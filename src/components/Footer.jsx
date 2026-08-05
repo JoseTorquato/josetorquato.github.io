@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Brand from './Brand.jsx'
+import { GitHubIcon, LinkedInIcon } from './icons.jsx'
 import { useT } from '../i18n.jsx'
 import { ui } from '../copy.js'
 
@@ -20,12 +21,12 @@ export default function Footer() {
           ))}
         </nav>
         <div className="footer-social">
-          <a href="https://github.com/josetorquato">GitHub</a>
-          <a href="https://linkedin.com/in/josetorquato">LinkedIn</a>
+          <a href="https://github.com/josetorquato" aria-label="GitHub"><GitHubIcon /></a>
+          <a href="https://linkedin.com/in/josetorquato" aria-label="LinkedIn"><LinkedInIcon /></a>
         </div>
       </div>
       <div className="footer-bottom">
-        <span className="signal">©</span> 2026 josetorquato.dev
+        <span className="signal">©</span> 2026 josetorquato.dev&nbsp;&nbsp;·&nbsp;&nbsp;{t(ui.footerTagline)}
       </div>
     </footer>
   )

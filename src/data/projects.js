@@ -1,7 +1,20 @@
+/** Category labels for the /projetos filter chips. Keys are the `category` slugs below. */
+export const categories = {
+  ia: { pt: 'IA', en: 'AI' },
+  dados: { pt: 'Dados', en: 'Data' },
+  backend: { pt: 'Backend', en: 'Backend' },
+  devops: { pt: 'DevOps', en: 'DevOps' },
+}
+
+/** Status shared by projects. `links.github` / `links.demo` are optional — icons only render when present. */
+const inProduction = { pt: 'Produção', en: 'Production' }
+
 export const projects = [
   {
     slug: 'copiloto-atendimento',
     year: '2026',
+    category: 'ia',
+    status: inProduction,
     title: 'Copiloto de Atendimento',
     role: { pt: 'tech lead + arquitetura', en: 'tech lead + architecture' },
     summary: {
@@ -63,6 +76,8 @@ export const projects = [
   {
     slug: 'plataforma-dados',
     year: '2025',
+    category: 'dados',
+    status: inProduction,
     title: 'Plataforma de Dados Multi-tenant',
     role: { pt: 'staff engineer', en: 'staff engineer' },
     summary: {
@@ -112,6 +127,8 @@ export const projects = [
   {
     slug: 'api-gateway',
     year: '2024',
+    category: 'backend',
+    status: inProduction,
     title: 'API Gateway de Alta Performance',
     role: { pt: 'senior backend engineer', en: 'senior backend engineer' },
     summary: {
@@ -161,6 +178,8 @@ export const projects = [
   {
     slug: 'cli-devops',
     year: '2023',
+    category: 'devops',
+    status: inProduction,
     title: 'CLI de Automação DevOps',
     role: { pt: 'tech lead', en: 'tech lead' },
     summary: {
@@ -193,6 +212,8 @@ export const projects = [
   {
     slug: 'busca-semantica',
     year: '2022',
+    category: 'ia',
+    status: inProduction,
     title: 'Motor de Busca Semântica',
     role: { pt: 'senior engineer', en: 'senior engineer' },
     summary: {
@@ -224,6 +245,8 @@ export const projects = [
   {
     slug: 'pipeline-eventos',
     year: '2021',
+    category: 'dados',
+    status: inProduction,
     title: 'Pipeline de Eventos em Streaming',
     role: { pt: 'backend engineer', en: 'backend engineer' },
     summary: {

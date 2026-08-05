@@ -1,4 +1,7 @@
 import SectionHead from '../components/SectionHead.jsx'
+import Metric from '../components/Metric.jsx'
+import Tags from '../components/Tags.jsx'
+import Cta from '../components/Cta.jsx'
 import { useT } from '../i18n.jsx'
 import { ui } from '../copy.js'
 import { experience, stack } from '../data/resume.js'
@@ -18,30 +21,40 @@ export default function About() {
   const t = useT()
   return (
     <div className="page">
-      <section className="page-head">
-        <p className="kicker">{t(ui.about.kicker)}</p>
-        <h1 className="page-title">
-          {t(intro.title).map((line, i) => (
-            <span key={line}>
-              {line}
-              {i < 2 ? <br /> : null}
-            </span>
+      <section className="page-head about-head">
+        <div>
+          <p className="kicker">{t(ui.about.kicker)}</p>
+          <h1 className="page-title">
+            {t(intro.title).map((line, i) => (
+              <span key={line}>
+                {line}
+                {i < 2 ? <br /> : null}
+              </span>
+            ))}
+          </h1>
+          <p className="about-text">{t(intro.body)}</p>
+        </div>
+        <div className="metric-panel">
+          {ui.metrics.map((m) => (
+            <Metric key={m.label.en} value={m.value} unit={m.unit} label={t(m.label)} />
           ))}
-        </h1>
-        <p className="about-text">{t(intro.body)}</p>
+        </div>
       </section>
 
       <section className="section">
         <SectionHead number="01">{t(ui.sections.experience)}</SectionHead>
-        <div className="rows rows-flush">
+        <ol className="timeline">
           {experience.map((job) => (
-            <div className="job" key={job.title}>
-              <span className="row-meta">{t(job.period)}</span>
-              <span className="job-title">{job.title}</span>
-              <span className="job-body">{t(job.body)}</span>
-            </div>
+            <li className="timeline-item" key={job.title}>
+              <div className="timeline-head">
+                <h3 className="job-title">{job.title}</h3>
+                <span className="row-meta">{t(job.period)}</span>
+              </div>
+              <p className="job-body">{t(job.body)}</p>
+              {job.stack ? <Tags items={job.stack} /> : null}
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="section section-panel">
@@ -59,6 +72,8 @@ export default function About() {
           ))}
         </div>
       </section>
+
+      <Cta copy={ui.cta.about} />
     </div>
   )
 }

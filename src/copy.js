@@ -12,6 +12,11 @@ export const ui = {
   role: { pt: '// tech lead & ai engineer', en: '// tech lead & ai engineer' },
   hero: {
     name: 'José Torquato',
+    tagline: {
+      pt: 'Engenheiro de Software · Arquiteto de Produtos · Visionário',
+      en: 'Software Engineer · Product Architect · Visionary',
+    },
+    // Not rendered on the page — used as the home meta description by scripts/prerender.mjs.
     lede: {
       pt: 'Lidero times de engenharia e coloco sistemas de IA em produção — do desenho da arquitetura ao custo por resposta.',
       en: 'I lead engineering teams and ship AI systems to production — from architecture to cost per response.',
@@ -44,7 +49,30 @@ export const ui = {
       en: 'Tech lead and AI engineer. Eleven years across platform, data and agents — designing architecture, building teams and getting the code to production.',
     },
   },
-  minutes: { pt: 'min', en: 'min' },
+  minutes: { pt: 'min de leitura', en: 'min read' },
+  cta: {
+    projects: {
+      kicker: { pt: '// colaboração', en: '// collaboration' },
+      title: { pt: 'Tem um projeto interessante?', en: 'Working on something interesting?' },
+      body: {
+        pt: 'Estou aberto a conversas sobre novos desafios.',
+        en: 'I am open to conversations about new challenges.',
+      },
+    },
+    about: {
+      kicker: { pt: '// vamos conversar', en: "// let's talk" },
+      title: { pt: 'Aberto a novas oportunidades', en: 'Open to new opportunities' },
+      body: {
+        pt: 'Estou sempre interessado em projetos desafiadores e times que constroem coisas que importam.',
+        en: 'I am always interested in challenging projects and teams building things that matter.',
+      },
+    },
+    button: { pt: 'Entrar em contato →', en: 'Get in touch →' },
+  },
+  featuredBadge: { pt: 'destaque', en: 'featured' },
+  filterAll: { pt: 'Todos', en: 'All' },
+  projectsCount: { pt: 'projetos', en: 'projects' },
+  footerTagline: { pt: 'feito com precisão e café', en: 'made with precision and coffee' },
   notFound: {
     title: { pt: 'Página não encontrada', en: 'Page not found' },
     body: { pt: 'O endereço não existe (ou não existe mais).', en: 'That address does not exist (or no longer does).' },

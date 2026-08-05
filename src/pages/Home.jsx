@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import SectionHead from '../components/SectionHead.jsx'
-import Metric from '../components/Metric.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
 import RowLink from '../components/RowLink.jsx'
 import CodeCard from '../components/CodeCard.jsx'
@@ -16,17 +15,11 @@ export default function Home() {
       <section className="hero dotted">
         <p className="kicker">{t(ui.role)}</p>
         <h1 className="hero-name">{ui.hero.name}</h1>
-        <p className="lede">{t(ui.hero.lede)}</p>
+        <p className="hero-tagline">{t(ui.hero.tagline)}</p>
         <div className="actions">
           <Link to="/projetos" className="btn btn-primary">{t(ui.hero.primary)}</Link>
           <Link to="/blog" className="btn btn-ghost">{t(ui.hero.secondary)}</Link>
         </div>
-      </section>
-
-      <section className="metric-strip">
-        {ui.metrics.map((m) => (
-          <Metric key={m.label.en} value={m.value} unit={m.unit} label={t(m.label)} />
-        ))}
       </section>
 
       <section className="section section-panel">
