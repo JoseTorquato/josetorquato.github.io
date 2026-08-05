@@ -27,6 +27,10 @@ const SITE_NAME = 'josetorquato.dev'
 const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
+// GitHub Pages serves each route from <route>/index.html and 301-redirects the
+// slashless form, so the canonical URL is always the trailing-slash one.
+const urlOf = (path) => SITE + (path === '/' ? '/' : `${path}/`)
+
 const truncate = (s, max = 155) => (s.length <= max ? s : s.slice(0, max - 1).trimEnd() + '…')
 
 // "Jul 2026" (en) -> "2026-07" (ISO 8601 year-month, valid for schema.org)
@@ -61,7 +65,7 @@ const projectLd = (p) => ({
   '@context': 'https://schema.org',
   '@type': 'CreativeWork',
   name: p.title,
-  url: `${SITE}/projetos/${p.slug}`,
+  url: urlOf(`/projetos/${p.slug}`),
   description: p.summary.pt,
   author: { '@type': 'Person', name: AUTHOR, url: SITE },
   keywords: p.stack.join(', '),
@@ -73,7 +77,7 @@ const postLd = (p) => ({
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: p.title.pt,
-  url: `${SITE}/blog/${p.slug}`,
+  url: urlOf(`/blog/${p.slug}`),
   description: truncate(p.body.pt[0].text),
   author: { '@type': 'Person', name: AUTHOR, url: SITE },
   datePublished: postDate(p),
@@ -140,7 +144,7 @@ const jsonLdTag = (obj) =>
   `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`
 
 function pageHtml(route) {
-  const canonical = SITE + (route.path === '/' ? '/' : route.path)
+  const canonical = urlOf(route.path)
   const head = [
     `<link rel="canonical" href="${canonical}" />`,
     `<meta name="author" content="${AUTHOR}" />`,
@@ -180,7 +184,7 @@ for (const route of routes) {
 const sitemap =
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  routes.map((r) => `  <url><loc>${SITE}${r.path === '/' ? '/' : r.path}</loc></url>`).join('\n') +
+  routes.map((r) => `  <url><loc>${urlOf(r.path)}</loc></url>`).join('\n') +
   '\n</urlset>\n'
 writeFileSync(resolve(dist, 'sitemap.xml'), sitemap)
 
@@ -190,18 +194,18 @@ const llms = [
   '',
   `> ${ui.hero.lede.pt} Site pessoal com projetos, artigos e contato, em português e inglês (mesmo endereço, alternância na página).`,
   '',
-  `## Projetos (${SITE}/projetos)`,
+  `## Projetos (${urlOf('/projetos')})`,
   '',
-  ...projects.map((p) => `- [${p.title}](${SITE}/projetos/${p.slug}): ${p.summary.pt} Stack: ${p.stack.join(', ')}.`),
+  ...projects.map((p) => `- [${p.title}](${urlOf(`/projetos/${p.slug}`)}): ${p.summary.pt} Stack: ${p.stack.join(', ')}.`),
   '',
-  `## Artigos (${SITE}/blog)`,
+  `## Artigos (${urlOf('/blog')})`,
   '',
-  ...posts.map((p) => `- [${p.title.pt}](${SITE}/blog/${p.slug}): ${truncate(p.body.pt[0].text, 200)}`),
+  ...posts.map((p) => `- [${p.title.pt}](${urlOf(`/blog/${p.slug}`)}): ${truncate(p.body.pt[0].text, 200)}`),
   '',
   '## Sobre e contato',
   '',
-  `- [Sobre](${SITE}/sobre): ${ui.about.short.pt}`,
-  `- [Contato](${SITE}/contato): e-mail jose@josetorquato.dev · GitHub github.com/josetorquato · LinkedIn linkedin.com/in/josetorquato · São Paulo, BR (UTC−3)`,
+  `- [Sobre](${urlOf('/sobre')}): ${ui.about.short.pt}`,
+  `- [Contato](${urlOf('/contato')}): e-mail jose@josetorquato.dev · GitHub github.com/josetorquato · LinkedIn linkedin.com/in/josetorquato · São Paulo, BR (UTC−3)`,
   '',
 ].join('\n')
 writeFileSync(resolve(dist, 'llms.txt'), llms)
