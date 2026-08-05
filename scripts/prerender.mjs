@@ -24,6 +24,14 @@ const SITE = 'https://josetorquato.dev'
 const AUTHOR = 'José Torquato'
 const SITE_NAME = 'josetorquato.dev'
 
+// Google Analytics 4. Injected only into built pages, so dev stays clean.
+// SPA route changes are tracked by GA4's enhanced measurement (history events).
+const GA_ID = '' // set to the measurement ID (G-XXXXXXXXXX) to enable
+const gaSnippet = GA_ID
+  ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>\n    ` +
+    `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}');</script>`
+  : ''
+
 const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
@@ -157,6 +165,7 @@ function pageHtml(route) {
     `<meta name="twitter:card" content="summary" />`,
     ...(route.published ? [`<meta property="article:published_time" content="${route.published}" />`] : []),
     ...route.jsonLd.map(jsonLdTag),
+    ...(gaSnippet ? [gaSnippet] : []),
   ].join('\n    ')
 
   return template
@@ -171,7 +180,7 @@ writeFileSync(
   resolve(dist, '404.html'),
   template
     .replace(/<title>.*?<\/title>/s, `<title>Página não encontrada — ${SITE_NAME}</title>`)
-    .replace('</head>', '    <meta name="robots" content="noindex" />\n  </head>')
+    .replace('</head>', `    <meta name="robots" content="noindex" />\n${gaSnippet ? `    ${gaSnippet}\n` : ''}  </head>`)
 )
 
 for (const route of routes) {
