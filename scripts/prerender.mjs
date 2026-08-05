@@ -26,7 +26,7 @@ const SITE_NAME = 'josetorquato.dev'
 
 // Google Analytics 4. Injected only into built pages, so dev stays clean.
 // SPA route changes are tracked by GA4's enhanced measurement (history events).
-const GA_ID = '' // set to the measurement ID (G-XXXXXXXXXX) to enable
+const GA_ID = 'G-YKX36TDERW'
 const gaSnippet = GA_ID
   ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>\n    ` +
     `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}');</script>`
