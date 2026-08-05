@@ -1,11 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { LangProvider } from './i18n.jsx'
 import './styles.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root')
+const app = (
   <React.StrictMode>
     <BrowserRouter>
       <LangProvider>
@@ -14,3 +15,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>
 )
+
+// Prerendered pages ship real HTML (hydrate); dev and 404 fallback start empty (render)
+if (container.hasChildNodes()) {
+  hydrateRoot(container, app)
+} else {
+  createRoot(container).render(app)
+}

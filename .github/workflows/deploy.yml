@@ -24,10 +24,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # build = client bundle + SSR bundle + prerender (per-route HTML, sitemap, llms.txt, 404.html)
       - run: npm run build
-      # SPA fallback: GitHub Pages serves 404.html for unknown paths,
-      # so deep links like /projects/x land on the app router
-      - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

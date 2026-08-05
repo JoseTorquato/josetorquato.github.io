@@ -3,10 +3,13 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const LangContext = createContext({ lang: 'pt', setLang: () => {} })
 
 export function LangProvider({ children }) {
-  const [lang, setLang] = useState(() => {
-    if (typeof localStorage === 'undefined') return 'pt'
-    return localStorage.getItem('jt-lang') || 'pt'
-  })
+  // Always start in 'pt' so client hydration matches the prerendered HTML;
+  // the saved preference is applied right after mount.
+  const [lang, setLang] = useState('pt')
+
+  useEffect(() => {
+    if (localStorage.getItem('jt-lang') === 'en') setLang('en')
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('jt-lang', lang)
