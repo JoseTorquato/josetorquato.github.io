@@ -53,11 +53,12 @@ const personLd = {
   '@type': 'Person',
   name: AUTHOR,
   url: SITE,
-  jobTitle: 'Tech Lead & AI Engineer',
+  jobTitle: 'Tech Lead',
+  worksFor: { '@type': 'Organization', name: 'KORO Martech' },
   email: 'mailto:jose@josetorquato.dev',
   address: { '@type': 'PostalAddress', addressLocality: 'São Paulo', addressCountry: 'BR' },
   sameAs: ['https://github.com/josetorquato', 'https://linkedin.com/in/josetorquato'],
-  knowsAbout: ['Python', 'TypeScript', 'Go', 'Rust', 'AI agents', 'RAG', 'LangGraph', 'pgvector', 'Postgres', 'Kafka', 'AWS', 'Kubernetes', 'Terraform', 'OpenTelemetry'],
+  knowsAbout: ['Python', 'Django', 'FastAPI', 'TypeScript', 'Node.js', 'AI agents', 'RAG', 'MCP servers', 'LangChain', 'PostgreSQL', 'RabbitMQ', 'Docker', 'AWS', 'GCP', 'Terraform'],
 }
 
 const websiteLd = {
@@ -104,7 +105,7 @@ const routes = [
   {
     path: '/projetos',
     title: 'Projetos — José Torquato',
-    description: 'Projetos selecionados de José Torquato — agentes de IA, plataformas de dados e infraestrutura em produção.',
+    description: 'Projetos de José Torquato — diagnóstico de performance para Django, chatbot com RAG e visão computacional, e produtos com IA em produção.',
     type: 'website',
     jsonLd: [],
   },

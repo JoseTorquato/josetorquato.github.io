@@ -41,14 +41,14 @@ export default function Projects() {
           >
             {t(ui.filterAll)}
           </button>
-          {Object.entries(categories).map(([slug, label]) => (
+          {[...new Set(projects.map((p) => p.category))].map((slug) => (
             <button
               key={slug}
               type="button"
               className={'filter-chip' + (filter === slug ? ' is-active' : '')}
               onClick={() => setFilter(slug)}
             >
-              {t(label)}
+              {t(categories[slug])}
             </button>
           ))}
         </div>

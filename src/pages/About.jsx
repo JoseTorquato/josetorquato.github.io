@@ -8,12 +8,12 @@ import { experience, stack } from '../data/resume.js'
 
 const intro = {
   title: {
-    pt: ['Onze anos', 'levando código', 'até produção'],
-    en: ['Eleven years', 'getting code', 'into production'],
+    pt: ['Sete anos', 'levando código', 'até produção'],
+    en: ['Seven years', 'getting code', 'into production'],
   },
   body: {
-    pt: 'Comecei em backend, passei por plataforma e dados, e hoje lidero um time que constrói sistemas de IA. Meu trabalho é dividir problema grande em decisão pequena e defensável — e escrever o que aprendi quando a decisão estava errada.',
-    en: 'I started in backend, moved through platform and data, and now lead a team building AI systems. My job is turning a big problem into small defensible decisions — and writing down what I learned when the decision was wrong.',
+    pt: 'Python é minha linguagem principal. Construo sistemas backend e agentes de IA que rodam em produção — pipelines de dados, RAG e servidores MCP. Hoje sou tech lead na KORO Martech: lidero um time técnico e continuo mergeando meus próprios PRs. Me importo menos com framework e mais com o que faz um time entregar rápido e um sistema ficar de pé.',
+    en: "Python is my main language. I build backend systems and AI agents that run in production — data pipelines, RAG and MCP servers. I'm a tech lead at KORO Martech: I lead a technical team and still merge my own PRs. I care less about frameworks and more about what makes a team ship fast and a system stay up.",
   },
 }
 

@@ -13,8 +13,8 @@ export const ui = {
   hero: {
     name: 'José Torquato',
     tagline: {
-      pt: 'Engenheiro de Software · Arquiteto de Produtos · Visionário',
-      en: 'Software Engineer · Product Architect · Visionary',
+      pt: 'Tech Lead · Engenheiro de Backend & IA',
+      en: 'Tech Lead · Backend & AI Engineer',
     },
     // Not rendered on the page — used as the home meta description by scripts/prerender.mjs.
     lede: {
@@ -25,10 +25,10 @@ export const ui = {
     secondary: { pt: 'Ler Blog', en: 'Read Blog' },
   },
   metrics: [
-    { value: '11', unit: 'y', label: { pt: 'em produção', en: 'in production' } },
-    { value: '1.2', unit: 'M', label: { pt: 'msg / mês', en: 'msg / month' } },
-    { value: '9', unit: '', label: { pt: 'pessoas no time', en: 'people on the team' } },
-    { value: '−38', unit: '%', label: { pt: 'custo por resposta', en: 'cost per response' } },
+    { value: '7', unit: '+', label: { pt: 'anos em produção', en: 'years in production' } },
+    { value: '3', unit: '', label: { pt: 'projetos open source', en: 'open source projects' } },
+    { value: '28 → 3.8', unit: 's', label: { pt: 'página real diagnosticada', en: 'real page diagnosed' } },
+    { value: '1/130', unit: '', label: { pt: 'Desenvolve · 8.000+ inscritos', en: 'Desenvolve · 8,000+ applicants' } },
   ],
   sections: {
     featured: { pt: 'Projetos em Destaque', en: 'Featured Work' },
@@ -45,8 +45,8 @@ export const ui = {
   about: {
     kicker: { pt: '// sobre', en: '// about' },
     short: {
-      pt: 'Tech lead e AI engineer. Onze anos entre plataforma, dados e agentes — desenhando arquitetura, formando time e levando o que a gente escreve até produção.',
-      en: 'Tech lead and AI engineer. Eleven years across platform, data and agents — designing architecture, building teams and getting the code to production.',
+      pt: 'Tech lead na KORO Martech. Sete anos levando código até produção — hoje construindo agentes de IA que rodam de verdade: pipelines de dados, RAG e servidores MCP.',
+      en: 'Tech lead at KORO Martech. Seven years getting code into production — now building AI agents that actually run: data pipelines, RAG and MCP servers.',
     },
   },
   minutes: { pt: 'min de leitura', en: 'min read' },

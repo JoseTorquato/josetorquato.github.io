@@ -1,47 +1,21 @@
 export const experience = [
   {
-    period: { pt: '2024 — hoje', en: '2024 — now' },
-    title: 'Tech Lead, AI Platform',
+    period: { pt: 'atual', en: 'current' },
+    title: 'Tech Lead — KORO Martech',
     body: {
-      pt: 'Time de 9 pessoas. Copiloto de atendimento a 1.2M msg/mês, suíte de avaliação em CI, custo por resposta −38%.',
-      en: 'Team of 9. Support copilot at 1.2M msg/month, eval suite in CI, cost per response down 38%.',
+      pt: 'Lidero um time técnico construindo agentes de IA em produção — pipelines de dados, RAG e servidores MCP — e continuo mergeando meus próprios PRs.',
+      en: 'I lead a technical team building AI agents in production — data pipelines, RAG and MCP servers — and I still merge my own PRs.',
     },
-    stack: ['Python', 'LangGraph', 'pgvector', 'AWS'],
+    stack: ['Python', 'Agentes de IA', 'RAG', 'MCP'],
   },
-  {
-    period: { pt: '2021 — 2024', en: '2021 — 2024' },
-    title: 'Staff Engineer, Data',
-    body: {
-      pt: 'Plataforma multi-tenant para 40 clientes. Pipeline de eventos a 80k/s e migração de monólito para serviços.',
-      en: 'Multi-tenant platform for 40 clients. 80k events/s pipeline and monolith-to-services migration.',
-    },
-    stack: ['TypeScript', 'Kafka', 'Postgres', 'Terraform'],
-  },
-  {
-    period: { pt: '2018 — 2021', en: '2018 — 2021' },
-    title: 'Senior Backend Engineer',
-    body: {
-      pt: 'API gateway em Rust com p99 de 12ms. Padronização de observabilidade em 30 serviços.',
-      en: 'Rust API gateway at 12ms p99. Observability standard across 30 services.',
-    },
-    stack: ['Rust', 'gRPC', 'Redis', 'OpenTelemetry'],
-  },
-  {
-    period: { pt: '2015 — 2018', en: '2015 — 2018' },
-    title: 'Backend Engineer',
-    body: {
-      pt: 'Primeiros anos em Python e Postgres, aprendendo a escrever menos código.',
-      en: 'Early years in Python and Postgres, learning to write less code.',
-    },
-    stack: ['Python', 'Postgres'],
-  },
+  // TODO: cargos anteriores — preencher com dados reais (empresa, período, stack)
 ]
 
 export const stack = [
-  { label: { pt: '// linguagens', en: '// languages' }, items: ['Python', 'TypeScript', 'Go', 'Rust'] },
-  { label: { pt: '// ia', en: '// ai' }, items: ['LangGraph', 'pgvector', 'OpenAI / Anthropic', 'evals em CI'] },
-  { label: { pt: '// dados', en: '// data' }, items: ['Postgres', 'Kafka', 'dbt', 'ClickHouse'] },
-  { label: { pt: '// infra', en: '// infra' }, items: ['AWS', 'Terraform', 'Kubernetes', 'OpenTelemetry'] },
+  { label: { pt: '// linguagens', en: '// languages' }, items: ['Python', 'TypeScript / Node.js', 'SQL'] },
+  { label: { pt: '// backend', en: '// backend' }, items: ['Django · DRF', 'FastAPI', 'NestJS', 'PostgreSQL', 'RabbitMQ'] },
+  { label: { pt: '// ia', en: '// ai' }, items: ['Agentes em produção', 'RAG', 'Servidores MCP', 'LangChain'] },
+  { label: { pt: '// infra', en: '// infra' }, items: ['Docker', 'AWS (Lambda, SQS)', 'GCP', 'Terraform'] },
 ]
 
 export const contact = [
