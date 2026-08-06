@@ -19,8 +19,8 @@ export const stack = [
 ]
 
 export const contact = [
-  { label: 'E-mail', value: 'jose@josetorquato.dev', href: 'mailto:jose@josetorquato.dev' },
+  { label: 'E-mail', value: 'jltorquato12@gmail.com', href: 'mailto:jltorquato12@gmail.com' },
   { label: 'GitHub', value: 'github.com/josetorquato', href: 'https://github.com/josetorquato' },
   { label: 'LinkedIn', value: 'in/josetorquato', href: 'https://linkedin.com/in/josetorquato' },
-  { label: 'Base', value: 'São Paulo, BR · UTC−3' },
+  { label: 'Base', value: 'Canoas, RS · UTC−3' },
 ]

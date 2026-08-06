@@ -55,8 +55,8 @@ const personLd = {
   url: SITE,
   jobTitle: 'Tech Lead',
   worksFor: { '@type': 'Organization', name: 'KORO Martech' },
-  email: 'mailto:jose@josetorquato.dev',
-  address: { '@type': 'PostalAddress', addressLocality: 'São Paulo', addressCountry: 'BR' },
+  email: 'mailto:jltorquato12@gmail.com',
+  address: { '@type': 'PostalAddress', addressLocality: 'Canoas', addressRegion: 'RS', addressCountry: 'BR' },
   sameAs: ['https://github.com/josetorquato', 'https://linkedin.com/in/josetorquato'],
   knowsAbout: ['Python', 'Django', 'FastAPI', 'TypeScript', 'Node.js', 'AI agents', 'RAG', 'MCP servers', 'LangChain', 'PostgreSQL', 'RabbitMQ', 'Docker', 'AWS', 'GCP', 'Terraform'],
 }
@@ -141,7 +141,7 @@ const routes = [
   {
     path: '/contato',
     title: 'Contato — José Torquato',
-    description: 'Fale com José Torquato — e-mail, GitHub e LinkedIn. São Paulo, BR (UTC−3).',
+    description: 'Fale com José Torquato — e-mail, GitHub e LinkedIn. Canoas, RS (UTC−3).',
     type: 'website',
     jsonLd: [],
   },
@@ -215,7 +215,7 @@ const llms = [
   '## Sobre e contato',
   '',
   `- [Sobre](${urlOf('/sobre')}): ${ui.about.short.pt}`,
-  `- [Contato](${urlOf('/contato')}): e-mail jose@josetorquato.dev · GitHub github.com/josetorquato · LinkedIn linkedin.com/in/josetorquato · São Paulo, BR (UTC−3)`,
+  `- [Contato](${urlOf('/contato')}): e-mail jltorquato12@gmail.com · GitHub github.com/josetorquato · LinkedIn linkedin.com/in/josetorquato · Canoas, RS (UTC−3)`,
   '',
 ].join('\n')
 writeFileSync(resolve(dist, 'llms.txt'), llms)
