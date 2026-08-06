@@ -20,17 +20,32 @@ export default function Blog() {
         <h1 className="page-title">{t(intro.title)}</h1>
         <p className="lede">{t(intro.lede)}</p>
       </section>
-      <section className="rows">
-        {posts.map((p) => (
-          <RowLink
-            key={p.slug}
-            to={'/blog/' + p.slug}
-            meta={t(p.date)}
-            title={t(p.title)}
-            detail={p.minutes + ' ' + t(ui.minutes)}
-          />
-        ))}
-      </section>
+      {posts.length ? (
+        <section className="rows">
+          {posts.map((p) => (
+            <RowLink
+              key={p.slug}
+              to={'/blog/' + p.slug}
+              meta={t(p.date)}
+              title={t(p.title)}
+              detail={p.minutes + ' ' + t(ui.minutes)}
+            />
+          ))}
+        </section>
+      ) : (
+        <section className="section">
+          <p className="kicker">{t({ pt: '// em breve', en: '// coming soon' })}</p>
+          <p className="lede">
+            {t({
+              pt: 'Os primeiros artigos estão a caminho. Enquanto isso, escrevo sobre agentes de IA, MCP e backend no LinkedIn.',
+              en: 'The first articles are on their way. Meanwhile, I write about AI agents, MCP and backend engineering on LinkedIn.',
+            })}
+          </p>
+          <a className="see-all" href="https://linkedin.com/in/josetorquato">
+            {t({ pt: '→ me encontra no LinkedIn', en: '→ find me on LinkedIn' })}
+          </a>
+        </section>
+      )}
     </div>
   )
 }

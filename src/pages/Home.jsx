@@ -32,21 +32,23 @@ export default function Home() {
         <Link to="/projetos" className="see-all">{t(ui.allProjects)}</Link>
       </section>
 
-      <section className="section">
-        <SectionHead number="02">{t(ui.sections.writing)}</SectionHead>
-        <div className="rows rows-flush">
-          {featuredPosts.map((p) => (
-            <RowLink
-              key={p.slug}
-              to={'/blog/' + p.slug}
-              meta={t(p.date)}
-              title={t(p.title)}
-              detail={p.minutes + ' ' + t(ui.minutes)}
-            />
-          ))}
-        </div>
-        <Link to="/blog" className="see-all">{t(ui.allPosts)}</Link>
-      </section>
+      {featuredPosts.length > 0 && (
+        <section className="section">
+          <SectionHead number="02">{t(ui.sections.writing)}</SectionHead>
+          <div className="rows rows-flush">
+            {featuredPosts.map((p) => (
+              <RowLink
+                key={p.slug}
+                to={'/blog/' + p.slug}
+                meta={t(p.date)}
+                title={t(p.title)}
+                detail={p.minutes + ' ' + t(ui.minutes)}
+              />
+            ))}
+          </div>
+          <Link to="/blog" className="see-all">{t(ui.allPosts)}</Link>
+        </section>
+      )}
 
       <section className="section section-panel about-split">
         <CodeCard />
