@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Priscila Stanqueviski | Advogada em Canoas - RS</title>
+  <meta name="description" content="Advocacia em Canoas - RS. Priscila Stanqueviski atua em direito de família, empresarial, civil e tributário, com atendimento presencial e virtual.">
+  <link rel="canonical" href="https://priscilastanqueviski.adv.br/">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Priscila Stanqueviski | Advogada em Canoas - RS">
+  <meta property="og:description" content="Advocacia em Canoas - RS. Priscila Stanqueviski atua em direito de família, empresarial, civil e tributário, com atendimento presencial e virtual.">
+  <meta property="og:url" content="https://priscilastanqueviski.adv.br/">
+  <meta property="og:site_name" content="Priscila Stanqueviski | Advogada">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://priscilastanqueviski.adv.br/img/retrato.jpg">
+  <meta name="twitter:image" content="https://priscilastanqueviski.adv.br/img/retrato.jpg">
+  <meta name="geo.placename" content="Canoas">
+  <meta name="geo.region" content="BR-RS">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta: oklch(0.1363 0.0030 325.7);
+  --tinta-suave: oklch(0.4363 0.0030 325.7);
+  --papel: oklch(0.9965 0.0026 106.4);
+  --papel-2: oklch(0.9606 0.0027 106.4);
+  --marca: oklch(0.5217 0.1096 76.0);
+  --marca-clara: oklch(0.8617 0.0796 76.0);
+  --marca-escura: oklch(0.3917 0.1096 76.0);
+  --areia: oklch(0.8243 0.0491 52.5);
+  --linha: oklch(0.9163 0.0000 325.7);
+  --titulo: 'Libre Baskerville', Georgia, serif;
+  --corpo: 'Source Sans 3', system-ui, sans-serif;
+  --medida: 62ch;
+  --r: 3px;
+}
+/* ============================================================
+   MOBILE FIRST. O padrão é o celular; o desktop é a exceção que
+   sobe por min-width. Não é preferência de estilo: quem chega
+   aqui vem do Google no celular, à noite, e é essa a experiência
+   que precisa estar certa por construção, não por ajuste.
+   ============================================================ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--papel); color:var(--tinta);
+  font-family:var(--corpo); font-size:16.5px; line-height:1.62;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--titulo);font-weight:400;line-height:1.16;letter-spacing:-.012em}
+p{max-width:var(--medida)}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+.env{width:min(1180px,90vw);margin-inline:auto}
+
+/* Alvo de toque de 44px em tudo que se clica: no celular, link menor
+   que isso erra o dedo — é a falha de acessibilidade mais comum aqui. */
+a[href],summary,button{min-height:44px;display:flex;align-items:center}
+.faq .resposta a,p a,footer a{min-height:0;display:inline}
+
+header.topo{
+  padding:12px 0; border-bottom:1px solid var(--linha);
+  position:sticky; top:0; background:color-mix(in oklab, var(--papel) 93%, transparent);
+  backdrop-filter:saturate(1.4) blur(7px); z-index:20;
+}
+header.topo .env{display:flex;align-items:center;gap:11px}
+.logo{height:38px;width:auto;flex:0 0 auto;border-radius:3px}
+.marca-nome{font-family:var(--titulo);font-size:17px;letter-spacing:-.01em;line-height:1.2;min-height:0;display:block}
+.registro{font-size:12px;color:var(--tinta-suave);letter-spacing:.03em;display:block;min-height:0}
+header.topo nav{display:none}
+
+.hero{padding:34px 0 30px}
+.hero .env{display:grid;gap:26px}
+.hero h1{font-size:31px;margin-bottom:14px;text-wrap:balance}
+.hero .apoio{font-size:17px;color:var(--tinta-suave)}
+.hero .local{
+  margin-top:20px;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--marca-escura);display:flex;gap:9px;align-items:center;
+  /* Precisa quebrar: em 390px, versalete com entreletra estourava a linha e
+     o fim da frase era cortado pela borda. */
+  flex-wrap:wrap;line-height:1.7
+}
+.hero .local::before{content:'';width:22px;height:1px;background:var(--marca);flex:0 0 auto}
+.retrato{position:relative;order:-1}
+.retrato img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
+/* campo de cor atrás do retrato: a marca ocupa superfície, não pinta borda */
+.retrato::after{
+  content:'';position:absolute;inset:auto -10px -10px auto;width:60%;height:56%;
+  background:var(--areia);border-radius:var(--r);z-index:-1
+}
+
+section{padding:38px 0}
+section h2{font-size:24px;margin-bottom:9px}
+section .intro{color:var(--tinta-suave);margin-bottom:24px;max-width:56ch}
+
+.areas dl{border-top:1px solid var(--linha)}
+.areas div{display:grid;gap:4px;padding:17px 0;border-bottom:1px solid var(--linha)}
+.areas dt{font-family:var(--titulo);font-size:18.5px;color:var(--marca-escura)}
+.areas dd{color:var(--tinta-suave);font-size:15.5px}
+
+.processo{background:var(--papel-2)}
+.passos{display:grid;gap:22px}
+.passos article h3{font-size:18px;margin:6px 0 5px}
+.passos article p{color:var(--tinta-suave);font-size:15.5px}
+.passos .n{font-family:var(--titulo);font-size:34px;line-height:1;color:var(--marca);opacity:.42}
+
+/* FAQ aberto por padrão: é o que buscador e assistente leem */
+.faq details{border-bottom:1px solid var(--linha)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:15px 38px 15px 0;position:relative;
+  font-family:var(--titulo);font-size:18px;color:var(--tinta);min-height:44px
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:'';position:absolute;right:8px;top:50%;width:10px;height:10px;
+  border-right:1.5px solid var(--marca);border-bottom:1.5px solid var(--marca);
+  transform:translateY(-70%) rotate(45deg);transition:transform .28s cubic-bezier(.2,.8,.3,1)
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .resposta{padding:0 0 20px;color:var(--tinta-suave);font-size:15.5px}
+
+.sobre .env{display:grid;gap:22px}
+.sobre img{width:100%;max-width:280px;aspect-ratio:1;object-fit:cover;border-radius:var(--r)}
+.sobre p+p{margin-top:13px}
+
+/* qualificação: credencial verificável, a prova que a norma admite */
+.qualificacao{background:var(--papel-2)}
+.qualificacao ul{list-style:none;display:grid;gap:15px}
+.qualificacao li{padding-left:17px;position:relative}
+.qualificacao li::before{
+  content:'';position:absolute;left:0;top:9px;width:6px;height:6px;
+  background:var(--marca);border-radius:50%
+}
+.qualificacao b{font-weight:500;display:block;font-size:16px}
+.qualificacao span{color:var(--tinta-suave);font-size:14.5px}
+
+.contato{background:var(--marca);color:var(--papel)}
+.contato h2,.contato a{color:var(--papel)}
+.contato .intro{color:color-mix(in oklab, var(--papel) 82%, var(--marca))}
+.canais{display:grid;gap:19px;margin-top:24px}
+.canais div span{
+  display:block;font-size:12px;letter-spacing:.11em;text-transform:uppercase;
+  color:color-mix(in oklab, var(--papel) 72%, var(--marca));margin-bottom:3px;min-height:0
+}
+.canais a,.canais p{font-size:17px;text-decoration:none;border-bottom:1px solid transparent}
+.canais a:hover{border-bottom-color:var(--papel)}
+
+/* Mapa que só carrega quando pedido. Embutir o Google direto dispara
+   requisição a terceiro e cookie antes de qualquer consentimento — e
+   ainda pesa mais que o resto da página somado. */
+.mapa{margin-top:26px;border-radius:var(--r);overflow:hidden;position:relative;background:var(--papel-2)}
+.mapa button{
+  all:unset;box-sizing:border-box;cursor:pointer;width:100%;min-height:158px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  padding:22px;text-align:center;color:var(--tinta);font-family:var(--corpo);font-size:14.5px
+}
+.mapa button small{color:var(--tinta-suave);font-size:12.5px;max-width:34ch;line-height:1.5}
+.mapa iframe{width:100%;height:290px;border:0;display:block}
+
+/* WhatsApp flutuante. Sóbrio de propósito: sem pulsar, sem contador,
+   sem "agora". Ver a nota em `zap_flutuante` no gerador. */
+.zap{
+  position:fixed;right:15px;bottom:15px;z-index:40;
+  display:flex;align-items:center;gap:9px;
+  background:var(--marca);color:var(--papel);
+  padding:12px 17px;border-radius:999px;text-decoration:none;
+  box-shadow:0 5px 20px rgb(0 0 0 / .17);font-size:14.5px;min-height:48px
+}
+.zap svg{width:19px;height:19px;flex:0 0 auto;fill:currentColor}
+.zap span{display:none}
+
+footer{padding:26px 0 90px;font-size:13px;color:var(--tinta-suave);border-top:1px solid var(--linha)}
+footer p{max-width:78ch}
+footer p+p{margin-top:8px}
+
+/* ---------- tablet ---------- */
+@media (min-width:700px){
+  body{font-size:17px;line-height:1.65}
+  header.topo{padding:16px 0}
+  .logo{height:44px}
+  .marca-nome{font-size:19px}
+  .hero{padding:60px 0 50px}
+  .hero h1{font-size:42px;margin-bottom:18px}
+  .hero .apoio{font-size:19px}
+  .hero .local{font-size:12.5px;letter-spacing:.09em}
+  section{padding:60px 0}
+  section h2{font-size:31px}
+  .areas div{grid-template-columns:minmax(170px,.42fr) 1fr;gap:8px 36px;padding:20px 0}
+  .passos{grid-template-columns:repeat(2,1fr);gap:30px}
+  .canais{grid-template-columns:repeat(2,1fr);gap:24px}
+  .zap span{display:inline}
+  .mapa iframe{height:340px}
+}
+
+/* ---------- desktop ---------- */
+@media (min-width:1000px){
+  .hero{padding:88px 0 74px}
+  .hero .env{grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(44px,4.6vw,58px);margin-bottom:20px}
+  .hero .apoio{font-size:20px;max-width:46ch}
+  .retrato{order:0}
+  header.topo nav{margin-left:auto;display:flex;gap:22px;font-size:14.5px}
+  header.topo nav a{text-decoration:none;color:var(--tinta-suave);transition:color .2s;min-height:0}
+  header.topo nav a:hover{color:var(--marca)}
+  section{padding:82px 0}
+  section h2{font-size:36px}
+  .areas dt{font-size:20px}
+  .passos{grid-template-columns:repeat(4,1fr);gap:38px}
+  .passos .n{font-size:42px}
+  .faq summary{font-size:21px;padding:20px 44px 20px 0}
+  .faq .resposta{font-size:16.5px;max-width:68ch;padding-bottom:24px}
+  .sobre .env{grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .sobre img{max-width:none}
+  .canais{grid-template-columns:repeat(4,1fr)}
+  .qualificacao ul{grid-template-columns:repeat(2,1fr);gap:20px 40px}
+  .zap{right:24px;bottom:24px}
+}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Attorney",
+   "@id": "https://priscilastanqueviski.adv.br/#profissional",
+   "name": "Priscila Stanqueviski | Advogada",
+   "url": "https://priscilastanqueviski.adv.br",
+   "description": "Advocacia em Canoas - RS. Priscila Stanqueviski atua em direito de família, empresarial, civil e tributário, com atendimento presencial e virtual.",
+   "telephone": "(51) 99595-7590",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Boqueirão, 3166",
+    "addressCountry": "BR",
+    "addressLocality": "Canoas",
+    "addressRegion": "RS",
+    "postalCode": "92440-002"
+   },
+   "areaServed": {
+    "@type": "City",
+    "name": "Canoas"
+   },
+   "sameAs": [
+    "https://wa.me/5551995957590"
+   ],
+   "knowsAbout": [
+    "Direito de Família",
+    "Execução de alimentos",
+    "Direito Empresarial e Societário",
+    "Contratos e prevenção de conflitos",
+    "Direito Tributário",
+    "Acordos e soluções extrajudiciais"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://priscilastanqueviski.adv.br/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Quem não paga pensão alimentícia pode ser preso?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pode. Na execução de alimentos pelo rito da prisão civil, o devedor é intimado para, em três dias, pagar, provar que pagou ou justificar a impossibilidade. Se não faz nada disso, o juiz pode decretar prisão civil de um a três meses, cumprida em regime fechado. A prisão não apaga a dívida: o valor continua devido e pode ser cobrado também por penhora e protesto."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Acordo de pensão combinado só entre os pais tem validade?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "O combinado verbal ou por mensagem não tem força de título executivo. Se o pagamento parar, não dá para executar direto: seria preciso ajuizar ação de alimentos e discutir o valor do zero. Quando o acordo é homologado pelo juiz, feito por escritura pública ou referendado pelos advogados das partes, ele vira título e pode ser cobrado na Justiça."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quanto tempo demora um divórcio?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depende do caminho. O divórcio consensual pode ser feito por escritura pública em cartório, sempre com advogado, quando as partes concordam e as questões sobre filhos menores já foram resolvidas judicialmente. Esse caminho não depende de pauta de audiência. O divórcio litigioso corre na Justiça e segue o tempo do tribunal, variando conforme a vara e a complexidade da partilha."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Advogado pode garantir que vou ganhar a causa?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Não. As normas da OAB proíbem o advogado de prometer resultado, garantir êxito ou anunciar prazo de decisão, porque quem julga é o Judiciário. O que um advogado pode e deve fazer é explicar as chances reais, os riscos, os custos e os cenários possíveis do seu caso. Promessa de causa ganha, dinheiro rápido ou custo zero é sinal de alerta."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quanto custa contratar um advogado?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Os honorários são combinados caso a caso e dependem da complexidade, do tempo de trabalho e da forma de cobrança, que pode ser valor fixo, por etapa ou percentual sobre o resultado. A OAB/RS publica uma tabela com valores de referência para a seccional. Custas judiciais, taxas de cartório e eventual perícia são despesas separadas dos honorários."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Precisa ir até o escritório em Canoas ou o atendimento pode ser online?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "As duas formas. O atendimento presencial acontece no escritório, na Av. Boqueirão, 3166, sala 402, bairro Estância Velha, em Canoas - RS. Há também atendimento virtual, para quem mora em outra cidade ou prefere resolver à distância. Em qualquer um dos casos, o primeiro contato é pelo telefone e WhatsApp (51) 99595-7590."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Minha empresa já tem contrato social. Preciso de acordo de sócios?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "São documentos diferentes. O contrato social é obrigatório e define o básico: objeto, capital, quotas e administração. O acordo de sócios é facultativo e trata do que costuma travar a operação depois: regra de desempate, entrada e saída de sócio, distribuição de lucros e o que acontece em caso de conflito. Sem essas regras combinadas antes, o impasse vira processo."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://priscilastanqueviski.adv.br/#site",
+   "url": "https://priscilastanqueviski.adv.br",
+   "name": "Priscila Stanqueviski | Advogada",
+   "inLanguage": "pt-BR",
+   "publisher": {
+    "@id": "https://priscilastanqueviski.adv.br/#profissional"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="env">
+    <img class="logo" src="img/logo.jpg" alt="Marca de Priscila Stanqueviski | Advogada" width="120" height="120">
+    <div>
+      <span class="marca-nome">Priscila Stanqueviski | Advogada</span>
+      
+    </div>
+    <nav>
+      <a href="#areas">Atuação</a>
+      <a href="#atendimento">Atendimento</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="env">
+    <div>
+      <h1>Advocacia para famílias e empresas em Canoas - RS</h1>
+      <p class="apoio">Atuação em direito de família, empresarial, civil e tributário. Atendimento presencial no escritório em Canoas e virtual para quem está em outra cidade.</p>
+      <p class="local">Canoas · atendimento presencial e on-line</p>
+    </div>
+    <figure class="retrato"><img src="img/retrato.jpg" alt="Retrato de Priscila Stanqueviski | Advogada" width="800" height="1000" fetchpriority="high"></figure>
+  </div>
+</div>
+
+<section id="areas" class="areas">
+  <div class="env">
+    <h2>Áreas de atuação</h2>
+    <dl>
+      <div><dt>Direito de Família</dt><dd>Guarda, pensão alimentícia, divórcio e acordos entre os pais. O documento formalizado preserva a rotina do seu filho, independentemente da relação entre os adultos.</dd></div><div><dt>Execução de alimentos</dt><dd>Cobrança judicial da pensão que não foi paga. O rito próprio permite protesto, penhora e, nos casos previstos em lei, a prisão civil do devedor.</dd></div><div><dt>Direito Empresarial e Societário</dt><dd>Contrato social, acordo de sócios e regra de desempate. Empresa sólida não pode travar a operação por um impasse que ninguém combinou antes.</dd></div><div><dt>Contratos e prevenção de conflitos</dt><dd>Redação e revisão de contratos antes de o problema aparecer. Apagar incêndio jurídico costuma custar bem mais do que escrever a regra no papel.</dd></div><div><dt>Direito Tributário</dt><dd>Revisão do planejamento tributário da empresa: regime de apuração, obrigações acessórias e a conta que a informalidade cobra depois.</dd></div><div><dt>Acordos e soluções extrajudiciais</dt><dd>Nem toda situação precisa de juiz. Quando a lei permite, cartório e acordo bem feito no papel resolvem em outra velocidade, sem arrastar o desgaste por anos.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="atendimento" class="processo">
+  <div class="env">
+    <h2>Como funciona o atendimento</h2>
+    <div class="passos">
+      <article><div class="n">1</div><h3>Primeiro contato</h3><p>Você descreve a situação por WhatsApp ou telefone. Nessa etapa eu avalio se o caso é da minha área de atuação.</p></article><article><div class="n">2</div><h3>Reunião de análise</h3><p>Conversa presencial no escritório em Canoas ou por vídeo, para entender os fatos e ver os documentos que já existem.</p></article><article><div class="n">3</div><h3>Diagnóstico claro</h3><p>Explico os caminhos possíveis, os riscos, os prazos reais e os custos envolvidos antes de você decidir qualquer coisa.</p></article><article><div class="n">4</div><h3>Condução do caso</h3><p>Definida a estratégia, você acompanha o andamento e recebe retorno a cada movimentação relevante do processo ou da negociação.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" class="faq">
+  <div class="env">
+    <h2>Perguntas frequentes</h2>
+    <p class="intro">Respostas de caráter informativo. Cada situação tem particularidades que só a análise do caso concreto revela.</p>
+    <details open><summary>Quem não paga pensão alimentícia pode ser preso?</summary><div class="resposta"><p>Pode. Na execução de alimentos pelo rito da prisão civil, o devedor é intimado para, em três dias, pagar, provar que pagou ou justificar a impossibilidade. Se não faz nada disso, o juiz pode decretar prisão civil de um a três meses, cumprida em regime fechado. A prisão não apaga a dívida: o valor continua devido e pode ser cobrado também por penhora e protesto.</p></div></details><details open><summary>Acordo de pensão combinado só entre os pais tem validade?</summary><div class="resposta"><p>O combinado verbal ou por mensagem não tem força de título executivo. Se o pagamento parar, não dá para executar direto: seria preciso ajuizar ação de alimentos e discutir o valor do zero. Quando o acordo é homologado pelo juiz, feito por escritura pública ou referendado pelos advogados das partes, ele vira título e pode ser cobrado na Justiça.</p></div></details><details open><summary>Quanto tempo demora um divórcio?</summary><div class="resposta"><p>Depende do caminho. O divórcio consensual pode ser feito por escritura pública em cartório, sempre com advogado, quando as partes concordam e as questões sobre filhos menores já foram resolvidas judicialmente. Esse caminho não depende de pauta de audiência. O divórcio litigioso corre na Justiça e segue o tempo do tribunal, variando conforme a vara e a complexidade da partilha.</p></div></details><details open><summary>Advogado pode garantir que vou ganhar a causa?</summary><div class="resposta"><p>Não. As normas da OAB proíbem o advogado de prometer resultado, garantir êxito ou anunciar prazo de decisão, porque quem julga é o Judiciário. O que um advogado pode e deve fazer é explicar as chances reais, os riscos, os custos e os cenários possíveis do seu caso. Promessa de causa ganha, dinheiro rápido ou custo zero é sinal de alerta.</p></div></details><details open><summary>Quanto custa contratar um advogado?</summary><div class="resposta"><p>Os honorários são combinados caso a caso e dependem da complexidade, do tempo de trabalho e da forma de cobrança, que pode ser valor fixo, por etapa ou percentual sobre o resultado. A OAB/RS publica uma tabela com valores de referência para a seccional. Custas judiciais, taxas de cartório e eventual perícia são despesas separadas dos honorários.</p></div></details><details open><summary>Precisa ir até o escritório em Canoas ou o atendimento pode ser online?</summary><div class="resposta"><p>As duas formas. O atendimento presencial acontece no escritório, na Av. Boqueirão, 3166, sala 402, bairro Estância Velha, em Canoas - RS. Há também atendimento virtual, para quem mora em outra cidade ou prefere resolver à distância. Em qualquer um dos casos, o primeiro contato é pelo telefone e WhatsApp (51) 99595-7590.</p></div></details><details open><summary>Minha empresa já tem contrato social. Preciso de acordo de sócios?</summary><div class="resposta"><p>São documentos diferentes. O contrato social é obrigatório e define o básico: objeto, capital, quotas e administração. O acordo de sócios é facultativo e trata do que costuma travar a operação depois: regra de desempate, entrada e saída de sócio, distribuição de lucros e o que acontece em caso de conflito. Sem essas regras combinadas antes, o impasse vira processo.</p></div></details>
+  </div>
+</section>
+
+
+<section class="sobre">
+  <div class="env">
+    <img src="img/ambiente.jpg" alt="Priscila Stanqueviski | Advogada em atendimento" width="700" height="700" loading="lazy">
+    <div>
+      <h2>Sobre o meu trabalho</h2>
+      <p>Sou advogada e atendo em Canoas, no Rio Grande do Sul. Meu trabalho começa antes do processo: entender o que aconteceu, o que a lei permite e qual caminho resolve o problema com menos desgaste. Nem toda situação precisa virar processo judicial, e eu digo isso na primeira conversa.</p><p>Prefiro ser clara desde o início a alimentar expectativa que a realidade não vai atender. Você vai saber os riscos, os prazos reais e os limites do seu caso antes de decidir qualquer coisa. Sem promessa de resultado e sem pressa artificial.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="contato" class="contato">
+  <div class="env">
+    <h2>Fale com o escritório</h2>
+    <p class="intro">Se você quer entender qual é o caminho para o seu caso, o contato pode ser feito por WhatsApp ou telefone, no (51) 99595-7590.</p>
+    <div class="canais">
+      <div><span>Telefone</span><a href="tel:+5551995957590">(51) 99595-7590</a></div><div><span>WhatsApp</span><a href="https://wa.me/5551995957590" rel="noopener">Enviar mensagem</a></div><div><span>Endereço</span><p>Av. Boqueirão, 3166 - Sl 402 - Estância Velha, Canoas - RS, 92440-002</p></div><div><span>Instagram</span><a href="https://wa.me/5551995957590" rel="noopener">Perfil</a></div>
+    </div>
+    
+    <div class="mapa" data-mapa="https://www.google.com/maps?q=Av.+Boqueir%C3%A3o%2C+3166+-+Sl+402+-+Est%C3%A2ncia+Velha%2C+Canoas+-+RS%2C+92440-002&amp;output=embed">
+      <button type="button">
+        Ver no mapa
+        <small>Av. Boqueirão, 3166 - Sl 402 - Estância Velha, Canoas - RS, 92440-002</small>
+      </button>
+    </div>
+    <script>
+    (function(){
+      var alvo = document.currentScript.previousElementSibling;
+      function abrir(){
+        if (alvo.dataset.aberto) return;
+        alvo.dataset.aberto = '1';
+        var f = document.createElement('iframe');
+        f.title = 'Mapa da localização do escritório';
+        f.loading = 'lazy';
+        f.referrerPolicy = 'no-referrer-when-downgrade';
+        f.src = alvo.dataset.mapa;
+        alvo.replaceChildren(f);
+      }
+      alvo.querySelector('button').addEventListener('click', abrir);
+      if ('IntersectionObserver' in window) {
+        // rootMargin adianta a carga: o mapa já chega pronto na tela em vez
+        // de aparecer em branco e preencher depois.
+        new IntersectionObserver(function(e, obs){
+          if (e[0].isIntersecting) { abrir(); obs.disconnect(); }
+        }, { rootMargin: '220px' }).observe(alvo);
+      } else {
+        abrir();
+      }
+    })();
+    </script>
+  </div>
+</section>
+</main>
+
+<a class="zap" href="https://wa.me/5551995957590" rel="noopener"
+   aria-label="Conversar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.23 8.23 0 0 1 0 16.47Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.01-.37.11-.49.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.09-.17.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.73 2.65 4.2 3.71.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<footer>
+  <div class="env">
+    <p>Priscila Stanqueviski | Advogada · Av. Boqueirão, 3166 - Sl 402 - Estância Velha, Canoas - RS, 92440-002</p>
+    <p>Conteúdo de caráter meramente informativo, em conformidade com o Provimento 205/2021 do OAB. Esta página não constitui oferta de serviço, não promete resultado e não substitui a análise de um caso concreto.</p>
+  </div>
+</footer>
+
+</body>
+</html>
