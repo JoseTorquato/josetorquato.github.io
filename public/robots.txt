@@ -47,4 +47,8 @@ Allow: /
 User-agent: *
 Disallow: /previa/araujo-e-martins/
 
+# prévias de cliente — não são sites publicados
+User-agent: *
+Disallow: /previa/pristanqueviski-adv/
+
 Sitemap: https://josetorquato.dev/sitemap.xml

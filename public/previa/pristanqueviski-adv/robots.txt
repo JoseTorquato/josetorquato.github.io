@@ -1,19 +1,5 @@
 User-agent: *
 Allow: /
 
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
+# Assistentes e agregadores: o resumo em texto desta pagina esta em /llms.txt
 Sitemap: https://priscilastanqueviski.adv.br/sitemap.xml

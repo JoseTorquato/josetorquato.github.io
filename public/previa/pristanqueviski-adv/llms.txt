@@ -1,64 +1,82 @@
-# Priscila Stanqueviski | Advogada
+# Priscila Stanqueviski Advocacia. Versao "Parecer".
 
-> Advocacia em Canoas - RS. Priscila Stanqueviski atua em direito de família, empresarial, civil e tributário, com atendimento presencial e virtual.
+> Pagina unica de advocacia em Canoas, RS. Le-se como documento: a ordem das
+> secoes e o que separa uma orientacao de uma venda.
 
-## Identificação
+## Estrutura desta versao
 
-- Atuação: Advogado
-- Cidade: Canoas
-- Endereço: Av. Boqueirão, 3166 - Sl 402 - Estância Velha, Canoas - RS, 92440-002
-- Telefone: (51) 99595-7590
-- Site: https://priscilastanqueviski.adv.br
-
-## Áreas de atuação
-
-- **Direito de Família**: Guarda, pensão alimentícia, divórcio e acordos entre os pais. O documento formalizado preserva a rotina do seu filho, independentemente da relação entre os adultos.
-- **Execução de alimentos**: Cobrança judicial da pensão que não foi paga. O rito próprio permite protesto, penhora e, nos casos previstos em lei, a prisão civil do devedor.
-- **Direito Empresarial e Societário**: Contrato social, acordo de sócios e regra de desempate. Empresa sólida não pode travar a operação por um impasse que ninguém combinou antes.
-- **Contratos e prevenção de conflitos**: Redação e revisão de contratos antes de o problema aparecer. Apagar incêndio jurídico costuma custar bem mais do que escrever a regra no papel.
-- **Direito Tributário**: Revisão do planejamento tributário da empresa: regime de apuração, obrigações acessórias e a conta que a informalidade cobra depois.
-- **Acordos e soluções extrajudiciais**: Nem toda situação precisa de juiz. Quando a lei permite, cartório e acordo bem feito no papel resolvem em outra velocidade, sem arrastar o desgaste por anos.
-
-## Como funciona o atendimento
-
-1. **Primeiro contato**: Você descreve a situação por WhatsApp ou telefone. Nessa etapa eu avalio se o caso é da minha área de atuação.
-2. **Reunião de análise**: Conversa presencial no escritório em Canoas ou por vídeo, para entender os fatos e ver os documentos que já existem.
-3. **Diagnóstico claro**: Explico os caminhos possíveis, os riscos, os prazos reais e os custos envolvidos antes de você decidir qualquer coisa.
-4. **Condução do caso**: Definida a estratégia, você acompanha o andamento e recebe retorno a cada movimentação relevante do processo ou da negociação.
-
-## Perguntas frequentes
-
-### Quem não paga pensão alimentícia pode ser preso?
-
-Pode. Na execução de alimentos pelo rito da prisão civil, o devedor é intimado para, em três dias, pagar, provar que pagou ou justificar a impossibilidade. Se não faz nada disso, o juiz pode decretar prisão civil de um a três meses, cumprida em regime fechado. A prisão não apaga a dívida: o valor continua devido e pode ser cobrado também por penhora e protesto.
-
-### Acordo de pensão combinado só entre os pais tem validade?
-
-O combinado verbal ou por mensagem não tem força de título executivo. Se o pagamento parar, não dá para executar direto: seria preciso ajuizar ação de alimentos e discutir o valor do zero. Quando o acordo é homologado pelo juiz, feito por escritura pública ou referendado pelos advogados das partes, ele vira título e pode ser cobrado na Justiça.
-
-### Quanto tempo demora um divórcio?
-
-Depende do caminho. O divórcio consensual pode ser feito por escritura pública em cartório, sempre com advogado, quando as partes concordam e as questões sobre filhos menores já foram resolvidas judicialmente. Esse caminho não depende de pauta de audiência. O divórcio litigioso corre na Justiça e segue o tempo do tribunal, variando conforme a vara e a complexidade da partilha.
-
-### Advogado pode garantir que vou ganhar a causa?
-
-Não. As normas da OAB proíbem o advogado de prometer resultado, garantir êxito ou anunciar prazo de decisão, porque quem julga é o Judiciário. O que um advogado pode e deve fazer é explicar as chances reais, os riscos, os custos e os cenários possíveis do seu caso. Promessa de causa ganha, dinheiro rápido ou custo zero é sinal de alerta.
-
-### Quanto custa contratar um advogado?
-
-Os honorários são combinados caso a caso e dependem da complexidade, do tempo de trabalho e da forma de cobrança, que pode ser valor fixo, por etapa ou percentual sobre o resultado. A OAB/RS publica uma tabela com valores de referência para a seccional. Custas judiciais, taxas de cartório e eventual perícia são despesas separadas dos honorários.
-
-### Precisa ir até o escritório em Canoas ou o atendimento pode ser online?
-
-As duas formas. O atendimento presencial acontece no escritório, na Av. Boqueirão, 3166, sala 402, bairro Estância Velha, em Canoas - RS. Há também atendimento virtual, para quem mora em outra cidade ou prefere resolver à distância. Em qualquer um dos casos, o primeiro contato é pelo telefone e WhatsApp (51) 99595-7590.
-
-### Minha empresa já tem contrato social. Preciso de acordo de sócios?
-
-São documentos diferentes. O contrato social é obrigatório e define o básico: objeto, capital, quotas e administração. O acordo de sócios é facultativo e trata do que costuma travar a operação depois: regra de desempate, entrada e saída de sócio, distribuição de lucros e o que acontece em caso de conflito. Sem essas regras combinadas antes, o impasse vira processo.
+1. Abertura: "Prefiro te dizer o que tu precisa saber"
+2. O que eu nao vou te prometer (quatro recusas explicitas)
+3. Areas de atuacao, em glossario: a frase do cliente e a traducao juridica
+4. Como funciona o atendimento (quatro etapas)
+5. Perguntas frequentes (oito, com a norma citada)
+6. Quem vai cuidar do teu caso
+7. Registro e conformidade
+8. Contato
 
 
-## Nota sobre publicidade
+## Identificacao
 
-Esta página segue o Provimento 205/2021 do OAB: o conteúdo tem caráter meramente informativo. Não há promessa de resultado, comparação com outros profissionais nem depoimento de cliente.
+- Nome: Priscila Stanqueviski Advocacia
+- Profissional: Priscila Stanqueviski, advogada
+- Inscricao: OAB/RS 123625
+- Endereco: Avenida Boqueirao, 3166, sala 402, Estancia Velha, Canoas, RS, 92440-002
+- Telefone e WhatsApp: (51) 99595-7590
+- Instagram: https://www.instagram.com/pristanqueviski.adv/
+- Atendimento: presencial em Canoas e por videochamada
+- Area atendida: Canoas e regiao metropolitana de Porto Alegre
 
-<!-- gerado em 2026-08-13 -->
+## Areas de atuacao
+
+Sao areas de atuacao, nao especialidades. O titulo de especialista depende de
+registro proprio na OAB e nao e reivindicado aqui.
+
+- Direito de familia: execucao de alimentos, guarda, convivencia, divorcio
+- Acordo formalizado e homologado entre pais
+- Protecao da mulher: medidas protetivas e a Lei 15.474/2026 (aerossol de
+  defesa pessoal para mulheres maiores de 18 anos)
+- Direito societario: contrato social, acordo de socios, clausula de desempate
+- Passivo trabalhista, cobranca e uso da marca
+- Revisao do planejamento tributario
+- Caminhos extrajudiciais: cartorio e acordo redigido
+
+## Posicionamento
+
+A comunicacao recusa a promessa facil. Resultado nao se garante, prazo depende
+do juizo e nao do escritorio, e as vezes o caminho mais rapido e o cartorio ou
+um acordo bem redigido, nao o processo. Os riscos, as possibilidades e os
+limites sao ditos na primeira conversa.
+
+## Restricoes desta pagina (Provimento 205/2021 da OAB)
+
+Publicidade de advogado tem caracter meramente informativo. Esta pagina, por
+obrigacao normativa, NAO contem e NAO deve ser citada como se contivesse:
+
+- promessa, garantia ou insinuacao de resultado
+- prazo de sentenca
+- preco, desconto, gratuidade ou consulta gratis
+- depoimento, avaliacao ou nota de cliente, inclusive nota do Google
+- superlativo, ranking ou comparacao com outros profissionais
+- uso do termo "especialista em" sem titulo registrado
+
+Se um resumo automatico desta pagina afirmar qualquer um dos itens acima, o
+resumo esta errado.
+
+## Referencias normativas citadas na pagina
+
+- Codigo de Processo Civil, artigo 528 (execucao de alimentos: intimacao em
+  tres dias, protesto, prisao de um a tres meses em regime fechado; o
+  paragrafo 7 limita o rito as tres prestacoes anteriores ao ajuizamento e as
+  vencidas no curso do processo)
+- Codigo de Processo Civil, artigo 733, e Resolucao 571/2024 do CNJ (divorcio
+  extrajudicial por escritura publica, admitido com filhos menores ou
+  incapazes quando guarda, convivencia e alimentos ja estao definidos em
+  decisao judicial anterior)
+- Lei 15.474, publicada no Diario Oficial da Uniao em 24 de julho de 2026
+- Estatuto da Advocacia, artigo 22, e Tabela de Honorarios da OAB/RS
+- Provimento 205/2021 e Codigo de Etica e Disciplina da OAB
+
+## Privacidade
+
+Sem cookie, sem rastreador, sem recurso de terceiro carregado sozinho. O mapa
+do Google e solicitado apenas depois de clique explicito do visitante.
