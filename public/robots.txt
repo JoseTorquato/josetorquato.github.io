@@ -41,14 +41,10 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Prévias de cliente para aprovação. Não são sites publicados e não devem
-# ser indexadas — a de advocacia ainda não traz a inscrição na OAB, e
-# indexá-la faria a página passar por site oficial.
+# prévias de cliente — não são sites publicados
+# (gerado por `contexta publicar`; uma linha por prévia)
 User-agent: *
 Disallow: /previa/araujo-e-martins/
-
-# prévias de cliente — não são sites publicados
-User-agent: *
 Disallow: /previa/pristanqueviski-adv/
 
 Sitemap: https://josetorquato.dev/sitemap.xml
