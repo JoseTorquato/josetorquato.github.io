@@ -1,0 +1,37 @@
+# Araújo e Martins | Advocacia e Consultoria — Canoas/RS
+# Resumo estruturado para assistentes: https://www.araujoemartinsadvocacia.com/llms.txt
+
+User-agent: *
+Allow: /
+
+# Assistentes de IA: liberados de propósito. Um escritório de advocacia é
+# encontrado hoje tanto por busca quanto por assistente, e a página é
+# meramente informativa — é conteúdo que se quer citado, com atribuição.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.araujoemartinsadvocacia.com/sitemap.xml
