@@ -42,6 +42,7 @@ User-agent: CCBot
 Allow: /
 
 # prévias de cliente — não são sites publicados
+Disallow: /previa/fortunastudio/
 # (gerado por `contexta publicar`; uma linha por prévia)
 User-agent: *
 Disallow: /previa/araujo-e-martins/

@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estúdio Fortuna · Tatuagem e piercing em Canoas, RS</title>
+<meta name="description" content="Estúdio de tatuagem e piercing em Canoas e Porto Alegre. Projetos autorais desenvolvidos com o cliente, atendimento com hora marcada e orçamento pelo WhatsApp.">
+<link rel="canonical" href="https://estudiofortuna.com.br/">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f2e2cd">
+<meta name="geo.placename" content="Canoas, RS">
+<meta name="geo.region" content="BR-RS">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Estúdio Fortuna">
+<meta property="og:title" content="Estúdio Fortuna · Tatuagem e piercing em Canoas, RS">
+<meta property="og:description" content="Projetos autorais desenvolvidos com o cliente. Canoas e Porto Alegre.">
+<meta property="og:url" content="https://estudiofortuna.com.br/">
+<meta property="og:image" content="https://estudiofortuna.com.br/img/peca-braco-1080.webp">
+<meta property="og:image:alt" content="Duas papoulas tatuadas em preto e cinza no braço, sombreado suave.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="img/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonte/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonte/karla-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonte/bricolage-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonte/bricolage-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Karla';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonte/karla-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Karla';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonte/karla-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* ═══════════════════════════════════════════════════════════════
+   ESTÚDIO FORTUNA — uma peça contada por inteiro
+
+   Tema claro e quente porque o estúdio é assim: parede amarela,
+   porta verde, moldura dourada. E porque a foto de trabalho é pele
+   clara sobre parede clara — sobre preto ela recortaria.
+
+   Cor Committed: o creme carrega a superfície, o oliva estrutura,
+   o dourado fica abaixo de 10% e só marca ação. Os três foram
+   medidos no feed, não escolhidos por categoria.
+   Nenhum #000 nem #fff literal: todo neutro puxa para o quente.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  color-scheme: light;
+  --creme:     oklch(0.9201 0.0330 74.8);  /* #f2e2cd medido no papel deles */
+  --creme-2:   oklch(0.9180 0.0400 90);
+  --papel:     oklch(0.9820 0.0140 92);
+  --tinta:     oklch(0.2180 0.0180 78);
+  --tinta-2:   oklch(0.4160 0.0220 82);
+  --oliva:     oklch(0.4380 0.0640 122);
+  --oliva-luz: oklch(0.6120 0.0560 122);
+  --ouro:      oklch(0.5000 0.0940 76);   /* 5,33:1 no creme — medido, pode texto */
+  --ouro-luz:  oklch(0.7680 0.1080 78);   /* só preenchimento, nunca texto */
+  /* sobre o oliva o ouro-luz dá 3,63:1 e reprova; este é o claro que passa */
+  --ouro-oliva:oklch(0.8600 0.1080 78);   /* 4,94:1 sobre o oliva */
+  --linha:     oklch(0.8480 0.0300 90);
+
+  --display:'Bricolage Grotesque','Verdana',sans-serif;
+  --corpo:'Karla',system-ui,-apple-system,sans-serif;
+
+  --gut: clamp(1.15rem, 5vw, 4rem);
+  --respiro: clamp(3.2rem, 9vw, 8rem);
+  --medida: 68ch;
+
+  --t-nota: clamp(0.76rem, 0.12vw + 0.74rem, 0.84rem);
+  --t-mini: clamp(0.9rem, 0.2vw + 0.86rem, 1rem);
+  --t-corpo: clamp(1.04rem, 0.34vw + 0.97rem, 1.2rem);
+  --t-lead: clamp(1.2rem, 0.9vw + 1rem, 1.6rem);
+  --t-h3: clamp(1.2rem, 0.6vw + 1.06rem, 1.5rem);
+  --t-h2: clamp(1.9rem, 2.6vw + 1.2rem, 3.4rem);
+  --t-h1: clamp(2.5rem, 6vw + 1rem, 6.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+body{
+  margin:0;background:var(--creme);color:var(--tinta);
+  font-family:var(--corpo);font-size:var(--t-corpo);line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;
+  letter-spacing:-0.022em;margin:0;text-wrap:balance}
+h1{font-size:var(--t-h1)}
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3);letter-spacing:-0.012em;line-height:1.16}
+p{margin:0}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--ouro);text-underline-offset:0.2em}
+a:hover{color:var(--tinta)}
+:focus-visible{outline:2.5px solid var(--oliva);outline-offset:3px}
+.env{width:min(1180px,100% - var(--gut)*2);margin-inline:auto}
+.prosa{max-width:var(--medida)}
+.rotulo{font-family:var(--corpo);font-size:var(--t-nota);font-weight:600;
+  letter-spacing:0.19em;text-transform:uppercase;color:var(--oliva)}
+a[href]:not(.emlinha),button{min-height:44px}
+.emlinha{min-height:0}
+
+/* ── topo ─────────────────────────────────────────────────────── */
+.topo{position:sticky;top:0;z-index:40;background:oklch(0.9201 0.0330 74.8/.94);
+  backdrop-filter:blur(10px) saturate(1.25);border-bottom:1px solid var(--linha)}
+.topo .env{display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;min-height:64px}
+.marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.marca img{width:38px;height:38px;flex:none;border-radius:50%}
+.marca b{font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-0.01em}
+.marca span{display:block;font-size:var(--t-nota);color:var(--tinta-2);letter-spacing:.04em}
+.zap{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.05rem;
+  background:var(--oliva);color:var(--papel);text-decoration:none;
+  font-size:var(--t-mini);font-weight:600;letter-spacing:.02em;
+  transition:background .2s ease}
+.zap:hover{background:var(--tinta);color:var(--papel)}
+.zap svg{width:1.05em;height:1.05em;fill:currentColor;flex:none}
+
+/* ── capa: a peça ─────────────────────────────────────────────── */
+.capa{padding-block:clamp(2.4rem,6vw,5rem) var(--respiro)}
+.capa .env{display:grid;gap:clamp(1.8rem,4vw,3.4rem)}
+.capa h1{margin-top:.7rem}
+.capa h1 em{font-style:normal;color:var(--oliva)}
+.capa .lead{margin-top:1.4rem;font-size:var(--t-lead);line-height:1.42;
+  color:var(--tinta-2);max-width:34ch}
+.capa .onde{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;
+  font-size:var(--t-mini);color:var(--tinta-2)}
+.capa .onde b{color:var(--tinta);font-weight:600}
+.capa figure{margin:0;position:relative}
+.capa figure img{width:100%;object-fit:cover;aspect-ratio:3/4}
+.capa figcaption{margin-top:.7rem;font-size:var(--t-nota);color:var(--tinta-2);
+  letter-spacing:.03em}
+@media (min-width:900px){
+  .capa .env{grid-template-columns:1.05fr .95fr;align-items:end}
+}
+
+/* ── a peça, contada ──────────────────────────────────────────── */
+.peca{background:var(--papel);border-block:1px solid var(--linha);
+  padding-block:var(--respiro)}
+.peca h2{margin-top:.6rem;max-width:16ch}
+.peca .intro{margin-top:1.2rem;color:var(--tinta-2)}
+.trilha{margin-top:clamp(2.2rem,5vw,4rem);display:grid;gap:clamp(1rem,2.5vw,1.8rem)}
+.trilha figure{margin:0}
+.trilha img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.trilha figcaption{margin-top:.6rem;font-size:var(--t-nota);color:var(--tinta-2);
+  display:flex;gap:.55rem;align-items:baseline}
+.trilha figcaption i{font-style:normal;color:var(--ouro);font-weight:600;
+  font-variant-numeric:tabular-nums;flex:none}
+@media (min-width:760px){.trilha{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.trilha{grid-template-columns:repeat(4,1fr)}}
+
+/* ── orçamento, na voz deles ──────────────────────────────────── */
+.orcamento{padding-block:var(--respiro)}
+.orcamento .env{display:grid;gap:clamp(1.8rem,4vw,3.6rem)}
+.orcamento .fala{font-family:var(--display);font-weight:400;
+  font-size:clamp(1.35rem,2vw + .9rem,2.15rem);line-height:1.2;
+  letter-spacing:-0.015em;max-width:20ch}
+.orcamento .fala span{color:var(--oliva)}
+.orcamento .quem{margin-top:1rem;font-size:var(--t-nota);color:var(--tinta-2);
+  letter-spacing:.06em;text-transform:uppercase}
+.passos{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.passos li{padding-block:1.15rem;border-top:1px solid var(--linha);
+  display:grid;grid-template-columns:2.2rem 1fr;gap:1rem;align-items:baseline}
+.passos li:last-child{border-bottom:1px solid var(--linha)}
+.passos b{font-family:var(--display);font-weight:700;color:var(--ouro);
+  font-size:1.05rem;font-variant-numeric:tabular-nums}
+.passos p{font-size:var(--t-mini);color:var(--tinta-2);margin-top:.25rem}
+.passos strong{color:var(--tinta);font-weight:600;font-size:var(--t-corpo)}
+@media (min-width:900px){.orcamento .env{grid-template-columns:.9fr 1.1fr}}
+
+/* ── quem te atende ───────────────────────────────────────────── */
+.equipe{background:var(--oliva);color:var(--papel);padding-block:var(--respiro)}
+.equipe .rotulo{color:var(--ouro-oliva)}
+.equipe h2{margin-top:.6rem;max-width:15ch}
+.equipe .intro{margin-top:1.1rem;color:oklch(0.9820 0.0140 92/.78);max-width:52ch}
+.grade{margin-top:clamp(2rem,4.5vw,3.4rem);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:clamp(1rem,2.4vw,1.9rem)}
+.grade figure{margin:0}
+.grade img{width:100%;aspect-ratio:14/15;object-fit:cover}
+.grade figcaption{margin-top:.6rem}
+.grade .nome{font-family:var(--display);font-weight:700;font-size:1.02rem;
+  letter-spacing:-0.01em}
+.grade a{display:inline-flex;align-items:center;min-height:44px;
+  font-size:var(--t-nota);color:var(--ouro-oliva);text-decoration:none;
+  border-bottom:1px solid oklch(0.8600 0.1080 78/.45)}
+.grade a:hover{color:var(--papel);border-bottom-color:var(--papel)}
+
+/* ── contato ──────────────────────────────────────────────────── */
+.contato{padding-block:var(--respiro)}
+.contato h2{margin-top:.6rem;max-width:14ch}
+.contato .env{display:grid;gap:clamp(2rem,4vw,3.6rem)}
+.canais{margin:clamp(1.7rem,3vw,2.5rem) 0 0;display:grid;gap:1.4rem}
+.canais dt{font-size:var(--t-nota);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tinta-2);margin-bottom:.2rem}
+.canais dd{margin:0;font-size:var(--t-mini)}
+.canais dd a,.canais dd.local{display:inline-flex;align-items:center;gap:.55rem;
+  min-height:44px;color:var(--tinta);text-decoration:none;
+  border-bottom:1px solid var(--linha)}
+.canais dd.local{border-bottom:0;align-items:flex-start}
+.canais dd a:hover{border-bottom-color:var(--ouro)}
+.canais svg{width:1.05em;height:1.05em;fill:var(--ouro);flex:none}
+.canais dd.local svg{margin-top:.28em}
+.prova{margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--linha);
+  font-size:var(--t-mini);color:var(--tinta-2);max-width:40ch}
+.prova b{font-family:var(--display);font-size:1.5rem;font-weight:700;
+  color:var(--tinta);letter-spacing:-0.01em;font-variant-numeric:tabular-nums}
+.mapa iframe{width:100%;height:clamp(16rem,38vw,24rem);border:0;display:block;
+  border:1px solid var(--linha)}
+.mapa .rota{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;
+  font-size:var(--t-mini);color:var(--tinta)}
+@media (min-width:900px){.contato .env{grid-template-columns:.85fr 1.15fr}}
+
+
+/* ── trabalho por artista ─────────────────────────────────────── */
+.obra{padding-block:var(--respiro);border-top:1px solid var(--linha)}
+.obra h2{margin-top:.6rem;max-width:17ch}
+.obra .intro{margin-top:1.1rem;color:var(--tinta-2);max-width:56ch}
+.autor{margin-top:clamp(2.2rem,5vw,3.6rem)}
+.autor+.autor{margin-top:clamp(2.4rem,5vw,4rem);padding-top:clamp(2rem,4vw,3rem);
+  border-top:1px solid var(--linha)}
+.autor .cabeca{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1.2rem;
+  margin-bottom:1.1rem}
+.autor .nome{font-family:var(--display);font-weight:700;
+  font-size:clamp(1.35rem,1.5vw + 1rem,2rem);letter-spacing:-0.022em;line-height:1}
+.autor .traco{font-size:var(--t-mini);color:var(--tinta-2)}
+.autor .arroba{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;
+  font-size:var(--t-nota);color:var(--ouro);text-decoration:none;margin-left:auto}
+.autor .arroba svg{width:1em;height:1em;fill:currentColor;flex:none}
+.obras{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.obras img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.obras figure{margin:0}
+@media (min-width:760px){.obras{grid-template-columns:repeat(4,1fr)}}
+
+
+.obra .faixa{background:var(--oliva);color:var(--papel);
+  padding-block:clamp(2.2rem,5vw,3.6rem);margin-bottom:clamp(2rem,4vw,3.2rem)}
+.obra .faixa .rotulo{color:var(--ouro-oliva)}
+.obra .faixa h2{margin-top:.6rem;max-width:20ch}
+.obra .faixa .intro{margin-top:1rem;color:oklch(0.9820 0.0140 92/.82);max-width:52ch}
+.autor .cabeca{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1rem;
+  margin-bottom:1.1rem}
+.autor .retrato{width:72px;height:72px;flex:none;object-fit:cover}
+.autor .ident{display:grid;gap:.1rem}
+.autor .chamar{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;
+  color:var(--ouro);text-decoration:none;font-size:var(--t-nota);
+  transition:color .2s}
+.autor .chamar:hover{color:var(--tinta)}
+.autor .chamar svg{width:1em;height:1em;fill:currentColor;flex:none}
+.autor .arroba{margin-left:auto}
+.autor.sem-obra{padding-top:clamp(1.6rem,3vw,2.4rem);border-top:1px solid var(--linha)}
+@media (max-width:640px){.autor .arroba{margin-left:0}}
+
+/* ── duas unidades ────────────────────────────────────────────── */
+.unidades{margin-top:1.8rem;display:grid;gap:1.6rem}
+.unidade{padding-top:1.2rem;border-top:1px solid var(--linha);
+  display:grid;grid-template-rows:auto auto 1fr auto;gap:0}
+.unidade h3{font-family:var(--display);font-weight:700;font-size:1.15rem;
+  letter-spacing:-0.015em}
+.unidade p{margin-top:.4rem;font-size:var(--t-mini);color:var(--tinta-2)}
+.unidade iframe{width:100%;height:clamp(12rem,26vw,17rem);border:0;display:block;
+  margin-top:.9rem;border:1px solid var(--linha)}
+.unidade .rota{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;
+  font-size:var(--t-nota);color:var(--tinta)}
+.unidade .rota svg{width:1em;height:1em;fill:var(--ouro);flex:none}
+@media (min-width:900px){
+  .unidades{grid-template-columns:1fr 1fr;gap:1.8rem;
+    grid-template-rows:auto auto auto auto}
+  /* subgrid faz os quatro elementos de cada cartão dividirem as mesmas
+     faixas: título com título, mapa com mapa, rota com rota. */
+  .unidade{grid-template-rows:subgrid;grid-row:span 4}
+}
+
+
+
+/* ── nota do Google ───────────────────────────────────────────── */
+/* Só tipografia: o número entre dois filetes. Sem estrelinha de review,
+   que é o clichê, e sem bloco de métrica, que é o outro. */
+.nota-google{margin-top:1.3rem;display:inline-flex;align-items:center;
+  gap:.6rem;flex-wrap:wrap;font-size:var(--t-mini);color:var(--tinta-2);
+  padding-block:.55rem;border-top:1px solid var(--linha);
+  border-bottom:1px solid var(--linha);padding-inline-end:.2rem}
+.nota-google b{font-family:var(--display);font-weight:700;color:var(--tinta);
+  font-size:1.24em;letter-spacing:-0.01em;font-variant-numeric:tabular-nums}
+
+/* ── grão de papel ────────────────────────────────────────────── */
+/* Reproduz a textura do material impresso deles com ruído SVG em vez de
+   bitmap: zero requisição, nítido em qualquer densidade de tela, e a
+   opacidade calibrada pelo desvio medido no original (±3 a ±16 por canal). */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  opacity:.055;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px}
+@media print{body::before{display:none}}
+body>*{position:relative;z-index:1}
+
+
+/* ── rodapé ───────────────────────────────────────────────────── */
+footer{background:var(--creme-2);border-top:1px solid var(--linha);
+  padding-block:2.4rem 5.5rem;font-size:var(--t-nota);color:var(--tinta-2)}
+footer p{max-width:70ch}
+footer p+p{margin-top:.7rem}
+footer a{color:var(--tinta-2);text-decoration:underline}
+/* os dois contatos do rodapé são afordância, não prosa: vão a 44px.
+   o link da política fica pequeno de propósito — está dentro de frase,
+   e a WCAG 2.2 isenta link em linha de texto corrido. */
+footer p:first-of-type a{display:inline-flex;align-items:center;min-height:44px}
+
+/* ── zap flutuante ────────────────────────────────────────────── */
+.flutua{position:fixed;right:clamp(.9rem,2.6vw,1.7rem);bottom:clamp(.9rem,2.6vw,1.7rem);
+  z-index:50;display:inline-flex;align-items:center;gap:.6rem;
+  min-height:56px;padding:0 1.3rem;background:var(--oliva);color:var(--papel);
+  text-decoration:none;font-size:var(--t-mini);font-weight:600;letter-spacing:.02em;
+  box-shadow:0 8px 26px oklch(0.2180 0.0180 78/.28);
+  transition:opacity .3s ease,transform .3s ease,background .2s ease}
+.flutua:hover{background:var(--tinta);color:var(--papel)}
+.flutua svg{width:1.2em;height:1.2em;fill:currentColor;flex:none}
+.flutua.recolhido{opacity:0;transform:translateY(1rem);pointer-events:none}
+@media (max-width:560px){
+  .flutua{padding:0;width:56px;justify-content:center}
+  .flutua .rot{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+}
+
+/* ── revelação ────────────────────────────────────────────────── */
+.revela{opacity:0;transform:translateY(1.3rem);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.revela.visivel{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.revela{opacity:1;transform:none}}
+
+/* ── impressão ────────────────────────────────────────────────── */
+@media print{
+  .topo,.flutua,.mapa iframe,.trilha,.grade img{display:none}
+  body{background:#fff;color:#000;font-size:11pt}
+  .equipe{background:#fff;color:#000}
+  .capa figure{display:none}
+  a{text-decoration:none}
+  .canais dd a::after{content:' (' attr(href) ')';font-size:8.5pt;word-break:break-all}
+  @page{margin:14mm}
+}
+.canais .semcompromisso{margin-top:.35rem;font-size:var(--t-nota);
+  color:var(--tinta-2);max-width:34ch;line-height:1.5}
+</style>
+</head>
+<body>
+<div data-previa style="background:#5a4a1f;color:#f4f1ec;font:500 13px/1.45 system-ui,sans-serif;padding:9px 16px;text-align:center">Prévia para aprovação — não é o site publicado.</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.23 8.23 0 0 1 0 16.47Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.01-.37.11-.49.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.09-.17.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.73 2.65 4.2 3.71.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56.79-.3 1.46-.71 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm7.85-10.41a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7Z"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="env">
+    <a class="marca" href="#inicio">
+      <img src="img/marca.webp" width="170" height="170" alt="" role="presentation">
+      <span><b>Estúdio Fortuna</b><span>Tattoo &amp; Piercing · Canoas, RS</span></span>
+    </a>
+    <a class="zap" href="https://wa.me/5582982298363" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-zap"/></svg>
+      Orçamento
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- CAPA ───────────────────────────────────────────────────────── -->
+<section class="capa" id="inicio">
+  <div class="env">
+    <div>
+      <span class="rotulo">Canoas e Porto Alegre · RS</span>
+      <h1>A arte é desenvolvida <em>com</em> quem vai carregar ela.</h1>
+      <p class="lead">Projetos autorais, feitos do desenho à pele. Atendimento
+        exclusivo com hora marcada.</p>
+      <p class="nota-google">
+        <b>5,0</b> em <b>222</b> avaliações no Google
+      </p>
+      <div class="onde">
+        <span><b>Tatuagem</b> e piercing</span>
+        <span>Seis tatuadores · Canoas e Porto Alegre</span>
+      </div>
+    </div>
+    <figure>
+      <img src="img/peca-braco-1080.webp"
+           srcset="img/peca-braco-600.webp 600w, img/peca-braco-1080.webp 1080w"
+           sizes="(min-width:900px) 46vw, 100vw"
+           width="1080" height="1440" fetchpriority="high"
+           alt="Duas papoulas tatuadas em preto e cinza no braço, com sombreado suave e traço fino no caule.">
+      <figcaption>Papoulas, braço. Traço fino com sombreado, por Vinnie.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- A PEÇA ─────────────────────────────────────────────────────── -->
+<section class="peca">
+  <div class="env">
+    <span class="rotulo">Uma peça, do começo ao fim</span>
+    <h2>O desenho existe antes da agulha.</h2>
+    <p class="intro prosa">Nada aqui sai de catálogo. O desenho é feito para a
+      pessoa, aprovado antes da sessão, e é dele que sai a tatuagem. Esta é uma
+      peça inteira, na ordem em que aconteceu.</p>
+
+    <div class="trilha">
+      <figure class="revela">
+        <img src="img/peca-desenho-600.webp"
+             srcset="img/peca-desenho-600.webp 600w, img/peca-desenho-1080.webp 1080w"
+             sizes="(min-width:1100px) 23vw, (min-width:760px) 46vw, 100vw"
+             width="1080" height="1440" loading="lazy"
+             alt="Desenho original a lápis com cinco estudos de papoula, assinado, preso com fita na bancada do estúdio.">
+        <figcaption><i>01</i> O estudo a lápis, assinado, na bancada.</figcaption>
+      </figure>
+      <figure class="revela">
+        <img src="img/peca-braco-600.webp"
+             srcset="img/peca-braco-600.webp 600w, img/peca-braco-1080.webp 1080w"
+             sizes="(min-width:1100px) 23vw, (min-width:760px) 46vw, 100vw"
+             width="1080" height="1440" loading="lazy"
+             alt="A tatuagem recém-feita no braço, duas papoulas com folhas e caule contínuo.">
+        <figcaption><i>02</i> Recém-feita, ainda no estúdio.</figcaption>
+      </figure>
+      <figure class="revela">
+        <img src="img/peca-estudio-600.webp"
+             srcset="img/peca-estudio-600.webp 600w, img/peca-estudio-1080.webp 1080w"
+             sizes="(min-width:1100px) 23vw, (min-width:760px) 46vw, 100vw"
+             width="1080" height="1440" loading="lazy"
+             alt="A pessoa de camiseta branca com a tatuagem no braço, na sala do estúdio, com a porta verde ao fundo.">
+        <figcaption><i>03</i> Na sala, com a porta verde atrás.</figcaption>
+      </figure>
+      <figure class="revela">
+        <img src="img/peca-sentada-600.webp"
+             srcset="img/peca-sentada-600.webp 600w, img/peca-sentada-1080.webp 1080w"
+             sizes="(min-width:1100px) 23vw, (min-width:760px) 46vw, 100vw"
+             width="1080" height="1440" loading="lazy"
+             alt="Outro ângulo da mesma tatuagem, com o braço apoiado no joelho.">
+        <figcaption><i>04</i> O caule acompanha o braço.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- OS TATUADORES ──────────────────────────────────────────────── -->
+<section class="obra" id="tatuadores">
+  <div class="faixa"><div class="env">
+    <span class="rotulo">Quem te atende</span>
+    <h2>Seis tatuadores. Escolhe a mão antes do desenho.</h2>
+    <p class="intro">Cada um tem estilo próprio. As peças abaixo são de cada
+      um deles, e dá para chamar direto quem tu escolher.</p>
+  </div></div>
+  <div class="env">
+      <div class="autor">
+        <div class="cabeca">
+          <img class="retrato" src="img/eq-vinnie-280.webp" srcset="img/eq-vinnie-280.webp 280w, img/eq-vinnie-560.webp 560w" sizes="72px" width="280" height="300" loading="lazy" alt="Retrato de Vinnie.">
+          <div class="ident"><span class="nome">Vinnie</span><span class="traco">Ilustração a carvão e traço fino</span></div>
+          <a class="arroba" href="https://instagram.com/vinnie_akio" rel="noopener me"><svg aria-hidden="true"><use href="#i-ig"/></svg>@vinnie_akio</a>
+          <a class="chamar" href="https://wa.me/5582982298363?text=Oi%21%20Quero%20tatuar%20com%20Vinnie." rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar</a>
+        </div>
+        <div class="obras">
+            <figure><img src="img/w-vinnie-1-420.webp" srcset="img/w-vinnie-1-420.webp 420w, img/w-vinnie-1-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Estudo a carvão de flores, feito à mão antes da sessão."></figure>
+            <figure><img src="img/w-vinnie-2-420.webp" srcset="img/w-vinnie-2-420.webp 420w, img/w-vinnie-2-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Papoulas no braço: a peça desta página, tatuada por ele."></figure>
+            <figure><img src="img/w-vinnie-3-420.webp" srcset="img/w-vinnie-3-420.webp 420w, img/w-vinnie-3-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Estudo a carvão de figura encapuzada com lanterna."></figure>
+            <figure><img src="img/w-vinnie-4-420.webp" srcset="img/w-vinnie-4-420.webp 420w, img/w-vinnie-4-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Floral pequeno na costela, traço fino."></figure>
+        </div>
+      </div>
+      <div class="autor">
+        <div class="cabeca">
+          <img class="retrato" src="img/eq-yas-280.webp" srcset="img/eq-yas-280.webp 280w, img/eq-yas-560.webp 560w" sizes="72px" width="280" height="300" loading="lazy" alt="Retrato de Yas.">
+          <div class="ident"><span class="nome">Yas</span><span class="traco">Ornamental floral e mandala</span></div>
+          <a class="arroba" href="https://instagram.com/mikahttt" rel="noopener me"><svg aria-hidden="true"><use href="#i-ig"/></svg>@mikahttt</a>
+          <a class="chamar" href="https://wa.me/5582982298363?text=Oi%21%20Quero%20tatuar%20com%20Yas." rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar</a>
+        </div>
+        <div class="obras">
+            <figure><img src="img/w-yas-1-420.webp" srcset="img/w-yas-1-420.webp 420w, img/w-yas-1-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Braço fechado em ornamental com mandala e folhagem."></figure>
+            <figure><img src="img/w-yas-2-420.webp" srcset="img/w-yas-2-420.webp 420w, img/w-yas-2-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Costas em floral de traço fino, peça grande."></figure>
+            <figure><img src="img/w-yas-3-420.webp" srcset="img/w-yas-3-420.webp 420w, img/w-yas-3-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Antebraço ornamental com folhagem e borboleta."></figure>
+            <figure><img src="img/w-yas-4-420.webp" srcset="img/w-yas-4-420.webp 420w, img/w-yas-4-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Ombro e braço em floral sombreado."></figure>
+        </div>
+      </div>
+      <div class="autor">
+        <div class="cabeca">
+          <img class="retrato" src="img/eq-veronica-280.webp" srcset="img/eq-veronica-280.webp 280w, img/eq-veronica-560.webp 560w" sizes="72px" width="280" height="300" loading="lazy" alt="Retrato de Verônica.">
+          <div class="ident"><span class="nome">Verônica</span><span class="traco">Blackwork ornamental</span></div>
+          <a class="arroba" href="https://instagram.com/veroocptattoo" rel="noopener me"><svg aria-hidden="true"><use href="#i-ig"/></svg>@veroocptattoo</a>
+          <a class="chamar" href="https://wa.me/5582982298363?text=Oi%21%20Quero%20tatuar%20com%20Verônica." rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar</a>
+        </div>
+        <div class="obras">
+            <figure><img src="img/w-veronica-1-420.webp" srcset="img/w-veronica-1-420.webp 420w, img/w-veronica-1-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Costas em filigrana ornamental simétrica."></figure>
+            <figure><img src="img/w-veronica-2-420.webp" srcset="img/w-veronica-2-420.webp 420w, img/w-veronica-2-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Coluna inteira em ornamental de traço grosso."></figure>
+            <figure><img src="img/w-veronica-3-420.webp" srcset="img/w-veronica-3-420.webp 420w, img/w-veronica-3-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Perna com ankh e olho de Hórus em preto sólido."></figure>
+            <figure><img src="img/w-veronica-4-420.webp" srcset="img/w-veronica-4-420.webp 420w, img/w-veronica-4-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Braço e mão em ornamental contínuo."></figure>
+        </div>
+      </div>
+      <div class="autor">
+        <div class="cabeca">
+          <img class="retrato" src="img/eq-vibora-280.webp" srcset="img/eq-vibora-280.webp 280w, img/eq-vibora-560.webp 560w" sizes="72px" width="280" height="300" loading="lazy" alt="Retrato de Víbora.">
+          <div class="ident"><span class="nome">Víbora</span><span class="traco">Tradicional colorido</span></div>
+          <a class="arroba" href="https://instagram.com/vibora_tattoo" rel="noopener me"><svg aria-hidden="true"><use href="#i-ig"/></svg>@vibora_tattoo</a>
+          <a class="chamar" href="https://wa.me/5582982298363?text=Oi%21%20Quero%20tatuar%20com%20Víbora." rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar</a>
+        </div>
+        <div class="obras">
+            <figure><img src="img/w-vibora-1-420.webp" srcset="img/w-vibora-1-420.webp 420w, img/w-vibora-1-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Rosa tradicional com rosto, em laranja e amarelo."></figure>
+            <figure><img src="img/w-vibora-2-420.webp" srcset="img/w-vibora-2-420.webp 420w, img/w-vibora-2-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Lagarto segurando um coração, na panturrilha."></figure>
+            <figure><img src="img/w-vibora-3-420.webp" srcset="img/w-vibora-3-420.webp 420w, img/w-vibora-3-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Porquinho-da-índia em traço tradicional colorido."></figure>
+            <figure><img src="img/w-vibora-4-420.webp" srcset="img/w-vibora-4-420.webp 420w, img/w-vibora-4-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Morcego em laranja e creme, contorno grosso."></figure>
+        </div>
+      </div>
+      <div class="autor">
+        <div class="cabeca">
+          <img class="retrato" src="img/eq-yuri-280.webp" srcset="img/eq-yuri-280.webp 280w, img/eq-yuri-560.webp 560w" sizes="72px" width="280" height="300" loading="lazy" alt="Retrato de Yuri.">
+          <div class="ident"><span class="nome">Yuri</span><span class="traco">Realismo colorido</span></div>
+          <a class="arroba" href="https://instagram.com/yuriguts_tattoo" rel="noopener me"><svg aria-hidden="true"><use href="#i-ig"/></svg>@yuriguts_tattoo</a>
+          <a class="chamar" href="https://wa.me/5582982298363?text=Oi%21%20Quero%20tatuar%20com%20Yuri." rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar</a>
+        </div>
+        <div class="obras">
+            <figure><img src="img/w-yuri-1-420.webp" srcset="img/w-yuri-1-420.webp 420w, img/w-yuri-1-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Mago em realismo colorido, com túnica roxa e livro aberto, na panturrilha."></figure>
+            <figure><img src="img/w-yuri-2-420.webp" srcset="img/w-yuri-2-420.webp 420w, img/w-yuri-2-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Davy Jones em realismo, tentáculos em tons de pele e corrente prateada, no ombro."></figure>
+            <figure><img src="img/w-yuri-3-420.webp" srcset="img/w-yuri-3-420.webp 420w, img/w-yuri-3-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Malenia em realismo, elmo alado e halo alaranjado, no braço fechado."></figure>
+            <figure><img src="img/w-yuri-4-420.webp" srcset="img/w-yuri-4-420.webp 420w, img/w-yuri-4-840.webp 840w" sizes="(min-width:900px) 18vw, 45vw" width="840" height="1120" loading="lazy" alt="Cobertura em realismo: máscara oni sobre rosto, com flores de cerejeira, no antebraço."></figure>
+        </div>
+      </div>
+      <div class="autor sem-obra">
+        <div class="cabeca">
+          <img class="retrato" src="img/eq-kelly-280.webp" srcset="img/eq-kelly-280.webp 280w, img/eq-kelly-560.webp 560w" sizes="72px" width="280" height="300" loading="lazy" alt="Retrato de Kelly.">
+          <div class="ident"><span class="nome">Kelly</span><span class="traco">Tatuadora no estúdio</span></div>
+          <a class="chamar" href="https://wa.me/5582982298363?text=Oi%21%20Quero%20tatuar%20com%20a%20Kelly." rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ORÇAMENTO ──────────────────────────────────────────────────── -->
+<section class="orcamento" id="orcamento">
+  <div class="env">
+    <div>
+      <span class="rotulo">Orçamento</span>
+      <p class="fala">“Cada procedimento aqui é <span>único</span>.”</p>
+    </div>
+    <div>
+      <ol class="passos">
+        <li><b>01</b><div>
+          <strong>Manda a ideia no WhatsApp.</strong>
+          <p>Referência visual ajuda, mesmo que seja print. Se não tiver, descreve.</p>
+        </div></li>
+        <li><b>02</b><div>
+          <strong>Diz o tamanho e o lugar do corpo.</strong>
+          <p>O orçamento leva em consideração a ideia, o tamanho, o local e a
+            anatomia do corpo. É por isso que não existe tabela.</p>
+        </div></li>
+        <li><b>03</b><div>
+          <strong>O desenho vem antes da sessão.</strong>
+          <p>Feito para você e aprovado por você. Depois disso marca a data.</p>
+        </div></li>
+        <li><b>04</b><div>
+          <strong>Atendimento com hora marcada.</strong>
+          <p>Canoas e Porto Alegre. Sem fila, sem porta aberta.</p>
+        </div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTATO ────────────────────────────────────────────────────── -->
+<section class="contato" id="contato">
+  <div class="env">
+    <div>
+      <span class="rotulo">Onde fica</span>
+      <h2>Duas unidades.</h2>
+      <dl class="canais">
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5582982298363" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-zap"/></svg>Mandar a ideia</a>
+          <p class="semcompromisso">Orçamento sem compromisso: saber o preço não obriga a marcar.</p></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/estudio_fortuna" rel="noopener me">
+          <svg aria-hidden="true"><use href="#i-ig"/></svg>@estudio_fortuna</a></dd></div>
+        <div><dt>Duas unidades</dt><dd class="local">
+          <svg aria-hidden="true"><use href="#i-pin"/></svg>
+          <span><b>Canoas</b> — R. Tiradentes, 130, sala 507<br>
+                <b>Porto Alegre</b> — Av. Independência, 1211</span></dd></div>
+        <div><dt>Atendimento</dt><dd class="local">
+          <svg aria-hidden="true"><use href="#i-relogio"/></svg>
+          <span>Com hora marcada, nas duas unidades.</span></dd></div>
+      </dl>
+      <p class="prova">
+        <b>5,0</b> de média em <b>222</b> avaliações no Google. Nenhuma abaixo disso.</p>
+    </div>
+    <div class="unidades">
+      <div class="unidade">
+        <h3>Canoas</h3>
+        <p>R. Tiradentes, 130, sala 507<br>Centro, Canoas — 92010-260</p>
+        <iframe src="https://www.google.com/maps?q=R.+Tiradentes,+130+-+Centro,+Canoas+-+RS,+92010-260&amp;hl=pt-BR&amp;z=17&amp;output=embed"
+          title="Mapa da unidade de Canoas, na Rua Tiradentes, 130"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="rota" href="https://www.google.com/maps/search/?api=1&amp;query=R.+Tiradentes,+130+-+Centro,+Canoas+-+RS,+92010-260" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-pin"/></svg>Abrir no Maps</a>
+      </div>
+      <div class="unidade">
+        <h3>Porto Alegre</h3>
+        <p>Av. Independência, 1211<br>Porto Alegre</p>
+        <iframe src="https://www.google.com/maps?q=Av.+Independ%C3%AAncia,+1211,+Porto+Alegre+-+RS&amp;hl=pt-BR&amp;z=17&amp;output=embed"
+          title="Mapa da unidade de Porto Alegre, na Avenida Independência, 1211"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="rota" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Independ%C3%AAncia,+1211,+Porto+Alegre+-+RS" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-pin"/></svg>Abrir no Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="env">
+    <p><b>Estúdio Fortuna · Tattoo &amp; Piercing</b> — R. Tiradentes, 130, sala 507,
+      Centro, Canoas, RS · <a href="https://wa.me/5582982298363" rel="noopener">WhatsApp</a>
+      · <a href="https://www.instagram.com/estudio_fortuna" rel="noopener me">@estudio_fortuna</a></p>
+    <p>As imagens de trabalho nesta página são de peças feitas no estúdio. O
+      orçamento depende da ideia, do tamanho, do local no corpo e da anatomia,
+      e é fechado antes da sessão.</p>
+    <p>Esta página não usa cookie próprio e não coleta dados de quem visita. O
+      mapa é fornecido pelo Google Maps e carrega quando você chega perto dele;
+      nesse momento o Google pode registrar o acesso, conforme a
+      <a href="https://policies.google.com/privacy?hl=pt-BR" rel="noopener">política de privacidade</a> deles.</p>
+  </div>
+</footer>
+
+<a class="flutua recolhido" id="flutua" href="https://wa.me/5582982298363" rel="noopener">
+  <svg aria-hidden="true"><use href="#i-zap"/></svg>
+  <span class="rot">Orçamento pelo WhatsApp</span>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TattooParlor",
+  "name": "Estúdio Fortuna | Tattoo & Piercing",
+  "url": "https://estudiofortuna.com.br/",
+  "image": "https://estudiofortuna.com.br/img/peca-braco-1080.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Tiradentes, 130, sala 507",
+    "addressLocality": "Canoas",
+    "addressRegion": "RS",
+    "postalCode": "92010-260",
+    "addressCountry": "BR"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Canoas"
+    },
+    {
+      "@type": "City",
+      "name": "Porto Alegre"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/estudio_fortuna"
+  ],
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=R.+Tiradentes,+130+-+Centro,+Canoas+-+RS,+92010-260",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Tatuagem autoral"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Piercing"
+      }
+    }
+  ],
+  "department": [
+    {
+      "@type": "TattooParlor",
+      "name": "Estúdio Fortuna — Canoas",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Tiradentes, 130, sala 507",
+        "addressLocality": "Canoas",
+        "addressRegion": "RS",
+        "postalCode": "92010-260",
+        "addressCountry": "BR"
+      }
+    },
+    {
+      "@type": "TattooParlor",
+      "name": "Estúdio Fortuna — Porto Alegre",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Independência, 1211",
+        "addressLocality": "Porto Alegre",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      }
+    }
+  ],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Vinnie"
+    },
+    {
+      "@type": "Person",
+      "name": "Yas"
+    },
+    {
+      "@type": "Person",
+      "name": "Verônica"
+    },
+    {
+      "@type": "Person",
+      "name": "Víbora"
+    },
+    {
+      "@type": "Person",
+      "name": "Yuri"
+    },
+    {
+      "@type": "Person",
+      "name": "Kelly"
+    }
+  ]
+}
+</script>
+
+<script>
+(function () {
+  // O balão só entra depois da capa: no topo o botão do cabeçalho já resolve.
+  var flutua = document.getElementById("flutua");
+  var capa = document.querySelector(".capa");
+  if (flutua && capa && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (e) {
+      flutua.classList.toggle("recolhido", e[0].isIntersecting);
+    }, { threshold: 0 }).observe(capa);
+  } else if (flutua) {
+    flutua.classList.remove("recolhido");
+  }
+
+  // Revelação só na trilha da peça, uma vez cada.
+  var alvos = document.querySelectorAll(".revela");
+  if ("IntersectionObserver" in window && alvos.length) {
+    var obs = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en, i) {
+        if (!en.isIntersecting) return;
+        en.target.style.transitionDelay = (i * 70) + "ms";
+        en.target.classList.add("visivel");
+        obs.unobserve(en.target);
+      });
+    }, { threshold: 0.12 });
+    alvos.forEach(function (a) { obs.observe(a); });
+  } else {
+    alvos.forEach(function (a) { a.classList.add("visivel"); });
+  }
+})();
+</script>
+</body>
+</html>
