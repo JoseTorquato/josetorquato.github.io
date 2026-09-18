@@ -1,0 +1,513 @@
+<!doctype html>
+<!--
+  Todo texto entre aspas é transcrição literal de publicações da advogada.
+
+  PENDÊNCIAS ANTES DE PUBLICAR
+  1. Inscrição na OAB/RS — buscar "inscrição a inserir" (2 ocorrências) e
+     substituir pelo número. Publicar sem ele declara irregularidade.
+  2. Domínio real — substituir exemplo.invalid em 5 pontos: canonical, og:url,
+     og:image e url/image do JSON-LD. Também em robots.txt e sitemap.xml.
+  3. Atualizar dateModified no JSON-LD e a data visível do rodapé.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glenda Meirelles — Advogada em São Leopoldo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Glenda Meirelles, advogada inscrita na OAB/RS, atende em São Leopoldo. Quem ela é, em suas próprias palavras, e como falar com ela.">
+<link rel="canonical" href="https://exemplo.invalid/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Glenda Meirelles — Advogada">
+<meta property="og:title" content="Glenda Meirelles — Advogada em São Leopoldo">
+<meta property="og:description" content="Advogada inscrita na OAB/RS, em São Leopoldo. Quem ela é, em suas próprias palavras.">
+<meta property="og:url" content="https://exemplo.invalid/">
+<meta property="og:image" content="https://exemplo.invalid/img/retrato.jpg">
+<meta property="og:image:width" content="760">
+<meta property="og:image:height" content="1013">
+<meta property="og:image:alt" content="Glenda Meirelles, de blazer branco sobre fundo escuro, olhando para a câmera.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fontes/libre-baskerville.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fontes/source-sans-3.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+@font-face{font-family:'Libre Baskerville';src:url(fontes/libre-baskerville.woff2) format('woff2');
+  font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url(fontes/source-sans-3.woff2) format('woff2');
+  font-weight:400 600;font-style:normal;font-display:swap}
+
+/* ---------- tokens: paleta MEDIDA nos 42 assets reais (dna → paleta.medicao) ---------- */
+:root{
+  --terra:     oklch(0.9056 0.0063 60.1);  /* #e3dfdc — fundo, neutro mais claro do conjunto */
+  --terra-fund:oklch(0.8706 0.0063 60.1);  /* #d8d3d0 */
+  --tinta:     oklch(0.15   0.0021 286.1); /* #0b0b0c — 14,85:1 no fundo */
+  --tinta-meia:oklch(0.395  0.0021 286.1); /* #4a4a4c — 6,68:1 */
+  --tijolo:    oklch(0.4252 0.1176 32.2);  /* #833021 — em 26 das 42 peças · 6,58:1 */
+  --oliva:     oklch(0.4450 0.0625 115.4); /* #4d5233 — oliva medida, escurecida p/ AA · 6,17:1 */
+  --noite:     oklch(0.195  0.0040 60.1);  /* #1c1b1a — banda escura, branco a 17,2:1 */
+  --filete:    oklch(0.775  0.0060 60.1);
+
+  --serifa:'Libre Baskerville',Georgia,'Times New Roman',serif;
+  --grotesca:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;
+
+  --corpo:clamp(1.03rem,0.98rem + 0.26vw,1.14rem);
+  --gutter:clamp(1.15rem,5vw,3.5rem);
+  --ar:clamp(3.75rem,11vw,8rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--terra);color:var(--tinta);
+  font-family:var(--grotesca);font-size:var(--corpo);line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+.faixa{max-width:64rem;margin-inline:auto;padding-inline:var(--gutter)}
+.estreito{max-width:34rem}
+p{max-width:62ch}
+img{max-width:100%}
+
+a{color:inherit}
+:focus-visible{outline:2px solid var(--tijolo);outline-offset:4px;border-radius:2px}
+/* fora de foco fica fora da tela, mas mantém a caixa de 44px: alvo de toque
+   real quando o teclado chega nele */
+.pular{position:absolute;left:-9999px;top:0;z-index:9;
+  display:flex;align-items:center;min-height:48px;min-width:12rem;
+  padding:.9rem 1.2rem;text-decoration:none}
+.pular:focus{left:0;background:var(--noite);color:#fff}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;
+  scroll-behavior:auto!important}}
+
+/* ---------- herói: só tipo. A foto vem depois, no Sobre. ---------- */
+.heroi{padding-block:clamp(2.75rem,9vw,6rem) clamp(3rem,9vw,6.5rem)}
+.crachá{
+  font-family:var(--grotesca);font-size:.76rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--tijolo);margin:0 0 clamp(1.6rem,4vw,2.4rem);
+  display:flex;flex-wrap:wrap;gap:.4rem .9rem;align-items:center;
+}
+.crachá span{color:var(--tinta-meia)}
+.fala{
+  font-family:var(--serifa);font-weight:400;
+  font-size:clamp(1.72rem,5.6vw + .4rem,3.5rem);
+  line-height:1.16;letter-spacing:-.017em;
+  margin:0;max-width:19ch;text-wrap:balance;
+}
+.fala em{font-style:italic;color:var(--tijolo)}
+.atribui{
+  font-family:var(--grotesca);font-size:.86rem;line-height:1.6;color:var(--tinta-meia);
+  margin:clamp(1.5rem,4vw,2.2rem) 0 0;padding-left:1rem;
+  border-left:2px solid var(--tijolo);max-width:34ch;
+}
+
+/* ---------- banda escura ---------- */
+.noite{background:var(--noite);color:#fff;padding-block:clamp(2.75rem,8vw,5rem)}
+.noite h2{
+  font-family:var(--serifa);font-weight:400;font-size:clamp(1.28rem,2.4vw + .7rem,1.72rem);
+  line-height:1.3;margin:0 0 1.1rem;max-width:26ch;
+}
+.noite p{color:#e8e5e2;margin:0 0 1rem}
+.noite p:last-child{margin-bottom:0}
+.noite .etiqueta{color:#d9a08f}
+
+.etiqueta{
+  font-family:var(--grotesca);font-size:.74rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--tijolo);margin:0 0 1rem;
+}
+
+/* ---------- retrato dominante ---------- */
+.retrato{padding-block:var(--ar);display:grid;gap:clamp(1.8rem,5vw,3.25rem)}
+@media (min-width:52rem){
+  .retrato{grid-template-columns:minmax(0,19rem) minmax(0,1fr);align-items:start}
+  .retrato .quadro{position:sticky;top:clamp(1.5rem,4vw,3rem)}
+}
+.quadro{margin:0}
+.quadro img{display:block;width:100%;height:auto;aspect-ratio:760/1013;
+  background:var(--terra-fund)}
+.quadro figcaption{
+  font-family:var(--grotesca);font-size:.8rem;line-height:1.55;color:var(--tinta-meia);
+  margin-top:.7rem;max-width:34ch;
+}
+h2.titulo{
+  font-family:var(--serifa);font-weight:400;
+  font-size:clamp(1.55rem,3.4vw + .7rem,2.35rem);
+  line-height:1.2;letter-spacing:-.01em;margin:0 0 1.15rem;max-width:20ch;
+  text-wrap:balance;
+}
+.retrato p{margin:0 0 1.15rem}
+.retrato p:last-of-type{margin-bottom:0}
+
+/* citação longa dentro do texto */
+blockquote{
+  margin:clamp(1.6rem,4vw,2.4rem) 0;padding-left:clamp(1rem,3vw,1.5rem);
+  border-left:3px solid var(--oliva);
+}
+blockquote p{
+  font-family:var(--serifa);font-size:clamp(1.05rem,1.1vw + .85rem,1.28rem);
+  line-height:1.48;font-style:italic;margin:0 0 .7rem;max-width:34ch;
+}
+blockquote cite{
+  display:block;font-style:normal;font-family:var(--grotesca);font-size:.79rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-meia);
+}
+
+/* ---------- par de imagens ---------- */
+.par{padding-block:0 var(--ar);display:grid;gap:clamp(1.25rem,3.5vw,2rem)}
+@media (min-width:44rem){.par{grid-template-columns:1fr 1fr;align-items:end}}
+.par figure{margin:0}
+.par img{display:block;width:100%;height:auto;background:var(--terra-fund)}
+.par .alta img{aspect-ratio:640/853}
+.par .quadrada img{aspect-ratio:1/1}
+.par figcaption{font-family:var(--grotesca);font-size:.79rem;line-height:1.55;
+  color:var(--tinta-meia);margin-top:.6rem;max-width:36ch}
+
+/* ---------- ausências ---------- */
+.ausencias{padding-block:var(--ar);border-top:1px solid var(--filete)}
+.ausencias ul{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;
+  gap:0;max-width:42rem}
+.ausencias li{padding:1.05rem 0;border-bottom:1px solid var(--filete)}
+.ausencias li:first-child{border-top:1px solid var(--filete)}
+.ausencias b{display:block;font-family:var(--serifa);font-weight:400;font-size:1.06rem;
+  line-height:1.35;margin-bottom:.3rem}
+.ausencias span{display:block;color:var(--tinta-meia);font-size:.95rem;line-height:1.6;
+  max-width:56ch}
+
+/* ---------- perguntas ---------- */
+.perguntas{padding-block:0 var(--ar);max-width:42rem}
+details{border-bottom:1px solid var(--filete)}
+details:first-of-type{border-top:1px solid var(--filete)}
+summary{
+  display:flex;gap:.9rem;align-items:baseline;cursor:pointer;list-style:none;
+  padding:1.05rem 0;min-height:54px;font-family:var(--serifa);font-size:1.06rem;
+  line-height:1.35;
+}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"→";font-family:var(--grotesca);color:var(--tijolo);
+  flex:0 0 1.1rem;font-size:.95rem;line-height:1.5}
+details[open] summary::before{content:"↓"}
+details[open] summary{color:var(--tijolo)}
+.resposta{padding:0 0 1.45rem 2rem}
+.resposta p{margin:0 0 .9rem;font-size:1rem;max-width:56ch}
+.resposta p:last-child{margin-bottom:0}
+.resposta .fonte{font-family:var(--grotesca);font-size:.79rem;color:var(--tinta-meia);
+  letter-spacing:.02em}
+
+/* ---------- saída única ---------- */
+.saida{background:var(--terra-fund);padding-block:clamp(2.75rem,8vw,5rem)}
+.saida h2{font-family:var(--serifa);font-weight:400;
+  font-size:clamp(1.5rem,3.2vw + .7rem,2.1rem);line-height:1.22;margin:0 0 .9rem;
+  max-width:18ch}
+.saida .dado{font-family:var(--grotesca);font-size:.98rem;line-height:1.7;
+  color:var(--tinta-meia);margin:0 0 1.9rem;max-width:40ch}
+.saida .dado b{color:var(--tinta);font-weight:600}
+.canais{display:grid;gap:.75rem;max-width:32rem}
+.canal{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  min-height:60px;padding:.95rem 1.15rem;text-decoration:none;
+  background:var(--terra);border:1px solid var(--filete);
+}
+.canal .rot{font-family:var(--serifa);font-size:1.02rem;line-height:1.3}
+.canal .rot small{display:block;font-family:var(--grotesca);font-size:.79rem;
+  color:var(--tinta-meia);margin-top:.2rem}
+.canal .seta{color:var(--tijolo);flex:none;font-family:var(--grotesca)}
+.canal:hover{border-color:var(--tijolo)}
+.canal:hover .rot{color:var(--tijolo)}
+
+/* ---------- rodapé ---------- */
+footer{padding-block:clamp(2.25rem,6vw,3.25rem);font-family:var(--grotesca);
+  font-size:.82rem;line-height:1.65;color:var(--tinta-meia)}
+footer p{max-width:60ch;margin:0 0 .75rem}
+footer .assinatura{color:var(--tinta);font-weight:600;font-size:.9rem}
+
+.pendencia{
+  display:inline-block;font-family:var(--grotesca);font-size:.76rem;font-weight:600;
+  letter-spacing:.04em;color:var(--tijolo);background:var(--terra-fund);
+  border:1px dashed var(--tijolo);border-radius:3px;padding:.08rem .42rem;
+  white-space:nowrap;text-transform:none;
+}
+</style>
+</head>
+
+<body>
+<div data-previa style="background:#5a4a1f;color:#f4f1ec;font:500 13px/1.45 system-ui,sans-serif;padding:9px 16px;text-align:center">Prévia para aprovação — não é o site publicado.</div>
+<a class="pular" href="#sobre">Ir para o conteúdo</a>
+
+<header class="heroi faixa">
+  <p class="crachá">Glenda Meirelles <span>·</span> Advogada <span>·</span>
+    OAB/RS <span class="pendencia">inscrição a inserir</span> <span>·</span> São Leopoldo</p>
+  <!-- PENDÊNCIA 1: substituir o span acima pelo número de inscrição informado pela cliente -->
+  <h1 class="fala">Por trás de cada processo existe <em>uma história</em>.</h1>
+  <p class="atribui">Escrito por ela, no dia 11 de agosto, Dia da Advocacia.
+    É a frase que melhor explica como ela trabalha — então ficou sendo a
+    primeira coisa desta página.</p>
+</header>
+
+<main>
+
+  <section class="noite">
+    <div class="faixa estreito">
+      <p class="etiqueta">Antes de mais nada</p>
+      <h2>Ela começou agora. Este site não vai fingir o contrário.</h2>
+      <p>Sobre o dia em que recebeu a carteira da OAB, ela própria escreveu que
+        aquilo era “apenas o começo de uma longa caminhada”. Não há uma parede de
+        casos para exibir — e mesmo que houvesse, exibir casos como oferta é
+        vedado pela norma da profissão.</p>
+      <p>O que existe é uma advogada inscrita, com endereço no Centro de São
+        Leopoldo, um telefone publicado, e um jeito de escrever sobre o trabalho
+        que você pode ler abaixo e julgar por conta própria.</p>
+    </div>
+  </section>
+
+  <section class="retrato faixa" id="sobre">
+    <figure class="quadro">
+      <img src="img/retrato.jpg" width="760" height="1013" fetchpriority="high" loading="eager" decoding="async"
+           alt="Glenda Meirelles, de blazer branco sobre camisa preta, apoiada em uma mesa, olhando para a câmera em fundo escuro.">
+      <figcaption>São Leopoldo, Rio Grande do Sul.</figcaption>
+    </figure>
+    <div>
+      <p class="etiqueta">Quem é</p>
+      <h2 class="titulo">No começo de uma longa caminhada — a expressão é dela</h2>
+      <p>Glenda Meirelles é advogada inscrita na Ordem dos Advogados do Brasil,
+        Seção do Rio Grande do Sul, e atende em São Leopoldo. Toda a informação
+        desta página termina aí — o resto são as palavras dela.</p>
+
+      <blockquote>
+        <p>“Ser advogada é ter a responsabilidade de defender direitos, enfrentar
+          desafios e, acima de tudo, nunca esquecer que por trás de cada processo
+          existe uma história.”</p>
+        <cite>@glenda_meirelles · Dia da Advocacia</cite>
+      </blockquote>
+
+      <p>Ela escreveu isso num post sobre a profissão, não num site de captação.
+        A diferença importa: ninguém revisou essa frase para vender nada.</p>
+
+      <blockquote>
+        <p>“Embora essa conquista represente um grande marco, sei que ela também
+          simboliza apenas o começo de uma longa caminhada.”</p>
+        <cite>@glenda_meirelles · sobre receber a carteira da OAB</cite>
+      </blockquote>
+
+      <p>É a própria advogada dizendo que está no início. Um site que apagasse isso
+        estaria mentindo na primeira linha — e seria a mentira mais fácil de
+        desmontar, porque o perfil dela é público.</p>
+    </div>
+  </section>
+
+  <section class="par faixa">
+    <figure class="alta">
+      <img src="img/posse.jpg" width="640" height="853" loading="lazy" decoding="async"
+           alt="Glenda Meirelles, de toga preta, segura a carteira vermelha de advogada diante das bandeiras do Brasil e do Rio Grande do Sul.">
+      <figcaption>A carteira de advogada, no dia em que foi entregue. A inscrição
+        pode ser conferida por qualquer pessoa no cadastro público da Ordem.</figcaption>
+    </figure>
+    <figure class="quadrada">
+      <img src="img/colacao.jpg" width="560" height="560" loading="lazy" decoding="async"
+           alt="Glenda Meirelles, de beca com peitilho de renda, durante a cerimônia de colação de grau.">
+      <figcaption>Colação de grau. Todas as fotos desta página são registros dela
+        próprios, publicados por ela — nenhuma vem de banco de imagens.</figcaption>
+    </figure>
+  </section>
+
+  <section class="ausencias faixa">
+    <p class="etiqueta">Honestidade estrutural</p>
+    <h2 class="titulo">O que não está neste site, e por quê</h2>
+    <p>Metade por norma, metade por falta de informação. Nos dois casos, é melhor
+      dizer do que preencher com enfeite.</p>
+    <ul>
+      <li><b>Áreas de atuação</b>
+        <span>Não estão listadas porque ainda não foram formalmente informadas.
+          Escrever “Família · Cível · Trabalhista” só porque toda página de
+          advogado escreve seria inventar. Pergunte pelo telefone.</span></li>
+      <li><b>Depoimentos e avaliações de clientes</b>
+        <span>Vedados pelo Provimento 205/2021 do Conselho Federal da OAB.
+          Avaliação de cliente funciona como argumento de venda, e a norma pede
+          informação. A vedação alcança também o dado estruturado que os
+          buscadores leem.</span></li>
+      <li><b>Promessa de resultado, prazo ou êxito</b>
+        <span>Também vedada — e, fora da norma, simplesmente impossível de fazer
+          com honestidade antes de ler os documentos do seu caso.</span></li>
+      <li><b>Honorários, desconto ou primeira consulta grátis</b>
+        <span>Valor não pode ser usado como argumento de atração. Honorários se
+          conversam no atendimento.</span></li>
+      <li><b>Horário de atendimento</b>
+        <span>Ainda não confirmado. Até estar, o caminho honesto é combinar pelo
+          telefone.</span></li>
+    </ul>
+  </section>
+
+  <section class="perguntas faixa">
+    <p class="etiqueta">Perguntas</p>
+    <h2 class="titulo">O que costuma travar na garganta</h2>
+
+    <details open>
+      <summary>Advogada em começo de carreira é pior?</summary>
+      <div class="resposta">
+        <p>É uma pergunta legítima e merece resposta direta: depende inteiramente do
+          caso. Um pedido de divórcio consensual, um inventário sem litígio, uma
+          revisão de contrato, uma defesa em juizado — são trabalhos em que
+          dedicação e disponibilidade pesam bastante.</p>
+        <p>Já uma causa de alta complexidade, com tese controvertida em tribunal
+          superior, costuma pedir quem já percorreu aquele caminho antes. A
+          resposta certa não é “sim” nem “não”: é contar o seu caso e ouvir com
+          franqueza se é ou não para ela. Fazer essa pergunta diretamente, a
+          qualquer profissional, é legítimo — e a resposta que você recebe já
+          diz bastante.</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Como confiro que ela é advogada mesmo?</summary>
+      <div class="resposta">
+        <p>Pelo Cadastro Nacional dos Advogados, em cna.oab.org.br, mantido pelo
+          Conselho Federal da OAB. A consulta é pública e gratuita, e aceita busca
+          por nome, número de inscrição ou seccional. Existe também o ConfirmADV,
+          em confirmadv.oab.org.br, criado pela própria Ordem diante de tentativas
+          de fraude com falsa identidade profissional.</p>
+        <p>Vale o hábito para qualquer profissional, não só para esta. Peça o número
+          de inscrição antes de transferir qualquer valor a quem quer que seja.
+          Glenda Meirelles é advogada inscrita na OAB/RS e atende em São Leopoldo,
+          Rio Grande do Sul.</p>
+        <p class="fonte">Fonte: Conselho Federal da OAB — CNA e ConfirmADV.</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Por que este site parece tão vazio de promessas?</summary>
+      <div class="resposta">
+        <p>Porque a publicidade da advocacia tem caráter meramente informativo. O
+          Provimento 205/2021 do Conselho Federal da OAB admite o marketing
+          jurídico, mas veda a promessa de resultados, o uso de casos concretos
+          como oferta, a menção a honorários, formas de pagamento, gratuidade ou
+          desconto como mecanismo de atração, e a ostentação.</p>
+        <p>A vedação alcança também o código: uma nota de avaliação embutida no
+          dado estruturado que os buscadores leem conta como avaliação publicada,
+          ainda que nenhuma estrela apareça na tela. Por isso não há avaliação
+          nem no texto nem no código desta página.</p>
+        <p class="fonte">Fonte: Provimento 205/2021, Conselho Federal da OAB.</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Preciso já saber o que quero antes de ligar?</summary>
+      <div class="resposta">
+        <p>Não. Boa parte das pessoas chega sem saber sequer o nome do que está
+          vivendo, e descrever a situação em ordem cronológica — o que aconteceu,
+          quando, com quem, o que foi assinado — já é suficiente para começar.</p>
+        <p>Separe o que existir por escrito: contratos, recibos, comprovantes,
+          conversas de aplicativo, e-mails, cartas e qualquer papel de cartório ou
+          do fórum. Documento que parece irrelevante costuma ser o que decide.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="saida" id="contato">
+    <div class="faixa">
+      <p class="etiqueta">Contato</p>
+      <h2>Uma saída, no fim, como deve ser</h2>
+      <p class="dado">
+        <b>R. Pres. Roosevelt, 1223</b> — Centro<br>
+        São Leopoldo/RS, CEP 93010-060<br>
+        <b>(51) 98090-9117</b><br>
+        Horário de atendimento não informado nesta página — combine pelo telefone.
+      </p>
+      <div class="canais">
+        <a class="canal" href="tel:+5551980909117">
+          <span class="rot">Ligar<small>(51) 98090-9117</small></span>
+          <span class="seta" aria-hidden="true">↗</span>
+        </a>
+        <a class="canal" href="https://wa.me/5551980909117" rel="noopener">
+          <span class="rot">Escrever pelo WhatsApp<small>mesmo número</small></span>
+          <span class="seta" aria-hidden="true">↗</span>
+        </a>
+        <a class="canal" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Pres.%20Roosevelt%2C%201223%20-%20Centro%2C%20S%C3%A3o%20Leopoldo%20-%20RS%2C%2093010-060" rel="noopener">
+          <span class="rot">Ver no mapa<small>Centro de São Leopoldo</small></span>
+          <span class="seta" aria-hidden="true">↗</span>
+        </a>
+        <a class="canal" href="https://www.instagram.com/glenda_meirelles/" rel="noopener">
+          <span class="rot">Instagram<small>@glenda_meirelles</small></span>
+          <span class="seta" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="faixa">
+  <p class="assinatura">Glenda Meirelles — Advogada — OAB/RS
+    <span class="pendencia">inscrição a inserir</span></p>
+  <p>R. Pres. Roosevelt, 1223 — Centro, São Leopoldo/RS, CEP 93010-060 · (51) 98090-9117</p>
+  <p>Atualizado em 18/09/2026.</p>
+  <p>Página de caráter meramente informativo, nos termos do Provimento 205/2021 do
+    Conselho Federal da Ordem dos Advogados do Brasil. Não constitui oferta de
+    serviços, consulta jurídica nem promessa de resultado. Os trechos entre aspas
+    são transcrições literais de publicações da própria advogada.</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Attorney",
+  "name": "Glenda Meirelles — Advogada",
+  "description": "Advogada inscrita na OAB/RS, atende em São Leopoldo, Rio Grande do Sul.",
+  "url": "https://exemplo.invalid/",
+  "image": "https://exemplo.invalid/img/retrato.jpg",
+  "telephone": "+55-51-98090-9117",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Pres. Roosevelt, 1223 - Centro",
+    "addressLocality": "São Leopoldo",
+    "addressRegion": "RS",
+    "postalCode": "93010-060",
+    "addressCountry": "BR"
+  },
+  "areaServed": { "@type": "City", "name": "São Leopoldo" },
+  "sameAs": ["https://www.instagram.com/glenda_meirelles/"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-09-18",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Advogada em começo de carreira é pior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende inteiramente do caso. Um divórcio consensual, um inventário sem litígio, uma revisão de contrato ou uma defesa em juizado são trabalhos em que dedicação e disponibilidade pesam bastante. Já uma causa de alta complexidade, com tese controvertida em tribunal superior, costuma pedir quem já percorreu aquele caminho antes. O caminho é contar o caso e ouvir com franqueza se é ou não para aquela profissional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como confiro que alguém é advogada mesmo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pelo Cadastro Nacional dos Advogados, em cna.oab.org.br, mantido pelo Conselho Federal da OAB. A consulta é pública e gratuita e aceita busca por nome, número de inscrição ou seccional. Existe também o ConfirmADV, em confirmadv.oab.org.br, criado pela Ordem diante de tentativas de fraude com falsa identidade profissional. Peça o número de inscrição antes de transferir qualquer valor. Glenda Meirelles é advogada inscrita na OAB/RS e atende em São Leopoldo, Rio Grande do Sul."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que um site de advocacia parece tão vazio de promessas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque a publicidade da advocacia tem caráter meramente informativo. O Provimento 205/2021 do Conselho Federal da OAB admite o marketing jurídico, mas veda a promessa de resultados, o uso de casos concretos como oferta, a menção a honorários, formas de pagamento, gratuidade ou desconto como mecanismo de atração, e a ostentação. A vedação alcança também o dado estruturado que os buscadores leem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso já saber o que quero antes de procurar uma advogada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Boa parte das pessoas chega sem saber sequer o nome do que está vivendo, e descrever a situação em ordem cronológica — o que aconteceu, quando, com quem, o que foi assinado — já é suficiente para começar. Separe o que existir por escrito: contratos, recibos, comprovantes, conversas de aplicativo, e-mails, cartas e qualquer papel de cartório ou do fórum."
+      }
+    }
+  ]
+}
+</script>
+<!-- Sem aggregateRating e sem review: avaliação de cliente é vedada pelo
+     Provimento 205/2021, inclusive em dado estruturado. -->
+</body>
+</html>

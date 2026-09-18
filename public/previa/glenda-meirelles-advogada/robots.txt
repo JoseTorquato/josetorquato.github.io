@@ -1,0 +1,20 @@
+# Trocar exemplo.invalid pelo domínio real antes de publicar.
+# Assistentes de IA liberados de propósito: a FAQ desta página foi escrita
+# para ser citada, e bloquear por reflexo custaria essa citação.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://exemplo.invalid/sitemap.xml
