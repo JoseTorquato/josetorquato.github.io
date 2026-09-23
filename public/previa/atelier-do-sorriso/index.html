@@ -3,74 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Atelier do Sorriso · Odontologia de Excelência & Ortodontia Digital</title>
-<meta name="description" content="Atendimento odontológico individualizado e tecnologia de ponta há mais de 18 anos em Canoas. Coordenação da Dra. Márcia Breitenbach e Dra. Cristiane Poletto.">
+<title>Atelier do Sorriso · Odontologia Digital & Estética do Sorriso</title>
+<meta name="description" content="Há mais de 18 anos transformando sorrisos com Invisalign®, escaneamento 3D iTero e atendimento humanizado na Torre Medical em Canoas. Coordenação Dra. Márcia e Dra. Cristiane.">
 <meta name="robots" content="noindex, nofollow">
 
 <!-- Open Graph / Meta -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Atelier do Sorriso · Odontologia de Excelência em Canoas">
-<meta property="og:description" content="Há mais de 18 anos transformando sorrisos com atendimento humanizado, Invisalign® e tecnologia 3D.">
+<meta property="og:title" content="Atelier do Sorriso · Odontologia de Alta Performance em Canoas">
+<meta property="og:description" content="A arte de transformar sorrisos, a ciência de preservar a sua saúde. Mais de 18 anos de trajetória na Torre Medical.">
 <meta property="og:image" content="./img/recepcao_logo.jpg">
 
-<!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="preload" as="image" href="img/alinhadores.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="img/recepcao_logo.jpg" fetchpriority="high">
 
-<!-- Lenis (Smooth Scroll Engine) + GSAP + ScrollTrigger -->
+<!-- Lenis (Smooth Scroll) + GSAP -->
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <style>
 /* ══════════════════════════════════════════════════════════════════
-   DESIGN TOKENS · ATELIER DO SORRISO
+   DESIGN TOKENS · IDENTIDADE ODONTOLÓGICA DE ALTA PERFORMANCE
+   Paleta: Branco Pérola, Verde Esmeralda Clínico, Champanhe e Grafite
    ══════════════════════════════════════════════════════════════════ */
 :root {
-  --font-serif: "Cormorant Garamond", Garamond, Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   
-  --bg-page: #FAF8F5;          /* Areia suave orgânica */
-  --bg-surface: #FFFFFF;       /* Branco clínico puro */
-  --bg-subtle: #F3EFE9;        /* Linho aconchegante */
-  --bg-warm: #EDE7DE;          /* Areia quente */
-  --bg-dark: #191715;          /* Mineral profundo */
-  --bg-dark-card: #262320;     /* Card escuro */
+  --bg-page: #F6F9FA;          /* Branco pérola com frescor clínico */
+  --bg-surface: #FFFFFF;       /* Branco esmalte puro */
+  --bg-subtle: #EBF2F3;        /* Menta suave bio-estética */
+  --bg-warm: #F4EFEA;          /* Areia quente suave para acolhimento */
+  --bg-dark: #0B1617;          /* Azul petróleo mineral profundo */
+  --bg-dark-card: #142426;     /* Card escuro técnico */
   
-  --text-primary: #1A1816;     /* Grafite ébano */
-  --text-secondary: #57524C;   /* Pedra quente */
-  --text-muted: #7A746D;       /* Neutro */
-  --text-light: #FAF8F5;       /* Linho claro para fundo escuro */
-  --text-light-muted: #D8D3CC; /* Cinza claro suave */
+  --text-primary: #0D1C1E;     /* Grafite profundo */
+  --text-secondary: #405355;   /* Pedra azulada neutra */
+  --text-muted: #6B7E80;       /* Mudo suave */
+  --text-light: #F8FAFA;       /* Pérola claro para fundo escuro */
+  --text-light-muted: #C4D3D4; /* Acinzentado claro */
   
-  --accent-gold: #9B7E54;      /* Dourado champanhe nobre */
-  --accent-gold-hover: #836943;
-  --accent-gold-soft: rgba(155, 126, 84, 0.12);
-  --accent-gold-border: rgba(155, 126, 84, 0.25);
+  --accent-teal: #0D696C;      /* Verde esmeralda médico nobre */
+  --accent-teal-hover: #084F52;
+  --accent-teal-light: rgba(13, 105, 108, 0.08);
+  --accent-teal-border: rgba(13, 105, 108, 0.22);
   
-  --border-light: rgba(26, 24, 22, 0.08);
-  --border-card: rgba(26, 24, 22, 0.1);
-  --border-glass: rgba(255, 255, 255, 0.28);
+  --accent-gold: #B69259;      /* Champanhe dourado do logo */
+  --accent-gold-soft: rgba(182, 146, 89, 0.12);
   
-  --radius-sm: 6px;
-  --radius-md: 14px;
-  --radius-lg: 24px;
+  --border-light: rgba(13, 105, 108, 0.08);
+  --border-card: rgba(13, 105, 108, 0.12);
+  --border-glass: rgba(255, 255, 255, 0.35);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 26px;
   --radius-pill: 9999px;
   
-  --shadow-subtle: 0 4px 20px -2px rgba(26, 24, 22, 0.04);
-  --shadow-card: 0 12px 36px -4px rgba(26, 24, 22, 0.07);
-  --shadow-lg: 0 24px 60px -8px rgba(26, 24, 22, 0.12);
+  --shadow-subtle: 0 4px 24px -2px rgba(13, 105, 108, 0.05);
+  --shadow-card: 0 16px 40px -4px rgba(13, 105, 108, 0.08);
+  --shadow-lg: 0 28px 70px -10px rgba(11, 22, 23, 0.14);
   
-  --max-w-content: 1200px;
+  --max-w-content: 1220px;
   --max-w-reading: 880px;
 }
 
-/* ══════════════════════════════════════════════════════════════════
-   RESET & FUNDAMENTAIS
-   ══════════════════════════════════════════════════════════════════ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -79,9 +81,7 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: auto;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -90,7 +90,6 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
-  position: relative;
 }
 
 img {
@@ -102,7 +101,7 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 button {
@@ -113,27 +112,26 @@ button {
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   TOP PREVIEW BAR & NAVEGAÇÃO
+   PREVIEW BANNER & TOP NAV
    ══════════════════════════════════════════════════════════════════ */
 .preview-banner {
-  background: #191715;
-  color: #FAF8F5;
+  background: #0B1617;
+  color: #E8F2F2;
   font-size: 0.78rem;
   padding: 0.5rem 1rem;
   text-align: center;
   font-weight: 500;
-  letter-spacing: 0.04em;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  z-index: 100;
   position: relative;
+  z-index: 100;
 }
 
-.preview-banner-badge {
+.preview-badge {
   background: var(--accent-gold);
-  color: #FAF8F5;
+  color: #FFFFFF;
   padding: 0.15rem 0.55rem;
   border-radius: var(--radius-pill);
   font-size: 0.7rem;
@@ -146,18 +144,17 @@ button {
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(250, 248, 245, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(246, 249, 250, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-light);
   z-index: 90;
-  transition: background 0.3s ease;
 }
 
 .nav-container {
   max-width: var(--max-w-content);
   margin: 0 auto;
-  padding: 1.1rem 2rem;
+  padding: 1.15rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -173,96 +170,114 @@ button {
   font-family: var(--font-serif);
   font-size: 1.55rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
   color: var(--text-primary);
   line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .nav-brand-sub {
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent-gold);
-  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--accent-teal);
+  font-weight: 700;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.2rem;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   font-weight: 500;
-  position: relative;
   transition: color 0.25s ease;
 }
 
 .nav-link:hover {
-  color: var(--accent-gold);
+  color: var(--accent-teal);
 }
 
-.btn-nav-cta {
-  background: var(--accent-gold);
+.btn-nav-whatsapp {
+  background: var(--accent-teal);
   color: #FFFFFF;
-  padding: 0.65rem 1.4rem;
+  padding: 0.7rem 1.45rem;
   border-radius: var(--radius-pill);
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 4px 16px rgba(13, 105, 108, 0.25);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(155, 126, 84, 0.25);
 }
 
-.btn-nav-cta:hover {
-  background: var(--accent-gold-hover);
+.btn-nav-whatsapp:hover {
+  background: var(--accent-teal-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(155, 126, 84, 0.35);
+  box-shadow: 0 6px 22px rgba(13, 105, 108, 0.35);
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   HERO SECTION
+   HERO SECTION (SPLIT ASIMÉTRICO DE ALTA ODONTOLOGIA)
    ══════════════════════════════════════════════════════════════════ */
 .hero-section {
-  padding: 4.5rem 2rem 5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-container {
+  padding: 4.5rem 2rem 5.5rem;
   max-width: var(--max-w-content);
   margin: 0 auto;
 }
 
-.hero-header {
-  text-align: center;
-  max-width: 920px;
-  margin: 0 auto 3.5rem;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.editorial-tag {
-  display: inline-block;
+.hero-content {
+  max-width: 640px;
+}
+
+.dental-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--accent-teal-light);
+  border: 1px solid var(--accent-teal-border);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-pill);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--accent-teal);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: var(--accent-gold);
-  margin-bottom: 1.2rem;
-  position: relative;
+  margin-bottom: 1.4rem;
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(37, 211, 102, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 5.2vw, 4.3rem);
+  font-size: clamp(2.5rem, 4.8vw, 3.9rem);
   font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
   color: var(--text-primary);
   margin-bottom: 1.6rem;
 }
@@ -270,29 +285,26 @@ button {
 .hero-title em {
   font-style: italic;
   font-weight: 400;
-  color: var(--accent-gold);
+  color: var(--accent-teal);
 }
 
 .hero-subtitle {
-  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
   color: var(--text-secondary);
-  font-weight: 400;
-  line-height: 1.65;
-  max-width: 760px;
-  margin: 0 auto 2.2rem;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1.2rem;
   flex-wrap: wrap;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.2rem;
 }
 
 .btn-primary {
-  background: var(--accent-gold);
+  background: var(--accent-teal);
   color: #FFFFFF;
   padding: 0.95rem 2.2rem;
   border-radius: var(--radius-pill);
@@ -301,289 +313,433 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
+  box-shadow: 0 8px 24px rgba(13, 105, 108, 0.28);
   transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(155, 126, 84, 0.28);
 }
 
 .btn-primary:hover {
-  background: var(--accent-gold-hover);
+  background: var(--accent-teal-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(155, 126, 84, 0.38);
+  box-shadow: 0 12px 32px rgba(13, 105, 108, 0.38);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: var(--bg-surface);
   color: var(--text-primary);
   border: 1px solid var(--border-card);
-  padding: 0.95rem 2rem;
+  padding: 0.95rem 1.9rem;
   border-radius: var(--radius-pill);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.25s ease;
 }
 
 .btn-secondary:hover {
-  background: var(--bg-surface);
-  border-color: var(--text-primary);
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
 }
 
-/* Hero Authority Stats Grid */
-.hero-stats-grid {
+/* Hero Pill Specs */
+.hero-specs-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
-  max-width: 980px;
-  margin: 0 auto 3.8rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 2rem;
 }
 
-.hero-stat-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 1.5rem 1.2rem;
-  text-align: center;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+.hero-spec-item {
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-stat-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent-gold);
-}
-
-.hero-stat-num {
+.hero-spec-num {
   font-family: var(--font-serif);
-  font-size: 1.85rem;
+  font-size: 1.55rem;
   font-weight: 600;
-  color: var(--accent-gold);
+  color: var(--accent-teal);
   line-height: 1.1;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
-.hero-stat-label {
+.hero-spec-label {
   font-size: 0.8rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-weight: 500;
-  letter-spacing: 0.02em;
 }
 
-/* Immersive Hero Media Showcase */
-.hero-media-wrap {
+/* Hero Media Showcase Side */
+.hero-visual-side {
   position: relative;
+}
+
+.hero-main-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(26, 24, 22, 0.06);
+  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+  position: relative;
 }
 
-.hero-media-img {
+.hero-main-img {
   width: 100%;
-  max-height: 640px;
+  aspect-ratio: 4 / 4.8;
   object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
-.hero-media-glass-badge {
+.hero-floating-glass {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  right: 2rem;
-  background: rgba(26, 24, 22, 0.75);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  bottom: 1.6rem;
+  left: 1.6rem;
+  right: 1.6rem;
+  background: rgba(11, 22, 23, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
-  padding: 1.4rem 1.8rem;
+  padding: 1.2rem 1.5rem;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.1rem;
+}
+
+.floating-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-gold);
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.glass-badge-title {
+.floating-glass-title {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-bottom: 0.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
 }
 
-.glass-badge-desc {
-  font-size: 0.88rem;
+.floating-glass-sub {
+  font-size: 0.82rem;
   color: var(--text-light-muted);
 }
 
-.manifesto-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 0.5rem 1.1rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
 /* ══════════════════════════════════════════════════════════════════
-   MANIFESTO & FILOSOFIA
+   A NOVA ERA DA ODONTOLOGIA: CONTRASTE CLÍNICO
+   "O que ficou no passado vs O que você vive no Atelier"
    ══════════════════════════════════════════════════════════════════ */
-.manifesto-section {
+.contrast-section {
   padding: 6.5rem 2rem;
-  background: var(--bg-warm);
-  position: relative;
-  text-align: center;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
-.manifesto-container {
-  max-width: var(--max-w-reading);
+.contrast-container {
+  max-width: var(--max-w-content);
   margin: 0 auto;
 }
 
-.manifesto-quote {
+.section-tagline {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-teal);
+  margin-bottom: 1rem;
+}
+
+.section-headline {
+  text-align: center;
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   font-weight: 500;
-  line-height: 1.35;
-  color: var(--text-primary);
-  margin-bottom: 2.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.manifesto-quote em {
-  font-style: italic;
-  color: var(--accent-gold);
-}
-
-.manifesto-body {
-  font-size: 1.1rem;
+.section-lead {
+  text-align: center;
+  font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 2.5rem;
+  max-width: 720px;
+  margin: 0 auto 4.2rem;
+}
+
+.contrast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.contrast-card-old {
+  background: #FAF7F5;
+  border: 1px solid rgba(180, 80, 80, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+}
+
+.contrast-card-new {
+  background: linear-gradient(135deg, #F0F7F7 0%, #FFFFFF 100%);
+  border: 2px solid var(--accent-teal-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.contrast-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.contrast-badge-old {
+  background: #FEE2E2;
+  color: #991B1B;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contrast-badge-new {
+  background: var(--accent-teal);
+  color: #FFFFFF;
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contrast-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.contrast-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.contrast-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.contrast-icon-old {
+  color: #EF4444;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.contrast-icon-new {
+  color: var(--accent-teal);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   TRATAMENTOS DE EXCELÊNCIA (CARDS COM FROSTED GLASS)
+   TRATAMENTOS DE EXCELÊNCIA (GRID MODERNO)
    ══════════════════════════════════════════════════════════════════ */
-.services-section {
+.treatments-section {
   padding: 7rem 2rem;
   max-width: var(--max-w-content);
   margin: 0 auto;
 }
 
-.section-head {
-  text-align: center;
-  max-width: 780px;
-  margin: 0 auto 4rem;
-}
-
-.section-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.section-desc {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-}
-
-.services-grid {
+.treatments-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
-.service-card {
-  background: var(--bg-surface);
+.treatment-card {
+  background: #FFFFFF;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: 2.6rem 2.2rem;
-  transition: all 0.35s ease;
-  position: relative;
+  padding: 2.5rem 2.2rem;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: var(--shadow-subtle);
 }
 
-.service-card:hover {
+.treatment-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-gold);
+  border-color: var(--accent-teal);
   box-shadow: var(--shadow-card);
 }
 
-.service-icon-box {
+.treatment-icon-circle {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background: var(--accent-gold-soft);
-  color: var(--accent-gold);
+  background: var(--accent-teal-light);
+  color: var(--accent-teal);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.5rem;
 }
 
-.service-badge {
-  display: inline-block;
+.treatment-category {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--accent-gold);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
-.service-title {
+.treatment-name {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 600;
-  margin-bottom: 0.85rem;
   line-height: 1.25;
+  margin-bottom: 0.85rem;
 }
 
-.service-desc {
+.treatment-desc {
   font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.65;
   margin-bottom: 1.8rem;
 }
 
-.service-bullets {
+.treatment-points {
   list-style: none;
   border-top: 1px solid var(--border-light);
   padding-top: 1.2rem;
-  margin-top: auto;
 }
 
-.service-bullet-item {
+.treatment-point {
   font-size: 0.84rem;
   color: var(--text-muted);
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
-.service-bullet-item::before {
+.treatment-point::before {
   content: "✦";
+  color: var(--accent-teal);
+  font-size: 0.7rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   O PROTOCOLO DO SORRISO EM 4 PASSOS
+   ══════════════════════════════════════════════════════════════════ */
+.protocol-section {
+  padding: 6.5rem 2rem;
+  background: var(--bg-dark);
+  color: #FFFFFF;
+}
+
+.protocol-container {
+  max-width: var(--max-w-content);
+  margin: 0 auto;
+}
+
+.protocol-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4.5rem;
+}
+
+.protocol-tag {
   color: var(--accent-gold);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.protocol-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.protocol-desc {
+  font-size: 1.05rem;
+  color: var(--text-light-muted);
+}
+
+.protocol-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+}
+
+.protocol-step-card {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.protocol-step-card:hover {
+  border-color: var(--accent-teal);
+  transform: translateY(-4px);
+}
+
+.step-num {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: var(--accent-gold);
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+
+.step-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #FFFFFF;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  color: var(--text-light-muted);
+  line-height: 1.6;
 }
 
 /* ══════════════════════════════════════════════════════════════════
    CARROSSEL CINEMATOGRÁFICO DE ESTRUTURA & TECNOLOGIA
    ══════════════════════════════════════════════════════════════════ */
 .carousel-section {
-  padding: 6.5rem 2rem;
-  background: var(--bg-surface);
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
+  padding: 7rem 2rem;
+  background: var(--bg-page);
 }
 
 .carousel-container {
@@ -593,7 +749,6 @@ button {
 
 .carousel-wrapper {
   position: relative;
-  margin: 0 auto;
   user-select: none;
 }
 
@@ -602,6 +757,7 @@ button {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   cursor: grab;
+  border: 1px solid var(--border-light);
 }
 
 .carousel-viewport:active {
@@ -617,8 +773,8 @@ button {
 .carousel-slide {
   flex: 0 0 100%;
   position: relative;
-  background: #111;
   aspect-ratio: 16 / 9.5;
+  background: #000;
   overflow: hidden;
 }
 
@@ -638,13 +794,13 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 3rem 2.5rem 2rem;
-  background: linear-gradient(to top, rgba(25, 23, 21, 0.92) 0%, rgba(25, 23, 21, 0.45) 60%, transparent 100%);
+  padding: 3.2rem 2.8rem 2.2rem;
+  background: linear-gradient(to top, rgba(11, 22, 23, 0.94) 0%, rgba(11, 22, 23, 0.45) 60%, transparent 100%);
   color: #FFFFFF;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .slide-info-box {
@@ -653,14 +809,13 @@ button {
 
 .slide-tag {
   display: inline-block;
-  background: rgba(155, 126, 84, 0.85);
-  backdrop-filter: blur(8px);
-  color: #FAF8F5;
+  background: var(--accent-teal);
+  color: #FFFFFF;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.8rem;
   border-radius: var(--radius-pill);
   margin-bottom: 0.65rem;
 }
@@ -670,7 +825,7 @@ button {
   font-size: clamp(1.4rem, 2.4vw, 2.1rem);
   font-weight: 500;
   margin-bottom: 0.5rem;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .slide-desc {
@@ -696,11 +851,11 @@ button {
 }
 
 .slide-zoom-btn:hover {
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
 
-/* Controls Bar */
+/* Controles */
 .carousel-controls {
   display: flex;
   align-items: center;
@@ -727,13 +882,13 @@ button {
   width: 7px;
   height: 7px;
   border-radius: var(--radius-pill);
-  background: rgba(26, 24, 22, 0.2);
+  background: rgba(13, 105, 108, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .carousel-dot.active {
-  background: var(--accent-gold);
+  background: var(--accent-teal);
   width: 24px;
 }
 
@@ -747,7 +902,7 @@ button {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-pill);
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border: 1px solid var(--border-light);
   color: var(--text-primary);
   display: flex;
@@ -757,18 +912,18 @@ button {
 }
 
 .carousel-arrow:hover {
-  background: var(--accent-gold);
-  border-color: var(--accent-gold);
+  background: var(--accent-teal);
+  border-color: var(--accent-teal);
   color: #FFFFFF;
-  transform: translateY(-1px);
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   CORPO CLÍNICO & AUTORIA (DRAS. MÁRCIA & CRISTIANE)
+   CORPO CLÍNICO & TRAJETÓRIA
    ══════════════════════════════════════════════════════════════════ */
 .team-section {
   padding: 7rem 2rem;
-  background: var(--bg-page);
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
 }
 
 .team-container {
@@ -776,30 +931,23 @@ button {
   margin: 0 auto;
 }
 
-.team-hero-block {
+.team-story-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 4rem;
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 5.5rem;
 }
 
-.team-hero-media {
+.team-photo-wrap {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
-  position: relative;
 }
 
-.team-hero-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.team-hero-content {
-  padding-right: 1.5rem;
+.team-story-content {
+  max-width: 600px;
 }
 
 .team-doctors-grid {
@@ -809,24 +957,24 @@ button {
 }
 
 .doctor-card {
-  background: var(--bg-surface);
+  background: var(--bg-page);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 2.4rem;
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  box-shadow: var(--shadow-subtle);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .doctor-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-gold);
+  border-color: var(--accent-teal);
+  box-shadow: var(--shadow-card);
 }
 
 .doctor-avatar-wrap {
-  width: 150px;
+  width: 140px;
   flex-shrink: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -848,8 +996,8 @@ button {
   display: inline-block;
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--accent-gold);
-  background: var(--accent-gold-soft);
+  color: var(--accent-teal);
+  background: var(--accent-teal-light);
   padding: 0.2rem 0.65rem;
   border-radius: var(--radius-pill);
   margin-bottom: 0.6rem;
@@ -860,14 +1008,14 @@ button {
   font-size: 1.65rem;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .doctor-role {
   font-size: 0.88rem;
   color: var(--text-secondary);
   font-weight: 600;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 .doctor-curriculum {
@@ -884,20 +1032,19 @@ button {
 }
 
 .doctor-curriculum li::before {
-  content: "•";
+  content: "✦";
   position: absolute;
   left: 0;
   color: var(--accent-gold);
-  font-size: 1.1rem;
-  line-height: 1;
+  font-size: 0.75rem;
 }
 
 /* ══════════════════════════════════════════════════════════════════
    LOCALIZAÇÃO & CONTATO
    ══════════════════════════════════════════════════════════════════ */
 .contact-section {
-  padding: 6rem 2rem;
-  background: var(--bg-surface);
+  padding: 6.5rem 2rem;
+  background: var(--bg-page);
   border-top: 1px solid var(--border-light);
 }
 
@@ -910,102 +1057,74 @@ button {
   align-items: center;
 }
 
-.contact-box {
-  background: var(--bg-page);
+.contact-card-info {
+  background: #FFFFFF;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 3rem 2.8rem;
+  box-shadow: var(--shadow-subtle);
 }
 
-.contact-title {
-  font-family: var(--font-serif);
-  font-size: 2.4rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.contact-text {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  margin-bottom: 2.2rem;
-  line-height: 1.65;
+.contact-card-cta {
+  background: var(--bg-dark);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-bottom: 2.5rem;
+  gap: 1.3rem;
+  margin: 2rem 0 2.5rem;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
   font-size: 0.94rem;
   color: var(--text-secondary);
 }
 
-.contact-item-icon {
-  color: var(--accent-gold);
+.contact-icon {
+  color: var(--accent-teal);
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
 
-.contact-card-cta {
-  background: #191715;
-  color: #FAF8F5;
-  border-radius: var(--radius-lg);
-  padding: 2.8rem 2.4rem;
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-}
-
-.contact-cta-title {
-  font-family: var(--font-serif);
-  font-size: 1.85rem;
-  font-weight: 500;
-  margin-bottom: 0.75rem;
-}
-
-.contact-cta-desc {
-  font-size: 0.94rem;
-  color: var(--text-light-muted);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.btn-whatsapp-big {
+.btn-whatsapp-cta {
   background: #25D366;
   color: #FFFFFF;
-  padding: 1.05rem 2.2rem;
+  padding: 1.05rem 2rem;
   border-radius: var(--radius-pill);
   font-size: 1rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-  width: 100%;
   justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s ease;
 }
 
-.btn-whatsapp-big:hover {
+.btn-whatsapp-cta:hover {
   background: #20BA5A;
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   FOOTER INSTITUCIONAL
+   FOOTER
    ══════════════════════════════════════════════════════════════════ */
 .site-footer {
-  background: #141210;
-  color: #A8A29E;
+  background: #070E0F;
+  color: #8C9E9F;
   padding: 4.5rem 2rem 2.5rem;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
 }
 
 .footer-container {
@@ -1044,7 +1163,7 @@ button {
 .lightbox-modal {
   position: fixed;
   inset: 0;
-  background: rgba(14, 13, 12, 0.94);
+  background: rgba(7, 14, 15, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
@@ -1062,7 +1181,7 @@ button {
 }
 
 .lightbox-content {
-  max-width: 1100px;
+  max-width: 1050px;
   width: 100%;
   position: relative;
   text-align: center;
@@ -1073,11 +1192,11 @@ button {
   max-width: 100%;
   margin: 0 auto;
   border-radius: var(--radius-md);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
 }
 
 .lightbox-caption {
-  color: #FAF8F5;
+  color: #FFFFFF;
   margin-top: 1.2rem;
   font-family: var(--font-serif);
   font-size: 1.25rem;
@@ -1104,16 +1223,23 @@ button {
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   RESPONSIVIDADE (MOBILE & TABLET)
+   RESPONSIVIDADE
    ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .hero-stats-grid {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .contrast-grid {
+    grid-template-columns: 1fr;
+  }
+  .treatments-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .services-grid {
+  .protocol-steps-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .team-hero-block {
+  .team-story-split {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
@@ -1135,21 +1261,18 @@ button {
   .hero-section {
     padding: 3rem 1.2rem 3.5rem;
   }
-  .hero-stats-grid {
+  .hero-specs-row {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
   }
-  .services-grid {
+  .treatments-grid {
     grid-template-columns: 1fr;
   }
-  .hero-media-glass-badge {
-    position: static;
-    margin-top: 1rem;
-    flex-direction: column;
-    align-items: flex-start;
+  .protocol-steps-grid {
+    grid-template-columns: 1fr;
   }
   .carousel-slide {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 3.4;
   }
   .carousel-slide-overlay {
     flex-direction: column;
@@ -1162,14 +1285,11 @@ button {
   }
   .doctor-avatar-wrap {
     width: 100%;
-    max-width: 200px;
+    max-width: 180px;
     margin: 0 auto;
   }
-  .contact-box {
-    padding: 2rem 1.4rem;
-  }
-  .contact-card-cta {
-    padding: 2rem 1.4rem;
+  .contact-card-info, .contact-card-cta {
+    padding: 2.2rem 1.4rem;
   }
 }
 </style>
@@ -1179,8 +1299,8 @@ button {
 
   <!-- Top Preview Banner -->
   <div class="preview-banner">
-    <span class="preview-banner-badge">Prévia de Apresentação</span>
-    <span>Desenvolvida para o Atelier do Sorriso · Canoas, RS</span>
+    <span class="preview-badge">Prévia Exclusiva</span>
+    <span>Proposta de Design Digital · Atelier do Sorriso · Canoas, RS</span>
   </div>
 
   <!-- Header & Navegação -->
@@ -1189,17 +1309,18 @@ button {
       <a href="#hero" class="nav-brand">
         <div>
           <div class="nav-brand-title">Atelier do Sorriso</div>
-          <div class="nav-brand-sub">Odontologia de Excelência</div>
+          <div class="nav-brand-sub">Odontologia Digital & Estética</div>
         </div>
       </a>
       <ul class="nav-menu">
-        <li><a href="#filosofia" class="nav-link">O Atelier</a></li>
+        <li><a href="#diferencial" class="nav-link">A Nova Odontologia</a></li>
         <li><a href="#tratamentos" class="nav-link">Tratamentos</a></li>
-        <li><a href="#estrutura" class="nav-link">Estrutura 3D</a></li>
-        <li><a href="#equipe" class="nav-link">Corpo Clínico</a></li>
+        <li><a href="#protocolo" class="nav-link">Protocolo 3D</a></li>
+        <li><a href="#estrutura" class="nav-link">A Clínica</a></li>
+        <li><a href="#corpo-clinico" class="nav-link">Corpo Clínico</a></li>
         <li><a href="#contato" class="nav-link">Localização</a></li>
       </ul>
-      <a href="https://wa.me/5551998444904?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Atelier%20do%20Sorriso" target="_blank" rel="noopener" class="btn-nav-cta">
+      <a href="https://wa.me/5551998444904?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Atelier%20do%20Sorriso" target="_blank" rel="noopener" class="btn-nav-whatsapp">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm5.79 13.97c-.24.68-1.4 1.26-1.94 1.33-.51.07-1.16.1-3.37-.82-2.83-1.17-4.66-4.04-4.8-4.23-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.35.26-.28.58-.35.77-.35.19 0 .39 0 .56.01.18.01.42-.07.65.49.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.29.77 1.27 1.65 2.05 1.13 1.01 2.09 1.32 2.38 1.47.3.15.47.13.65-.07.18-.21.77-.9 1-.1.21.23.42.33.68.43.26.1.48.24.56.38.08.13.08.77-.16 1.45z"/></svg>
         <span>Agendar Consulta</span>
       </a>
@@ -1208,198 +1329,283 @@ button {
 
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
-    <div class="hero-container">
-      <div class="hero-header">
-        <span class="editorial-tag">— ODONTOLOGIA DE EXCELÊNCIA · CANOAS, RS</span>
+    <div class="hero-grid">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="dental-live-badge">
+          <span class="live-pulse-dot"></span>
+          <span>Tecnologia 3D · Ortodontia Digital & Acolhimento</span>
+        </div>
         <h1 class="hero-title">
-          Cuidamos do seu sorriso com <em>ciência, arte e afeto.</em>
+          A arte de transformar sorrisos, a <em>ciência de cuidar</em> de você.
         </h1>
         <p class="hero-subtitle">
-          Atendimento odontológico individualizado e tecnologia de ponta há mais de 18 anos. Coordenado pela Dra. Márcia Breitenbach e Dra. Cristiane Poletto na Torre Medical do Maxplaza.
+          Alinhadores invisíveis Invisalign®, escaneamento 3D sem moldagens de massa e reabilitação estética. Há mais de 18 anos cuidando de gerações de famílias em Canoas sob a coordenação da Dra. Márcia Breitenbach e Dra. Cristiane Poletto.
         </p>
+
         <div class="hero-actions">
           <a href="https://wa.me/5551998444904?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Atelier%20do%20Sorriso" target="_blank" rel="noopener" class="btn-primary">
-            <span>Agendar Avaliação Inicial</span>
+            <span>Agendar Avaliação do Sorriso</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#estrutura" class="btn-secondary">Conhecer a Estrutura</a>
+          <a href="#diferencial" class="btn-secondary">Por que o Atelier?</a>
         </div>
 
-        <div class="hero-stats-grid">
-          <div class="hero-stat-card">
-            <div class="hero-stat-num">18+ Anos</div>
-            <div class="hero-stat-label">Trajetória e Acolhimento em Canoas</div>
+        <div class="hero-specs-row">
+          <div class="hero-spec-item">
+            <div class="hero-spec-num">18+ Anos</div>
+            <div class="hero-spec-label">Tradição & Confiança Contínua</div>
           </div>
-          <div class="hero-stat-card">
-            <div class="hero-stat-num">Invisalign®</div>
-            <div class="hero-stat-label">Ortodontistas Credenciadas</div>
+          <div class="hero-spec-item">
+            <div class="hero-spec-num">Invisalign®</div>
+            <div class="hero-spec-label">Ortodontistas Credenciadas</div>
           </div>
-          <div class="hero-stat-card">
-            <div class="hero-stat-num">iTero 3D</div>
-            <div class="hero-stat-label">Scanner Digital sem Moldagens</div>
-          </div>
-          <div class="hero-stat-card">
-            <div class="hero-stat-num">1 só Local</div>
-            <div class="hero-stat-label">Equipe Multidisciplinar Integrada</div>
+          <div class="hero-spec-item">
+            <div class="hero-spec-num">iTero 3D</div>
+            <div class="hero-spec-label">Simulação Antes de Iniciar</div>
           </div>
         </div>
       </div>
 
-      <!-- Hero Showcase Media -->
-      <div class="hero-media-wrap">
-        <img src="img/recepcao_logo.jpg" alt="Recepção sofisticada do Atelier do Sorriso em Canoas" class="hero-media-img" width="1600" height="1065">
-        <div class="hero-media-glass-badge">
-          <div>
-            <div class="glass-badge-title">Recepção & Acolhimento · Torre Medical</div>
-            <div class="glass-badge-desc">Ambiente sereno, iluminado e desenhado para o seu conforto absoluto.</div>
-          </div>
-          <div class="manifesto-pill">
-            <span>Atelier do Sorriso · Canoas</span>
+      <!-- Right Visual Side -->
+      <div class="hero-visual-side">
+        <div class="hero-main-card">
+          <img src="img/alinhadores.jpg" alt="Dra. Cristiane Poletto apresentando alinhadores invisíveis Invisalign no Atelier do Sorriso" class="hero-main-img" width="1080" height="1616">
+          <div class="hero-floating-glass">
+            <div class="floating-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <div>
+              <div class="floating-glass-title">Invisalign® Doctor</div>
+              <div class="floating-glass-sub">Alinhamento invisível sob medida sem braquetes metálicos</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Manifesto / Filosofia -->
-  <section class="manifesto-section" id="filosofia">
-    <div class="manifesto-container">
-      <span class="editorial-tag">FILOSOFIA CLÍNICA</span>
-      <h2 class="manifesto-quote">
-        “Nosso diferencial é o cuidado individualizado: <em>todos passam inicialmente conosco</em> para então serem direcionados aos especialistas.”
-      </h2>
-      <p class="manifesto-body">
-        Na contramão das redes odontológicas impessoais, o Atelier do Sorriso nasceu em 2007 da dedicação das Dras. Márcia e Cristiane. Aqui, o seu tempo é respeitado, a tecnologia de ponta elimina o desconforto e o plano de tratamento é construído com transparência ética e foco na saúde duradoura de toda a sua família.
+  <!-- CONTRASTE CLÍNICO: A Nova Odontologia -->
+  <section class="contrast-section" id="diferencial">
+    <div class="contrast-container">
+      <div class="section-tagline">— EVOLUÇÃO & CUIDADO HUMANO</div>
+      <h2 class="section-headline">A odontologia mudou. Sua experiência também.</h2>
+      <p class="section-lead">
+        Esqueça os tratamentos traumatizantes e a frieza de grandes franquias. O Atelier do Sorriso foi projetado para acolher, ouvir e solucionar com precisão digital.
       </p>
-      <div class="manifesto-pill" style="background: rgba(155, 126, 84, 0.15); color: var(--accent-gold);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Registros CRO/RS 12.058 & 14.410 · Canoas, RS</span>
+
+      <div class="contrast-grid">
+        <!-- O Passado -->
+        <div class="contrast-card-old">
+          <div class="contrast-header">
+            <span class="contrast-badge-old">Como costumava ser</span>
+            <h3 class="contrast-title" style="color: #7F1D1D;">A Odontologia Tradicional</h3>
+          </div>
+          <ul class="contrast-list">
+            <li class="contrast-item">
+              <span class="contrast-icon-old">✕</span>
+              <div><strong>Massas de moldagem e náusea:</strong> Procedimentos desconfortáveis com pastas na boca e moldes de gesso imprecisos.</div>
+            </li>
+            <li class="contrast-item">
+              <span class="contrast-icon-old">✕</span>
+              <div><strong>Braquetes metálicos cortantes:</strong> Fios que machucam a bochecha, restringem a alimentação e dificultam a higiene.</div>
+            </li>
+            <li class="contrast-item">
+              <span class="contrast-icon-old">✕</span>
+              <div><strong>Incerteza do resultado:</strong> Iniciar um tratamento longo sem saber com clareza como o sorriso final realmente vai ficar.</div>
+            </li>
+            <li class="contrast-item">
+              <span class="contrast-icon-old">✕</span>
+              <div><strong>Rotatividade de profissionais:</strong> Ser atendido a cada consulta por um dentista recém-formado diferente.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- O Atelier -->
+        <div class="contrast-card-new">
+          <div class="contrast-header">
+            <span class="contrast-badge-new">A Experiência no Atelier</span>
+            <h3 class="contrast-title" style="color: var(--accent-teal);">Odontologia Digital & Afeto</h3>
+          </div>
+          <ul class="contrast-list">
+            <li class="contrast-item">
+              <span class="contrast-icon-new">✓</span>
+              <div><strong>Escaneamento 3D Colorido (iTero):</strong> Uma câmera intraoral capta toda a sua arcada em minutos, sem nenhuma massa ou desconforto.</div>
+            </li>
+            <li class="contrast-item">
+              <span class="contrast-icon-new">✓</span>
+              <div><strong>Alinhadores Invisíveis Removíveis:</strong> Estética impecável, você retira para comer e escovar os dentes livremente.</div>
+            </li>
+            <li class="contrast-item">
+              <span class="contrast-icon-new">✓</span>
+              <div><strong>Simulação Digital Imediata:</strong> Visualize o movimento dos seus dentes na tela antes mesmo de aprovar o planejamento.</div>
+            </li>
+            <li class="contrast-item">
+              <span class="contrast-icon-new">✓</span>
+              <div><strong>Coordenação Direta das Sócias:</strong> Dra. Márcia e Dra. Cristiane acompanham pessoalmente cada caso há mais de 18 anos.</div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Tratamentos de Excelência -->
-  <section class="services-section" id="tratamentos">
-    <div class="section-head">
-      <span class="editorial-tag">ÁREAS DE ATUAÇÃO</span>
-      <h2 class="section-title">Tratamentos integrados com rigor e conforto.</h2>
-      <p class="section-desc">Todos os cuidados odontológicos centralizados em um só endereço de fácil acesso.</p>
-    </div>
+  <!-- TRATAMENTOS DE EXCELÊNCIA -->
+  <section class="treatments-section" id="tratamentos">
+    <div class="section-tagline" style="text-align: center;">— ESPECIALIDADES INTEGRADAS</div>
+    <h2 class="section-headline" style="text-align: center;">Tratamentos completos em um único local.</h2>
+    <p class="section-lead">
+      Seu tempo é precioso. Centralizamos diagnósticos, ortodontia, próteses e estética em consultórios de ponta na Torre Medical.
+    </p>
 
-    <div class="services-grid">
-      <!-- Card 1 -->
-      <div class="service-card">
+    <div class="treatments-grid">
+      <!-- 1. Invisalign -->
+      <div class="treatment-card">
         <div>
-          <div class="service-icon-box">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+          <div class="treatment-icon-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
           </div>
-          <span class="service-badge">Ortodontia Digital</span>
-          <h3 class="service-title">Invisalign® & Alinhadores Invisíveis</h3>
-          <p class="service-desc">Alinhamento estético de alta precisão sem braquetes metálicos, permitindo higiene perfeita e liberdade total para falar e sorrir.</p>
+          <div class="treatment-category">Ortodontia Invisível</div>
+          <h3 class="treatment-name">Invisalign® & Alinhadores</h3>
+          <p class="treatment-desc">Alinhamento de dentes e correção de mordida com placas de poliuretano médico transparente, sem interferir na sua vida profissional ou social.</p>
         </div>
-        <ul class="service-bullets">
-          <li class="service-bullet-item">Removível para refeições e eventos</li>
-          <li class="service-bullet-item">Simulação 3D antes de iniciar</li>
+        <ul class="treatment-points">
+          <li class="treatment-point">Removível para refeições e fotos</li>
+          <li class="treatment-point">Trocas planejadas a cada 7 a 14 dias</li>
         </ul>
       </div>
 
-      <!-- Card 2 -->
-      <div class="service-card">
+      <!-- 2. Scanner iTero -->
+      <div class="treatment-card">
         <div>
-          <div class="service-icon-box">
+          <div class="treatment-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <span class="service-badge">Tecnologia 3D</span>
-          <h3 class="service-title">Escaneamento Digital iTero Element</h3>
-          <p class="service-desc">Substituição das incômodas massas e moldagens de gesso por um escaneamento óptico colorido que mapeia seus dentes em minutos.</p>
+          <div class="treatment-category">Diagnóstico 3D</div>
+          <h3 class="treatment-name">Scanner Intraoral iTero</h3>
+          <p class="treatment-desc">Substituição completa das antigas moldagens. Imagens tridimensionais em alta definição com simulação em tempo real do seu futuro sorriso.</p>
         </div>
-        <ul class="service-bullets">
-          <li class="service-bullet-item">Zero desconforto ou náusea</li>
-          <li class="service-bullet-item">Planejamento milimétrico computadorizado</li>
+        <ul class="treatment-points">
+          <li class="treatment-point">Escaneamento rápido e sem dor</li>
+          <li class="treatment-point">Previsibilidade clínica computadorizada</li>
         </ul>
       </div>
 
-      <!-- Card 3 -->
-      <div class="service-card">
+      <!-- 3. Clareamento Opalescence -->
+      <div class="treatment-card">
         <div>
-          <div class="service-icon-box">
+          <div class="treatment-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <span class="service-badge">Estética Segura</span>
-          <h3 class="service-title">Clareamento Opalescence®</h3>
-          <p class="service-desc">Protocolos médicos individualizados com nitrato de potássio e flúor que preservam o esmalte e evitam a sensibilidade dentária.</p>
+          <div class="treatment-category">Estética Segura</div>
+          <h3 class="treatment-name">Clareamento Opalescence®</h3>
+          <p class="treatment-desc">Protocolos supervisionados com nitrato de potássio e flúor. Clareia profundamente os pigmentos do dente sem gerar sensibilidade térmica.</p>
         </div>
-        <ul class="service-bullets">
-          <li class="service-bullet-item">Segurança biológica monitorada</li>
-          <li class="service-bullet-item">Brilho natural duradouro</li>
+        <ul class="treatment-points">
+          <li class="treatment-point">Segurança biológica monitorada</li>
+          <li class="treatment-point">Resultados naturais e luminosos</li>
         </ul>
       </div>
 
-      <!-- Card 4 -->
-      <div class="service-card">
+      <!-- 4. Lentes & Facetas -->
+      <div class="treatment-card">
         <div>
-          <div class="service-icon-box">
+          <div class="treatment-icon-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/></svg>
+          </div>
+          <div class="treatment-category">Harmonização Dental</div>
+          <h3 class="treatment-name">Lentes e Facetas Cerâmicas</h3>
+          <p class="treatment-desc">Lâminas ultrafinas de porcelana pura ou resinas compostas estratificadas para harmonizar cor, tamanho, bordas e proporções dentárias com mínima invasão.</p>
+        </div>
+        <ul class="treatment-points">
+          <li class="treatment-point">Translucidez e brilho de dente natural</li>
+          <li class="treatment-point">Durabilidade e resistência à pigmentação</li>
+        </ul>
+      </div>
+
+      <!-- 5. Implantes e Próteses -->
+      <div class="treatment-card">
+        <div>
+          <div class="treatment-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
           </div>
-          <span class="service-badge">Reabilitação Oral</span>
-          <h3 class="service-title">Implantes & Próteses Fixas</h3>
-          <p class="service-desc">Restauração da mastigação e harmonia facial com implantes unitários ou protocolos totais através de materiais nobres biocompatíveis.</p>
+          <div class="treatment-category">Reabilitação Oral</div>
+          <h3 class="treatment-name">Implantes Guiados & Próteses</h3>
+          <p class="treatment-desc">Recuperação da eficiência mastigatória e da sustentação facial com implantes de titânio ou zircônia e coroas confeccionadas com alta tecnologia CAD/CAM.</p>
         </div>
-        <ul class="service-bullets">
-          <li class="service-bullet-item">Planejamento guiado por tomografia</li>
-          <li class="service-bullet-item">Recuperação funcional e segurança</li>
+        <ul class="treatment-points">
+          <li class="treatment-point">Cirurgia guiada por tomografia 3D</li>
+          <li class="treatment-point">Soluções unitárias ou reabilitação total</li>
         </ul>
       </div>
 
-      <!-- Card 5 -->
-      <div class="service-card">
+      <!-- 6. Saúde Bucal Familiar -->
+      <div class="treatment-card">
         <div>
-          <div class="service-icon-box">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-          </div>
-          <span class="service-badge">Harmonia do Sorriso</span>
-          <h3 class="service-title">Facetas & Lentes de Contato</h3>
-          <p class="service-desc">Lâminas cerâmicas ultrafinas ou resinas de alta estética para correção de cor, formato, fechamento de diastemas e alinhamento do sorriso.</p>
-        </div>
-        <ul class="service-bullets">
-          <li class="service-bullet-item">Mimetismo e translucidez natural</li>
-          <li class="service-bullet-item">Desgaste minimamente invasivo</li>
-        </ul>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="service-card">
-        <div>
-          <div class="service-icon-box">
+          <div class="treatment-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
           </div>
-          <span class="service-badge">Saúde Bucal Integral</span>
-          <h3 class="service-title">Odontologia Multidisciplinar</h3>
-          <p class="service-desc">Endodontia (tratamento de canal preciso), periodontia (saúde da gengiva) e cirurgias com biossegurança hospitalar rigorosa.</p>
+          <div class="treatment-category">Prevenção & Família</div>
+          <h3 class="treatment-name">Odontologia Integrada & Infantil</h3>
+          <p class="treatment-desc">Acompanhamento contínuo de crianças, jovens e adultos: odontopediatria, tratamento de canal (endodontia precisa), periodontia e limpeza profilática periódica.</p>
         </div>
-        <ul class="service-bullets">
-          <li class="service-bullet-item">Especialistas integrados no mesmo local</li>
-          <li class="service-bullet-item">Otimização de tempo para o paciente</li>
+        <ul class="treatment-points">
+          <li class="treatment-point">Dra. Márcia: Pós em Odontopediatria (UFRGS)</li>
+          <li class="treatment-point">Cuidado afetuoso que elimina o medo de dentista</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Carrossel Cinematográfico da Estrutura & Tecnologia -->
-  <section class="carousel-section" id="estrutura">
-    <div class="carousel-container">
-      <div class="section-head">
-        <span class="editorial-tag">ESTRUTURA & TECNOLOGIA</span>
-        <h2 class="section-title">Conheça por dentro o Atelier do Sorriso.</h2>
-        <p class="section-desc">Deslize pelas fotografias reais para conferir nossos consultórios, equipamentos 3D e ambiente de acolhimento.</p>
+  <!-- O PROTOCOLO DO SORRISO EM 4 PASSOS -->
+  <section class="protocol-section" id="protocolo">
+    <div class="protocol-container">
+      <div class="protocol-head">
+        <span class="protocol-tag">FLUXO CLÍNICO INTEGRAL</span>
+        <h2 class="protocol-title">O Protocolo Atelier em 4 Etapas</h2>
+        <p class="protocol-desc">Um método claro, seguro e transparente para que você viva sua transformação dental sem ansiedade ou surpresas.</p>
       </div>
 
-      <!-- CAROUSEL WRAPPER -->
+      <div class="protocol-steps-grid">
+        <div class="protocol-step-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Escuta & Anamnese</h3>
+          <p class="step-desc">Conversa inicial detalhada com as sócias para entender suas queixas estéticas, hábitos, saúde geral e expectativas pessoais.</p>
+        </div>
+
+        <div class="protocol-step-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Escaneamento 3D</h3>
+          <p class="step-desc">Varredura digital completa da boca com o iTero Element. Diagnóstico milimétrico sem moldes físicos nem desconfortos.</p>
+        </div>
+
+        <div class="protocol-step-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Simulação & Plano</h3>
+          <p class="step-desc">Apresentação do planejamento visual em tela. Você enxerga o alinhamento e o resultado estético antes de iniciar o tratamento.</p>
+        </div>
+
+        <div class="protocol-step-card">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Sorriso Saudável</h3>
+          <p class="step-desc">Execução com materiais nobres, consultas pontuais e acompanhamento próximo para garantir estabilidade e saúde duradoura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARROSSEL CINEMATOGRÁFICO DE ESTRUTURA & TECNOLOGIA -->
+  <section class="carousel-section" id="estrutura">
+    <div class="carousel-container">
+      <div class="section-tagline" style="text-align: center;">— AMBIENTE & TECNOLOGIA</div>
+      <h2 class="section-headline" style="text-align: center;">Conheça por dentro o Atelier do Sorriso.</h2>
+      <p class="section-lead">Deslize pelas fotografias reais para conferir nossos consultórios, equipamentos 3D e ambiente de acolhimento.</p>
+
       <div class="carousel-wrapper" id="dentalCarousel">
         <div class="carousel-viewport" id="carouselViewport">
           <div class="carousel-track" id="carouselTrack">
 
-            <!-- Slide 1: Alinhadores Invisalign -->
+            <!-- Slide 1: Alinhadores -->
             <div class="carousel-slide" data-index="0" data-caption="Alinhadores Invisíveis Invisalign® apresentados no Atelier do Sorriso">
               <img src="img/alinhadores.jpg" alt="Dra. Cristiane com Alinhador Invisalign" class="carousel-slide-img" width="1080" height="1616">
               <div class="carousel-slide-overlay">
@@ -1495,7 +1701,7 @@ button {
               </div>
             </div>
 
-            <!-- Slide 7: Cadeira Odontológica de Ponta -->
+            <!-- Slide 7: Cadeira Odontológica -->
             <div class="carousel-slide" data-index="6" data-caption="Cadeira clínica ergonômica com foco em conforto lombar e cervical">
               <img src="img/cadeira_clinica.jpg" alt="Cadeira Odontológica Ergonômica" class="carousel-slide-img" width="1080" height="1616">
               <div class="carousel-slide-overlay">
@@ -1511,8 +1717,8 @@ button {
               </div>
             </div>
 
-            <!-- Slide 8: Sala de Espera Aconchegante -->
-            <div class="carousel-slide" data-index="7" data-caption="Sala de espera tranquila e climatizada na Torre Medical">
+            <!-- Slide 8: Sala de Espera -->
+            <div class="carousel-slide" data-index="7" data-caption="Sala de espera serena e climatizada">
               <img src="img/sala_espera.jpg" alt="Sala de Espera do Atelier do Sorriso" class="carousel-slide-img" width="1600" height="1067">
               <div class="carousel-slide-overlay">
                 <div class="slide-info-box">
@@ -1527,14 +1733,14 @@ button {
               </div>
             </div>
 
-            <!-- Slide 9: Recepção & Identidade -->
-            <div class="carousel-slide" data-index="8" data-caption="Letreiro luminoso e acabamentos nobres da recepção">
+            <!-- Slide 9: Recepção -->
+            <div class="carousel-slide" data-index="8" data-caption="Recepção iluminada com o letreiro do Atelier do Sorriso">
               <img src="img/recepcao.jpg" alt="Recepção com Iluminação Cênica" class="carousel-slide-img" width="1080" height="1616">
               <div class="carousel-slide-overlay">
                 <div class="slide-info-box">
-                  <span class="slide-tag">Identidade do Atelier</span>
+                  <span class="slide-tag">Identidade</span>
                   <h3 class="slide-title">Recepção com Acabamento Nobre</h3>
-                  <p class="slide-desc">Ambiente com luz indireta acolhedora e marcenaria clara que transmitem paz desde o primeiro instante.</p>
+                  <p class="slide-desc">Ambiente com luz indireta acolhedora e marcenaria clara que transmitem paz e serenidade desde o primeiro instante.</p>
                 </div>
                 <button type="button" class="slide-zoom-btn" onclick="openLightbox(8)">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
@@ -1543,7 +1749,7 @@ button {
               </div>
             </div>
 
-            <!-- Slide 10: Resultado do Sorriso -->
+            <!-- Slide 10: Sorrisos Transformados -->
             <div class="carousel-slide" data-index="9" data-caption="Resultado estético e funcional de um sorriso revitalizado">
               <img src="img/resultado_sorriso.jpg" alt="Resultado de Sorriso Estético" class="carousel-slide-img" width="1600" height="1066">
               <div class="carousel-slide-overlay">
@@ -1562,7 +1768,6 @@ button {
           </div>
         </div>
 
-        <!-- Carousel Navigation Controls -->
         <div class="carousel-controls">
           <div class="carousel-counter" id="carouselCounter">01 / 10</div>
           <div class="carousel-dots" id="carouselDots">
@@ -1590,32 +1795,33 @@ button {
     </div>
   </section>
 
-  <!-- Corpo Clínico & Autoria -->
-  <section class="team-section" id="equipe">
+  <!-- CORPO CLÍNICO & AUTORIDADE MÉDICA -->
+  <section class="team-section" id="corpo-clinico">
     <div class="team-container">
-      <div class="team-hero-block">
-        <div class="team-hero-media">
-          <img src="img/equipe.jpg" alt="Dra. Márcia Breitenbach e Dra. Cristiane Poletto no consultório do Atelier do Sorriso" class="team-hero-img" width="1280" height="1920">
+      <div class="team-story-split">
+        <div class="team-photo-wrap">
+          <img src="img/equipe.jpg" alt="Dra. Márcia Breitenbach e Dra. Cristiane Poletto no consultório do Atelier do Sorriso" width="1280" height="1920">
         </div>
-        <div class="team-hero-content">
-          <span class="editorial-tag">AUTORIA & FORMAÇÃO</span>
-          <h2 class="section-title">Mais de 18 anos cuidando de gerações de famílias.</h2>
-          <p class="manifesto-body" style="text-align: left; margin-bottom: 1.5rem;">
-            O Atelier do Sorriso consolidou sua história em 2007, quando a Dra. Márcia e a Dra. Cristiane, então cirurgiãs-dentistas da equipe, uniram sua visão e tornaram-se sócias-proprietárias da clínica.
+        <div class="team-story-content">
+          <div class="section-tagline" style="text-align: left;">— AUTORIA & TRAJETÓRIA</div>
+          <h2 class="section-headline" style="text-align: left; font-size: clamp(2rem, 3.2vw, 2.8rem);">
+            Mais de 18 anos de cuidado contínuo e dedicação às famílias de Canoas.
+          </h2>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 1.5rem;">
+            O Atelier do Sorriso nasceu do encontro e da paixão de duas cirurgiãs-dentistas. Em 2007, após atuarem na equipe da clínica, Dra. Márcia e Dra. Cristiane assumiram a propriedade com o objetivo de construir uma odontologia de excelência técnica com atmosfera calorosa e familiar.
           </p>
-          <p style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
-            Ao longo de quase duas décadas, transformaram o espaço em um centro de referência e acolhimento humano. Aqui, os pacientes encontram profissionais de confiança contínua, combinando especialização acadêmica sólida nas melhores universidades do país com o que há de mais avançado na ortodontia digital mundial.
+          <p style="font-size: 0.98rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2.2rem;">
+            <em>"Nosso maior orgulho é acompanhar pacientes que começaram conosco na infância e hoje trazem seus próprios filhos para iniciar os tratamentos."</em> Todos os casos contam com o olhar experiente de ambas, unindo rigor acadêmico aos avanços da odontologia digital.
           </p>
           <a href="https://wa.me/5551998444904?text=Ol%C3%A1%20Doutoras%2C%20gostaria%20de%20agendar%20uma%20consulta%20no%20Atelier%20do%20Sorriso" target="_blank" rel="noopener" class="btn-primary">
-            <span>Conversar com a Equipe</span>
+            <span>Conversar com as Doutoras</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Grid de Doutoras -->
+      <!-- Duas Sócias Grid -->
       <div class="team-doctors-grid">
-        <!-- Dra. Márcia -->
         <div class="doctor-card">
           <div class="doctor-avatar-wrap">
             <img src="img/dra_marcia.jpg" alt="Dra. Márcia Breitenbach" class="doctor-avatar-img" width="1080" height="1616">
@@ -1633,7 +1839,6 @@ button {
           </div>
         </div>
 
-        <!-- Dra. Cristiane -->
         <div class="doctor-card">
           <div class="doctor-avatar-wrap">
             <img src="img/dra_cristiane.jpg" alt="Dra. Cristiane Poletto" class="doctor-avatar-img" width="1080" height="1616">
@@ -1654,90 +1859,95 @@ button {
     </div>
   </section>
 
-  <!-- Localização & Contato -->
+  <!-- LOCALIZAÇÃO & CONTATO -->
   <section class="contact-section" id="contato">
     <div class="contact-container">
-      <div class="contact-box">
-        <span class="editorial-tag">LOCALIZAÇÃO & HORÁRIOS</span>
-        <h2 class="contact-title">Venha conhecer o Atelier na Torre Medical.</h2>
-        <p class="contact-text">
-          Uma estrutura moderna e segura localizada no centro médico mais nobre de Canoas, projetada para atender você e sua família com comodidade e privacidade.
+      <div class="contact-card-info">
+        <div class="section-tagline" style="text-align: left;">— ONDE ESTAMOS</div>
+        <h2 class="section-headline" style="text-align: left; font-size: 2.2rem; margin-bottom: 0.8rem;">
+          Venha nos visitar na Torre Medical.
+        </h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1.8rem; line-height: 1.6;">
+          Localizada no polo de saúde mais moderno de Canoas, com fácil acesso, segurança e conforto para você e sua família.
         </p>
 
         <div class="contact-details">
           <div class="contact-item">
-            <svg class="contact-item-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg class="contact-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <strong>Endereço:</strong> Av. Getúlio Vargas, 4831 · MaxPlaza · Torre Medical, Sala 1109 · Marechal Rondon, Canoas — RS
+              <strong>Endereço:</strong> Av. Getúlio Vargas, 4831 · MaxPlaza · Torre Medical, Sala 1109 · Canoas — RS
             </div>
           </div>
           <div class="contact-item">
-            <svg class="contact-item-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg class="contact-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <strong>Horário de Atendimento:</strong> Segunda a sexta-feira, das 8h às 19h (com agendamentos pontuais)
+              <strong>Horário de Atendimento:</strong> Segunda a sexta-feira, das 8h às 19h (agendamento pontual sem filas)
             </div>
           </div>
           <div class="contact-item">
-            <svg class="contact-item-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <svg class="contact-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             <div>
-              <strong>Facilidades:</strong> Estacionamento coberto no local com valet e acessibilidade total para cadeirantes
+              <strong>Comodidade:</strong> Estacionamento coberto no subsolo com serviço de valet e elevadores acessíveis
             </div>
           </div>
         </div>
 
         <a href="https://maps.google.com/?q=Av.+Get%C3%BAlio+Vargas,+4831+Canoas+RS" target="_blank" rel="noopener" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          <span>Abrir no Google Maps</span>
+          <span>Traçar Rota no Google Maps</span>
         </a>
       </div>
 
       <!-- Card CTA WhatsApp -->
       <div class="contact-card-cta">
-        <h3 class="contact-cta-title">Agende sua avaliação inicial</h3>
-        <p class="contact-cta-desc">
-          Converse diretamente com a equipe do Atelier do Sorriso pelo WhatsApp para esclarecer dúvidas sobre Invisalign®, escaneamento 3D ou reabilitação oral.
+        <span class="preview-badge" style="background: var(--accent-gold); margin-bottom: 1.2rem; display: inline-block;">Agendamento Prioritário</span>
+        <h3 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 500; margin-bottom: 0.8rem;">
+          Converse com a recepção do Atelier
+        </h3>
+        <p style="font-size: 0.94rem; color: var(--text-light-muted); margin-bottom: 2rem; line-height: 1.6;">
+          Tire suas dúvidas sobre o Invisalign®, escaneamento 3D ou clareamento e reserve o melhor horário para o seu atendimento.
         </p>
-        <a href="https://wa.me/5551998444904?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Atelier%20do%20Sorriso" target="_blank" rel="noopener" class="btn-whatsapp-big">
+        <a href="https://wa.me/5551998444904?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Atelier%20do%20Sorriso" target="_blank" rel="noopener" class="btn-whatsapp-cta">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm5.79 13.97c-.24.68-1.4 1.26-1.94 1.33-.51.07-1.16.1-3.37-.82-2.83-1.17-4.66-4.04-4.8-4.23-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.35.26-.28.58-.35.77-.35.19 0 .39 0 .56.01.18.01.42-.07.65.49.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.29.77 1.27 1.65 2.05 1.13 1.01 2.09 1.32 2.38 1.47.3.15.47.13.65-.07.18-.21.77-.9 1-.1.21.23.42.33.68.43.26.1.48.24.56.38.08.13.08.77-.16 1.45z"/></svg>
-          <span>Chamar no WhatsApp</span>
+          <span>Falar no WhatsApp (51) 99844-4904</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER INSTITUCIONAL -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-top">
         <div>
           <div class="footer-brand-title">Atelier do Sorriso</div>
           <p style="max-width: 440px; margin-bottom: 1.5rem; line-height: 1.6;">
-            Odontologia de excelência, ortodontia estética e cuidado familiar há mais de 18 anos na Torre Medical do Maxplaza em Canoas.
+            Odontologia de excelência, ortodontia estética e cuidado familiar há mais de 18 anos na Torre Medical em Canoas.
           </p>
-          <p style="font-size: 0.8rem; color: #78716C;">
+          <p style="font-size: 0.8rem; color: #6B7E80;">
             Responsáveis Técnicas: Dra. Márcia Breitenbach (CRO/RS 12.058) e Dra. Cristiane Poletto (CRO/RS 14.410). Em conformidade com o Código de Ética Odontológica (CFO).
           </p>
         </div>
         <div>
           <strong style="color: #FAF8F5; display: block; margin-bottom: 1rem; font-size: 0.95rem;">Navegação</strong>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
-            <li><a href="#filosofia">O Atelier</a></li>
+            <li><a href="#diferencial">A Nova Odontologia</a></li>
             <li><a href="#tratamentos">Tratamentos</a></li>
-            <li><a href="#estrutura">Estrutura 3D</a></li>
-            <li><a href="#equipe">Corpo Clínico</a></li>
-            <li><a href="#contato">Localização</a></li>
+            <li><a href="#protocolo">Protocolo 3D</a></li>
+            <li><a href="#estrutura">A Clínica</a></li>
+            <li><a href="#corpo-clinico">Corpo Clínico</a></li>
           </ul>
         </div>
         <div>
           <strong style="color: #FAF8F5; display: block; margin-bottom: 1rem; font-size: 0.95rem;">Atendimento</strong>
-          <p style="margin-bottom: 0.5rem;">(51) 99844-4904 (WhatsApp)</p>
+          <p style="margin-bottom: 0.5rem; color: #FFFFFF; font-weight: 600;">(51) 99844-4904</p>
           <p style="margin-bottom: 0.5rem;">Torre Medical · Sala 1109</p>
-          <p>Canoas — Rio Grande do Sul</p>
+          <p>Av. Getúlio Vargas, 4831 · Canoas / RS</p>
         </div>
       </div>
       <div class="footer-bottom">
         <div>© 2026 Atelier do Sorriso · Todos os direitos reservados.</div>
-        <div>Desenvolvido com padrão editorial e performance moderna.</div>
+        <div>Desenvolvido com padrão editorial e performance médica moderna.</div>
       </div>
     </div>
   </footer>
@@ -1753,7 +1963,7 @@ button {
     </div>
   </div>
 
-  <!-- Scripts: Lenis + GSAP + Carrossel Interativo -->
+  <!-- Scripts: Lenis + GSAP + Carrossel -->
   <script>
     // 1. Lenis Smooth Scroll
     const lenis = new Lenis({
@@ -1770,7 +1980,7 @@ button {
     }
     requestAnimationFrame(raf);
 
-    // GSAP ScrollTrigger Sync
+    // GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((time) => {
@@ -1778,30 +1988,21 @@ button {
     });
     gsap.ticker.lagSmoothing(0);
 
-    // Animações Sutis de Entrada
-    gsap.from(".hero-title", {
+    // Entrada suave do Hero
+    gsap.from(".hero-content", {
       opacity: 0,
-      y: 30,
+      x: -40,
       duration: 1,
       ease: "power3.out",
       delay: 0.2
     });
 
-    gsap.from(".hero-subtitle", {
+    gsap.from(".hero-visual-side", {
       opacity: 0,
-      y: 20,
+      x: 40,
       duration: 1,
       ease: "power3.out",
-      delay: 0.4
-    });
-
-    gsap.from(".hero-stat-card", {
-      opacity: 0,
-      y: 25,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "power2.out",
-      delay: 0.6
+      delay: 0.3
     });
 
     // 2. Carrossel Cinematográfico com Touch & Drag
