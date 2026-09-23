@@ -42,6 +42,7 @@ User-agent: CCBot
 Allow: /
 
 # prévias de cliente — não são sites publicados
+Disallow: /previa/labaia-arquitetura/
 Disallow: /previa/heaven-pilates/
 Disallow: /previa/glenda-meirelles-advogada/
 Disallow: /previa/fortunastudio/
