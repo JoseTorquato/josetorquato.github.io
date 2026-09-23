@@ -1,0 +1,3394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Heaven Pilates · Cinco Cadillacs na Sala 202 · Canoas, RS</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Cinco Cadillacs. Cinco alunas. A atenção individualizada de uma fisioterapeuta a cada movimento na sala 202 em Canoas — RS.">
+<link rel="canonical" href="http://127.0.0.1:8010/proposta/heaven-pilates/v3-premium/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Heaven Pilates · Estúdio Boutique & Fisioterapia">
+<meta property="og:description" content="Cinco Cadillacs. Cinco alunas. Uma fisioterapeuta conduzindo cada detalhe em Canoas — RS.">
+<meta property="og:image" content="./img/pico.jpg">
+
+<!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="img/pico.jpg" fetchpriority="high">
+
+<!-- Lenis (Smooth Scroll Engine) + GSAP + ScrollTrigger -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+/* ══════════════════════════════════════════════════════════════════
+   CINEMATIC DESIGN TOKENS — AWWWARDS SITE OF THE YEAR STANDARD
+   ══════════════════════════════════════════════════════════════════ */
+:root {
+  --font-serif: "Cormorant Garamond", Garamond, Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --bg-page: #FBF9F5;          /* Linho cru orgânico */
+  --bg-surface: #FFFFFF;       /* Branco puro */
+  --bg-subtle: #F3EFE9;        /* Areia quente suave */
+  --bg-deep: #0A140D;          /* Noite floresta / Dark luxury cinemático */
+  --bg-deep-card: #132418;     /* Verde oliva profundo */
+  
+  --ink-primary: #151311;      /* Espresso queimado */
+  --ink-secondary: #4A4640;    /* Tom terra neutro para leitura fluida */
+  --ink-muted: #857E74;        /* Metadados e legendas */
+  --ink-faint: #C9BFB2;        /* Linhas e numerações */
+  
+  --brand-forest: #1F4526;     /* Verde assinatura do estúdio */
+  --brand-emerald: #2E6B3B;    /* Esmeralda vibrante */
+  --brand-gold: #C5A059;       /* Ouro champagne acetinado */
+  --brand-gold-glow: rgba(197, 160, 89, 0.28);
+  --brand-forest-glow: rgba(31, 69, 38, 0.25);
+  
+  --border-hairline: rgba(23, 21, 19, 0.08);
+  --border-light: rgba(23, 21, 19, 0.15);
+  --border-strong: rgba(23, 21, 19, 0.28);
+  
+  --curva-luxo: cubic-bezier(0.16, 1, 0.3, 1);
+  --curva-suave: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  background-color: var(--bg-page);
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ══════════ CURSOR MAGNÉTICO PERSONALIZADO ══════════ */
+.cursor-dot { display: none !important;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--brand-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  display: none;
+}
+
+.cursor-ring { display: none !important;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid var(--brand-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--curva-luxo), height 0.3s var(--curva-luxo), background-color 0.3s, border-color 0.3s, opacity 0.3s;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .cursor-dot, .cursor-ring { display: none !important;
+   display: block; }
+}
+
+body.cursor-hover .cursor-ring { display: none !important;
+  
+  width: 62px;
+  height: 62px;
+  background-color: rgba(197, 160, 89, 0.14);
+  border-color: var(--brand-gold);
+}
+
+/* Grão Tátil Analógico */
+.grao-textura {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.026;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Barra de Progresso Superior */
+.linha-progresso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-gold), var(--brand-forest), var(--brand-gold));
+  z-index: 1001;
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+}
+
+.envelope {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+}
+
+/* ══════════ TIPOGRAFIA EDITORIAL ══════════ */
+h1, h2, h3, h4, .serif-display {
+  font-family: var(--font-serif);
+  color: var(--ink-primary);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+}
+
+h1 em, h2 em, h3 em, .serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--brand-forest);
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.lede {
+  font-size: clamp(1.15rem, 1.1rem + 0.35vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--ink-secondary);
+}
+
+.tag-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-forest);
+}
+
+.tag-meta::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--brand-gold);
+  box-shadow: 0 0 10px var(--brand-gold);
+}
+
+.num-secao { display: none !important;
+  
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--brand-gold);
+  margin-right: 0.4rem;
+}
+
+/* ══════════ BOTÕES DE ALTO VALOR COM SHIMMER ══════════ */
+.btn-luxo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.05rem 2.4rem;
+  background-color: var(--brand-forest);
+  color: #FAF8F5;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px -5px var(--brand-forest-glow);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--curva-luxo);
+  cursor: pointer;
+}
+
+.btn-luxo::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent 35%, rgba(255, 255, 255, 0.22) 50%, transparent 65%);
+  transform: rotate(30deg) translateX(-100%);
+  animation: brilho-varredura 5.5s infinite;
+}
+
+@keyframes brilho-varredura {
+  0%, 75% { transform: rotate(30deg) translateX(-100%); }
+  100% { transform: rotate(30deg) translateX(100%); }
+}
+
+.btn-luxo:hover {
+  background-color: #14301A;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 40px -6px rgba(31, 69, 38, 0.38);
+  border-color: var(--brand-gold);
+}
+
+.btn-luxo svg {
+  transition: transform 0.35s var(--curva-luxo);
+}
+
+.btn-luxo:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  transition: all 0.3s var(--curva-luxo);
+}
+
+.btn-outline:hover {
+  border-color: var(--ink-primary);
+  background-color: rgba(23, 21, 19, 0.04);
+  transform: translateY(-2px);
+}
+
+/* ══════════ SPOTLIGHT GLOW EFFECT (CARDS REATIVOS AO MOUSE) ══════════ */
+.card-spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(197, 160, 89, 0.18), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.4s var(--curva-luxo);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* ══════════ CABEÇALHO FROSTED GLASS ══════════ */
+.header-mestre {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: rgba(251, 249, 245, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-hairline);
+  transition: transform 0.4s var(--curva-luxo), background-color 0.4s;
+}
+
+.header-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.marca-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+}
+
+.marca-wrapper img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.marca-divisao {
+  width: 1px;
+  height: 22px;
+  background-color: var(--border-light);
+}
+
+.marca-loc {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 2.2rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .nav-links { display: flex; }
+}
+
+.nav-links a {
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s;
+}
+
+.nav-links a:hover {
+  color: var(--brand-forest);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-forest);
+}
+
+.ponto-pulso {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2E7D32;
+  position: relative;
+}
+
+.ponto-pulso::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background-color: #2E7D32;
+  opacity: 0.5;
+  animation: pulso 2.2s infinite var(--curva-luxo);
+}
+
+@keyframes pulso {
+  0% { transform: scale(1); opacity: 0.6; }
+  70% { transform: scale(2.6); opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .header-conteudo { height: 64px; }
+  .marca-divisao, .marca-loc, .status-pill { display: none; }
+  .header-conteudo .btn-luxo { padding: 0.55rem 1.15rem; font-size: 0.8rem; gap: 0.4rem; }
+  .marca-wrapper img { height: 30px; }
+}
+
+/* ══════════ 1. HERO THEATRICAL FULL-BLEED (CINEMA OPENING) ══════════ */
+.secao-hero-theatrical {
+  background-color: var(--bg-deep);
+  color: #FAF8F5;
+  padding-top: clamp(8.5rem, 16vh, 12rem);
+  padding-bottom: clamp(5rem, 10vh, 8rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-theatrical-bg-glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 60vh;
+  background: radial-gradient(circle, rgba(31, 69, 38, 0.28) 0%, rgba(197, 160, 89, 0.08) 40%, transparent 75%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-theatrical-topo {
+  text-align: center;
+  max-width: 58rem;
+  margin: 0 auto 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-theatrical-manchete {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 2.2rem + 4.5vw, 6.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: #FAF8F5;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.hero-theatrical-manchete em {
+  color: var(--brand-gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-theatrical-sub {
+  font-size: clamp(1.1rem, 1.05rem + 0.35vw, 1.35rem);
+  color: rgba(250, 248, 245, 0.8);
+  max-width: 44rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.65;
+}
+
+.hero-theatrical-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+/* Moldura Panorâmica Central com Zoom Reverso */
+.hero-theatrical-palco {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-theatrical-moldura {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  background: var(--bg-deep-card);
+}
+
+.hero-theatrical-moldura img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.1);
+  will-change: transform;
+}
+
+.hero-theatrical-hud {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(10, 20, 13, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 12px;
+  padding: 1.1rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  color: #FAF8F5;
+}
+
+@media (max-width: 768px) {
+  .hero-theatrical-hud {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+    gap: 0.6rem;
+  }
+}
+
+.hero-theatrical-hud-coord {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+.hero-theatrical-hud-status {
+  font-size: 0.84rem;
+  color: rgba(250, 248, 245, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Faixa de Credibilidade em Dark Mode */
+.faixa-credenciais-dark {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.8rem 0;
+  margin-top: 4.5rem;
+}
+
+.grade-credenciais-dark {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .grade-credenciais-dark {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+}
+
+.item-credencial-dark-num {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 2rem + 1.8vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--brand-gold);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.item-credencial-dark-rotulo {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #FAF8F5;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.item-credencial-dark-desc {
+  font-size: 0.82rem;
+  color: rgba(250, 248, 245, 0.65);
+  line-height: 1.45;
+}
+
+/* ══════════ 2. PINNED KINETIC MANIFESTO ══════════ */
+.secao-manifesto-pinned {
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.manifesto-bg-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: clamp(10rem, 28vw, 24rem);
+  font-weight: 700;
+  color: rgba(31, 69, 38, 0.03);
+  line-height: 0.8;
+  pointer-events: none;
+  user-select: none;
+}
+
+.manifesto-box-kinetic {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.manifesto-frase-kinetic {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 1.6rem + 2.8vw, 4.5rem);
+  line-height: 1.15;
+  color: var(--ink-primary);
+  margin-bottom: 2rem;
+}
+
+.manifesto-frase-kinetic em {
+  color: var(--brand-forest);
+  font-style: italic;
+}
+
+.manifesto-apoio-kinetic {
+  font-size: clamp(1.1rem, 1.05rem + 0.3vw, 1.35rem);
+  color: var(--ink-secondary);
+  max-width: 44rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* ══════════ 3. O ATELIER DOS APARELHOS: PINNED HORIZONTAL SCRUB ══════════ */
+.secao-aparelhos-pinned {
+  position: relative;
+  background-color: var(--bg-deep);
+  color: #FAF8F5;
+  overflow: hidden;
+}
+
+.aparelhos-pinned-topo {
+  padding-top: clamp(4rem, 8vh, 6rem);
+  padding-bottom: 2rem;
+}
+
+.aparelhos-hud-barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.aparelhos-hud-rotulo {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+.aparelhos-hud-contador {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #FAF8F5;
+}
+
+/* Esteira Horizontal (Desktop) / Carrossel Snap (Mobile) */
+.trilho-horizontal-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 0 5rem;
+}
+
+.trilho-horizontal-esteira {
+  display: flex;
+  gap: 2.5rem;
+  padding-left: clamp(1.25rem, 5vw, 4rem);
+  padding-right: clamp(1.25rem, 5vw, 4rem);
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  .trilho-horizontal-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .trilho-horizontal-container::-webkit-scrollbar { display: none; }
+  .trilho-horizontal-esteira {
+    width: max-content;
+  }
+}
+
+.card-aparelho-cinema {
+  width: clamp(300px, 34vw, 420px);
+  flex-shrink: 0;
+  background: var(--bg-deep-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--curva-luxo), border-color 0.4s, box-shadow 0.4s;
+  scroll-snap-align: start;
+}
+
+.card-aparelho-cinema:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-gold);
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.7);
+}
+
+.card-aparelho-cinema-chapa {
+  height: 240px;
+  background: #060E08;
+  color: #FAF8F5;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-aparelho-cinema-chapa::before {
+  content: "MAT";
+  position: absolute;
+  right: -0.5rem;
+  bottom: -1rem;
+  font-family: var(--font-serif);
+  font-size: 8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.04);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.card-aparelho-cinema-foto {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+.card-aparelho-cinema-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--curva-luxo);
+}
+
+.card-aparelho-cinema:hover .card-aparelho-cinema-foto img {
+  transform: scale(1.08);
+}
+
+.card-aparelho-cinema-conteudo {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-aparelho-cinema-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: 0.4rem;
+}
+
+.card-aparelho-cinema-titulo {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+  color: #FAF8F5;
+}
+
+.card-aparelho-cinema-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(250, 248, 245, 0.78);
+  margin-bottom: 1.5rem;
+}
+
+.card-aparelho-cinema-rodape {
+  margin-top: auto;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: rgba(250, 248, 245, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-aparelho-cinema-rodape strong {
+  color: var(--brand-gold);
+  font-weight: 600;
+}
+
+/* ══════════ 4. O ESPAÇO FÍSICO COM TRIPTYCH CURATORIAL ══════════ */
+.secao-espaco {
+  padding: clamp(5rem, 10vh, 8.5rem) 0;
+  background-color: var(--bg-page);
+}
+
+.espaco-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .espaco-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+  }
+}
+
+.espaco-titulo {
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3.8rem);
+  line-height: 1.08;
+  margin: 1rem 0 1.5rem;
+}
+
+.bloco-pedacinho {
+  padding: 1.8rem;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border-left: 3px solid var(--brand-forest);
+  border-top: 1px solid var(--border-hairline);
+  border-right: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  margin-top: 2rem;
+  box-shadow: 0 12px 28px -8px rgba(23, 21, 19, 0.05);
+}
+
+.bloco-pedacinho-frase {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--brand-forest);
+  margin-bottom: 0.4rem;
+}
+
+.bloco-pedacinho-sub {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}
+
+.galeria-curatorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+
+.galeria-curatorial figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 18px 40px -10px rgba(23, 21, 19, 0.08);
+}
+
+.galeria-curatorial figure:first-child {
+  grid-column: 1 / -1;
+}
+
+.galeria-curatorial img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--curva-luxo);
+  will-change: transform;
+}
+
+.galeria-curatorial figure:hover img {
+  transform: scale(1.04);
+}
+
+.galeria-curatorial figcaption {
+  padding: 0.9rem 1.2rem;
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-hairline);
+}
+
+/* ══════════ 5. O RITUAL DA SESSÃO EM 4 COMPASSOS (COMPACT LUXURY) ══════════ */
+.secao-ritual {
+  padding: clamp(4.5rem, 7vh, 7rem) 0;
+  background: linear-gradient(180deg, #FAF8F5 0%, #F5F1EA 100%);
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  position: relative;
+}
+
+.ritual-topo-bloco {
+  max-width: 860px;
+  margin: 0 auto 2.5rem;
+}
+
+.grid-ritual-espacoso {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.3rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid-ritual-espacoso {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+}
+
+.compasso-card-amplo {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(23, 21, 19, 0.08);
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 10px 28px rgba(21, 19, 17, 0.03), inset 0 1px 0 #FFFFFF;
+  transition: all 0.3s var(--curva-luxo);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.compasso-card-amplo:hover {
+  transform: translateY(-3px);
+  border-color: rgba(197, 160, 89, 0.6);
+  box-shadow: 0 16px 36px rgba(197, 160, 89, 0.12), inset 0 1px 0 #FFFFFF;
+}
+
+.compasso-card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.compasso-card-tempo {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-forest);
+  background: rgba(31, 69, 38, 0.07);
+  padding: 0.28rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(31, 69, 38, 0.12);
+}
+
+.compasso-card-romano {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  color: var(--brand-gold);
+  line-height: 1;
+}
+
+.compasso-card-nome {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+}
+
+.compasso-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+  margin-bottom: 1rem;
+}
+
+.compasso-card-foco {
+  border-top: 1px solid rgba(23, 21, 19, 0.06);
+  padding-top: 0.7rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compasso-card-foco strong {
+  color: var(--brand-forest);
+  font-weight: 600;
+}
+
+/* ══════════ 6. EFEITOS REAIS NO ORGANISMO (EDITORIAL ASYMMETRIC MASONRY) ══════════ */
+.secao-efeitos {
+  padding: clamp(5.5rem, 9vh, 9rem) 0;
+  background-color: var(--bg-page);
+  position: relative;
+}
+
+.bento-efeitos-desencaixado {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 860px) {
+  .bento-efeitos-desencaixado {
+    display: grid;
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 2.5rem 3.5rem;
+    align-items: start;
+  }
+}
+
+.card-efeito {
+  background: var(--bg-surface);
+  border-radius: 18px;
+  padding: clamp(2.2rem, 3.5vw, 3rem);
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 12px 35px rgba(23, 21, 19, 0.04);
+  transition: transform 0.4s var(--curva-luxo), border-color 0.4s, box-shadow 0.4s;
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-efeito:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-gold);
+  box-shadow: 0 24px 50px rgba(197, 160, 89, 0.15);
+}
+
+/* Desencaixe horizontal assimétrico em telas maiores */
+@media (min-width: 860px) {
+  .card-efeito-1 {
+    width: 95%;
+    margin-left: 0;
+  }
+  .card-efeito-2 {
+    width: 90%;
+    margin-left: auto;
+    margin-top: 3.8rem;
+  }
+  .card-efeito-3 {
+    width: 88%;
+    margin-left: 3.5rem;
+  }
+  .card-efeito-4 {
+    width: 96%;
+    margin-left: auto;
+    margin-top: 3.8rem;
+  }
+}
+
+.card-efeito-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.card-efeito-frase {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 1.25rem + 0.6vw, 1.95rem);
+  line-height: 1.25;
+  color: var(--ink-primary);
+  margin-bottom: 0.9rem;
+}
+
+.card-efeito-desc {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+}
+
+/* ══════════ 7. A COMUNIDADE ("NINGUÉM TREINA SOZINHA") ══════════ */
+.secao-turma {
+  padding: clamp(5rem, 10vh, 8.5rem) 0;
+  background-color: var(--bg-subtle);
+}
+
+.turma-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .turma-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.turma-moldura {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -18px rgba(23, 21, 19, 0.14);
+  border: 1px solid var(--border-light);
+  background: var(--bg-surface);
+}
+
+.turma-moldura img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--curva-luxo);
+  will-change: transform;
+}
+
+.turma-moldura:hover img {
+  transform: scale(1.04);
+}
+
+/* ══════════ 8. QUEM CONDUZ: MORGANA STEIN (FEATURE SPREAD) ══════════ */
+.secao-morgana {
+  padding: clamp(5rem, 10vh, 8.5rem) 0;
+  background-color: var(--bg-page);
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.morgana-spread {
+  background: var(--bg-surface);
+  border-radius: 18px;
+  border: 1px solid var(--border-hairline);
+  overflow: hidden;
+  box-shadow: 0 28px 70px -20px rgba(23, 21, 19, 0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+  .morgana-spread {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.morgana-conteudo {
+  padding: clamp(2.2rem, 5vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.morgana-nome {
+  font-size: clamp(2.5rem, 1.8rem + 2vw, 4rem);
+  line-height: 1.05;
+  margin: 0.8rem 0 1.2rem;
+}
+
+.lista-credenciais-luxo {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.6rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.lista-credenciais-luxo li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.lista-credenciais-luxo li svg {
+  color: var(--brand-forest);
+}
+
+.morgana-bio {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.morgana-retrato-col {
+  position: relative;
+  background: var(--bg-subtle);
+  min-height: 440px;
+  overflow: hidden;
+}
+
+.morgana-retrato-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--curva-luxo);
+  will-change: transform;
+}
+
+.morgana-spread:hover .morgana-retrato-col img {
+  transform: scale(1.03);
+}
+
+/* ══════════ 9. PERGUNTAS FREQUENTES (ACCORDION NATIVO) ══════════ */
+.secao-faq {
+  padding: clamp(5rem, 10vh, 8.5rem) 0;
+  background-color: var(--bg-subtle);
+}
+
+.faq-envelope {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faq-lista {
+  margin-top: 3.2rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+details {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.6rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-serif);
+  font-size: clamp(1.22rem, 1.1rem + 0.35vw, 1.5rem);
+  font-weight: 600;
+  color: var(--ink-primary);
+  transition: color 0.25s;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary:hover {
+  color: var(--brand-forest);
+}
+
+summary .faq-icone {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: transform 0.35s var(--curva-luxo), background-color 0.35s, border-color 0.35s;
+}
+
+details[open] summary .faq-icone {
+  transform: rotate(45deg);
+  background-color: var(--brand-forest);
+  color: #FAF8F5;
+  border-color: var(--brand-forest);
+  box-shadow: 0 4px 12px var(--brand-forest-glow);
+}
+
+.faq-corpo {
+  padding-bottom: 1.8rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--ink-secondary);
+}
+
+/* ══════════ 10. O CONVITE FINAL COM WATERMARK & DOCK ══════════ */
+.secao-cta-final {
+  padding: clamp(4rem, 8vh, 7rem) 0 clamp(6rem, 10vh, 8.5rem);
+  background-color: var(--bg-page);
+}
+
+.cta-caixa-luxo {
+  background-color: var(--bg-deep);
+  border-radius: 22px;
+  padding: clamp(2.8rem, 6vw, 5.8rem);
+  color: #FAF8F5;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 35px 90px -20px rgba(10, 20, 13, 0.5);
+}
+
+.cta-caixa-luxo::before {
+  content: "HEAVEN";
+  position: absolute;
+  right: -1rem;
+  bottom: -2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(6rem, 16vw, 15rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.035);
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.cta-caixa-conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+}
+
+.cta-caixa-titulo {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 1.8rem + 2.5vw, 4.4rem);
+  line-height: 1.06;
+  color: #FAF8F5;
+  margin-bottom: 1.4rem;
+}
+
+.cta-caixa-titulo em {
+  font-style: italic;
+  color: var(--brand-gold);
+}
+
+.cta-caixa-texto {
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
+  color: rgba(250, 248, 245, 0.82);
+  line-height: 1.65;
+  margin-bottom: 2.6rem;
+}
+
+.btn-cta-ouro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.2rem 2.8rem;
+  background-color: #FAF8F5;
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.35s var(--curva-luxo);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta-ouro:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.38);
+}
+
+.btn-cta-ouro svg {
+  transition: transform 0.35s var(--curva-luxo);
+}
+
+.btn-cta-ouro:hover svg {
+  transform: translateX(4px);
+}
+
+.cta-grid-dados {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4.2rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (min-width: 640px) {
+  .cta-grid-dados {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cta-dado-rotulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: 0.4rem;
+}
+
+.cta-dado-valor {
+  font-size: 0.96rem;
+  color: rgba(250, 248, 245, 0.9);
+  line-height: 1.6;
+}
+
+.cta-dado-valor a {
+  color: #FAF8F5;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ══════════ DOCK FLUTUANTE DE CONVERSÃO ══════════ */
+.dock-flutuante {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(140%);
+  z-index: 800;
+  background: rgba(10, 20, 13, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.32);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.45);
+  border-radius: 9999px;
+  padding: 0.55rem 0.65rem 0.55rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: #FAF8F5;
+  transition: transform 0.5s var(--curva-luxo);
+  white-space: nowrap;
+}
+
+.dock-flutuante.visivel {
+  transform: translateX(-50%) translateY(0);
+}
+
+.dock-status {
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dock-btn {
+  padding: 0.65rem 1.4rem;
+  background-color: var(--brand-gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s;
+}
+
+.dock-btn:hover {
+  background-color: #FAF8F5;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .dock-flutuante {
+    width: calc(100% - 2.5rem);
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem 0.5rem 1.1rem;
+  }
+  .dock-status span:last-child {
+    display: none;
+  }
+}
+
+/* ══════════ RODAPÉ ARQUITETÔNICO ══════════ */
+.rodape-luxo {
+  background-color: var(--bg-page);
+  border-top: 1px solid var(--border-hairline);
+  padding: 3.5rem 0 3rem;
+  font-size: 0.85rem;
+}
+
+.rodape-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .rodape-grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.rodape-marca img {
+  height: 34px;
+  width: auto;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.rodape-crefito {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  margin-top: 0.6rem;
+}
+
+/* ══ 11. AWWWARDS PRELOADER CURTAIN ══ */
+.preloader-curtain {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0A140D;
+  z-index: 20000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FAF8F5;
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+  pointer-events: all;
+}
+
+.preloader-curtain.remover {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.preloader-inner {
+  text-align: center;
+  max-width: 480px;
+  padding: 2rem;
+}
+
+.preloader-badge {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.preloader-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+  color: #FAF8F5;
+}
+
+.preloader-counter {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--brand-gold);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 1rem;
+}
+
+.preloader-bar {
+  width: 220px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.preloader-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background: var(--brand-gold);
+  transition: width 0.08s linear;
+}
+
+/* ══ 12. TEXTURA CINEMATOGRÁFICA DE FILME (FILM GRAIN) ══ */
+.film-grain-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ══ 13. BOTÃO DE AMBIÊNCIA SONORA RELAXANTE ══ */
+.btn-audio-ambience {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FAF8F5;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s var(--curva-suave);
+  backdrop-filter: blur(8px);
+}
+
+.btn-audio-ambience:hover {
+  background: rgba(197, 160, 89, 0.2);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+.btn-audio-ambience.ativo {
+  background: rgba(197, 160, 89, 0.25);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+.audio-waves {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 12px;
+}
+
+.wave-bar {
+  width: 2px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: height 0.2s ease;
+}
+
+.btn-audio-ambience.ativo .wave-bar:nth-child(1) {
+  animation: pulseWave 0.8s infinite ease-in-out alternate;
+}
+.btn-audio-ambience.ativo .wave-bar:nth-child(2) {
+  animation: pulseWave 0.8s infinite ease-in-out 0.25s alternate;
+}
+.btn-audio-ambience.ativo .wave-bar:nth-child(3) {
+  animation: pulseWave 0.8s infinite ease-in-out 0.5s alternate;
+}
+
+@keyframes pulseWave {
+  0% { height: 3px; }
+  100% { height: 12px; }
+}
+
+/* ══ 14. SEÇÃO INTERATIVA: ENGENHARIA BIOMECÂNICA DO CADILLAC ══ */
+.secao-cadillac-anatomia {
+  background-color: var(--bg-deep);
+  color: #FAF8F5;
+  padding: clamp(5rem, 4rem + 4vw, 8rem) 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cadillac-anatomia-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 2rem + 3vw, 4.5rem);
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 960px) {
+  .cadillac-anatomia-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cadillac-palco-visual {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #112015;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cadillac-palco-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.85) contrast(1.05);
+  transition: transform 0.6s var(--curva-luxo);
+}
+
+.cadillac-palco-visual:hover img {
+  transform: scale(1.02);
+}
+
+/* Hotspots pulsantes */
+.hotspot-pin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hotspot-circulo {
+  width: 14px;
+  height: 14px;
+  background-color: var(--brand-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 16px var(--brand-gold);
+  transition: transform 0.3s var(--curva-suave);
+}
+
+.hotspot-aura {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--brand-gold);
+  animation: pulseAura 2s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hotspot-pin.ativo .hotspot-circulo {
+  transform: scale(1.4);
+  background-color: #FFFFFF;
+}
+
+@keyframes pulseAura {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.cadillac-painel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card-spec-tecnica {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s var(--curva-suave);
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.card-spec-tecnica:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(197, 160, 89, 0.4);
+}
+
+.card-spec-tecnica.ativo {
+  background: rgba(19, 36, 24, 0.85);
+  border-color: var(--brand-gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.spec-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.spec-numero {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-gold);
+  letter-spacing: 0.1em;
+}
+
+.spec-tag {
+  font-size: 0.72rem;
+  color: rgba(250, 248, 245, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.spec-titulo {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #FAF8F5;
+  margin-bottom: 0.4rem;
+}
+
+.spec-detalhe {
+  font-size: 0.88rem;
+  color: rgba(250, 248, 245, 0.75);
+  line-height: 1.5;
+}
+
+/* ══ 15. SEÇÃO: COMPARADOR BIOMECÂNICO (ANTES VS DEPOIS) ══ */
+.secao-comparador {
+  padding: clamp(5rem, 4rem + 4vw, 8rem) 0;
+  background: linear-gradient(180deg, #FAF8F5 0%, #F5F1EA 100%);
+  border-bottom: 1px solid var(--border-hairline);
+  position: relative;
+}
+
+.comparador-container {
+  max-width: 1080px;
+  margin: 3.5rem auto 0;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: clamp(1.8rem, 1.5rem + 2vw, 3.2rem);
+  box-shadow: 0 30px 70px rgba(21, 19, 17, 0.05), inset 0 1px 0 #FFFFFF;
+}
+
+.comparador-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+}
+
+@media (max-width: 820px) {
+  .comparador-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comp-coluna {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(23, 21, 19, 0.08);
+  border-radius: 18px;
+  padding: clamp(1.8rem, 1.5rem + 1vw, 2.5rem);
+  transition: all 0.35s var(--curva-luxo);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.02);
+}
+
+.comp-coluna:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+}
+
+.comp-coluna.destaque {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 250, 247, 0.88) 100%);
+  border: 1.5px solid rgba(197, 160, 89, 0.55);
+  box-shadow: 0 20px 50px rgba(197, 160, 89, 0.15), inset 0 1px 0 #FFFFFF;
+}
+
+.comp-coluna.destaque:hover {
+  border-color: var(--brand-gold);
+  box-shadow: 0 26px 60px rgba(197, 160, 89, 0.22), inset 0 1px 0 #FFFFFF;
+}
+
+.comp-status-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.comp-lista {
+  list-style: none;
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.comp-lista-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-primary);
+}
+
+.comp-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ══ 16. SEÇÃO: SIMULADOR CLÍNICO DA SALA 202 ══ */
+.secao-simulador {
+  padding: clamp(5rem, 4rem + 4vw, 8rem) 0;
+  background-color: var(--bg-page);
+}
+
+.simulador-card {
+  max-width: 900px;
+  margin: 3.5rem auto 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: clamp(2rem, 1.6rem + 2.5vw, 3.5rem);
+  box-shadow: 0 24px 50px rgba(21, 19, 17, 0.06);
+}
+
+.simulador-etapa-rotulo {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-forest);
+  margin-bottom: 0.8rem;
+}
+
+.simulador-pergunta {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 1.2rem;
+}
+
+.simulador-botoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 2.2rem;
+}
+
+.btn-opcao-simulador {
+  padding: 0.9rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: left;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  cursor: pointer;
+  transition: all 0.2s var(--curva-suave);
+}
+
+.btn-opcao-simulador:hover {
+  border-color: var(--brand-forest);
+  background: var(--bg-subtle);
+}
+
+.btn-opcao-simulador.selecionado {
+  border-color: var(--brand-forest);
+  background: var(--brand-forest);
+  color: #FAF8F5;
+  box-shadow: 0 4px 12px var(--brand-forest-glow);
+}
+
+.simulador-resultado-box {
+  background: #0C1810;
+  color: #FAF8F5;
+  border-radius: 14px;
+  padding: clamp(1.6rem, 1.4rem + 1vw, 2.4rem);
+  margin-top: 1.8rem;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+.simulador-resultado-tag {
+  color: var(--brand-gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.simulador-resultado-titulo {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #FAF8F5;
+  margin-bottom: 0.8rem;
+}
+
+.simulador-resultado-desc {
+  font-size: 0.95rem;
+  color: rgba(250, 248, 245, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+</style>
+</head>
+<body>
+<div data-previa style="background:#5a4a1f;color:#f4f1ec;font:500 13px/1.45 system-ui,sans-serif;padding:9px 16px;text-align:center">Prévia para aprovação — não é o site publicado.</div>
+
+<!-- ══ AWWWARDS THEATRICAL PRELOADER CURTAIN ══ -->
+<div class="preloader-curtain" id="preloaderCurtain" aria-hidden="true">
+  <div class="preloader-inner">
+    <div class="preloader-badge">HEAVEN PILATES · SALA 202</div>
+    <div class="preloader-title">Arquitetura Corporal & Fisioterapia</div>
+    <div class="preloader-counter"><span id="preloaderNum">00</span>%</div>
+    <div class="preloader-bar"><div class="preloader-bar-fill" id="preloaderFill"></div></div>
+  </div>
+</div>
+
+<div class="film-grain-overlay" aria-hidden="true"></div>
+
+
+<!-- Cursor Dinâmico -->
+<div class="cursor-dot" id="cursorDot"></div>
+<!-- cursor ring removido -->
+
+<div class="grao-textura" aria-hidden="true"></div>
+<div class="linha-progresso" aria-hidden="true" id="linhaProgresso"></div>
+
+<!-- ══ DOCK FLUTUANTE DE CONVERSÃO ══ -->
+<aside class="dock-flutuante" id="dockFlutuante" aria-label="Ação Rápida">
+  <div class="dock-status">
+    <span class="ponto-pulso" aria-hidden="true"></span>
+    <strong>Sala 202</strong>
+    <span>· Fisioterapia & Aparelhos</span>
+  </div>
+  <a class="dock-btn" href="https://wa.me/5551994200175?text=Ol%C3%A1%20Morgana!%20Gostaria%20de%20agendar%20uma%20aula%20no%20Heaven%20Pilates." target="_blank" rel="noopener">
+    <span>Agendar Aula</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </a>
+</aside>
+
+<!-- ══ CABEÇALHO FROSTED GLASS ══ -->
+<header class="header-mestre">
+  <div class="envelope header-conteudo">
+    <a class="marca-wrapper" href="#topo" aria-label="Heaven Pilates — Página Inicial">
+      <img src="img/logo.png" width="132" height="37" alt="Heaven Pilates">
+      <div class="marca-divisao" aria-hidden="true"></div>
+      <span class="marca-loc">Sala 202 · Canoas, RS</span>
+    </a>
+
+    <nav aria-label="Navegação Principal">
+      <ul class="nav-links">
+        <li><a href="#aparelhos">Os Aparelhos</a></li>
+        <li><a href="#espaco">O Estúdio</a></li>
+        <li><a href="#ritual">O Ritual</a></li>
+        <li><a href="#conducao">Morgana Stein</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span class="status-pill">
+        <span class="ponto-pulso" aria-hidden="true"></span>
+        <span>Até 5 por turma</span>
+      </span>
+      <a class="btn-luxo" href="https://wa.me/5551994200175?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20para%20conhecer%20o%20Heaven%20Pilates." target="_blank" rel="noopener">
+        <span>Agendar Aula</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- ══ 1. HERO THEATRICAL FULL-BLEED (CINEMA OPENING) ══ -->
+  <section class="secao-hero-theatrical">
+    <div class="hero-theatrical-bg-glow" aria-hidden="true"></div>
+
+    <div class="envelope hero-theatrical-topo">
+      <div class="tag-meta" style="color: rgba(250, 248, 245, 0.8);">
+        <span>Arquitetura Corporal & Fisioterapia</span>
+      </div>
+
+      <h1 class="hero-theatrical-manchete" id="heroManchete">
+        Cinco Cadillacs.<br>
+        Cinco alunas.<br>
+        Uma <em>fisioterapeuta</em> atenta a cada detalhe.
+      </h1>
+
+      <p class="hero-theatrical-sub">
+        Na sala 202 da Rua Dona Rafaela, 444, cada movimento é conduzido por Morgana Stein com olhar clínico, respeito à anatomia e precisão milimétrica.
+      </p>
+
+      <div class="hero-theatrical-acoes">
+        <a class="btn-luxo" href="https://wa.me/5551994200175?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20primeira%20aula%20no%20Heaven%20Pilates." target="_blank" rel="noopener">
+          <span>Agendar Primeira Aula no WhatsApp</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a class="btn-outline" href="#aparelhos" style="color: #FAF8F5; border-color: rgba(255,255,255,0.3);">
+          <span>Explorar os Aparelhos</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Moldura Panorâmica Central com Zoom Reverso Cinemático -->
+    <div class="envelope hero-theatrical-palco">
+      <div class="hero-theatrical-moldura card-spotlight" id="heroPalcoMoldura">
+        <img src="img/pico.jpg" width="1080" height="826" fetchpriority="high" loading="eager" decoding="async" alt="Os cinco Cadillacs do Heaven Pilates ocupados ao mesmo tempo com turmas reduzidas na sala 202." id="heroPalcoImg">
+        
+        <div class="hero-theatrical-hud">
+          <div class="hero-theatrical-hud-coord">CANOAS · 29°55'S 51°10'W · SALA 202 · 2º ANDAR</div>
+          <div class="hero-theatrical-hud-status">
+            <span class="ponto-pulso" aria-hidden="true"></span>
+            <span>Aparelhagem própria completa · <strong>Zero revezamento</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticker de Credibilidade em Dark Mode -->
+      <div class="faixa-credenciais-dark">
+        <div class="grade-credenciais-dark">
+          <div class="item-credencial-dark">
+            <span class="item-credencial-dark-num">05</span>
+            <span class="item-credencial-dark-rotulo">Cadillacs Próprios</span>
+            <span class="item-credencial-dark-desc">Equipamento individual completo. Todas treinam simultaneamente.</span>
+          </div>
+          <div class="item-credencial-dark">
+            <span class="item-credencial-dark-num">Até 5</span>
+            <span class="item-credencial-dark-rotulo">Alunas por Horário</span>
+            <span class="item-credencial-dark-desc">Atenção e correção postural constante durante os 60 minutos.</span>
+          </div>
+          <div class="item-credencial-dark">
+            <span class="item-credencial-dark-num">100%</span>
+            <span class="item-credencial-dark-rotulo">Condução Fisioterapêutica</span>
+            <span class="item-credencial-dark-desc">Olhar clínico individualizado com Morgana Stein em sala.</span>
+          </div>
+          <div class="item-credencial-dark">
+            <span class="item-credencial-dark-num">202</span>
+            <span class="item-credencial-dark-rotulo">Sala na Dona Rafaela</span>
+            <span class="item-credencial-dark-desc">Bairro Marechal Rondon, Canoas. Luz natural e tranquilidade.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 2. PINNED KINETIC MANIFESTO ══ -->
+  <section class="secao-manifesto-pinned" id="metodo">
+    <div class="manifesto-bg-watermark" aria-hidden="true">HEAVEN</div>
+    
+    <div class="envelope manifesto-box-kinetic">
+      <div class="tag-meta" style="margin-bottom: 2rem;">
+        <span>A Filosofia do Movimento</span>
+      </div>
+
+      <h2 class="manifesto-frase-kinetic" id="kineticFrase">
+        “Quem disse que Pilates é só para idoso?<br>
+        Aqui a gente constrói <em>força, controle de core e resistência real</em> em cada movimento.”
+      </h2>
+
+      <p class="manifesto-apoio-kinetic">
+        No Pilates, não basta fazer força: é preciso saber dosá-la com precisão neuromuscular. Cada detalhe importa: respiração, alinhamento axial e a condução atenta de quem entende a biomecânica da coluna.
+      </p>
+
+      <div style="margin-top: 1.5rem;">
+        <span class="status-pill" style="background: var(--bg-surface); border-color: var(--border-light); font-size: 0.85rem; padding: 0.6rem 1.4rem;">
+          <span class="ponto-pulso" aria-hidden="true"></span>
+          <span>Condução de <strong>Morgana Stein</strong> · Fisioterapeuta Responsável</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ══ NOVO: ENGENHARIA BIOMECÂNICA DO CADILLAC (HOTSPOTS INTERATIVOS) ══ -->
+  <section class="secao-cadillac-anatomia" id="engenharia">
+    <div class="envelope">
+      <div class="tag-meta" style="color: rgba(250,248,245,0.7);">
+        <span>Aparelhagem Própria Exclusiva</span>
+      </div>
+
+      <div style="max-width: 52rem; margin-top: 1rem;">
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 1.8rem + 2.2vw, 3.8rem); line-height: 1.15; color: #FAF8F5;">
+          A engenharia do Cadillac: <em>cinco unidades completas</em> na sala 202.
+        </h2>
+        <p style="color: rgba(250,248,245,0.75); font-size: 1.05rem; margin-top: 0.8rem; line-height: 1.6;">
+          Toque nos pontos brilhantes do aparelho para compreender a função biomecânica de cada componente regulado por Morgana Stein.
+        </p>
+      </div>
+
+      <div class="cadillac-anatomia-grid">
+        <!-- Palco Visual com Hotspots -->
+        <div class="cadillac-palco-visual card-spotlight" id="cadillacPalco">
+          <img src="img/alcas.jpg" width="900" height="514" alt="Detalhe das torres e alças do Cadillac no Heaven Pilates.">
+          
+          <!-- Hotspot 1: Trapézio Aéreo -->
+          <button class="hotspot-pin ativo" style="top: 24%; left: 32%;" data-spec="1" aria-label="Trapézio e Alças Aéreas">
+            <span class="hotspot-aura"></span>
+            <span class="hotspot-circulo"></span>
+          </button>
+
+          <!-- Hotspot 2: Barra Torre com Pino -->
+          <button class="hotspot-pin" style="top: 48%; left: 68%;" data-spec="2" aria-label="Barra Torre Articulada">
+            <span class="hotspot-aura"></span>
+            <span class="hotspot-circulo"></span>
+          </button>
+
+          <!-- Hotspot 3: Molas de Calibração -->
+          <button class="hotspot-pin" style="top: 65%; left: 45%;" data-spec="3" aria-label="Molas Biomecânicas">
+            <span class="hotspot-aura"></span>
+            <span class="hotspot-circulo"></span>
+          </button>
+
+          <!-- Hotspot 4: Estrutura Maciça -->
+          <button class="hotspot-pin" style="top: 85%; left: 22%;" data-spec="4" aria-label="Estrutura Antirruído">
+            <span class="hotspot-aura"></span>
+            <span class="hotspot-circulo"></span>
+          </button>
+        </div>
+
+        <!-- Painel Lateral de Especificações -->
+        <div class="cadillac-painel-info" id="cadillacSpecs">
+          <div class="card-spec-tecnica ativo" data-spec="1">
+            <div class="spec-topo">
+              <span class="spec-numero">SPEC 01</span>
+              <span class="spec-tag">Descompressão</span>
+            </div>
+            <h3 class="spec-titulo">Trapézio Aéreo & Alças de Couro</h3>
+            <p class="spec-detalhe">
+              Permite a suspensão do peso corporal em gravidade assistida. Abre espaço entre as vértebras e descomprime o nervo ciático sem qualquer impacto articular.
+            </p>
+          </div>
+
+          <div class="card-spec-tecnica" data-spec="2">
+            <div class="spec-topo">
+              <span class="spec-numero">SPEC 02</span>
+              <span class="spec-tag">Mobilidade Espinhal</span>
+            </div>
+            <h3 class="spec-titulo">Barra Torre de Ajuste Milimétrico</h3>
+            <p class="spec-detalhe">
+              Conduzida pelas mãos da fisioterapeuta. Articula vértebra por vértebra, restabelecendo a curvatura fisiológica natural da coluna e a flexibilidade torácica.
+            </p>
+          </div>
+
+          <div class="card-spec-tecnica" data-spec="3">
+            <div class="spec-topo">
+              <span class="spec-numero">SPEC 03</span>
+              <span class="spec-tag">Controle de Carga</span>
+            </div>
+            <h3 class="spec-titulo">Molas com Calibração Biomecânica</h3>
+            <p class="spec-detalhe">
+              5 graus de tensão progressiva. A resistência não sobrecarrega tendões: ela recruta o músculo no momento exato e desafia a estabilidade do transverso abdominal.
+            </p>
+          </div>
+
+          <div class="card-spec-tecnica" data-spec="4">
+            <div class="spec-topo">
+              <span class="spec-numero">SPEC 04</span>
+              <span class="spec-tag">Foco & Silêncio</span>
+            </div>
+            <h3 class="spec-titulo">Chassi Maciço Antirruído</h3>
+            <p class="spec-detalhe">
+              Estabilidade absoluta durante todos os 60 minutos de aula. Sem ruídos metálicos ou vibração de esteiras. Um ambiente calmo propício para a respiração e concentração.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3. O ATELIER DOS APARELHOS: PINNED HORIZONTAL SCRUB (ASSINATURA AWWWARDS) ══ -->
+  <section class="secao-aparelhos-pinned" id="aparelhos">
+    <div class="envelope aparelhos-pinned-topo">
+      <div class="tag-meta" style="color: rgba(250,248,245,0.7);">
+        <span>O Atelier Biomecânico</span>
+      </div>
+      
+      <div class="aparelhos-hud-barra">
+        <div>
+          <h2 style="font-family: var(--font-serif); font-size: clamp(2.4rem, 2rem + 2.5vw, 4.2rem); color: #FAF8F5;">
+            O corpo passa pelo chão <em>antes de subir na torre.</em>
+          </h2>
+          <p style="color: rgba(250,248,245,0.7); max-width: 42rem; font-size: 1rem; margin-top: 0.5rem;">
+            Deslize horizontalmente pelas estações de treino do estúdio na sala 202.
+          </p>
+        </div>
+        <div class="aparelhos-hud-contador" id="aparelhosContador">01 / 06</div>
+      </div>
+    </div>
+
+    <!-- Esteira Horizontal Pinned via GSAP ScrollTrigger -->
+    <div class="trilho-horizontal-container" id="trilhoHorizontal">
+      <div class="trilho-horizontal-esteira" id="esteiraHorizontal">
+        
+        <!-- 1. Solo Mat -->
+        <article class="card-aparelho-cinema card-spotlight">
+          <div class="card-aparelho-cinema-chapa">
+            <span class="card-aparelho-cinema-tag">01 · Fundação</span>
+            <div style="font-family: var(--font-serif); font-size: 2.4rem; font-weight: 600; line-height: 1;">
+              Mat (Solo)
+            </div>
+          </div>
+          <div class="card-aparelho-cinema-conteudo">
+            <h3 class="card-aparelho-cinema-titulo">O Solo</h3>
+            <p class="card-aparelho-cinema-desc">
+              O controle do próprio peso sem auxílio de molas. Desperta a musculatura profunda do centro (powerhouse) e o ritmo diafragmático.
+            </p>
+            <div class="card-aparelho-cinema-rodape">
+              <span>Foco Biomecânico</span>
+              <strong>Estabilidade de Core</strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Reformer -->
+        <article class="card-aparelho-cinema card-spotlight">
+          <div class="card-aparelho-cinema-foto">
+            <img src="img/reformer.jpg" width="640" height="511" loading="eager" decoding="async" alt="Aluna em execução de prancha no Reformer.">
+          </div>
+          <div class="card-aparelho-cinema-conteudo">
+            <span class="card-aparelho-cinema-tag">02 · O Carrinho</span>
+            <h3 class="card-aparelho-cinema-titulo">Reformer</h3>
+            <p class="card-aparelho-cinema-desc">
+              O carrinho deslizante e a resistência gradual das molas guiam o movimento onde falta mobilidade e desafiam onde sobra compensação.
+            </p>
+            <div class="card-aparelho-cinema-rodape">
+              <span>Foco Biomecânico</span>
+              <strong>Fluidez & Alinhamento</strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Cadillac -->
+        <article class="card-aparelho-cinema card-spotlight">
+          <div class="card-aparelho-cinema-foto">
+            <img src="img/alcas.jpg" width="900" height="514" loading="eager" decoding="async" alt="Alças e estrutura superior do Cadillac.">
+          </div>
+          <div class="card-aparelho-cinema-conteudo">
+            <span class="card-aparelho-cinema-tag">03 · A Torre</span>
+            <h3 class="card-aparelho-cinema-titulo">Cadillac (5 Unidades)</h3>
+            <p class="card-aparelho-cinema-desc">
+              O aparelho mais completo do método original. Permite exercícios aéreos, tração de coluna e suspensão com máxima segurança.
+            </p>
+            <div class="card-aparelho-cinema-rodape">
+              <span>Foco Biomecânico</span>
+              <strong>Descompressão & Força</strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. A Torre & Molas -->
+        <article class="card-aparelho-cinema card-spotlight">
+          <div class="card-aparelho-cinema-foto">
+            <img src="img/torre.jpg" width="720" height="563" loading="eager" decoding="async" alt="Torre do Cadillac com molas e barras de suporte.">
+          </div>
+          <div class="card-aparelho-cinema-conteudo">
+            <span class="card-aparelho-cinema-tag">04 · Calibração</span>
+            <h3 class="card-aparelho-cinema-titulo">Molas de Precisão</h3>
+            <p class="card-aparelho-cinema-desc">
+              Barras articuladas e molas de diversas intensidades ajustadas milimetricamente para o objetivo clínico de cada aluna.
+            </p>
+            <div class="card-aparelho-cinema-rodape">
+              <span>Foco Biomecânico</span>
+              <strong>Amplitude Articular</strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. O Salão na Esquina -->
+        <article class="card-aparelho-cinema card-spotlight">
+          <div class="card-aparelho-cinema-foto">
+            <img src="img/sala.jpg" width="980" height="640" loading="eager" decoding="async" alt="O salão amplo e ventilado do Heaven Pilates na esquina do 2º andar.">
+          </div>
+          <div class="card-aparelho-cinema-conteudo">
+            <span class="card-aparelho-cinema-tag">05 · O Espaço</span>
+            <h3 class="card-aparelho-cinema-titulo">Sala 202</h3>
+            <p class="card-aparelho-cinema-desc">
+              A esquina do segundo andar: janelas contínuas trazendo luz natural durante todas as aulas do dia, arejado e silencioso.
+            </p>
+            <div class="card-aparelho-cinema-rodape">
+              <span>Localização</span>
+              <strong>Rua Dona Rafaela, 444</strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. O Horizonte -->
+        <article class="card-aparelho-cinema card-spotlight">
+          <div class="card-aparelho-cinema-foto">
+            <img src="img/ceu.jpg" width="900" height="544" loading="eager" decoding="async" alt="Mãos apoiadas no aparelho com vista do céu pela janela.">
+          </div>
+          <div class="card-aparelho-cinema-conteudo">
+            <span class="card-aparelho-cinema-tag">06 · Atmosfera</span>
+            <h3 class="card-aparelho-cinema-titulo">Pedacinho de Céu</h3>
+            <p class="card-aparelho-cinema-desc">
+              A tranquilidade necessária para silenciar a pressa e focar totalmente no alinhamento da coluna e na respiração.
+            </p>
+            <div class="card-aparelho-cinema-rodape">
+              <span>Sensação</span>
+              <strong>Bem-Estar Integral</strong>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4. O ESPAÇO FÍSICO COM TRIPTYCH CURATORIAL ══ -->
+  <section class="secao-espaco envelope" id="espaco">
+    <div class="espaco-grid">
+      <div>
+        <div class="tag-meta">
+          <span>A Atmosfera</span>
+        </div>
+        
+        <h2 class="espaco-titulo">
+          Sala 202,<br>
+          segundo andar.<br>
+          <em>Luz natural que acolhe.</em>
+        </h2>
+
+        <p class="lede" style="margin-bottom: 1.2rem;">
+          O estúdio ocupa a esquina do segundo andar na Rua Dona Rafaela, 444 — Marechal Rondon, Canoas.
+        </p>
+
+        <p style="color: var(--ink-secondary); margin-bottom: 1.6rem;">
+          Janelas amplas e contínuas banham os Cadillacs com luz do dia, criando um ambiente arejado e silencioso onde a mente desacelera e o corpo consegue se concentrar na precisão de cada respiração.
+        </p>
+
+        <div class="bloco-pedacinho card-spotlight">
+          <p class="bloco-pedacinho-frase">“Bem-vindos ao nosso pedacinho de céu.”</p>
+          <p class="bloco-pedacinho-sub">A sensação de treinar com vista aberta para a copa das árvores de Canoas.</p>
+        </div>
+      </div>
+
+      <div class="galeria-curatorial">
+        <figure class="card-spotlight">
+          <img src="img/sala.jpg" width="980" height="640" loading="eager" decoding="async" alt="O salão amplo e ventilado do Heaven Pilates na esquina do 2º andar.">
+          <figcaption>Salão amplo com os cinco Cadillacs alinhados sob luz natural.</figcaption>
+        </figure>
+        <figure class="card-spotlight">
+          <img src="img/ceu.jpg" width="900" height="544" loading="eager" decoding="async" alt="Mãos apoiadas no aparelho com vista do céu pela janela.">
+          <figcaption>Tranquilidade para focar no movimento.</figcaption>
+        </figure>
+        <figure class="card-spotlight">
+          <img src="img/torre.jpg" width="720" height="563" loading="eager" decoding="async" alt="Detalhe técnico da torre de molas do Cadillac.">
+          <figcaption>Molas calibradas para cada biomecânica.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 5. O RITUAL DA SESSÃO EM 4 COMPASSOS (INTERACTIVE STEPPER) ══ -->
+  
+  <!-- ══ NOVO: COMPARADOR BIOMECÂNICO DE ALINHAMENTO DA COLUNA ══ -->
+  <section class="secao-comparador" id="alinhamento">
+    <div class="envelope">
+      <div style="text-align: center; max-width: 48rem; margin: 0 auto;">
+        <div class="tag-meta" style="justify-content: center;">
+          <span>Biomecânica Aplicada</span>
+        </div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 1.8rem + 2.2vw, 3.6rem); color: var(--ink-primary); line-height: 1.18; margin-top: 0.8rem;">
+          O que acontece com a sua coluna <em>quando você deita no Cadillac.</em>
+        </h2>
+        <p style="color: var(--ink-secondary); font-size: 1.05rem; margin-top: 0.6rem;">
+          A diferença anatômica entre a rotina comum comprimida e o alinhamento axial conduzido por uma fisioterapeuta.
+        </p>
+      </div>
+
+      <div class="comparador-container">
+        <div class="comparador-grid">
+          <!-- Coluna A: Rotina Comum -->
+          <div class="comp-coluna">
+            <span class="comp-status-tag" style="color: #A33A3A;">Rotina Sedentária & Estresse</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--ink-primary); margin-bottom: 0.5rem;">
+              Compressão Contínua
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--ink-secondary); line-height: 1.5;">
+              Horas sentada ao computador e uso contínuo de celular produzem encurtamento anterior e sobrecarga discal.
+            </p>
+            <ul class="comp-lista">
+              <li class="comp-lista-item">
+                <svg class="comp-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A33A3A" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <span><strong>Discos L4-L5 sob pressão:</strong> Dor lombar persistente e pinçamento ciático ao final da tarde.</span>
+              </li>
+              <li class="comp-lista-item">
+                <svg class="comp-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A33A3A" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <span><strong>Ombros caídos à frente:</strong> Tensão nos trapézios, rigidez cervical e dores de cabeça tensionais.</span>
+              </li>
+              <li class="comp-lista-item">
+                <svg class="comp-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A33A3A" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <span><strong>Respiração curta e apical:</strong> Ansiedade corporal e ausência de estabilização do assoalho pélvico.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna B: Pós-Sessão Sala 202 -->
+          <div class="comp-coluna destaque">
+            <span class="comp-status-tag" style="color: var(--brand-emerald);">Sala 202 · Heaven Pilates</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--brand-forest); margin-bottom: 0.5rem;">
+              Descompressão & Força de Core
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--ink-secondary); line-height: 1.5;">
+              A tração mecânica das molas aliada à correção tátil restaura o espaço articular e o tônus funcional.
+            </p>
+            <ul class="comp-lista">
+              <li class="comp-lista-item">
+                <svg class="comp-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B3B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Abertura de espaço intervertebral:</strong> Alívio imediato da queimação lombar por tração axial controlada.</span>
+              </li>
+              <li class="comp-lista-item">
+                <svg class="comp-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B3B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Escápulas encaixadas:</strong> Peitoral aberto, postura ereta espontânea sem rigidez forçada.</span>
+              </li>
+              <li class="comp-lista-item">
+                <svg class="comp-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B3B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Powerhouse ativo:</strong> Transverso abdominal e musculatura profunda protegendo cada passo do seu dia.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ══ 5. O RITUAL DA SESSÃO EM 4 COMPASSOS (ARQUITETURA ESPAÇOSA) ══ -->
+  <section class="secao-ritual envelope" id="ritual">
+    <div class="ritual-topo-bloco">
+      <div class="tag-meta">
+        <span>A Sessão de 60 Minutos</span>
+      </div>
+      <h2 class="serif-display" style="font-size: clamp(2.4rem, 1.8rem + 2vw, 3.8rem); margin: 1rem 0 1.2rem; line-height: 1.18;">
+        Como a aula acontece: <em>o ritual em 4 compassos.</em>
+      </h2>
+      <p class="lede" style="font-size: 1.1rem; max-width: 44rem; line-height: 1.65;">
+        Você não entra em uma esteira nem pega uma ficha genérica. Cada sessão é uma experiência com início, meio e desfecho guiada individualmente por fisioterapeuta.
+      </p>
+    </div>
+
+    <div class="grid-ritual-espacoso">
+      <!-- Compasso 1 -->
+      <article class="compasso-card-amplo card-spotlight">
+        <div>
+          <div class="compasso-card-topo">
+            <span class="compasso-card-tempo">00 – 10 MIN</span>
+            <span class="compasso-card-romano">I</span>
+          </div>
+          <h3 class="compasso-card-nome">Triagem & Respiração</h3>
+          <p class="compasso-card-desc">
+            Morgana ouve como seu corpo amanheceu hoje: pontos de tensão, dores nas costas ou cansaço acumulado para calibrar a intensidade exata da aula.
+          </p>
+        </div>
+        <div class="compasso-card-foco">
+          <span><strong>Foco Clínico:</strong> Escuta individual e estabilização diafragmática inicial.</span>
+        </div>
+      </article>
+
+      <!-- Compasso 2 -->
+      <article class="compasso-card-amplo card-spotlight">
+        <div>
+          <div class="compasso-card-topo">
+            <span class="compasso-card-tempo">10 – 25 MIN</span>
+            <span class="compasso-card-romano">II</span>
+          </div>
+          <h3 class="compasso-card-nome">Fundamento no Mat</h3>
+          <p class="compasso-card-desc">
+            Ativação de assoalho pélvico, transverso do abdômen e mobilidade escapular no solo, acordando a musculatura profunda antes dos aparelhos.
+          </p>
+        </div>
+        <div class="compasso-card-foco">
+          <span><strong>Foco Clínico:</strong> Conexão neuromuscular do powerhouse sem sobrecarga.</span>
+        </div>
+      </article>
+
+      <!-- Compasso 3 -->
+      <article class="compasso-card-amplo card-spotlight">
+        <div>
+          <div class="compasso-card-topo">
+            <span class="compasso-card-tempo">25 – 50 MIN</span>
+            <span class="compasso-card-romano">III</span>
+          </div>
+          <h3 class="compasso-card-nome">Força nos Aparelhos</h3>
+          <p class="compasso-card-desc">
+            Série progressiva no Reformer e nos Cadillacs exclusivos. A resistência das molas desafia o tônus e descomprime as articulações com zero impacto.
+          </p>
+        </div>
+        <div class="compasso-card-foco">
+          <span><strong>Foco Clínico:</strong> Tração vertebral assistida e ganho de força articular.</span>
+        </div>
+      </article>
+
+      <!-- Compasso 4 -->
+      <article class="compasso-card-amplo card-spotlight">
+        <div>
+          <div class="compasso-card-topo">
+            <span class="compasso-card-tempo">50 – 60 MIN</span>
+            <span class="compasso-card-romano">IV</span>
+          </div>
+          <h3 class="compasso-card-nome">Flow & Integração</h3>
+          <p class="compasso-card-desc">
+            Alongamento assistido, liberação miofascial e respiração final. Você sai da sala 202 com a postura ereta e a mente visivelmente serena.
+          </p>
+        </div>
+        <div class="compasso-card-foco">
+          <span><strong>Foco Clínico:</strong> Alinhamento axial consolidado e sensação imediata de leveza.</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ 6. EFEITOS REAIS NO ORGANISMO (BENTO GRID MODERNO) ══ -->
+  <section class="secao-efeitos" id="efeitos">
+    <div class="envelope">
+      <div style="max-width: 46rem;">
+        <div class="tag-meta">
+          <span>Transformação Biomecânica</span>
+        </div>
+        <h2 class="serif-display" style="font-size: clamp(2.4rem, 1.8rem + 2vw, 3.8rem); margin: 1rem 0 1.2rem;">
+          A sensação vem primeiro. <em>A explicação vem depois.</em>
+        </h2>
+        <p class="lede">
+          Não é apenas sobre estética: é sobre autonomia motora e longevidade sem dores para o cotidiano.
+        </p>
+      </div>
+
+      <div class="bento-efeitos-desencaixado">
+        <div class="card-efeito card-efeito-1 card-spotlight">
+          <span class="card-efeito-tag">Alívio & Descompressão</span>
+          <h3 class="card-efeito-frase">“Aquela dor na lombar já não me incomoda ao acordar.”</h3>
+          <p class="card-efeito-desc">
+            Exercícios de tração axial e mobilidade que criam espaço entre as vértebras e aliviam pressões sobre o ciático e cervical.
+          </p>
+        </div>
+
+        <div class="card-efeito card-efeito-2 card-spotlight">
+          <span class="card-efeito-tag">Consciência Postural</span>
+          <h3 class="card-efeito-frase">“A postura melhora naturalmente no trabalho.”</h3>
+          <p class="card-efeito-desc">
+            Fortalecimento profundo de centro. Você passa a sentar, caminhar e dirigir com os ombros encaixados sem ter que forçar uma rigidez artificial.
+          </p>
+        </div>
+
+        <div class="card-efeito card-efeito-3 card-spotlight">
+          <span class="card-efeito-tag">Controle & Tônus</span>
+          <h3 class="card-efeito-frase">“Músculos mais firmes e movimentos muito mais leves.”</h3>
+          <p class="card-efeito-desc">
+            No Pilates, força é precisão. O corpo ganha definição sem hipertrofia agressiva, respeitando as curvas naturais da anatomia feminina.
+          </p>
+        </div>
+
+        <div class="card-efeito card-efeito-4 card-spotlight">
+          <span class="card-efeito-tag">Liberdade Diária</span>
+          <h3 class="card-efeito-frase">“Subir escadas e carregar peso sem medo de travar.”</h3>
+          <p class="card-efeito-desc">
+            A recuperação da confiança no próprio corpo: brincar com os filhos, viajar e praticar esportes com flexibilidade e estabilidade articular.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7. A COMUNIDADE ("NINGUÉM TREINA SOZINHA") ══ -->
+  <section class="secao-turma" id="turma">
+    <div class="envelope turma-grid">
+      <div class="turma-moldura card-spotlight">
+        <img src="img/turma.jpg" width="1000" height="676" loading="eager" decoding="async" alt="Alunas de costas abraçadas diante da janela panorâmica do Heaven Pilates.">
+      </div>
+
+      <div>
+        <div class="tag-meta">
+          <span>Comunidade Acolhedora</span>
+        </div>
+        
+        <h2 class="serif-display" style="font-size: clamp(2.4rem, 1.8rem + 2vw, 3.8rem); margin: 1rem 0 1.2rem;">
+          Ninguém treina <em>sozinha</em> por aqui.
+        </h2>
+
+        <p class="manifesto-citacao" style="font-size: 1.45rem; line-height: 1.4; margin-bottom: 1.5rem; font-family: var(--font-serif); color: var(--ink-primary);">
+          “É sobre encontrar apoio no olhar da amiga ao lado. É sobre rir no meio do exercício. É sobre motivar e ser motivada. É sobre sair da aula mais leve por dentro, não só por fora.”
+        </p>
+
+        <p style="color: var(--ink-secondary); line-height: 1.7;">
+          Na sala 202, o ambiente não tem julgamentos nem competições de espelho. São no máximo 5 alunas por horário compartilhando conquistas diárias de saúde e mobilidade.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 8. QUEM CONDUZ: MORGANA STEIN (FEATURE SPREAD) ══ -->
+  <section class="secao-morgana" id="conducao">
+    <div class="envelope">
+      <div class="morgana-spread card-spotlight">
+        <div class="morgana-conteudo">
+          <div class="tag-meta">
+            <span>Responsabilidade Técnica</span>
+          </div>
+
+          <h2 class="morgana-nome">Morgana Stein</h2>
+
+          <ul class="lista-credenciais-luxo">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Fisioterapeuta</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Instrutora Certificada de Pilates</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Especialista em Mobility Flow</span>
+            </li>
+          </ul>
+
+          <p class="morgana-bio">
+            Com presença integral durante toda a aula, Morgana não apenas passa exercícios: ela calibra a carga das molas, corrige ângulos de escápula e alinha a pelve com a precisão e o olhar clínico de uma fisioterapeuta.
+          </p>
+
+          <p style="font-size: 0.92rem; color: var(--ink-muted); margin-bottom: 2rem;">
+            Idealizadora do Heaven Pilates em Canoas e facilitadora de workshops de consciência corporal e mobilidade funcional.
+          </p>
+
+          <div>
+            <a class="btn-luxo" href="https://wa.me/5551994200175?text=Ol%C3%A1%20Morgana!%20Gostaria%20de%20conversar%20sobre%20as%20aulas%20no%20Heaven%20Pilates." target="_blank" rel="noopener">
+              <span>Falar Diretamente com Morgana</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="morgana-retrato-col">
+          <img src="img/morgana.jpg" width="560" height="663" loading="eager" decoding="async" alt="Retrato da fisioterapeuta Morgana Stein no estúdio Heaven Pilates.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 9. DÚVIDAS FREQUENTES (ACCORDION NATIVO) ══ -->
+  
+  <!-- ══ NOVO: SIMULADOR CLÍNICO DA SALA 202 ══ -->
+  <section class="secao-simulador" id="simulador">
+    <div class="envelope">
+      <div style="text-align: center; max-width: 48rem; margin: 0 auto;">
+        <div class="tag-meta" style="justify-content: center;">
+          <span>Personalização Clínica</span>
+        </div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 1.8rem + 2.2vw, 3.6rem); color: var(--ink-primary); line-height: 1.18; margin-top: 0.8rem;">
+          Como seria a sua aula <em>na sala 202?</em>
+        </h2>
+        <p style="color: var(--ink-secondary); font-size: 1.05rem; margin-top: 0.6rem;">
+          Selecione seu objetivo principal e descubra o direcionamento que Morgana Stein prepara para o seu primeiro contato.
+        </p>
+      </div>
+
+      <div class="simulador-card">
+        <!-- Passo 1 -->
+        <div class="simulador-etapa-rotulo">Passo 1 · Seu Objetivo Principal</div>
+        <div class="simulador-pergunta">O que seu corpo mais pede neste momento?</div>
+        <div class="simulador-botoes-grid" id="simuladorObjetivos">
+          <button class="btn-opcao-simulador selecionado" data-foco="coluna">
+            <strong>Alívio de Dor na Coluna</strong><br>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Hérnia discal, ciático ou lombalgia</span>
+          </button>
+          <button class="btn-opcao-simulador" data-foco="postura">
+            <strong>Postura & Consciência</strong><br>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Ombros encaixados e alinhamento</span>
+          </button>
+          <button class="btn-opcao-simulador" data-foco="forca">
+            <strong>Força sem Impacto</strong><br>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Tônus de core e pernas firmes</span>
+          </button>
+          <button class="btn-opcao-simulador" data-foco="reab">
+            <strong>Reabilitação / Gestante</strong><br>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Cuidado suave e biomecânica segura</span>
+          </button>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="simulador-etapa-rotulo">Passo 2 · Sua Experiência</div>
+        <div class="simulador-pergunta">Você já praticou Pilates em aparelhos antes?</div>
+        <div class="simulador-botoes-grid" id="simuladorExperiencia">
+          <button class="btn-opcao-simulador selecionado" data-exp="iniciante">
+            <strong>Começando do Zero</strong><br>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Preciso de orientação paciente passo a passo</span>
+          </button>
+          <button class="btn-opcao-simulador" data-exp="avancada">
+            <strong>Já Pratico / Já Treinei</strong><br>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Busco precisão clínica e zero revezamento</span>
+          </button>
+        </div>
+
+        <!-- Card de Resultado Dinâmico -->
+        <div class="simulador-resultado-box" id="simuladorResultado">
+          <div class="simulador-resultado-tag">DIRECIONAMENTO NA SALA 202</div>
+          <h3 class="simulador-resultado-titulo" id="resultadoTitulo">Protocolo de Descompressão Vertebral</h3>
+          <p class="simulador-resultado-desc" id="resultadoDesc">
+            Morgana iniciará com avaliação da amplitude da sua coluna no Mat, avançando para tração axial suave nas molas do Cadillac. Sem impacto articular e com atenção 100% individualizada em turma de até 5 alunas.
+          </p>
+
+          <a class="btn-luxo" id="btnWhatsappSimulador" href="https://wa.me/5551994200175?text=Ol%C3%A1%20Morgana!%20Simulei%20minha%20aula%20para%20Al%C3%ADvio%20de%20Dor%20na%20Coluna%20e%20gostaria%20de%20saber%20sobre%20hor%C3%A1rios%20na%20sala%20202." target="_blank" rel="noopener">
+            <span>Conversar com Morgana sobre esse Plano no WhatsApp</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao-faq envelope" id="duvidas">
+    <div class="faq-envelope">
+      <div style="text-align: center;">
+        <div class="tag-meta">
+          <span>Esclarecimentos Clínicos</span>
+        </div>
+        <h2 class="serif-display" style="font-size: clamp(2.4rem, 1.8rem + 2vw, 3.8rem); margin: 1rem 0 1.2rem;">
+          O que você precisa saber <em>antes de começar.</em>
+        </h2>
+      </div>
+
+      <div class="faq-lista">
+        <details open>
+          <summary>
+            <span>Nunca pratiquei Pilates. É possível começar do zero absoluto?</span>
+            <span class="faq-icone" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-corpo">
+            Sim. A progressão começa nos fundamentos do solo (Mat) e avança para os aparelhos no ritmo exato das suas articulações. Com no máximo 5 alunos por horário, Morgana ajusta cada exercício para o seu nível.
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span>Tenho hérnia de disco, dores no ciático ou lesões. Posso fazer?</span>
+            <span class="faq-icone" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-corpo">
+            Sim, e é justamente o cenário mais indicado. Como o estúdio é conduzido por fisioterapeuta, seus exames e limitações são levados em conta desde o primeiro minuto para que nenhum movimento cause sobrecarga perigosa.
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span>O Pilates trabalha força real ou é apenas alongamento?</span>
+            <span class="faq-icone" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-corpo">
+            O método constrói força profunda de estabilização articular, abdômen e glúteos. A resistência das molas dos Cadillacs e Reformers impõe um desafio neuromuscular intenso, sem o impacto articular da musculação tradicional.
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span>Como funciona a divisão dos aparelhos durante a aula?</span>
+            <span class="faq-icone" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-corpo">
+            Como o Heaven possui 5 Cadillacs próprios para no máximo 5 alunas simultâneas, não há revezamento nem espera: cada aluna treina no seu próprio aparelho durante a sessão inteira.
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span>Como faço para agendar minha aula e conhecer a sala 202?</span>
+            <span class="faq-icone" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-corpo">
+            Basta tocar no botão de WhatsApp <a href="https://wa.me/5551994200175?text=Ol%C3%A1%20Morgana!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20para%20conhecer%20a%20sala%20202." target="_blank" rel="noopener" style="color: var(--brand-forest); font-weight: 600;">(51) 99420-0175</a>. Combinamos um horário conveniente e esclarecemos qualquer dúvida sobre sua condição física.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 10. O CONVITE FINAL & RESERVA ══ -->
+  <section class="secao-cta-final envelope" id="contato">
+    <div class="cta-caixa-luxo card-spotlight">
+      <div class="cta-caixa-conteudo">
+        <div class="tag-meta" style="color: rgba(250, 248, 245, 0.7); margin-bottom: 1.2rem;">
+          <span>A Primeira Aula</span>
+        </div>
+
+        <h2 class="cta-caixa-titulo">
+          Começa com uma <em>conversa sincera</em> sobre o seu corpo.
+        </h2>
+
+        <p class="cta-caixa-texto">
+          Venha sentir o conforto de treinar em um estúdio arejado, com a atenção individual de uma fisioterapeuta e aparelhagem própria na sala 202.
+        </p>
+
+        <a class="btn-cta-ouro" href="https://wa.me/5551994200175?text=Ol%C3%A1%20Morgana!%20Gostaria%20de%20agendar%20minha%20primeira%20aula%20no%20Heaven%20Pilates." target="_blank" rel="noopener">
+          <span>Reservar Horário pelo WhatsApp</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+
+        <div class="cta-grid-dados">
+          <div>
+            <div class="cta-dado-rotulo">Endereço do Salão</div>
+            <div class="cta-dado-valor">
+              Rua Dona Rafaela, 444 — Sala 202 (2º Andar)<br>
+              Bairro Marechal Rondon · Canoas — RS<br>
+              CEP 92020-030
+            </div>
+          </div>
+          <div>
+            <div class="cta-dado-rotulo">Canais Oficiais</div>
+            <div class="cta-dado-valor">
+              WhatsApp: <a href="https://wa.me/5551994200175?text=Ol%C3%A1%20Morgana!%20Gostaria%20de%20conversar%20sobre%20as%20aulas%20no%20Heaven%20Pilates." target="_blank" rel="noopener">(51) 99420-0175</a><br>
+              Instagram: <a href="https://www.instagram.com/heaven.pilates/" target="_blank" rel="noopener">@heaven.pilates</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ RODAPÉ ARQUITETÔNICO & COMPLIANCE ══ -->
+<footer class="rodape-luxo">
+  <div class="envelope rodape-grid">
+    <div class="rodape-marca">
+      <img src="img/logo.png" width="132" height="37" alt="Heaven Pilates">
+      <p style="color: var(--ink-secondary);">
+        <strong>Heaven Pilates</strong> · Estúdio Boutique de Pilates e Mobility Flow
+      </p>
+      <p style="color: var(--ink-muted); margin-top: 0.3rem;">
+        Rua Dona Rafaela, 444 — sala 202, Marechal Rondon, Canoas — RS · CEP 92020-030
+      </p>
+    </div>
+
+    <div>
+      <p style="color: var(--ink-primary); font-weight: 600;">Responsabilidade Técnica em Fisioterapia</p>
+      <p style="color: var(--ink-secondary); margin-top: 0.2rem;">
+        Morgana Stein — Fisioterapeuta e Instrutora de Pilates.
+      </p>
+      <p class="rodape-crefito">
+        Prática em estrita conformidade com as resoluções e diretrizes éticas do COFFITO e CREFITO-5. Projeto de design autoral e curadoria visual de alta resolução.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ SCRIPT CINEMÁTICO: LENIS + GSAP PINNED HORIZONTAL SCRUB + CURSOR MAGNÉTICO ══ -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  // ── A. PRELOADER CURTAIN AWWWARDS COM CONTADOR SUAVE ──
+  var preloader = document.getElementById('preloaderCurtain');
+  var preloaderNum = document.getElementById('preloaderNum');
+  var preloaderFill = document.getElementById('preloaderFill');
+  var count = 0;
+
+  var intervalId = setInterval(function() {
+    count += Math.floor(Math.random() * 8) + 4;
+    if (count > 100) count = 100;
+    if (preloaderNum) preloaderNum.textContent = count < 10 ? '0' + count : count;
+    if (preloaderFill) preloaderFill.style.width = count + '%';
+
+    if (count >= 100) {
+      clearInterval(intervalId);
+      setTimeout(function() {
+        if (preloader) preloader.classList.add('remover');
+      }, 250);
+    }
+  }, 35);
+
+  // ── B. WEB AUDIO SYNTH AMBIENCE RELAXANTE NATIVO ──
+  var btnAudio = document.getElementById('btnAudioToggle');
+  var audioLabel = document.getElementById('audioLabelTexto');
+  var audioCtx = null;
+  var osc1 = null;
+  var osc2 = null;
+  var gainNode = null;
+  var audioLigado = false;
+
+  if (btnAudio) {
+    btnAudio.addEventListener('click', function() {
+      if (!audioLigado) {
+        try {
+          var AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (!audioCtx) audioCtx = new AudioContext();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+
+          gainNode = audioCtx.createGain();
+          gainNode.gain.setValueAtTime(0.001, audioCtx.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.06, audioCtx.currentTime + 2.5);
+
+          var filter = audioCtx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(380, audioCtx.currentTime);
+
+          // Oscilador 1: Tom fundamental 432 Hz
+          osc1 = audioCtx.createOscillator();
+          osc1.type = 'sine';
+          osc1.frequency.setValueAtTime(216, audioCtx.currentTime);
+
+          // Oscilador 2: Quinta suave (324 Hz)
+          osc2 = audioCtx.createOscillator();
+          osc2.type = 'sine';
+          osc2.frequency.setValueAtTime(324, audioCtx.currentTime);
+
+          osc1.connect(filter);
+          osc2.connect(filter);
+          filter.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+
+          osc1.start();
+          osc2.start();
+
+          audioLigado = true;
+          btnAudio.classList.add('ativo');
+          if (audioLabel) audioLabel.textContent = 'SOM DO ESTÚDIO: ON (432Hz)';
+        } catch (e) {
+          console.warn('Web Audio indisponível:', e);
+        }
+      } else {
+        if (gainNode && audioCtx) {
+          gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+          setTimeout(function() {
+            if (osc1) { osc1.stop(); osc1.disconnect(); }
+            if (osc2) { osc2.stop(); osc2.disconnect(); }
+            audioLigado = false;
+            btnAudio.classList.remove('ativo');
+            if (audioLabel) audioLabel.textContent = 'SOM DO ESTÚDIO: OFF';
+          }, 1300);
+        }
+      }
+    });
+  }
+
+  // ── C. HOTSPOTS INTERATIVOS DA ENGENHARIA DO CADILLAC ──
+  var hotspots = document.querySelectorAll('.hotspot-pin');
+  var specCards = document.querySelectorAll('.card-spec-tecnica');
+
+  function ativarSpec(id) {
+    hotspots.forEach(function(h) {
+      if (h.getAttribute('data-spec') === id) h.classList.add('ativo');
+      else h.classList.remove('ativo');
+    });
+    specCards.forEach(function(s) {
+      if (s.getAttribute('data-spec') === id) {
+        s.classList.add('ativo');
+        s.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        s.classList.remove('ativo');
+      }
+    });
+  }
+
+  hotspots.forEach(function(pin) {
+    pin.addEventListener('click', function() {
+      var id = pin.getAttribute('data-spec');
+      ativarSpec(id);
+    });
+  });
+
+  specCards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      var id = card.getAttribute('data-spec');
+      ativarSpec(id);
+    });
+  });
+
+  // ── D. SIMULADOR CLÍNICO DA SALA 202 ──
+  var focoAtual = 'coluna';
+  var expAtual = 'iniciante';
+
+  var protocolos = {
+    'coluna': {
+      titulo: 'Protocolo de Descompressão Vertebral & Alívio Ciático',
+      desc: 'Morgana focará nos exercícios aéreos do Cadillac com tração assistida para alívio imediato da pressão nos discos L4-L5, combinando mobilidade torácica com estabilização do powerhouse sem sobrecarga.',
+      msg: 'Ol%C3%A1%20Morgana!%20Fiz%20a%20simula%C3%A7%C3%A3o%20no%20site%20para%20Al%C3%ADvio%20de%20Dor%20na%20Coluna%20e%20gostaria%20de%20agendar%20uma%20conversa%20na%20sala%20202.'
+    },
+    'postura': {
+      titulo: 'Protocolo de Reeducação Postural & Cintura Escapular',
+      desc: 'Foco na abertura de peitoral, retração escapular e alinhamento axial no Reformer e Cadillac. Você aprende a sustentar o corpo ereto sem esforço estafante, respirando com amplitude plena.',
+      msg: 'Ol%C3%A1%20Morgana!%20Fiz%20o%20simulador%20visando%20Postura%20e%20Consci%C3%AAncia%20Corporal.%20Gostaria%20de%20conhecer%20os%20hor%C3%A1rios%20da%20sala%20202.'
+    },
+    'forca': {
+      titulo: 'Protocolo de Força Neuromuscular & Resistência de Core',
+      desc: 'Trabalho de tonificação profunda sem impacto articular. A resistência progressiva das molas desafia os oblíquos, glúteos e estabilizadores com ritmo e sem compensação de coluna.',
+      msg: 'Ol%C3%A1%20Morgana!%20Fiz%20a%20simula%C3%A7%C3%A3o%20para%20For%C3%A7a%20sem%20Impacto%20e%20Core.%20Como%20fa%C3%A7o%20para%20agendar%20uma%20aula?'
+    },
+    'reab': {
+      titulo: 'Protocolo de Cuidado Clínico e Reabilitação Segura',
+      desc: 'Supervisão estrita de cada grau de movimento. Ideal para pós-operatório, recuperação de lesões ou gestantes, adaptando as molas e apoios para conforto, drenagem e segurança absoluta.',
+      msg: 'Ol%C3%A1%20Morgana!%20Busco%20Reabilita%C3%A7%C3%A3o/Pilates%20Cl%C3%ADnico%20com%20acompanhamento%20de%20fisioterapeuta%20na%20sala%20202.'
+    }
+  };
+
+  function atualizarSimulador() {
+    var p = protocolos[focoAtual] || protocolos['coluna'];
+    var resTitulo = document.getElementById('resultadoTitulo');
+    var resDesc = document.getElementById('resultadoDesc');
+    var btnZap = document.getElementById('btnWhatsappSimulador');
+
+    if (resTitulo) resTitulo.textContent = p.titulo;
+    if (resDesc) {
+      var expExtra = expAtual === 'iniciante' 
+        ? ' A condução será adaptada com paciência desde o primeiro contato, garantindo segurança total.'
+        : ' A progressão desafiará sua biomecânica com ajustes de precisão milimétrica.';
+      resDesc.textContent = p.desc + expExtra;
+    }
+    if (btnZap) {
+      btnZap.href = 'https://wa.me/5551994200175?text=' + p.msg;
+    }
+  }
+
+  var btnsObjetivo = document.querySelectorAll('#simuladorObjetivos .btn-opcao-simulador');
+  btnsObjetivo.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btnsObjetivo.forEach(function(b) { b.classList.remove('selecionado'); });
+      btn.classList.add('selecionado');
+      focoAtual = btn.getAttribute('data-foco');
+      atualizarSimulador();
+    });
+  });
+
+  var btnsExp = document.querySelectorAll('#simuladorExperiencia .btn-opcao-simulador');
+  btnsExp.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btnsExp.forEach(function(b) { b.classList.remove('selecionado'); });
+      btn.classList.add('selecionado');
+      expAtual = btn.getAttribute('data-exp');
+      atualizarSimulador();
+    });
+  });
+
+  // ── E. 3D TILT SUAVE EM CARDS DE APARELHOS E FOTOS ──
+  var tiltCards = document.querySelectorAll('.card-aparelho-cinema, .hero-theatrical-moldura, .comp-coluna.destaque');
+  tiltCards.forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      var rotX = -(y / (rect.height / 2)) * 4;
+      var rotY = (x / (rect.width / 2)) * 4;
+      card.style.transform = 'perspective(900px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+    });
+  });
+
+
+  // 1. Cursor Magnético Dinâmico (Dot + Ring Lerp)
+  var cursorDot = document.getElementById('cursorDot');
+  var cursorRing = document.getElementById('cursorRing');
+  var mouseX = window.innerWidth / 2;
+  var mouseY = window.innerHeight / 2;
+  var ringX = mouseX;
+  var ringY = mouseY;
+
+  window.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (cursorDot) {
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top = mouseY + 'px';
+    }
+  });
+
+  function animarCursor() {
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
+    if (cursorRing) {
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top = ringY + 'px';
+    }
+    requestAnimationFrame(animarCursor);
+  }
+  requestAnimationFrame(animarCursor);
+
+  // Expansão do cursor em links e botões interativos
+  var elementosInterativos = document.querySelectorAll('a, button, summary, .card-spotlight, .card-aparelho-cinema');
+  elementosInterativos.forEach(function(el) {
+    el.addEventListener('mouseenter', function() { document.body.classList.add('cursor-hover'); });
+    el.addEventListener('mouseleave', function() { document.body.classList.remove('cursor-hover'); });
+  });
+
+  // 2. Lenis Smooth Scroll Engine
+  var lenis = null;
+  if (typeof Lenis !== "undefined") {
+    lenis = new Lenis({
+      duration: 1.25,
+      easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true,
+      wheelMultiplier: 1.05
+    });
+
+    if (typeof ScrollTrigger !== "undefined") {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function(time) {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+  }
+
+  // 3. Barra de Progresso e Dock Flutuante
+  var barra = document.getElementById('linhaProgresso');
+  var dock = document.getElementById('dockFlutuante');
+
+  window.addEventListener('scroll', function() {
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    if (total > 0) {
+      var progresso = window.pageYOffset / total;
+      barra.style.transform = 'scaleX(' + Math.min(progresso, 1) + ')';
+    }
+    if (window.pageYOffset > 500) {
+      dock.classList.add('visivel');
+    } else {
+      dock.classList.remove('visivel');
+    }
+  }, { passive: true });
+
+  // 4. Spotlight Interativo em Cards
+  var spotlightCards = document.querySelectorAll('.card-spotlight');
+  spotlightCards.forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', x + 'px');
+      card.style.setProperty('--mouse-y', y + 'px');
+    });
+  });
+
+  // 5. GSAP ScrollTrigger Animations
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Zoom Reverso Cinemático na foto do Hero Palco
+    gsap.to("#heroPalcoImg", {
+      scale: 1.0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".secao-hero-theatrical",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1.2
+      }
+    });
+
+    // Pinned Horizontal Scrub na Seção de Aparelhos (Desktop >= 900px)
+    var containerHorizontal = document.getElementById("trilhoHorizontal");
+    var esteiraHorizontal = document.getElementById("esteiraHorizontal");
+    var contadorAparelhos = document.getElementById("aparelhosContador");
+
+    if (window.innerWidth >= 900 && esteiraHorizontal) {
+      var deslocamentoTotal = esteiraHorizontal.scrollWidth - window.innerWidth + 80;
+
+      gsap.to(esteiraHorizontal, {
+        x: -deslocamentoTotal,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".secao-aparelhos-pinned",
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: () => "+=" + deslocamentoTotal,
+          invalidateOnRefresh: true,
+          onUpdate: function(self) {
+            var step = Math.min(6, Math.max(1, Math.round(self.progress * 5) + 1));
+            contadorAparelhos.textContent = "0" + step + " / 06";
+          }
+        }
+      });
+    }
+
+    // Efeito de escada nos Compassos do Ritual ao rolar
+    var compassos = document.querySelectorAll(".compasso-item");
+    compassos.forEach(function(item) {
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 78%",
+        onEnter: function() { item.classList.add("ativo"); }
+      });
+    });
+
+    // Parallax em figuras da galeria curatorial
+    gsap.utils.toArray(".galeria-curatorial figure img").forEach(function(img) {
+      gsap.to(img, {
+        y: -22,
+        ease: "none",
+        scrollTrigger: {
+          trigger: img,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.4
+        }
+      });
+    });
+
+  }
+
+});
+</script>
+
+<!-- Schema.org JSON-LD para SEO Local e Autoridade Clínica -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
+  "name": "Heaven Pilates",
+  "description": "Estúdio boutique de Pilates na sala 202 em Canoas — RS, equipado com cinco Cadillacs próprios e conduzido pela fisioterapeuta Morgana Stein.",
+  "image": "http://127.0.0.1:8010/proposta/heaven-pilates/v3-premium/img/pico.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Dona Rafaela, 444 — sala 202",
+    "addressLocality": "Canoas",
+    "addressRegion": "RS",
+    "postalCode": "92020-030",
+    "addressCountry": "BR"
+  },
+  "telephone": "+55-51-99420-0175",
+  "sameAs": ["https://www.instagram.com/heaven.pilates/"],
+  "employee": {
+    "@type": "Person",
+    "name": "Morgana Stein",
+    "jobTitle": "Fisioterapeuta"
+  },
+  "areaServed": { "@type": "City", "name": "Canoas" }
+}
+</script>
+
+</body>
+</html>

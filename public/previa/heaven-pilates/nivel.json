@@ -1,0 +1,19 @@
+{
+  "slug": "heaven-pilates",
+  "nivel": "premium",
+  "pasta": "v3-premium",
+  "execucao": {
+    "agente": "frontend-de-marca",
+    "executor": "claude-agente",
+    "duracao_s": 2509,
+    "pesquisou": true,
+    "turnos": 149,
+    "custo_usd": 28.076199000000017,
+    "duracao_ms": 2506463,
+    "modelo": "opus"
+  },
+  "fora_do_orcamento": [],
+  "conferencia": [
+    "profissão regulada (COFFITO) e nenhum número de inscrição no CREFITO na página"
+  ]
+}
