@@ -7,7 +7,6 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Labaia Arquitetura & Design · Projetos Residenciais no Maxplaza · Canoas, RS</title>
-<meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Se tu quer uma casa para se sentir bem, tu quer uma baia. Ateliê de arquitetura de interiores e projetos residenciais por Bruna Bonacina e Josiane Rauber. Torre Office Maxplaza, Canoas - RS.">
 <link rel="canonical" href="https://josetorquato.dev/previa/labaia-arquitetura/">
 <meta property="og:type" content="website">
@@ -490,7 +489,7 @@ a {
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   PORTFOLIO SELEÇÃO AUTORAL
+   PORTFÓLIO INTERATIVO · CARROSSEL CINEMATOGRÁFICO & MASONRY
    ══════════════════════════════════════════════════════════════════ */
 .portfolio-section {
   padding: clamp(5rem, 10vw, 9rem) 0;
@@ -504,8 +503,8 @@ a {
 }
 
 .section-head {
-  max-width: 760px;
-  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+  max-width: 820px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .section-title {
@@ -523,128 +522,299 @@ a {
   line-height: 1.6;
 }
 
-/* Portfolio Masonry / Asymmetric Grid */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.75rem;
+/* Carrossel Principal de Alta Costura */
+.carousel-wrapper {
+  margin-bottom: 4rem;
+  position: relative;
 }
 
-.project-card {
-  background: var(--bg-surface);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(164, 90, 60, 0.3);
-}
-
-.project-card.span-7 {
-  grid-column: span 12;
-}
-
-.project-card.span-5 {
-  grid-column: span 12;
-}
-
-.project-card.span-4 {
-  grid-column: span 12;
-}
-
-.project-card.span-8 {
-  grid-column: span 12;
-}
-
-.project-card.span-6 {
-  grid-column: span 12;
-}
-
-@media (min-width: 992px) {
-  .project-card.span-7 { grid-column: span 7; }
-  .project-card.span-5 { grid-column: span 5; }
-  .project-card.span-4 { grid-column: span 4; }
-  .project-card.span-8 { grid-column: span 8; }
-  .project-card.span-6 { grid-column: span 6; }
-}
-
-.project-thumb-wrap {
+.carousel-viewport {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-xl);
+  user-select: none;
+  cursor: grab;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--bg-dark);
 }
 
-.project-card.span-5 .project-thumb-wrap {
-  aspect-ratio: 4 / 3;
+.carousel-viewport:active {
+  cursor: grabbing;
 }
 
-.project-thumb {
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.carousel-slide-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.project-card:hover .project-thumb {
-  transform: scale(1.04);
+.carousel-slide:hover .carousel-slide-img {
+  transform: scale(1.03);
 }
 
-.project-tag-glass {
+.carousel-slide-overlay {
   position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  background: rgba(28, 25, 23, 0.55);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(1.4rem, 4vw, 3rem);
+  background: linear-gradient(to top, rgba(28, 25, 23, 0.88) 0%, rgba(28, 25, 23, 0.4) 60%, transparent 100%);
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.slide-info-box {
+  max-width: 680px;
+}
+
+.slide-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-sand);
+  margin-bottom: 0.75rem;
+}
+
+.slide-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.slide-desc {
+  font-size: 0.92rem;
+  color: var(--text-light-muted);
+  line-height: 1.5;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .slide-desc {
+    display: block;
+  }
+}
+
+.slide-zoom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-glass-subtle);
-  border-radius: 9999px;
-  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
-  font-size: 0.72rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
 }
 
-.project-info {
-  padding: 1.8rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.project-name {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 500;
+.slide-zoom-btn:hover {
+  background: #FFFFFF;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
 }
 
-.project-desc {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
-  flex-grow: 1;
-}
-
-.project-meta-list {
+/* Controles de Navegação do Carrossel */
+.carousel-controls-bar {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-light);
-  padding-top: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
 }
+
+.carousel-counter-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.carousel-counter {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.carousel-dots-list {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.carousel-dot-item {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--border-card);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-dot-item.active {
+  width: 26px;
+  background: var(--accent-terracotta);
+}
+
+.carousel-btns-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.carousel-arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.carousel-arrow-btn:hover {
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+  border-color: var(--accent-terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(164, 90, 60, 0.25);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.open {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-caption {
+  color: #FFFFFF;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  background: var(--accent-terracotta);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--accent-terracotta);
+}
+
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
 
 /* ══════════════════════════════════════════════════════════════════
    O RITUAL PROJETUAL EM 4 COMPASSOS
@@ -1117,7 +1287,6 @@ a {
 </style>
 </head>
 <body>
-<div data-previa style="background:#5a4a1f;color:#f4f1ec;font:500 13px/1.45 system-ui,sans-serif;padding:9px 16px;text-align:center">Prévia para aprovação — não é o site publicado.</div>
 
 <!-- Header -->
 <header class="site-header" id="header">
@@ -1164,7 +1333,7 @@ a {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
           <a href="#portfolio" class="btn-secondary">
-            <span>Explorar Projetos Autorais</span>
+            <span>Deslizar pelo Portfólio</span>
           </a>
         </div>
 
@@ -1222,124 +1391,224 @@ a {
     </div>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- Portfolio Section com Carrossel Cinematográfico -->
   <section class="portfolio-section" id="portfolio">
     <div class="portfolio-container">
       <div class="section-head">
         <span class="editorial-tag">PORTFÓLIO AUTORAL</span>
         <h2 class="section-title">Espaços desenhados para acolher a vida real.</h2>
         <p class="section-desc">
-          Uma seleção de projetos residenciais onde marcenaria inteligente, luz zenital e matérias-primas nobres transformam metros quadrados em refúgio.
+          Deslize pelo carrossel para explorar a fluidez dos ambientes ou clique em qualquer fotografia para abrir a galeria em alta resolução.
         </p>
       </div>
 
-      <div class="portfolio-grid">
-        
-        <!-- Projeto 1: Suíte Master (Span 7) -->
-        <div class="project-card span-7">
-          <div class="project-thumb-wrap">
-            <img src="img/suite.jpg" alt="Suíte master com cabeceira estofada e iluminação indireta" class="project-thumb" loading="lazy" width="2400" height="1350">
-            <span class="project-tag-glass">Suíte Master</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-name">Refúgio Íntimo & Suíte com Ripado Suave</h3>
-            <p class="project-desc">Aconchego com cabeceira sob medida, tons areia e painéis que camuflam a circulação do closet.</p>
-            <div class="project-meta-list">
-              <span>Iluminação cênica</span>
-              <span>•</span>
-              <span>Marcenaria acolhedora</span>
+      <!-- CARROSSEL PRINCIPAL INTERATIVO -->
+      <div class="carousel-wrapper" id="projectCarousel">
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="carousel-track" id="carouselTrack">
+            
+            <!-- Slide 1: Living Principal -->
+            <div class="carousel-slide" data-index="0" data-caption="Living Integrado com Marcenaria e Luz Natural Filtrada">
+              <img src="img/hero.jpg" alt="Living Integrado" class="carousel-slide-img" width="2133" height="1600">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Estar & Social</span>
+                  <h3 class="slide-title">Living Integrado com Marcenaria e Conexão Espacial</h3>
+                  <p class="slide-desc">Integração fluida entre estar, leitura e jantar. Painel ripado contínuo em carvalho americano e iluminação indireta difusa.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(0)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
             </div>
+
+            <!-- Slide 2: Suíte Master -->
+            <div class="carousel-slide" data-index="1" data-caption="Suíte Master com Cabeceira Estofada e Ripado Suave">
+              <img src="img/suite.jpg" alt="Suíte Master" class="carousel-slide-img" width="2400" height="1350">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Íntimo & Conforto</span>
+                  <h3 class="slide-title">Suíte Master com Cabeceira em Lino e Ripado Oculto</h3>
+                  <p class="slide-desc">Cabeceira estofada em linho cru, painel de madeira com portas pivotantes camufladas e iluminação quente zenital.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(1)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 3: Cozinha e Bancada -->
+            <div class="carousel-slide" data-index="2" data-caption="Cozinha Gourmet Integrada com Ilha em Quartzo">
+              <img src="img/cozinha.jpg" alt="Cozinha Integrada" class="carousel-slide-img" width="1783" height="1189">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Cozinha & Convívio</span>
+                  <h3 class="slide-title">Cozinha Gourmet com Ilha de Preparo e Marcenaria Oculta</h3>
+                  <p class="slide-desc">Armários com puxadores cava integrados, bancada em quartzo acetinado e nichos iluminados para temperos e peças afetivas.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(2)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 4: Varanda Gourmet -->
+            <div class="carousel-slide" data-index="3" data-caption="Varanda Gourmet Envidraçada com Churrasqueira Revestida">
+              <img src="img/varanda.jpg" alt="Varanda Gourmet" class="carousel-slide-img" width="1788" height="1192">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Varanda & Lazer</span>
+                  <h3 class="slide-title">Varanda Gourmet Envidraçada com Churrasqueira em Pedra Natural</h3>
+                  <p class="slide-desc">Integração da área externa ao living, mesa de jantar em madeira maciça e ventilação cruzada para receber amigos.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(3)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 5: Estante e Home -->
+            <div class="carousel-slide" data-index="4" data-caption="Living com Estante Arquitetônica e Nichos Iluminados">
+              <img src="img/living.jpg" alt="Living com Estante" class="carousel-slide-img" width="1920" height="1080">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Home & Arquitetura</span>
+                  <h3 class="slide-title">Living de Estar com Estante Arquitetônica em Laca Fosca</h3>
+                  <p class="slide-desc">Composição geométrica com nichos para livros, objetos de memória de viagens e acústica confortável para momentos em família.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(4)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 6: Sala de Jantar -->
+            <div class="carousel-slide" data-index="5" data-caption="Sala de Jantar Escultural com Pendente Linear">
+              <img src="img/galeria_sala_jantar.jpg" alt="Sala de Jantar" class="carousel-slide-img" width="1200" height="675">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Convívio Social</span>
+                  <h3 class="slide-title">Sala de Jantar com Pendente Escultural e Mesa Oval</h3>
+                  <p class="slide-desc">Cadeiras estofadas em tom areia, espelho bronze para ampliação óptica e marcenaria de apoio integrada.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(5)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 7: Ilha Gourmet -->
+            <div class="carousel-slide" data-index="6" data-caption="Cozinha com Ilha Central e Cooktop Integrado">
+              <img src="img/galeria_cozinha_ilha.jpg" alt="Ilha Central de Cozinha" class="carousel-slide-img" width="1200" height="675">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Design Gourmet</span>
+                  <h3 class="slide-title">Ilha Central com Cooktop e Armários em Tom Fendi</h3>
+                  <p class="slide-desc">Eletrodomésticos embutidos, torre quente camuflada e bancada pensada para cozinhar interagindo com o living.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(6)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 8: Banheiro da Suíte -->
+            <div class="carousel-slide" data-index="7" data-caption="Sala de Banho da Suíte com Cuba Esculpida">
+              <img src="img/galeria_banheiro_suite.jpg" alt="Banheiro Suíte" class="carousel-slide-img" width="1200" height="675">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Sala de Banho</span>
+                  <h3 class="slide-title">Banheiro Suíte em Porcelanato Calacata e Cuba Esculpida</h3>
+                  <p class="slide-desc">Metais em preto fosco, nicho iluminado no box e espelho retroiluminado com temperatura de cor quente e relaxante.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(7)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 9: Home Office & Estudo -->
+            <div class="carousel-slide" data-index="8" data-caption="Home Office & Biblioteca com Biofilia">
+              <img src="img/galeria_home_office.jpg" alt="Home Office" class="carousel-slide-img" width="2000" height="1125">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Home Office</span>
+                  <h3 class="slide-title">Home Office & Biblioteca com Foco em Ergonomia e Luz Natural</h3>
+                  <p class="slide-desc">Bancada contínua para duas pessoas, prateleiras suspensas em serralheria fina e biofilia pontual para produtividade serena.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(8)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 10: Detalhamento de Marcenaria -->
+            <div class="carousel-slide" data-index="9" data-caption="Detalhamento Construtivo e Encontros de Marcenaria">
+              <img src="img/detalhe.jpg" alt="Detalhe de Marcenaria" class="carousel-slide-img" width="1367" height="1367">
+              <div class="carousel-slide-overlay">
+                <div class="slide-info-box">
+                  <span class="slide-tag">Precisão & Acabamento</span>
+                  <h3 class="slide-title">A Precisão dos Detalhes Construtivos e Encontros Milimétricos</h3>
+                  <p class="slide-desc">Encontros perfeitos entre marcenaria artesanal, pedras nobres e iluminação embutida. O padrão ateliê em cada centímetro.</p>
+                </div>
+                <button type="button" class="slide-zoom-btn" onclick="openLightbox(9)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Ampliar</span>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- Projeto 2: Cozinha Planejada (Span 5) -->
-        <div class="project-card span-5">
-          <div class="project-thumb-wrap">
-            <img src="img/cozinha.jpg" alt="Cozinha integrada com marcenaria minimalista em tom neutro" class="project-thumb" loading="lazy" width="1783" height="1189">
-            <span class="project-tag-glass">Cozinha & Convívio</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-name">Cozinha Funcional & Bancada Social</h3>
-            <p class="project-desc">Espaço gourmet desenhado para receber amigos com fluidez entre bancada e ilha de preparo.</p>
-            <div class="project-meta-list">
-              <span>Superfície em quartzo</span>
-              <span>•</span>
-              <span>Armazenamento oculto</span>
+        <!-- Controles Inferiores do Carrossel -->
+        <div class="carousel-controls-bar">
+          <div class="carousel-counter-wrap">
+            <div class="carousel-counter" id="carouselCounter">01 / 10</div>
+            <div class="carousel-dots-list" id="carouselDots">
+              <!-- Dots gerados via JS -->
             </div>
           </div>
-        </div>
 
-        <!-- Projeto 3: Varanda Gourmet (Span 5) -->
-        <div class="project-card span-5">
-          <div class="project-thumb-wrap">
-            <img src="img/varanda.jpg" alt="Varanda gourmet envidraçada com churrasqueira e mesa de jantar" class="project-thumb" loading="lazy" width="1788" height="1192">
-            <span class="project-tag-glass">Varanda Gourmet</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-name">Área Gourmet Integrada ao Horizonte</h3>
-            <p class="project-desc">Churrasqueira revestida em pedra natural com marcenaria suspensa e ventilação cruzada.</p>
-            <div class="project-meta-list">
-              <span>Lazer residencial</span>
-              <span>•</span>
-              <span>Integração total</span>
-            </div>
+          <div class="carousel-btns-group">
+            <button type="button" class="carousel-arrow-btn" id="prevBtn" aria-label="Foto Anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="carousel-arrow-btn" id="nextBtn" aria-label="Próxima Foto">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
           </div>
         </div>
-
-        <!-- Projeto 4: Living Social (Span 7) -->
-        <div class="project-card span-7">
-          <div class="project-thumb-wrap">
-            <img src="img/living.jpg" alt="Living com estante e iluminação em trilho elegante" class="project-thumb" loading="lazy" width="1920" height="1080">
-            <span class="project-tag-glass">Estar & Home</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-name">Living de Estar com Estante Arquitetônica</h3>
-            <p class="project-desc">Composição geométrica com nichos para livros, objetos de memória e acabamento em laca fosca.</p>
-            <div class="project-meta-list">
-              <span>Design de mobiliário</span>
-              <span>•</span>
-              <span>Acústica suave</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projeto 5: Comercial / Ateliê (Span 6) -->
-        <div class="project-card span-6">
-          <div class="project-thumb-wrap">
-            <img src="img/comercial.jpg" alt="Consultório e escritório com divisória de vidro e madeira" class="project-thumb" loading="lazy" width="1800" height="1200">
-            <span class="project-tag-glass">Espaço Corporativo</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-name">Escritórios & Consultórios com Identidade</h3>
-            <p class="project-desc">A mesma essência de bem-estar residencial adaptada para ambientes profissionais e clínicas.</p>
-            <div class="project-meta-list">
-              <span>Biofilia</span>
-              <span>•</span>
-              <span>Ergonomia produtiva</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projeto 6: Detalhe de Mobiliário (Span 6) -->
-        <div class="project-card span-6">
-          <div class="project-thumb-wrap">
-            <img src="img/detalhe.jpg" alt="Detalhe de marcenaria e iluminação de nicho" class="project-thumb" loading="lazy" width="1367" height="1367">
-            <span class="project-tag-glass">Detalhamento Autoral</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-name">A Precisão dos Detalhes Construtivos</h3>
-            <p class="project-desc">Encontros milimétricos entre pedra, madeira e metal. O luxo mora na perfeição do arremate.</p>
-            <div class="project-meta-list">
-              <span>Desenho exclusivo</span>
-              <span>•</span>
-              <span>Produção artesanal</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+
     </div>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Fechar galeria">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <button type="button" class="lightbox-nav-btn lightbox-prev" onclick="stepLightbox(-1)" aria-label="Anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button type="button" class="lightbox-nav-btn lightbox-next" onclick="stepLightbox(1)" aria-label="Próxima">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
 
   <!-- Ritual Projetual Section (860px Centered 2x2 Grid) -->
   <section class="ritual-section" id="ritual">
@@ -1622,7 +1891,6 @@ document.addEventListener("DOMContentLoaded", () => {
     infinite: false,
   });
 
-  // Connect Lenis to GSAP ScrollTrigger
   lenis.on('scroll', ScrollTrigger.update);
 
   gsap.ticker.add((time) => {
@@ -1680,21 +1948,6 @@ document.addEventListener("DOMContentLoaded", () => {
     delay: 0.6
   });
 
-  // ScrollTrigger reveals
-  gsap.utils.toArray('.project-card').forEach((card) => {
-    gsap.from(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 88%",
-        once: true
-      },
-      duration: 0.9,
-      y: 45,
-      opacity: 0,
-      ease: "power3.out"
-    });
-  });
-
   gsap.utils.toArray('.ritual-card').forEach((card, i) => {
     gsap.from(card, {
       scrollTrigger: {
@@ -1709,7 +1962,159 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out"
     });
   });
+
+  // ══════════════════════════════════════════════════════════════════
+  // PORTFOLIO CAROUSEL LOGIC (TOUCH SWIPE, MOUSE DRAG & KEYBOARD)
+  // ══════════════════════════════════════════════════════════════════
+  const track = document.getElementById("carouselTrack");
+  const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+  const counter = document.getElementById("carouselCounter");
+  const dotsContainer = document.getElementById("carouselDots");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const viewport = document.getElementById("carouselViewport");
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  // Generate Dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.className = `carousel-dot-item ${i === 0 ? "active" : ""}`;
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+  const dots = Array.from(dotsContainer.querySelectorAll(".carousel-dot-item"));
+
+  function updateCarousel() {
+    track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
+    const displayNum = String(currentIndex + 1).padStart(2, "0");
+    const totalNum = String(totalSlides).padStart(2, "0");
+    counter.textContent = `${displayNum} / ${totalNum}`;
+    
+    dots.forEach((d, i) => {
+      d.classList.toggle("active", i === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    if (index < 0) {
+      currentIndex = totalSlides - 1;
+    } else if (index >= totalSlides) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+    updateCarousel();
+  }
+
+  prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
+  nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
+
+  // Touch Swipe & Dragging Support
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+
+  viewport.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+
+  viewport.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+  }, { passive: true });
+
+  viewport.addEventListener("touchend", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - currentX;
+    if (Math.abs(diff) > 45) {
+      if (diff > 0) goToSlide(currentIndex + 1);
+      else goToSlide(currentIndex - 1);
+    }
+  });
+
+  // Mouse Drag
+  viewport.addEventListener("mousedown", (e) => {
+    startX = e.clientX;
+    isDragging = true;
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    currentX = e.clientX;
+  });
+
+  window.addEventListener("mouseup", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - currentX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goToSlide(currentIndex + 1);
+      else goToSlide(currentIndex - 1);
+    }
+  });
+
+  // Keyboard navigation
+  window.addEventListener("keydown", (e) => {
+    if (document.getElementById("lightboxModal").classList.contains("open")) {
+      if (e.key === "ArrowLeft") stepLightbox(-1);
+      if (e.key === "ArrowRight") stepLightbox(1);
+      if (e.key === "Escape") closeLightbox();
+    } else {
+      if (e.key === "ArrowLeft") goToSlide(currentIndex - 1);
+      if (e.key === "ArrowRight") goToSlide(currentIndex + 1);
+    }
+  });
 });
+
+// ══════════════════════════════════════════════════════════════════
+// LIGHTBOX FULLSCREEN LOGIC
+// ══════════════════════════════════════════════════════════════════
+let currentLightboxIndex = 0;
+const slidesData = [
+  { src: "img/hero.jpg", caption: "Living Integrado com Marcenaria e Luz Natural Filtrada" },
+  { src: "img/suite.jpg", caption: "Suíte Master com Cabeceira Estofada em Linho e Ripado Suave" },
+  { src: "img/cozinha.jpg", caption: "Cozinha Gourmet com Ilha de Preparo e Marcenaria Oculta" },
+  { src: "img/varanda.jpg", caption: "Varanda Gourmet Envidraçada com Churrasqueira em Pedra Natural" },
+  { src: "img/living.jpg", caption: "Living de Estar com Estante Arquitetônica em Laca Fosca" },
+  { src: "img/galeria_sala_jantar.jpg", caption: "Sala de Jantar com Pendente Escultural e Mesa Oval" },
+  { src: "img/galeria_cozinha_ilha.jpg", caption: "Ilha Central com Cooktop e Armários em Tom Fendi" },
+  { src: "img/galeria_banheiro_suite.jpg", caption: "Banheiro Suíte em Porcelanato Calacata e Cuba Esculpida" },
+  { src: "img/galeria_home_office.jpg", caption: "Home Office & Biblioteca com Foco em Ergonomia e Luz Natural" },
+  { src: "img/detalhe.jpg", caption: "A Precisão dos Detalhes Construtivos e Encontros Milimétricos" }
+];
+
+function openLightbox(index) {
+  currentLightboxIndex = index;
+  const modal = document.getElementById("lightboxModal");
+  const img = document.getElementById("lightboxImg");
+  const caption = document.getElementById("lightboxCaption");
+  
+  img.src = slidesData[index].src;
+  caption.textContent = `${index + 1} / ${slidesData.length} — ${slidesData[index].caption}`;
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  const modal = document.getElementById("lightboxModal");
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function stepLightbox(direction) {
+  currentLightboxIndex += direction;
+  if (currentLightboxIndex < 0) currentLightboxIndex = slidesData.length - 1;
+  if (currentLightboxIndex >= slidesData.length) currentLightboxIndex = 0;
+  
+  const img = document.getElementById("lightboxImg");
+  const caption = document.getElementById("lightboxCaption");
+  img.src = slidesData[currentLightboxIndex].src;
+  caption.textContent = `${currentLightboxIndex + 1} / ${slidesData.length} — ${slidesData[currentLightboxIndex].caption}`;
+}
 </script>
 </body>
 </html>
