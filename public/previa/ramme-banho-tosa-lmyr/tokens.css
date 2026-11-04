@@ -1,0 +1,9 @@
+/* Espuma de Ateliê */
+:root{
+  --foam:#eef6f8; --mist:#d5e8ee; --ink:#1c2a32; --teal:#2a7a8c; --teal-deep:#1a5562;
+  --blush:#f3d6d0; --paper:#fffaf8; --line:rgba(28,42,50,.12);
+  --font-display:"Libre Baskerville",Georgia,serif; --font-body:"Manrope",system-ui,sans-serif;
+  --fs-hero:clamp(2.35rem,1.55rem + 3.2vw,4.1rem); --fs-h2:clamp(1.7rem,1.25rem + 1.8vw,2.55rem);
+  --pad:clamp(1.25rem,4vw,2.5rem); --max:70rem; --radius:1.5rem;
+  --focus:0 0 0 3px #fff,0 0 0 6px var(--teal);
+}

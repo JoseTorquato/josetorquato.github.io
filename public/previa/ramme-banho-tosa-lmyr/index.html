@@ -1,79 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ramme Banho e Tosa — Agende pelo WhatsApp</title>
-<meta name="description" content="Banho e tosa com hora marcada em Canoas. Av. Boqueirão, 3733 — Canoas/RS. WhatsApp (51) 99411-8057.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ramme Banho e Tosa — Canoas</title>
+<meta name="description" content="Ramme Banho e Tosa em Canoas. Av. Boqueirão, 3733. WhatsApp (51) 99411-8057. Ateliê de higiene pet.">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon.png" sizes="64x64">
+<link rel="icon" href="assets/img/favicon.png" sizes="64x64">
+<link rel="preload" as="image" href="assets/frames/poster.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Manrope:wght@500;700;800&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir ao conteúdo</a>
-<header class="appbar">
-  <a class="brand" href="#topo"><img src="assets/ramme-mark.webp" width="28" height="28" alt=""> Ramme</a>
-  <span class="chip">Hora marcada</span>
+<header class="site-head">
+  <a class="brand" href="#topo"><img src="assets/img/logo.webp" width="40" height="40" alt="" decoding="async"><span>Ramme</span></a>
+  <nav class="head-nav" aria-label="Contato">
+    <a class="ico-link" href="https://www.google.com/search?q=Ramme+Banho+e+Tosa+Canoas+Instagram" target="_blank" rel="noopener" aria-label="Buscar Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.2A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 15.1 12 3.1 3.1 0 0 1 12 15.1zM18.4 6.1a1.15 1.15 0 1 0 1.15 1.15A1.15 1.15 0 0 0 18.4 6.1z"/></svg></a>
+    <a class="ico-link" href="https://wa.me/5551994118057" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.85L2 22l5.3-1.39A9.9 9.9 0 1 0 12.04 2zm5.78 14.07c-.24.68-1.4 1.25-1.93 1.33-.5.07-1.12.1-1.81-.11a8.3 8.3 0 0 1-3.63-2.35 9.4 9.4 0 0 1-1.95-3.1c-.2-.55-.02-1.12.3-1.45.2-.2.52-.33.84-.33h.56c.18 0 .43-.07.66.5.24.6.82 2 .89 2.14.07.14.12.3 0 .48-.1.18-.16.3-.31.46-.16.16-.33.35-.47.47-.16.14-.32.3-.14.58.18.28.8 1.32 1.72 2.14 1.18 1.05 2.14 1.38 2.45 1.54.31.16.49.13.67-.08.18-.2.77-.9.98-1.21.2-.3.41-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.35.08.13.08.74-.16 1.42z"/></svg></a>
+    <a class="btn btn--wa btn--sm" href="https://wa.me/5551994118057" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
 </header>
 <main id="conteudo">
-  <section class="compare-hero" id="topo">
-    <div class="slider" id="ba-slider" style="--pos:50%" role="slider" aria-valuemin="5" aria-valuemax="95" aria-valuenow="50" aria-label="Comparador antes e depois do mesmo pet" tabindex="0">
-      <img class="after" src="assets/ramme-after-560.webp" srcset="assets/ramme-after-560.webp 560w, assets/ramme-after-900.webp 900w" sizes="100vw" width="900" height="900" alt="Mesmo pet — depois do banho (ilustrativo)" fetchpriority="high">
-      <img class="before" src="assets/ramme-before-560.webp" srcset="assets/ramme-before-560.webp 560w, assets/ramme-before-900.webp 900w" sizes="100vw" width="900" height="900" alt="Mesmo pet — antes do banho (ilustrativo)">
-      <div class="handle" aria-hidden="true"><span></span></div>
-      <span class="tag tag-b">Antes</span>
-      <span class="tag tag-a">Depois</span>
+  <section class="seq" id="topo" aria-labelledby="hero-title" data-frames-d="73" data-frames-m="48">
+    <div class="seq__sticky">
+      <img class="seq__poster" src="assets/frames/poster.webp" width="1280" height="720" alt="Banho ilustrativo com espuma e toalha" fetchpriority="high" decoding="async">
+      <canvas class="seq__canvas" aria-hidden="true"></canvas>
+      <div class="seq__veil" aria-hidden="true"></div>
+      <div class="seq__overlay">
+        <p class="chip rv" style="--i:0">Banho &amp; tosa · Boqueirão</p>
+        <h1 id="hero-title" class="hero-title rv" style="--i:1">Ateliê de espuma. Pelagem que respira. <span class="ex">texto de exemplo</span></h1>
+        <p class="hero-lead rv" style="--i:2">Do molhado ao seco — ritual de higiene com calma. <span class="ex">texto de exemplo</span></p>
+        <div class="hero-actions rv" style="--i:3">
+          <a class="btn btn--wa btn--lg" href="https://wa.me/5551994118057" target="_blank" rel="noopener">WhatsApp 99411-8057</a>
+          <a class="btn btn--ghost" href="#ritual" style="color:#fff;border-color:rgba(255,255,255,.45)">Ver o ritual</a>
+        </div>
+        <p class="badge-ai">imagem ilustrativa / gerada por IA</p>
+      </div>
     </div>
-    <p class="badge-ex">mesmo animal · imagem ilustrativa — substituir por fotos reais</p>
   </section>
 
-  <section class="app-body">
-    <h1>Banho &amp; tosa com hora marcada</h1>
-    <p class="lede">Arraste o comparador, escolha o pacote e agende no WhatsApp — sem fila no balcão.</p>
-
-    <div class="pkgs" id="pacotes">
-      <button type="button" class="pkg active" data-pkg="banho">
-        <span class="pkg-name">Banho</span>
-        <span class="pkg-meta">Cães pequenos · a partir de exemplo</span>
-      </button>
-      <button type="button" class="pkg" data-pkg="banho-tosa">
-        <span class="pkg-name">Banho + tosa</span>
-        <span class="pkg-meta">Higiene completa</span>
-      </button>
-      <button type="button" class="pkg" data-pkg="mensal">
-        <span class="pkg-name">Plano mensal</span>
-        <span class="pkg-meta">Recorrência sob consulta</span>
-      </button>
+  <section class="fold fold--foam" id="ritual" aria-labelledby="ritual-title">
+    <div class="wrap">
+      <p class="eyebrow rv">Ritual</p>
+      <h2 id="ritual-title" class="h2 rv">Cinco passos de ateliê <span class="ex">texto de exemplo</span></h2>
+      <div class="ritual">
+        <article class="ritual-step rv" data-step style="--i:0"><span class="ritual-step__num" aria-hidden="true">01</span><div><h3 class="h3">Acolhida</h3><p>Chegada tranquila na Av. Boqueirão, 3733. <span class="ex">texto de exemplo</span></p></div></article>
+        <article class="ritual-step rv" data-step style="--i:1"><span class="ritual-step__num" aria-hidden="true">02</span><div><h3 class="h3">Banho</h3><p>Espuma e enxágue com cuidado. <span class="ex">texto de exemplo</span></p></div></article>
+        <article class="ritual-step rv" data-step style="--i:2"><span class="ritual-step__num" aria-hidden="true">03</span><div><h3 class="h3">Secagem</h3><p>Toalha e ar na medida certa. <span class="ex">texto de exemplo</span></p></div></article>
+        <article class="ritual-step rv" data-step style="--i:3"><span class="ritual-step__num" aria-hidden="true">04</span><div><h3 class="h3">Tosa / acabamento</h3><p>Conforme o combinado. <span class="ex">texto de exemplo</span></p></div></article>
+        <article class="ritual-step rv" data-step style="--i:4"><span class="ritual-step__num" aria-hidden="true">05</span><div><h3 class="h3">Entrega</h3><p>Pelagem limpa, pronta pra casa. <span class="ex">texto de exemplo</span></p></div></article>
+      </div>
     </div>
-    <p class="pkg-note">Preços e disponibilidade: confirmar no WhatsApp. Valores na prévia são estrutura de exemplo.</p>
+  </section>
 
-    <section class="info" id="onde">
-      <h2>Onde</h2>
-      <p>Av. Boqueirão, 3733 — Canoas/RS</p>
-      <p>WhatsApp <a href="https://wa.me/5551994118057?text=Ol%C3%A1%21%20Quero%20agendar%20banho%20e%20tosa%20na%20Ramme." target="_blank" rel="noopener">(51) 99411-8057</a></p>
-      <p>E-mail <a href="mailto:agro.ramme@gmail.com">agro.ramme@gmail.com</a></p>
-      <div class="map-box" data-map="https://www.google.com/maps?q=Avenida+Boqueir%C3%A3o+3733+Canoas&output=embed">
-        <div class="map-fallback">
-          <p>Mapa sob demanda.</p>
-          <button type="button" class="btn-soft" data-map-load>Carregar mapa</button>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Boqueir%C3%A3o+3733+Canoas" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
+  <section class="fold fold--paper" id="pacotes" aria-labelledby="pkg-title">
+    <div class="wrap">
+      <p class="eyebrow rv">Pacotes</p>
+      <h2 id="pkg-title" class="h2 rv">Escolhas do ateliê</h2>
+      <p class="lede rv">Valores abaixo são <span class="ex">valores ilustrativos</span> — confirme no WhatsApp.</p>
+      <div class="pkgs">
+        <article class="pkg rv" style="--i:0"><h3 class="h3">Banho</h3><p class="pkg__price">sob consulta</p><p>Higiene completa. <span class="ex">valores ilustrativos</span></p></article>
+        <article class="pkg rv" style="--i:1"><h3 class="h3">Banho + tosa</h3><p class="pkg__price">sob consulta</p><p>Higiene e acabamento. <span class="ex">valores ilustrativos</span></p></article>
+        <article class="pkg rv" style="--i:2"><h3 class="h3">Pacote recorrente</h3><p class="pkg__price">sob consulta</p><p>Agenda fixa. <span class="ex">valores ilustrativos</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fold fold--mist" id="antes-depois" aria-labelledby="ad-title">
+    <div class="wrap">
+      <p class="eyebrow rv" style="text-align:center">Transformação</p>
+      <h2 id="ad-title" class="h2 rv" style="text-align:center">Antes &amp; depois</h2>
+      <p class="lede rv" style="text-align:center;margin:0 auto 1.5rem">Fotos reais do ateliê. Arraste o controle. <span class="ex">imagem ilustrativa</span> não se aplica aqui — ativos do cliente.</p>
+      <div class="compare rv" data-compare>
+        <div class="compare__before"><img src="assets/img/ramme-before-560.webp" width="560" height="420" alt="Antes do banho" decoding="async"><span class="compare__label compare__label--b">Antes</span></div>
+        <div class="compare__after"><img src="assets/img/ramme-after-560.webp" width="560" height="420" alt="Depois do banho" decoding="async"><span class="compare__label compare__label--a">Depois</span></div>
+        <label class="visually-hidden" for="cmp" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Comparar antes e depois</label>
+        <input id="cmp" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      </div>
+    </div>
+  </section>
+
+  <section class="fold fold--teal" id="sobre" aria-labelledby="sobre-title">
+    <div class="wrap" style="max-width:40rem">
+      <p class="eyebrow rv" style="color:#9fd0dc">Sobre</p>
+      <h2 id="sobre-title" class="h2 rv" style="color:#fff">Ramme na Boqueirão</h2>
+      <p class="rv">Banho e tosa em Canoas — Av. Boqueirão, 3733. Sem nota Google pública nesta coleta (04/11/2026). Contato principal: WhatsApp (51) 99411-8057.</p>
+    </div>
+  </section>
+
+  <section class="fold fold--foam" id="mapa" aria-labelledby="map-title">
+    <div class="wrap" class="map-grid">
+      <div>
+        <p class="eyebrow rv">Como chegar</p>
+        <h2 id="map-title" class="h2 rv">Av. Boqueirão, 3733</h2>
+        <p class="lede rv">Canoas/RS</p>
+        <div class="pkg rv" id="contato">
+          <p><strong>WhatsApp confirmado</strong><br><a href="https://wa.me/5551994118057" target="_blank" rel="noopener">(51) 99411-8057</a></p>
         </div>
       </div>
-    </section>
+      <div class="map-box rv" data-map-src="https://www.google.com/maps?q=Av.+Boqueirão,+3733,+Canoas,+RS&output=embed" data-map-title="Mapa — Ramme">
+        <button type="button" class="btn btn--teal" data-map-load>Carregar mapa</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="fold fold--paper" id="faq" aria-labelledby="faq-title">
+    <div class="wrap" style="max-width:42rem">
+      <h2 id="faq-title" class="h2 rv">FAQ</h2>
+      <div class="faq">
+        <details class="rv"><summary>Como agendar?</summary><p>WhatsApp (51) 99411-8057. <span class="ex">texto de exemplo</span></p></details>
+        <details class="rv"><summary>Onde fica?</summary><p>Av. Boqueirão, 3733 — Canoas/RS.</p></details>
+        <details class="rv"><summary>Quais serviços?</summary><p>Banho, tosa e pacotes — confirme valores no WhatsApp. <span class="ex">valores ilustrativos</span></p></details>
+      </div>
+      <p class="rv" style="margin-top:2rem"><a class="btn btn--wa btn--lg" href="https://wa.me/5551994118057" target="_blank" rel="noopener">Agendar no WhatsApp</a></p>
+    </div>
   </section>
 </main>
-<footer class="foot">
-  <p><strong>Ramme Banho e Tosa</strong> · Prévia não indexada · Dados 04/11/2026</p>
-  <p>Nota Google: não encontrada nesta coleta</p>
-</footer>
-<nav class="bookbar" aria-label="Agendar">
-  <div class="book-meta">
-    <strong id="book-pkg">Banho</strong>
-    <span>WhatsApp · resposta rápida</span>
+<footer class="site-foot"><div class="wrap foot-grid">
+  <div><p><strong>Ramme Banho e Tosa</strong> · Prévia comercial não indexada</p>
+  <p>Av. Boqueirão, 3733 — Canoas/RS · <a href="https://wa.me/5551994118057" target="_blank" rel="noopener">(51) 99411-8057</a></p>
+  <p>Dados 04/11/2026 (America/Sao_Paulo). Hero: imagem ilustrativa / IA. Antes/depois: fotos do cliente.</p></div>
+  <div class="foot-social">
+    <a class="ico-link" href="https://www.google.com/search?q=Ramme+Banho+e+Tosa+Canoas+Instagram" target="_blank" rel="noopener" aria-label="Buscar Instagram" style="color:#9fd0dc"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.2A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 15.1 12 3.1 3.1 0 0 1 12 15.1zM18.4 6.1a1.15 1.15 0 1 0 1.15 1.15A1.15 1.15 0 0 0 18.4 6.1z"/></svg></a>
+    <a class="ico-link" href="https://wa.me/5551994118057" target="_blank" rel="noopener" aria-label="WhatsApp" style="color:#9fd0dc"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.85L2 22l5.3-1.39A9.9 9.9 0 1 0 12.04 2zm5.78 14.07c-.24.68-1.4 1.25-1.93 1.33-.5.07-1.12.1-1.81-.11a8.3 8.3 0 0 1-3.63-2.35 9.4 9.4 0 0 1-1.95-3.1c-.2-.55-.02-1.12.3-1.45.2-.2.52-.33.84-.33h.56c.18 0 .43-.07.66.5.24.6.82 2 .89 2.14.07.14.12.3 0 .48-.1.18-.16.3-.31.46-.16.16-.33.35-.47.47-.16.14-.32.3-.14.58.18.28.8 1.32 1.72 2.14 1.18 1.05 2.14 1.38 2.45 1.54.31.16.49.13.67-.08.18-.2.77-.9.98-1.21.2-.3.41-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.35.08.13.08.74-.16 1.42z"/></svg></a>
   </div>
-  <a class="book-cta" id="book-cta" href="https://wa.me/5551994118057?text=Ol%C3%A1%21%20Quero%20agendar%20banho%20e%20tosa%20na%20Ramme." target="_blank" rel="noopener">Agendar</a>
-</nav>
+</div></footer>
+<a class="float-call" href="https://wa.me/5551994118057" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.85L2 22l5.3-1.39A9.9 9.9 0 1 0 12.04 2zm5.78 14.07c-.24.68-1.4 1.25-1.93 1.33-.5.07-1.12.1-1.81-.11a8.3 8.3 0 0 1-3.63-2.35 9.4 9.4 0 0 1-1.95-3.1c-.2-.55-.02-1.12.3-1.45.2-.2.52-.33.84-.33h.56c.18 0 .43-.07.66.5.24.6.82 2 .89 2.14.07.14.12.3 0 .48-.1.18-.16.3-.31.46-.16.16-.33.35-.47.47-.16.14-.32.3-.14.58.18.28.8 1.32 1.72 2.14 1.18 1.05 2.14 1.38 2.45 1.54.31.16.49.13.67-.08.18-.2.77-.9.98-1.21.2-.3.41-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.35.08.13.08.74-.16 1.42z"/></svg> WhatsApp</a>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="main.js" defer></script>
 </body></html>

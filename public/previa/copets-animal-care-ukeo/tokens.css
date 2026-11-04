@@ -1,0 +1,14 @@
+/* Quatro Mundos (VYRON) */
+:root{
+  --ink:#12141c; --paper:#f4f1ea; --cream:#faf7f1;
+  --mundo-clinica:#2f6fed; --mundo-vacina:#e85d4c; --mundo-banho:#1aae8f; --mundo-nutri:#f0a202;
+  --active:var(--mundo-clinica);
+  --font-display:"Space Grotesk",system-ui,sans-serif; --font-body:"DM Sans",system-ui,sans-serif;
+  --fs-hero:clamp(2.3rem,1.5rem + 3.2vw,4rem); --fs-h2:clamp(1.7rem,1.25rem + 1.8vw,2.5rem);
+  --pad:clamp(1.25rem,4vw,2.5rem); --max:74rem; --radius:1.25rem;
+  --focus:0 0 0 3px #fff,0 0 0 6px var(--active);
+}
+[data-active="clinica"]{--active:var(--mundo-clinica)}
+[data-active="vacina"]{--active:var(--mundo-vacina)}
+[data-active="banho"]{--active:var(--mundo-banho)}
+[data-active="nutri"]{--active:var(--mundo-nutri)}
