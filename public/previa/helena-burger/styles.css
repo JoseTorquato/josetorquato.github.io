@@ -191,3 +191,12 @@ cite{display:block;margin-top:.5rem;font:600 .85rem var(--f-text);font-style:nor
 .mq-track{animation:corre 28s linear infinite}
 .marquee:hover .mq-track{animation-play-state:paused}
 @keyframes corre{to{transform:translateX(-50%)}}
+
+/* v2: preço, chip de pedido, botão pequeno, inauguração */
+.price{font:700 1.25rem var(--f-display);color:var(--navy);font-variant-numeric:tabular-nums}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.chip{display:inline-flex;align-items:center;min-height:40px;padding:.35rem .95rem;border-radius:var(--r-pill);border:2px solid var(--navy);background:var(--cheddar);color:var(--navy);font:700 .92rem var(--f-display);text-decoration:none;transition:transform var(--dur-fast) var(--ease-out)}
+.chip:hover{transform:translateY(-2px)}
+.btn-sm{min-height:44px;padding:.5rem 1rem;font-size:.92rem;box-shadow:3px 3px 0 var(--navy)}
+.inaug{background:var(--white);border:2px dashed var(--blue);border-radius:var(--r-sm);padding:var(--sp-2)}
+@media (max-width:760px){.top .btn-sm{display:none}}

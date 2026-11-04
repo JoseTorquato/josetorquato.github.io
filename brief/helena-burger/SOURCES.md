@@ -91,7 +91,18 @@ Avaliações de 01–03/11/2026 citam "novo espaço", "a nova estrutura está in
 - Cheddar `#f8b808` — lanche (maps-24)
 - Lema na embalagem: "FAST AND TASTY"; vitrine: "Don't hurry, be happy" com quadriculado.
 
+## Fontes oficiais coletadas no navegador do José (04/11/2026)
+| Dado | Fonte (página) | Data | Obs |
+|---|---|---|---|
+| Bio "Bons momentos, qualidade e um ótimo custo benefício!", "Canoas \| Porto Alegre", ~31 mil seguidores | https://www.instagram.com/_helenaburger/ | 04/11/2026 | Lido com o login do próprio José; nada baixado do Instagram. |
+| Inauguração do Helena da Venâncio: 09/11, a partir das 18h30 | https://www.instagram.com/p/DfK3SFMhnlw/ | 04/11/2026 | Post da própria marca. |
+| Endereço POA: Av. Venâncio Aires, 827, ao lado da Redenção | https://www.instagram.com/p/DdrkHatTDeU/ | 04/11/2026 | Post da própria marca. |
+| WhatsApp Canoas (51) 99315-4922 · WhatsApp POA (51) 99144-4737 · pedido online · cardápio do salão (PDF) · grupo de promoções | https://linktr.ee/_helenaburger | 04/11/2026 | Contatos oficiais. Substituem o celular do Google (51) 98514-5379. |
+| Cardápio de delivery: nomes, descrições, preços, pedido mínimo R$ 45, cashback 10%, 10% no 1º pedido | https://pedido.anota.ai/loja/hamburgueria-helena-burger?f=msa | 04/11/2026 | Preços de delivery; podem mudar e podem diferir do salão. |
+
+Associação foto ↔ lanche nos cards: feita por comparação visual com as descrições do Anota AI (ingredientes, tipo de pão). É aproximada — confirmar com o cliente ou trocar pelas fotos oficiais do cardápio.
+- Helena ↔ lanche-tora · Hermes ↔ hero-cheddar (pão australiano escuro) · Perseu ↔ lanche-empanado (almofadinhas de gouda) · Apolo ↔ combo-mesa (anéis de cebola) · Almofadinha Gouda ↔ porcao-empanados · Batatinha + cheddar + bacon ↔ porcao-cheddar-bacon
+
 ## Não confirmado (vai como "texto de exemplo" na prévia)
-- Nomes e preços dos lanches (cardápio só no totem/Instagram).
-- Data e detalhes da inauguração.
-- Plataforma de pedido online (o Maps diz "Entrega", sem link).
+- Frase de abertura do CTA final ("Bateu a fome?").
+- Fotos: são do perfil no Google, não do cardápio oficial.
