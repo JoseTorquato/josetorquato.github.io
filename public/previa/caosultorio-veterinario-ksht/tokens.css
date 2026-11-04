@@ -1,0 +1,9 @@
+/* Cerâmica do Bairro */
+:root{
+  --terra:#8f4a32; --terra-deep:#6e3724; --cream:#f6efe6; --olive:#6b7a5a;
+  --ink:#2a211c; --sand:#d9c8b4; --accent:#c4784a; --paper:#fffaf3; --line:rgba(143,74,50,.18);
+  --font-display:"Fraunces",Georgia,serif; --font-body:"Nunito Sans",system-ui,sans-serif;
+  --fs-hero:clamp(2.4rem,1.6rem + 3.5vw,4.2rem); --fs-h2:clamp(1.75rem,1.3rem + 1.8vw,2.6rem);
+  --pad:clamp(1.25rem,4vw,2.5rem); --max:70rem; --radius:1.1rem;
+  --focus:0 0 0 3px var(--cream),0 0 0 6px var(--terra);
+}
