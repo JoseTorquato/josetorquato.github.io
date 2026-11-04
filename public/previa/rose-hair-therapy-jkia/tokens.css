@@ -1,0 +1,43 @@
+/* Rosé Hair Therapy · Ritual / Spa de luz — design tokens */
+:root {
+  /* Base clara (não escura) */
+  --creme: #faf6f1;
+  --creme-2: #f3ebe3;
+  --papel: #fffdfb;
+  --blush: #f2d6cf;
+  --poeira: #dcbfb8;       /* dusty rose ~ logo plate */
+  --pessego: #e8a28a;     /* peach-coral */
+  --coral: #d9786a;
+  --coral-forte: #b4564a; /* fundo de botão c/ texto branco (AA 4.8:1) */
+  --rosa-clara: #f5d0d8;
+  --manteiga: #f5e6b8;
+  --menta: #c8d9c8;
+  --tinta: #1a1412;       /* texto principal */
+  --tinta-2: #4a3f3a;
+  --nevoa: #8a7a74;
+  --nevoa-forte: #75655f; /* texto pequeno sobre creme (AA 5.2:1) */
+  --linha: rgba(26, 20, 18, 0.10);
+  --linha-forte: rgba(26, 20, 18, 0.18);
+  --zap: #25d366;
+  --grad-sign: linear-gradient(120deg, #f2a3b0 0%, #f0b08a 45%, #e89a6a 100%);
+  --grad-luz: radial-gradient(ellipse 80% 60% at 20% 30%, rgba(242, 214, 207, 0.85), transparent 60%),
+              radial-gradient(ellipse 70% 50% at 85% 20%, rgba(245, 230, 184, 0.55), transparent 55%),
+              radial-gradient(ellipse 60% 50% at 70% 85%, rgba(200, 217, 200, 0.35), transparent 50%),
+              var(--creme);
+
+  --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "Figtree", "Segoe UI", system-ui, sans-serif;
+
+  --gutter: clamp(18px, 5vw, 72px);
+  --max: 1120px;
+  --radius: 1.75rem;
+  --radius-sm: 1rem;
+  --radius-pill: 999px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-breath: cubic-bezier(0.37, 0, 0.63, 1);
+  --dur-fast: 0.28s;
+  --dur-base: 0.8s;
+  --dur-slow: 1.4s;
+  --reveal: 32px;
+}

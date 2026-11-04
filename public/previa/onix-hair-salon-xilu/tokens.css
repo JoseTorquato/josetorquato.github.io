@@ -1,0 +1,42 @@
+/* Onix Hair Salon v2 · Fashion-Glam Elevator — design tokens */
+:root{
+  /* Brand palette from reels + logo */
+  --onix:#111111;
+  --onix-deep:#0a0a0a;
+  --laje:#1a1a1a;
+  --pedra:#242424;
+  --champagne:#C5A059;
+  --champagne-claro:#E0C078;
+  --champagne-esc:#8A6E3A;
+  --prata:#A8A9AD;
+  --prata-claro:#D4D5D8;
+  --branco:#FAFAF8;
+  --creme:#F3EBE3;
+  --madeira:#5C4030;
+  --madeira-clara:#8B6914;
+  --rosa:#E8A0B5; /* hint IX logo */
+  --rosa-esc:#D4789A;
+  --nevoa:#A89F96;
+  --fio:rgba(197,160,89,.28);
+  --fio-prata:rgba(168,169,173,.35);
+  --zap:#25D366;
+  --neon-glow:0 0 12px rgba(197,160,89,.55),0 0 36px rgba(197,160,89,.25),0 0 72px rgba(197,160,89,.12);
+
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --display:"Bebas Neue","Arial Narrow",Impact,sans-serif;
+  --sans:"Outfit",system-ui,sans-serif;
+
+  --gutter:clamp(18px,5vw,64px);
+  --max:1180px;
+  --max-wide:1400px;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-door:cubic-bezier(.7,0,.3,1);
+  --dur-fast:.25s;
+  --dur-base:.7s;
+  --dur-slow:1.1s;
+  --reveal:32px;
+
+  --gold-shine:linear-gradient(105deg,#8A6E3A 0%,#C5A059 35%,#F0D8A0 50%,#E0C078 65%,#8A6E3A 100%);
+  --silver-shine:linear-gradient(105deg,#6a6b70 0%,#A8A9AD 40%,#E8E9EC 50%,#A8A9AD 60%,#6a6b70 100%);
+}
