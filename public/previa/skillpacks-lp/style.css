@@ -63,7 +63,7 @@ mark.hl{background:linear-gradient(transparent 55%,var(--hl) 55%) no-repeat;back
 .pack footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:var(--b)}
 .price{font-size:30px}
 .c-lp{--c:var(--or)}.c-pr{--c:var(--blue)}.c-ds{--c:var(--pink)}.c-pd{--c:var(--green)}
-.c-pr header,.c-pr header h3{color:#fff}.c-pr header h3{color:#fff}
+.c-pr header h3{color:#fff}.c-pr .lbl{color:var(--ink,#111)}
 .band{background:var(--ink);color:var(--paper);padding:48px 0}
 .band-in{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
 .band strong{display:block;font-size:56px;color:var(--hl)}
