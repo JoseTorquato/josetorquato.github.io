@@ -1,0 +1,164 @@
+/*
+ * CT Four Force — design tokens (extração pública)
+ * Fontes amostradas em 3 nov. 2026 (America/Sao_Paulo):
+ *   - Avatar Linktree / logo em Wellhub (escudo + kettlebell vermelho, “4F” cinza)
+ *   - Tema Linktree (JSON __NEXT_DATA__)
+ *   - Foto interior TotalPass (unidade Águia)
+ * Logo oficial NÃO embutida: use monograma/texto placeholder.
+ * Toda suposição está comentada abaixo.
+ */
+
+:root {
+  /* ========== Cores ========== */
+
+  /* Primária — vermelho do kettlebell/borda do escudo no avatar Linktree e logo Wellhub.
+     Buckets mais frequentes nos pixels saturados: #F80000, #F00000, #E80000.
+     Média dos pixels vermelhos (r>160,g<80,b<80) no avatar: ~#DF1112.
+     Escolha: #E10600 (entre média e pico) como brand red de UI. */
+  --color-primary: #E10600;
+  --color-primary-hover: #B80500; /* ASSUNÇÃO: -20% luminosidade para hover; não amostrado */
+  --color-primary-soft: #FFE5E5; /* ASSUNÇÃO: tint para fundos de chip; não no logo */
+
+  /* Secundária / ink — preto do tema Linktree (background #000000) e tipografia do logo */
+  --color-secondary: #000000;
+
+  /* Neutros — “4F” cinza do logo (~#A0A0A0 / #989898) + sombra Linktree #999999 */
+  --color-neutral-100: #FFFFFF;
+  --color-neutral-200: #F0F0F0; /* fundo amostrado nas fotos de logo (fundo branco/off) */
+  --color-neutral-300: #D0D0D0;
+  --color-neutral-400: #A0A0A0; /* “4F” do monograma — bucket dominante não-branco */
+  --color-neutral-500: #999999; /* shadowStyle.color do Linktree */
+  --color-neutral-700: #404040; /* mid-tones da foto TotalPass (aparelho/ambiente) */
+  --color-neutral-900: #0A0A0A;
+
+  /* Superfícies — Linktree luminance DARK / background #000000 */
+  --color-bg: #000000;
+  --color-bg-elevated: #141414; /* ASSUNÇÃO: elevação em dark UI; não no tema LT */
+  --color-surface: #FFFFFF; /* botões Linktree backgroundStyle #ffffff */
+  --color-text: #FFFFFF; /* typeface.color Linktree */
+  --color-text-on-primary: #FFFFFF; /* ASSUNÇÃO CTA vermelho: texto branco para contraste */
+  --color-text-on-surface: #000000; /* button textStyle Linktree #000000 */
+  --color-text-muted: #A0A0A0;
+
+  /* Acentos de ambiente (foto TotalPass) — NÃO são cores de marca do logo.
+     Usar só em fotos/detalhes; evitar como primária de UI. */
+  --color-accent-turf: #50A040; /* strip inferior da foto TotalPass (grama sintética) */
+  --color-accent-wood: #C8A060; /* ASSUNÇÃO a partir de madeira da recepção na foto; amostragem grosseira */
+
+  /* Estados — ASSUNÇÃO genérica a partir da primária; não há UI de erro amostrada */
+  --color-success: #2E7D32;
+  --color-warning: #F9A825;
+  --color-danger: #E10600; /* reusa primária */
+  --color-focus: #FFFFFF;
+
+  /* ========== Tipografia ========== */
+
+  /* Linktree typeface.family = "dm sans" (confirmado no tema). */
+  --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Logo usa sans industrial/block condensada (FORCE/CT).
+     ASSUNÇÃO/PLACEHOLDER: Oswald Bold como display próximo; não é a fonte oficial. */
+  --font-display: "Oswald", "Arial Narrow", Impact, Haettenschweiler, sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 2.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --lh-tight: 1.15;
+  --lh-body: 1.5;
+
+  /* ========== Raio / forma ========== */
+
+  /* Linktree cornerStyle.type = ROUNDED_FULL nos botões → pill */
+  --radius-pill: 9999px;
+  --radius-button: var(--radius-pill);
+
+  /* Escudo do logo tem cantos levemente arredondados; cards: raio moderado.
+     ASSUNÇÃO: 12px para cards; ambiente físico da academia é mais angular. */
+  --radius-card: 12px;
+  --radius-sm: 6px;
+  --radius-none: 0;
+
+  /* ========== Botões / sombra ========== */
+
+  /* Linktree: HARDSHADOW_ROUNDED + shadowStyle SHADOW_FULL color #999999 */
+  --shadow-button: 4px 4px 0 #999999;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35); /* ASSUNÇÃO dark UI */
+
+  --btn-padding-y: 0.875rem;
+  --btn-padding-x: 1.5rem;
+  --btn-font: var(--fw-bold) var(--fs-md) / 1 var(--font-body);
+
+  /* Primário LP (conversão WhatsApp): vermelho marca + texto branco — ASSUNÇÃO de uso;
+     no Linktree o botão real é branco/#000. Oferecemos os dois tokens. */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-fg: var(--color-text-on-primary);
+  --btn-primary-shadow: none; /* ASSUNÇÃO: CTA limpo; sombra hard é estilo Linktree */
+
+  /* Estilo Linktree (secundário / ghost invertido) */
+  --btn-secondary-bg: var(--color-surface);
+  --btn-secondary-fg: var(--color-text-on-surface);
+  --btn-secondary-shadow: var(--shadow-button);
+
+  /* ========== Espaçamento ========== */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  /* ========== Layout ========== */
+  --container: 72rem;
+  --section-pad-y: clamp(3rem, 8vw, 5rem);
+}
+
+/* Utilitários mínimos para a folha de design system */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border: 0;
+  border-radius: var(--radius-button);
+  font: var(--btn-font);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.ds-btn--primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  box-shadow: var(--btn-primary-shadow);
+}
+.ds-btn--primary:hover { background: var(--color-primary-hover); }
+.ds-btn--secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-fg);
+  box-shadow: var(--btn-secondary-shadow);
+}
+.ds-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-neutral-700);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+}
+.ds-mono {
+  /* PLACEHOLDER de marca — não é a logo oficial */
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
