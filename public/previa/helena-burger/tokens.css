@@ -1,0 +1,60 @@
+/* Helena burger — tokens. Somente variáveis; componentes usam var(--…).
+   Cores amostradas de fotos públicas do Google Maps (ver brief/helena-burger/SOURCES.md):
+   azul royal #0a2fc8 (placa iluminada), marinho #0b1a5c (fachada de dia), cheddar #f8b808 (lanche).
+   Contraste (WCAG): branco/azul 9,3 · marinho/branco 16,0 · marinho/cheddar 9,0 · texto-2/papel 8,0. */
+:root{
+  /* Marca */
+  --blue:#0a2fc8;
+  --blue-d:#0822a0;      /* hover/pressionado (derivado) */
+  --blue-ink:#3b6cf0;    /* suposição: azul mais claro da estampa da embalagem */
+  --navy:#0b1a5c;
+  --navy-2:#13257a;      /* suposição: degrau entre marinho e azul */
+  --cheddar:#f8b808;
+  --cheddar-2:#ffd34d;   /* suposição: cheddar claro para brilho */
+  --white:#ffffff;
+  --paper:#f5f7ff;       /* suposição: branco levemente azulado, como o papel da embalagem */
+  --ink:#0b1a5c;
+  --ink-2:#3d4a7a;
+  --line:#d6ddf5;
+  --on-dark-2:#c9d3ff;   /* legenda sobre marinho (10,8:1) */
+  --ok:#1f8a4c;
+  --wa:#25d366;          /* verde oficial do WhatsApp (botão flutuante) */
+  --warn:#b45309;
+
+  /* Quadriculado da vitrine ("Don't hurry, be happy") */
+  --check-size:22px;
+  --check:conic-gradient(var(--blue) 25%,var(--white) 0 50%,var(--blue) 0 75%,var(--white) 0) 0 0/var(--check-size) var(--check-size);
+
+  /* Tipografia */
+  --f-display:'Fredoka',ui-rounded,'Segoe UI',system-ui,sans-serif;
+  --f-script:'Pacifico','Brush Script MT',cursive;
+  --f-text:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fs-hero:clamp(2.7rem,7.2vw,6rem);
+  --fs-h2:clamp(2rem,4.6vw,3.4rem);
+  --fs-sub:clamp(1.25rem,2.2vw,1.5rem);  /* subtítulo ≥ 20px no celular */
+  --fs-body:1.06rem;
+  --fs-small:.9rem;
+  --fw-body:400;
+  --fw-subtitle:700;
+  --fw-display:700;
+  --lh-body:1.6;
+
+  /* Espaço, raio, sombra */
+  --sp-1:.5rem;--sp-2:1rem;--sp-3:1.5rem;--sp-4:2.5rem;--sp-5:4rem;--sp-6:6rem;
+  --r-sm:12px;--r-card:24px;--r-pill:999px;
+  --shadow-card:0 1px 2px rgb(11 26 92/8%),0 12px 32px rgb(11 26 92/12%);
+  --shadow-hard:5px 5px 0 var(--navy);   /* carimbo, como a estampa da embalagem */
+
+  /* Movimento (consumido por main.js / lp-motion-layer) */
+  --ease-out:cubic-bezier(.2,.8,.2,1);
+  --ease-pop:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:180ms;--dur-base:420ms;--dur-slow:800ms;
+  --reveal-y:26px;
+
+  --max:1180px;
+}
+
+/* Lacunas (não inventadas):
+   - Fonte original da logo desconhecida: Fredoka + Pacifico são aproximações livres (placeholder).
+   - Logo vetorial não coletado (Instagram exige login): a marca é recriada em texto e o mascote NÃO é redesenhado.
+   - Azul da estampa (--blue-ink) e papel (--paper) são estimativas visuais, não amostra direta. */
