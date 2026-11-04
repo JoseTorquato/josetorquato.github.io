@@ -87,6 +87,8 @@ Regras que o design assume:
 
 Build estático. Em Vercel/Netlify, configure o rewrite de SPA para `index.html` (necessário por causa das rotas `/projetos/:slug`).
 
+Publicação no GitHub Pages: push em `main` dispara `.github/workflows/deploy.yml`.
+
 ## Pendências
 
 - Conteúdo é exemplo — trocar por texto real em `src/data/`.
