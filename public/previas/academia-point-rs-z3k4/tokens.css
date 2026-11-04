@@ -1,0 +1,15 @@
+/* Academia Point RS v2 — direção "Bairro em movimento": claro, amigável, arredondado.
+   Cores do logo (Wellhub lg_logo.jpg): verde #00A040 / #005020, lima #A0C030, laranja #D08030; fachada laranja (TotalPass). */
+:root{
+  --cream:#fbf8f1; --paper:#ffffff; --sand:#f3ecdc;   /* ASSUNÇÃO: neutros quentes p/ fundo claro */
+  --green-700:#005020; --green-500:#00a040; --green-100:#e3f4e8;
+  --lime-400:#a0c030; --lime-100:#eef6d6;
+  --orange-500:#e07a1f; --orange-600:#c4620c; --orange-100:#fdebd8; /* logo #D08030 saturado p/ CTA (ASSUNÇÃO) */
+  --ink:#16261c; --muted:#5d6b62; --line:#e6dfcf; --wa:#25d366;
+  --font-display:"Bricolage Grotesque",ui-rounded,system-ui,sans-serif; /* PLACEHOLDER: fonte oficial do logo desconhecida */
+  --font-body:"Nunito",ui-rounded,system-ui,sans-serif;
+  --fs-hero:clamp(2.7rem,6.2vw,5.4rem); --fs-h2:clamp(2rem,4vw,3.3rem);
+  --r-sm:14px; --r:28px; --r-xl:44px; --max:1200px;
+  --shadow-sticker:4px 4px 0 var(--ink);
+  --ease-out:cubic-bezier(.22,1.2,.36,1); --dur-fast:.18s; --dur-base:.5s; --dur-slow:1s; --reveal-y:24px;
+}
