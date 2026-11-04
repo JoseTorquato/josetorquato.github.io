@@ -50,5 +50,6 @@ Disallow: /previa/fortunastudio/
 User-agent: *
 Disallow: /previa/araujo-e-martins/
 Disallow: /previa/pristanqueviski-adv/
+Disallow: /previas/
 
 Sitemap: https://josetorquato.dev/sitemap.xml
