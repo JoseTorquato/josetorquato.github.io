@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>CT Four Force · Unidade Águia | Canoas/RS — Prévia</title>
-  <meta name="description" content="Academia completa em Canoas — CT Four Force, Av. Santos Ferreira 922. Prévia de landing (placeholders de logo, fotos e preços)." />
+  <meta name="description" content="Academia completa em Canoas — CT Four Force, Av. Santos Ferreira 922. Prévia de landing com fotos públicas da unidade; preços ainda em placeholder." />
   <!-- Fontes self-hosted (font-display: swap). Sem Google Fonts runtime. -->
   <link rel="preload" href="./fonts/rP2Hp2ywxg089UriCZOIHQ.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./fonts/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUZiZQ.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/hero.webp" as="image" type="image/webp" />
   <link rel="stylesheet" href="./fonts.css" />
   <link rel="stylesheet" href="./tokens.css" />
   <link rel="stylesheet" href="./styles.css" />
@@ -17,10 +18,8 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="#topo">
-        <!-- [LOGO] placeholder — monograma; não é a logo oficial -->
-        <div class="brand__mark" aria-hidden="true">4<span>F</span></div>
+        <img class="brand__logo" src="./assets/logo.webp" width="96" height="96" alt="CT Four Force" />
         <div>
-          <span class="brand__ph">[LOGO] placeholder</span>
           <div class="brand__text">CT Four Force</div>
         </div>
       </a>
@@ -63,8 +62,8 @@
           <p class="hero__micro">Resposta pelo WhatsApp da unidade. Planos e valores: <span class="ph-inline">[PLACEHOLDER — inserir preços oficiais]</span></p>
         </div>
 
-        <div class="hero__media" aria-label="Foto da academia"><!-- Hero: sem lazy-load; quando houver [FOTO_HERO] real, usar <img> sem loading=lazy + preload -->
-          <div class="ph" role="img" aria-label="Placeholder de foto do hero">[FOTO_HERO]<br />ambiente da academia</div>
+        <div class="hero__media" aria-label="Foto da academia">
+          <img class="hero__img" src="./assets/hero.webp" width="800" height="600" alt="Área de musculação e equipamentos — CT Four Force, Canoas" fetchpriority="high" />
         </div>
       </div>
     </section>
@@ -80,24 +79,24 @@
           <article class="mod-card">
             <h3 class="mod-card__label">Publicado no Wellhub</h3>
             <ul class="mod-grid">
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_MUSCULACAO]</div><span>Musculação</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_HIBRIDO]</div><span>Treino híbrido</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_FISICULTURISMO]</div><span>Fisiculturismo</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_DANCA_SALAO]</div><span>Dança de salão</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_ARTES_MARCIAIS]</div><span>Artes marciais</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_PERSONAL_DANCA]</div><span>Personal trainer — Dança</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-musculacao.webp" width="144" height="144" alt="Musculação — equipamentos" loading="lazy" decoding="async" /><span>Musculação</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-hibrido.webp" width="144" height="144" alt="Treino híbrido — rig funcional" loading="lazy" decoding="async" /><span>Treino híbrido</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-fisiculturismo.webp" width="144" height="144" alt="Fisiculturismo — pesos livres" loading="lazy" decoding="async" /><span>Fisiculturismo</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-danca.webp" width="144" height="144" alt="Espaço da academia" loading="lazy" decoding="async" /><span>Dança de salão</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-artes.webp" width="144" height="144" alt="Área de treino funcional" loading="lazy" decoding="async" /><span>Artes marciais</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-personal.webp" width="144" height="144" alt="Área de musculação" loading="lazy" decoding="async" /><span>Personal trainer — Dança</span></li>
             </ul>
           </article>
 
           <article class="mod-card">
             <h3 class="mod-card__label">Publicado no TotalPass (Unidade águia)</h3>
             <ul class="mod-grid">
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_RITMOS]</div><span>Ritmos</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_PILATES]</div><span>Pilates solo</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_MUSCULACAO_TP]</div><span>Musculação</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_LOCALIZADA]</div><span>Localizada</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_CROSS]</div><span>Cross Training</span></li>
-              <li class="mod-item"><div class="ph" aria-hidden="true">[FOTO_MODALIDADE_MUAYTHAI]</div><span>Muay Thai</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-ritmos.webp" width="144" height="144" alt="Área de cardio" loading="lazy" decoding="async" /><span>Ritmos</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-pilates.webp" width="144" height="144" alt="Área de musculação" loading="lazy" decoding="async" /><span>Pilates solo</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-musculacao-tp.webp" width="144" height="144" alt="Musculação — pesos" loading="lazy" decoding="async" /><span>Musculação</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-localizada.webp" width="144" height="144" alt="Equipamentos" loading="lazy" decoding="async" /><span>Localizada</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-cross.webp" width="144" height="144" alt="Cross training — rig" loading="lazy" decoding="async" /><span>Cross Training</span></li>
+              <li class="mod-item"><img class="mod-item__img" src="./assets/mod-muaythai.webp" width="144" height="144" alt="Área de treino" loading="lazy" decoding="async" /><span>Muay Thai</span></li>
             </ul>
           </article>
         </div>
@@ -141,7 +140,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Prévia estática · CT Four Force · WhatsApp <a href="https://wa.me/5551989102802">(51) 98910-2802</a> · Sem JS · Placeholders marcados</p>
+      <p>Prévia estática · CT Four Force · WhatsApp <a href="https://wa.me/5551989102802">(51) 98910-2802</a> · Sem JS · Placeholders de preço mantidos</p>
+      <p class="site-footer__credits">Imagens: CT Four Force (uso apenas para esta prévia)</p>
     </div>
   </footer>
 </body>
