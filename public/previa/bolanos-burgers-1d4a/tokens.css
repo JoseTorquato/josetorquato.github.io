@@ -1,0 +1,8 @@
+/* Tokens amostrados da logo pública (InstaDelivery). Vermelho #D80000, azul royal #0030C0/#0078D8, amarelo #F0D800, marinho #000078. */
+:root{
+--red:#d80000;--red-d:#a80000;--blue:#0a3cc2;--blue-2:#0a78d8;--navy:#08085a;--yellow:#f6d800;--yellow-2:#ffe866;
+--paper:#fff7dc;/* suposição: creme quente para leitura, derivado do amarelo */--ink:#0b0b2e;
+--f-display:'Bowlby One',Impact,sans-serif;--f-text:'Rubik',system-ui,sans-serif;
+--fs-hero:clamp(2.6rem,7.5vw,6.4rem);--fs-h2:clamp(2rem,5vw,3.8rem);--fs-body:1.06rem;
+--r-tv:34px;--r-card:22px;--shadow-hard:6px 6px 0 var(--navy);
+--ease-out:cubic-bezier(.2,.8,.2,1);--ease-pop:cubic-bezier(.34,1.56,.64,1);--dur-fast:180ms;--dur-base:450ms;--dur-slow:800ms;--reveal-y:28px}
