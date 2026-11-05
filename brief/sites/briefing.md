@@ -5,7 +5,7 @@ Data: 04/11/2026. Fonte: conversa com o José + configurações do PréviaLab (O
 | Pergunta | Resposta | Origem |
 |---|---|---|
 | O que se vende | Site para negócio local, feito a partir de uma prévia grátis | José |
-| Preço | Essencial: R$ 499 de setup + R$ 39/mês. Ideal e Completo: sob consulta | PréviaLab › Oferta + José |
+| Preço | Plano único em promoção de lançamento: R$ 397 de setup + R$ 39,90/mês (04/11/2026). Sem "de/por" com preço anterior fictício | José |
 | Pagamento | Pix e cartão. Mensalidade sem fidelidade | José (marcado) |
 | NÃO prometer | domínio no nome do cliente; "só paga depois de aprovar" (não confirmados) | José (não marcou) |
 | Para quem | Donos de hamburguerias, restaurantes, salões, pet/vet, academias de Canoas e Porto Alegre que só têm Instagram, Linktree ou cardápio de app (iFood, Anota AI) | José |

@@ -28,10 +28,11 @@ Título: Tudo o que o cliente procura, num endereço seu
 4. Em até 7 dias, o site está no ar no endereço de vocês.
 (Dias 2 a 5 ajusto; dia 6 você revisa e pede mudanças.)
 
-## Planos
-- Essencial — R$ 499 de setup + R$ 39/mês: a prévia ajustada com fotos e textos de vocês · domínio e hospedagem · botão de WhatsApp · ajustes leves todo mês
-- Ideal — sob consulta: tudo do Essencial · cardápio ou serviços com pedido direto pelo WhatsApp · perfil do Google Meu Negócio revisado · atualização de fotos e preços todo mês
-- Completo — sob consulta: tudo do Ideal · sessão de fotos ou vídeo de destaque para o topo · relatório mensal de visitas e cliques · prioridade nos ajustes
+## Preço
+Título: Um plano só, com preço de lançamento
+- Selo: Promoção de lançamento
+- Site do seu negócio — R$ 397 de setup + R$ 39,90/mês: a prévia ajustada com fotos e textos de vocês · domínio e hospedagem · botão de WhatsApp · ajustes leves todo mês
+- Botão: Quero uma prévia grátis
 - Nota: Sem fidelidade: cancele a mensalidade quando quiser. Pix ou cartão.
 
 ## Quem faz

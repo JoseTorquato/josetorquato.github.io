@@ -225,7 +225,7 @@ const llms = [
     : []),
   '## Serviço',
   '',
-  `- [Sites para negócios locais](${urlOf('/sites')}): criação de site para negócios de Canoas e Porto Alegre, com prévia grátis. Plano Essencial: R$ 499 de setup + R$ 39/mês, sem fidelidade.`,
+  `- [Sites para negócios locais](${urlOf('/sites')}): criação de site para negócios de Canoas e Porto Alegre, com prévia grátis. Promoção de lançamento: R$ 397 de setup + R$ 39,90/mês, sem fidelidade.`,
   '',
   '## Sobre e contato',
   '',

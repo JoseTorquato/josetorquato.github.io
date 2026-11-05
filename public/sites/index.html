@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Site para negócio local em Canoas e Porto Alegre — prévia grátis | José Torquato</title>
-<meta name="description" content="Site para hamburguerias, restaurantes, salões e comércios de Canoas e Porto Alegre. Eu monto uma prévia grátis do seu site. Essencial: R$ 499 + R$ 39/mês, sem fidelidade." />
+<meta name="description" content="Site para hamburguerias, restaurantes, salões e comércios de Canoas e Porto Alegre. Eu monto uma prévia grátis do seu site. Promoção de lançamento: R$ 397 + R$ 39,90/mês, sem fidelidade." />
 <link rel="canonical" href="https://josetorquato.dev/sites/" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Seu negócio com um site de verdade. A prévia é por minha conta." />
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"José Torquato — sites para negócios locais","url":"https://josetorquato.dev/sites/","description":"Criação de site para negócios locais com prévia grátis.","areaServed":[{"@type":"City","name":"Canoas"},{"@type":"City","name":"Porto Alegre"}],"address":{"@type":"PostalAddress","addressLocality":"Canoas","addressRegion":"RS","addressCountry":"BR"},"priceRange":"A partir de R$ 499","paymentAccepted":"Pix, cartão","founder":{"@type":"Person","name":"José Torquato","url":"https://josetorquato.dev/"},"makesOffer":{"@type":"Offer","name":"Plano Essencial","price":"499","priceCurrency":"BRL","description":"Setup R$ 499 + R$ 39/mês: site com fotos e textos do negócio, domínio e hospedagem, botão de WhatsApp e ajustes leves todo mês."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"José Torquato — sites para negócios locais","url":"https://josetorquato.dev/sites/","description":"Criação de site para negócios locais com prévia grátis.","areaServed":[{"@type":"City","name":"Canoas"},{"@type":"City","name":"Porto Alegre"}],"address":{"@type":"PostalAddress","addressLocality":"Canoas","addressRegion":"RS","addressCountry":"BR"},"priceRange":"R$ 397 + R$ 39,90/mês","paymentAccepted":"Pix, cartão","founder":{"@type":"Person","name":"José Torquato","url":"https://josetorquato.dev/"},"makesOffer":{"@type":"Offer","name":"Site do seu negócio (promoção de lançamento)","price":"397","priceCurrency":"BRL","description":"Setup R$ 397 + R$ 39,90/mês: site com fotos e textos do negócio, domínio e hospedagem, botão de WhatsApp e ajustes leves todo mês."}}</script>
 <style>
   :root {
     --bg: #FAFAF7; --panel: #FFFFFF; --ink: #0A0A0A; --text: #2B2B2B; --muted: #5C5C5C; --rule: #E6E4DE;
@@ -89,6 +89,8 @@
   .planos { display: grid; gap: 16px; }
   .plano { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--r); padding: 24px; display: grid; gap: 14px; align-content: start; }
   .plano.forte { border: 2px solid var(--ink); }
+  .selo { justify-self: start; font: 500 12px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); background: color-mix(in srgb, var(--signal) 45%, #fff); padding: 7px 10px; border-radius: 999px; }
+  .plano .btn { justify-self: start; margin-top: 4px; }
   .plano h3 { font-size: 24px; }
   .preco { font: 700 30px/1.1 var(--f-display); color: var(--ink); font-variant-numeric: tabular-nums; }
   .preco small { display: block; font: 400 16px/1.4 var(--f-display); color: var(--muted); margin-top: 4px; }
@@ -119,7 +121,7 @@
     .tem { grid-template-columns: 1fr 1fr; gap: 16px 40px; }
     .passos { grid-template-columns: repeat(4, 1fr); }
     .passos li { padding: 60px 0 0; }
-    .planos { grid-template-columns: repeat(3, 1fr); }
+    .planos { grid-template-columns: minmax(0, 560px); }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
@@ -208,23 +210,15 @@
 
   <section aria-labelledby="t-planos">
     <div class="wrap">
-      <p class="kicker">Planos</p>
-      <h2 id="t-planos" class="sec-title">Um valor claro para começar</h2>
+      <p class="kicker">Preço</p>
+      <h2 id="t-planos" class="sec-title">Um plano só, com preço de lançamento</h2>
       <div class="planos">
         <article class="plano forte">
-          <h3>Essencial</h3>
-          <p class="preco">R$ 499 <small>de setup + R$ 39/mês</small></p>
+          <p class="selo">Promoção de lançamento</p>
+          <h3>Site do seu negócio</h3>
+          <p class="preco">R$ 397 <small>de setup + R$ 39,90/mês</small></p>
           <ul><li>A prévia ajustada com fotos e textos de vocês</li><li>Domínio e hospedagem</li><li>Botão de WhatsApp</li><li>Ajustes leves todo mês</li></ul>
-        </article>
-        <article class="plano">
-          <h3>Ideal</h3>
-          <p class="preco">Sob consulta</p>
-          <ul><li>Tudo do Essencial</li><li>Cardápio ou serviços com pedido direto pelo WhatsApp</li><li>Perfil do Google Meu Negócio revisado</li><li>Atualização de fotos e preços todo mês</li></ul>
-        </article>
-        <article class="plano">
-          <h3>Completo</h3>
-          <p class="preco">Sob consulta</p>
-          <ul><li>Tudo do Ideal</li><li>Sessão de fotos ou vídeo de destaque para o topo do site</li><li>Relatório mensal de visitas e cliques</li><li>Prioridade nos ajustes</li></ul>
+          <a class="btn" data-wa href="https://wa.me/__WHATSAPP__?text=Oi%2C%20Jos%C3%A9!%20Quero%20uma%20pr%C3%A9via%20do%20site%20do%20meu%20neg%C3%B3cio%3A%20" target="_blank" rel="noopener">Quero uma prévia grátis</a>
         </article>
       </div>
       <p class="regras"><strong>Sem fidelidade:</strong> cancele a mensalidade quando quiser. Pagamento por Pix ou cartão.</p>
