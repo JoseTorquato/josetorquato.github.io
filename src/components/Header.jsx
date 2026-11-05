@@ -11,7 +11,11 @@ export default function Header() {
       <Brand />
       <div className="header-right">
         <nav className="nav">
-          {ui.nav.map((item) => (
+          {ui.nav.map((item) => item.href ? (
+            <a key={item.href} href={item.href} className="nav-link">
+              {t(item.label)}
+            </a>
+          ) : (
             <NavLink
               key={item.to}
               to={item.to}

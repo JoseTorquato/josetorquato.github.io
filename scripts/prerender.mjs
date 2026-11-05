@@ -194,11 +194,14 @@ for (const route of routes) {
   writeFileSync(resolve(dir, 'index.html'), pageHtml(route))
 }
 
+// páginas estáticas de public/ que devem aparecer no sitemap (as prévias de clientes ficam fora: são noindex)
+const staticPages = ['/sites']
+
 // sitemap.xml
 const sitemap =
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  routes.map((r) => `  <url><loc>${urlOf(r.path)}</loc></url>`).join('\n') +
+  [...routes.map((r) => r.path), ...staticPages].map((p) => `  <url><loc>${urlOf(p)}</loc></url>`).join('\n') +
   '\n</urlset>\n'
 writeFileSync(resolve(dist, 'sitemap.xml'), sitemap)
 
@@ -220,6 +223,10 @@ const llms = [
         '',
       ]
     : []),
+  '## Serviço',
+  '',
+  `- [Sites para negócios locais](${urlOf('/sites')}): criação de site para negócios de Canoas e Porto Alegre, com prévia grátis. Plano Essencial: R$ 499 de setup + R$ 39/mês, sem fidelidade.`,
+  '',
   '## Sobre e contato',
   '',
   `- [Sobre](${urlOf('/sobre')}): ${ui.about.short.pt}`,
@@ -228,4 +235,4 @@ const llms = [
 ].join('\n')
 writeFileSync(resolve(dist, 'llms.txt'), llms)
 
-console.log(`prerendered ${routes.length} routes + 404.html, sitemap.xml, llms.txt`)
+console.log(`prerendered ${routes.length} routes + 404.html, sitemap.xml (+${staticPages.length} static), llms.txt`)

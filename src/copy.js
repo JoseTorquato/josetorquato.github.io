@@ -8,6 +8,8 @@ export const ui = {
     { to: '/blog', label: { pt: 'Blog', en: 'Blog' } },
     { to: '/sobre', label: { pt: 'Sobre', en: 'About' } },
     { to: '/contato', label: { pt: 'Contato', en: 'Contact' } },
+    // página estática em public/sites/ (não é rota do React): navegação completa
+    { href: '/sites/', label: { pt: 'Sites', en: 'Sites' } },
   ],
   role: { pt: '// tech lead & ai engineer', en: '// tech lead & ai engineer' },
   hero: {

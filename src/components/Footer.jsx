@@ -14,7 +14,11 @@ export default function Footer() {
           <div className="footer-role">{t(ui.role)}</div>
         </div>
         <nav className="footer-nav">
-          {ui.nav.map((item) => (
+          {ui.nav.map((item) => item.href ? (
+            <a key={item.href} href={item.href} className="nav-link">
+              {t(item.label)}
+            </a>
+          ) : (
             <Link key={item.to} to={item.to} className="nav-link">
               {t(item.label)}
             </Link>
