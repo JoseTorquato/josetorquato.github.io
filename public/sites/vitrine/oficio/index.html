@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Barbearia Ofício — demonstração (negócio fictício)</title>
+<meta name="description" content="Site de demonstração de barbearia feito por José Torquato. Negócio fictício." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preload" as="image" href="assets/hero-720.webp" imagesrcset="assets/hero-720.webp 720w, assets/hero-1200.webp 1200w" imagesizes="(min-width: 900px) 50vw, 100vw" fetchpriority="high" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --preto: #0b0b0c; --grafite: #141416; --latao: #c8a46a; --latao-2: #e0c48f; --marfim: #efe7d8; --cinza: #a8a196; --linha: #26252a;
+    --f-display: 'Cormorant Garamond', Georgia, serif; --f-texto: 'Manrope', system-ui, sans-serif;
+    --ease: cubic-bezier(.2,.7,.2,1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--preto); color: var(--marfim); font: 400 17px/1.65 var(--f-texto); -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--f-display); font-weight: 500; margin: 0; line-height: 1; letter-spacing: -.01em; }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+  .demo { position: sticky; top: 0; z-index: 30; background: var(--latao); color: var(--preto); font: 600 13px/1.3 var(--f-texto); padding: 8px 16px; display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; text-align: center; }
+  .demo a { font-weight: 800; }
+  .embed .demo { display: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 2px; font: 800 14px/1 var(--f-texto); text-transform: uppercase; letter-spacing: .16em; text-decoration: none; transition: background 200ms var(--ease), color 200ms var(--ease), transform 200ms var(--ease); }
+  .btn-latao { background: var(--latao); color: var(--preto); }
+  .btn-latao:hover { background: var(--latao-2); transform: translateY(-2px); }
+  .btn-fio { border: 1px solid var(--latao); color: var(--latao); }
+  .btn-fio:hover { background: var(--latao); color: var(--preto); }
+  :focus-visible { outline: 2px solid var(--latao-2); outline-offset: 4px; }
+  .rotulo { font: 800 12px/1 var(--f-texto); letter-spacing: .3em; text-transform: uppercase; color: var(--latao); display: flex; align-items: center; gap: 12px; }
+  .rotulo::before { content: ""; width: 28px; height: 1px; background: var(--latao); }
+  section { padding: 80px 0; }
+
+  /* topo */
+  .hero { display: grid; min-height: min(92vh, 900px); position: relative; }
+  .hero-foto { position: absolute; inset: 0; overflow: hidden; }
+  .hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; animation: aproxima 16s var(--ease) infinite alternate; }
+  .hero-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,12,.25), rgba(11,11,12,.55) 50%, rgba(11,11,12,.97) 92%); }
+  .hero .wrap { position: relative; z-index: 2; align-self: end; padding-bottom: 54px; width: 100%; }
+  .selo { font: 600 13px/1 var(--f-texto); letter-spacing: .32em; text-transform: uppercase; color: var(--latao); margin-bottom: 22px; }
+  .hero h1 { font-size: clamp(60px, 16vw, 132px); font-weight: 500; }
+  .hero h1 em { font-style: italic; color: var(--latao); }
+  .hero .sub { color: var(--cinza); max-width: 36ch; margin: 20px 0 28px; font-size: 18px; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+  .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; font-size: 15px; color: var(--cinza); }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--cinza); }
+  .status.aberto::before { background: #5fd38a; }
+  .status.fechado::before { background: var(--latao); }
+  @keyframes aproxima { to { transform: scale(1.1); } }
+
+  /* manifesto */
+  .manifesto { text-align: center; }
+  .manifesto p { font: 500 clamp(30px, 7vw, 56px)/1.15 var(--f-display); max-width: 22ch; margin: 22px auto 0; }
+  .manifesto p em { color: var(--latao); }
+
+  /* serviços */
+  .cab { display: grid; gap: 14px; margin-bottom: 36px; }
+  .cab h2 { font-size: clamp(48px, 11vw, 88px); }
+  .servicos { display: grid; gap: 6px; }
+  .servico { display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; padding: 20px 0; border-bottom: 1px solid var(--linha); }
+  .servico h3 { font-size: 30px; display: flex; align-items: baseline; gap: 12px; }
+  .servico h3::after { content: ""; flex: 1; border-bottom: 1px dotted #4b463d; transform: translateY(-6px); }
+  .servico b { font: 600 28px/1 var(--f-display); color: var(--latao); align-self: end; }
+  .servico p { grid-column: 1 / -1; color: var(--cinza); font-size: 15px; }
+  .servico small { color: var(--latao); font-weight: 600; letter-spacing: .08em; }
+
+  /* galeria */
+  .galeria { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .galeria figure { margin: 0; overflow: hidden; }
+  .galeria img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
+  .galeria figure:hover img { transform: scale(1.05); }
+  .g-alta { grid-row: span 2; }
+  .g-larga { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+
+  /* falas */
+  .falas { display: grid; gap: 28px; }
+  .fala { margin: 0; border-left: 1px solid var(--latao); padding-left: 20px; }
+  .fala p { font: 500 26px/1.25 var(--f-display); font-style: italic; }
+  .aviso { color: var(--cinza); font-size: 13px; margin-top: 18px; }
+
+  /* visite */
+  .visite { display: grid; gap: 30px; }
+  .hours li { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--linha); color: var(--cinza); }
+  .hours li.hoje { color: var(--marfim); font-weight: 800; }
+  .hours li.hoje span:first-child::after { content: " · hoje"; color: var(--latao); }
+  .mapa { min-height: 240px; border: 1px solid var(--linha); background:
+      radial-gradient(circle at 42% 52%, var(--latao) 0 6px, rgba(200,164,106,.2) 7px 20px, transparent 21px),
+      repeating-linear-gradient(90deg, transparent 0 58px, #1d1c20 58px 60px),
+      repeating-linear-gradient(0deg, transparent 0 58px, #1d1c20 58px 60px), var(--grafite);
+    display: grid; place-items: end start; padding: 16px; color: var(--cinza); font-size: 13px; }
+
+  .fim { text-align: center; border-top: 1px solid var(--linha); }
+  .fim h2 { font-size: clamp(54px, 14vw, 112px); }
+  .fim h2 em { color: var(--latao); }
+  .fim p { color: var(--cinza); margin: 18px auto 30px; max-width: 36ch; }
+  footer { border-top: 1px solid var(--linha); padding: 30px 0 46px; color: var(--cinza); font-size: 13px; }
+  footer .wrap { display: grid; gap: 8px; }
+
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 900ms var(--ease), transform 900ms var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (min-width: 900px) {
+    section { padding: 120px 0; }
+    .hero { grid-template-columns: 1fr 1fr; }
+    .hero-foto { left: 45%; }
+    .hero-foto::after { background: linear-gradient(90deg, rgba(11,11,12,1) 0%, rgba(11,11,12,.2) 40%, rgba(11,11,12,.1)); }
+    .hero .wrap { grid-column: 1 / -1; align-self: center; padding-bottom: 0; }
+    .servicos { grid-template-columns: 1fr 1fr; column-gap: 64px; }
+    .galeria { grid-template-columns: 1.2fr 1fr 1fr; grid-auto-rows: 260px; }
+    .g-alta { grid-row: span 2; }
+    .g-larga { grid-column: span 2; aspect-ratio: auto; }
+    .falas { grid-template-columns: repeat(3, 1fr); }
+    .visite { grid-template-columns: 1fr 1.2fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body data-horario='{"0":[],"1":[],"2":[[540,1200]],"3":[[540,1200]],"4":[[540,1200]],"5":[[540,1200]],"6":[[540,1080]]}'>
+<div class="demo" role="note">Demonstração · negócio fictício · site feito por José Torquato <a href="/sites/">Quero um assim →</a></div>
+
+<header class="hero">
+  <div class="hero-foto"><img src="assets/hero-720.webp" srcset="assets/hero-720.webp 720w, assets/hero-1200.webp 1200w" sizes="(min-width: 900px) 55vw, 100vw" width="1200" height="1794" alt="Barbearia à meia-luz com cadeiras clássicas de couro e espelhos" fetchpriority="high" /></div>
+  <div class="wrap">
+    <p class="selo">Barbearia Ofício · Canoas</p>
+    <h1>Corte é<br /><em>ofício.</em></h1>
+    <p class="sub">Tesoura, navalha e tempo para fazer direito. Agende em um toque e chegue na sua hora.</p>
+    <div class="acoes">
+      <a class="btn btn-latao" href="https://wa.me/5551991913505?text=Oi%2C%20Jos%C3%A9!%20Vi%20a%20vitrine%20Barbearia%20Of%C3%ADcio%20e%20quero%20um%20site%20assim%20pro%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Agendar horário</a>
+      <a class="btn btn-fio" href="#servicos">Serviços e preços</a>
+    </div>
+    <p class="status" data-status><span data-status-text>Terça a sábado · a partir das 9h</span></p>
+  </div>
+</header>
+
+<section class="manifesto" aria-label="Manifesto">
+  <div class="wrap reveal">
+    <p class="rotulo" style="justify-content:center">A casa</p>
+    <p>Sem pressa, sem fila e sem <em>corte de linha de montagem.</em></p>
+  </div>
+</section>
+
+<section id="servicos" aria-labelledby="t-servicos">
+  <div class="wrap">
+    <div class="cab reveal"><p class="rotulo">Serviços</p><h2 id="t-servicos">Tabela da casa</h2></div>
+    <ul class="servicos">
+      <li class="servico reveal"><h3>Corte</h3><b>R$ 55</b><p>Tesoura e máquina, lavagem e finalização. <small>45 min</small></p></li>
+      <li class="servico reveal"><h3>Barba</h3><b>R$ 40</b><p>Toalha quente, navalha e balm. <small>30 min</small></p></li>
+      <li class="servico reveal"><h3>Corte + barba</h3><b>R$ 85</b><p>O ritual completo, com café ou chopp. <small>75 min</small></p></li>
+      <li class="servico reveal"><h3>Acabamento</h3><b>R$ 25</b><p>Pezinho e contorno entre um corte e outro. <small>15 min</small></p></li>
+      <li class="servico reveal"><h3>Sobrancelha</h3><b>R$ 20</b><p>Na pinça ou na navalha. <small>15 min</small></p></li>
+      <li class="servico reveal"><h3>Pai e filho</h3><b>R$ 95</b><p>Dois cortes no mesmo horário. <small>60 min</small></p></li>
+    </ul>
+  </div>
+</section>
+
+<section aria-label="O espaço">
+  <div class="wrap">
+    <div class="cab reveal"><p class="rotulo">O espaço</p><h2>Feito pra ficar</h2></div>
+    <div class="galeria">
+      <figure class="g-alta reveal"><img src="assets/moderno-480.webp" srcset="assets/moderno-480.webp 480w, assets/moderno-720.webp 720w" sizes="(min-width: 900px) 30vw, 50vw" width="480" height="854" loading="lazy" alt="Salão em preto e branco com cadeiras e espelhos em arco" /></figure>
+      <figure class="reveal"><img src="assets/cosmeticos-480.webp" srcset="assets/cosmeticos-480.webp 480w, assets/cosmeticos-720.webp 720w" sizes="(min-width: 900px) 25vw, 50vw" width="480" height="480" loading="lazy" alt="Prateleiras com produtos de cuidado para cabelo e barba" /></figure>
+      <figure class="reveal"><img src="assets/cadeiras-480.webp" srcset="assets/cadeiras-480.webp 480w, assets/cadeiras-720.webp 720w" sizes="(min-width: 900px) 25vw, 50vw" width="480" height="334" loading="lazy" alt="Cadeiras pretas diante de espelhos redondos em parede escura" /></figure>
+      <figure class="g-larga reveal"><img src="assets/hero-720.webp" width="720" height="1076" loading="lazy" alt="Fileira de cadeiras de barbeiro sob luminárias douradas" style="object-position:50% 70%" /></figure>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="t-falas">
+  <div class="wrap">
+    <div class="cab reveal"><p class="rotulo">Clientes</p><h2 id="t-falas">Quem senta, volta</h2></div>
+    <div class="falas">
+      <figure class="fala reveal"><p>Primeira barbearia em que eu não precisei explicar duas vezes.</p></figure>
+      <figure class="fala reveal"><p>Agendei pelo celular, cheguei e sentei. Sem espera nenhuma.</p></figure>
+      <figure class="fala reveal"><p>A toalha quente na barba já vale a visita.</p></figure>
+    </div>
+    <p class="aviso">Depoimentos ilustrativos: este é um negócio fictício.</p>
+  </div>
+</section>
+
+<section aria-labelledby="t-visite">
+  <div class="wrap visite">
+    <div class="reveal">
+      <p class="rotulo">Visite</p>
+      <h2 id="t-visite" style="font-size:clamp(46px,11vw,80px);margin:14px 0 18px">Horários</h2>
+      <p class="status" data-status style="margin:0 0 14px"><span data-status-text>Terça a sábado · a partir das 9h</span></p>
+      <ul class="hours">
+        <li data-dia="2"><span>Terça</span><span>9h – 20h</span></li>
+        <li data-dia="3"><span>Quarta</span><span>9h – 20h</span></li>
+        <li data-dia="4"><span>Quinta</span><span>9h – 20h</span></li>
+        <li data-dia="5"><span>Sexta</span><span>9h – 20h</span></li>
+        <li data-dia="6"><span>Sábado</span><span>9h – 18h</span></li>
+        <li data-dia="0"><span>Domingo</span><span>Fechado</span></li>
+        <li data-dia="1"><span>Segunda</span><span>Fechado</span></li>
+      </ul>
+    </div>
+    <div class="mapa reveal" role="img" aria-label="Mapa ilustrativo">Endereço de exemplo · Canoas, RS · mapa ilustrativo</div>
+  </div>
+</section>
+
+<section class="fim" aria-labelledby="t-fim">
+  <div class="wrap">
+    <h2 id="t-fim">Sua cadeira<br /><em>está pronta.</em></h2>
+    <p>Escolha o serviço e o horário pelo WhatsApp. Confirmamos na hora.</p>
+    <a class="btn btn-latao" href="https://wa.me/5551991913505?text=Oi%2C%20Jos%C3%A9!%20Vi%20a%20vitrine%20Barbearia%20Of%C3%ADcio%20e%20quero%20um%20site%20assim%20pro%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Agendar horário</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Barbearia Ofício é um negócio fictício.</strong> Este site é uma demonstração feita por <a href="/sites/">José Torquato</a>; os botões de WhatsApp falam com ele.</p>
+    <p>Fotos: Unsplash — T (@tanyabarrow), Greg Trowman, Barney Goodman, Ela De Pure (Licença Unsplash).</p>
+  </div>
+</footer>
+<script src="../vitrine.js" defer></script>
+</body>
+</html>
