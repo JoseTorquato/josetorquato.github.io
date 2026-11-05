@@ -24,8 +24,15 @@ Coleta em 05/11/2026 (skill client-asset-harvest). Instagram lido no navegador d
 | fotos/iga-02-01..08-{400,720,1080}.webp | 8 foto(s) do anúncio IGA-02 | https://www.instagram.com/p/Dbv3luAGi0M/ | CDN do Instagram (lido no navegador do José) | 05/11/2026 | Material de divulgação do próprio corretor; só para a prévia noindex. |
 | fotos/iga-01-01..08-{400,720,1080}.webp | 8 foto(s) do anúncio IGA-01 | https://www.instagram.com/p/Db3qOmmmmyr/ | CDN do Instagram (lido no navegador do José) | 05/11/2026 | Material de divulgação do próprio corretor; só para a prévia noindex. |
 
+## Fotos do corretor
+| Arquivo | O quê | Página de origem | Como | Data | Obs |
+|---|---|---|---|---|---|
+| fotos/felipe-retrato.webp | Felipe em frente a um sobrado (quadro inicial do vídeo, sem legenda) | https://www.instagram.com/reel/DXr9SHECa7O/ | print do quadro no navegador do José (o Chrome bloqueou downloads seguidos; nada contornado) | 05/11/2026 | Só ele na imagem; sem clientes |
+| fotos/felipe-avatar.webp | Foto de perfil do Instagram | https://www.instagram.com/felipealbuquerquecorretor/ | print da foto de perfil (150 px) | 05/11/2026 | Usada pequena (40–52 px) |
+
+Descartadas: fotos de entrega de chaves (têm clientes) e de viagem (tem outra pessoa).
+
 ## Não confirmado (marcado na página)
 - Seção "Como eu trabalho": texto de exemplo.
 - Disponibilidade e valores: "a confirmar" em cada imóvel, com a data do anúncio original.
 - Bairro do imóvel PAV-01: não informado na legenda (aparece só "Canoas").
-- Monograma "FA": criado para a prévia (a foto de perfil disponível tem 150 px).
