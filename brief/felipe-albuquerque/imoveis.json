@@ -1,0 +1,190 @@
+{
+  "corretor": {
+    "nome": "Felipe Albuquerque",
+    "titulo": "Corretor de Imóveis",
+    "creci": "69.515F",
+    "cidade": "Canoas",
+    "uf": "RS",
+    "escritorio": "Rua Sete Povos, 330, sala 803 · Marechal Rondon · Canoas/RS",
+    "whatsapp": "5551982993404",
+    "instagram": "https://www.instagram.com/felipealbuquerquecorretor/",
+    "instagram2": "https://www.instagram.com/albuquerque.imoveisrs/",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Felipe%20Albuquerque%20Corretor%20de%20Im%C3%B3veis&query_place_id=ChIJCWwCRhBxGZUREJ5Ga7_z9AE",
+    "bio": "Te auxilio na busca pelo seu imóvel. As melhores oportunidades de Canoas."
+  },
+  "imoveis": [
+    {
+      "cod": "MOV-01",
+      "post": "DV1Xa7Fjx6j",
+      "slug": "casa-4-suites-moinhos-de-vento",
+      "titulo": "Casa de alto padrão com 4 suítes",
+      "tipo": "Casa",
+      "bairro": "Moinhos de Vento",
+      "preco": 2350000,
+      "area": 250,
+      "terreno": "12 × 28 m",
+      "dormitorios": 4,
+      "suites": 4,
+      "vagas": 4,
+      "resumo": "Casa nova no Moinhos de Vento, com entrega prevista para novembro de 2026, 4 suítes, lareira a lenha e espaço gourmet integrado ao pátio.",
+      "destaques": [
+        "4 suítes: 3 com sacada no pavimento superior e 1 no térreo",
+        "Living integrado à cozinha e à sala de jantar",
+        "Lareira a lenha e lavabo",
+        "Espaço gourmet com churrasqueira parrilla integrado ao pátio",
+        "Pátio amplo com espaço para piscina",
+        "Garagem para até 4 veículos (2 cobertas)",
+        "Esquadrias em PVC e persianas automatizadas nos dormitórios",
+        "Porcelanato nas áreas sociais e infraestrutura para água quente",
+        "Entrega com móveis planejados na sala, cozinha, espaço gourmet, lavanderia e lavabo"
+      ],
+      "condicoes": [],
+      "entrega": "Entrega prevista para novembro de 2026",
+      "ilustrativas": true,
+      "fotos": 2,
+      "capa": 1
+    },
+    {
+      "cod": "MON-01",
+      "post": "DVO5QHXoMu9",
+      "slug": "sobrado-piscina-aquecida-mont-serrat",
+      "titulo": "Sobrado com piscina aquecida",
+      "tipo": "Sobrado",
+      "bairro": "Mont Serrat",
+      "preco": 1649000,
+      "area": 210,
+      "dormitorios": 3,
+      "suites": 1,
+      "vagas": 2,
+      "resumo": "Sobrado de alto padrão no Mont Serrat, perto do Park Shopping, com piscina aquecida, área gourmet e energia solar.",
+      "destaques": [
+        "Pátio com piscina aquecida e área gourmet",
+        "Placas de energia solar",
+        "3 dormitórios, sendo 1 suíte com hidromassagem, closet e sacada",
+        "Vagas de garagem fechadas, lado a lado",
+        "Móveis planejados em todos os ambientes",
+        "Perto do Park Shopping"
+      ],
+      "condicoes": [
+        "Avalia o seu imóvel como parte do pagamento"
+      ],
+      "fotos": 8,
+      "capa": 2
+    },
+    {
+      "cod": "BEL-01",
+      "post": "DVO6f2bDNwr",
+      "slug": "sobrado-3-suites-bela-vista",
+      "titulo": "Sobrado com 3 suítes",
+      "tipo": "Sobrado",
+      "bairro": "Bela Vista",
+      "preco": 1295000,
+      "area": 174,
+      "dormitorios": 3,
+      "suites": 3,
+      "vagas": 2,
+      "resumo": "Sobrado no Bela Vista com 3 suítes, living integrado e pátio amplo com possibilidade de piscina.",
+      "destaques": [
+        "3 suítes, sendo uma master",
+        "Living integrado entre os ambientes",
+        "2 vagas cobertas, lado a lado",
+        "Pátio amplo com possibilidade de instalar piscina"
+      ],
+      "condicoes": [
+        "Aceita financiamento bancário"
+      ],
+      "fotos": 8,
+      "capa": 2
+    },
+    {
+      "cod": "SJO-01",
+      "post": "DbWYah2mjMx",
+      "slug": "casa-3-dormitorios-sao-jose",
+      "titulo": "Casa semi nova com pátio amplo",
+      "tipo": "Casa",
+      "bairro": "São José",
+      "preco": 960000,
+      "dormitorios": 3,
+      "suites": 1,
+      "vagas": 2,
+      "resumo": "Casa semi nova no São José, pronta para morar, com ótima posição solar e amplo espaço de pátio.",
+      "destaques": [
+        "3 dormitórios, sendo 1 suíte",
+        "Ótima posição solar",
+        "Amplo espaço de pátio",
+        "2 vagas de garagem lado a lado"
+      ],
+      "condicoes": [],
+      "fotos": 8,
+      "capa": 1
+    },
+    {
+      "cod": "PAV-01",
+      "post": "Dbvz1aZGvHc",
+      "slug": "casa-com-pavilhao-6-vagas",
+      "titulo": "Casa com pavilhão e garagem para 6 veículos",
+      "tipo": "Casa",
+      "bairro": null,
+      "preco": 850000,
+      "dormitorios": 3,
+      "suites": 1,
+      "vagas": 6,
+      "resumo": "Casa ampla com pavilhão ao lado, ideal para morar e ter comércio ou empresa no mesmo endereço.",
+      "destaques": [
+        "3 dormitórios, sendo 1 suíte",
+        "Sala de estar e jantar, living amplo, gabinete e escritório",
+        "Churrasqueira, sacada e varanda ampla",
+        "Garagem fechada com pé-direito duplo para até 6 veículos e caminhão de porte médio",
+        "Pavilhão ao lado da residência, ideal para comércio ou empresa",
+        "Poço artesiano com água potável, terreno murado e gradeado, cerca elétrica e jardim"
+      ],
+      "condicoes": [],
+      "fotos": 8,
+      "capa": 1
+    },
+    {
+      "cod": "IGA-02",
+      "post": "Dbv3luAGi0M",
+      "slug": "casa-3-suites-igara",
+      "titulo": "Casa com 3 suítes, semi mobiliada",
+      "tipo": "Casa",
+      "bairro": "Igara",
+      "preco": null,
+      "area": 210,
+      "dormitorios": 3,
+      "suites": 3,
+      "vagas": 2,
+      "resumo": "Residência de 210 m² no Igara, semi mobiliada e pronta para morar, com 3 suítes e living integrado.",
+      "destaques": [
+        "3 suítes completas, sendo 1 master",
+        "Semi mobiliada, pronta para morar",
+        "Living integrado para receber família e amigos",
+        "Garagem com vagas lado a lado"
+      ],
+      "condicoes": [],
+      "fotos": 8,
+      "capa": 2
+    },
+    {
+      "cod": "IGA-01",
+      "post": "Db3qOmmmmyr",
+      "slug": "sobrado-3-dormitorios-igara",
+      "titulo": "Sobrado com suíte e sacada",
+      "tipo": "Sobrado",
+      "bairro": "Igara",
+      "preco": 590000,
+      "dormitorios": 3,
+      "suites": 1,
+      "resumo": "Sobrado no Igara com 3 dormitórios, sala e cozinha integradas, pátio privativo e churrasqueira.",
+      "destaques": [
+        "3 dormitórios, sendo 1 suíte com sacada",
+        "Sala e cozinha integradas",
+        "Pátio privativo com churrasqueira",
+        "Ambientes amplos e funcionais"
+      ],
+      "condicoes": [],
+      "fotos": 8,
+      "capa": 1
+    }
+  ]
+}
