@@ -12,7 +12,9 @@ function previaDirectoryIndex() {
         const q = raw.indexOf('?')
         const pathname = q === -1 ? raw : raw.slice(0, q)
         const search = q === -1 ? '' : raw.slice(q)
-        if (!pathname.startsWith('/previa/') || path.extname(pathname)) return next()
+        // prévias e a página estática /sites/ abrem o index.html de public/ (em produção o GitHub Pages faz isso)
+        const estatica = pathname.startsWith('/previa/') || pathname === '/sites' || pathname === '/sites/'
+        if (!estatica || path.extname(pathname)) return next()
         const dir = pathname.endsWith('/') ? pathname : `${pathname}/`
         const file = path.join(server.config.publicDir, dir.slice(1), 'index.html')
         if (fs.existsSync(file)) req.url = `${dir}index.html${search}`
