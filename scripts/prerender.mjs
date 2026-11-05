@@ -195,7 +195,7 @@ for (const route of routes) {
 }
 
 // páginas estáticas de public/ que devem aparecer no sitemap (as prévias de clientes ficam fora: são noindex)
-const staticPages = ['/sites']
+const staticPages = ['/sites', '/skillpacks']
 
 // sitemap.xml
 const sitemap =
@@ -226,6 +226,7 @@ const llms = [
   '## Serviço',
   '',
   `- [Sites para negócios locais](${urlOf('/sites')}): criação de site para negócios de Canoas e Porto Alegre, com prévia grátis. Promoção de lançamento: R$ 397 de setup + R$ 39,90/mês, sem fidelidade.`,
+  `- [Skill Packs](${urlOf('/skillpacks')}): packs de skills para Cursor, Claude, Grok Bot e Antigravity. Packs avulsos a partir de R$ 9,90 (incluindo Faceless YouTube). Pack completo por R$ 37, preço de lançamento: todos os packs + Faceless + demos (demo-flythrough-airbnb e app-ui-redesign).`,
   '',
   '## Sobre e contato',
   '',
