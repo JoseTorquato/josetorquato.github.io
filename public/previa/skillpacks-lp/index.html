@@ -27,7 +27,7 @@
     <h1 class="reveal">Sua IA já programa.<br>Agora ela sabe <mark class="hl">vender</mark>.</h1>
     <p class="lead reveal">Packs de skills prontas: você coloca na pasta, pede em português e a sua IA monta landing page, prospecta clientes, cria identidade visual e organiza o trabalho com segurança.</p>
     <div class="hero-cta reveal">
-      <a href="#comprar" class="btn">Quero o pack completo · R$ 29,90</a>
+      <a class="btn" id="checkout-completo-hero" data-pack="completo" href="https://pay.kiwify.com.br/LN2xiTX" target="_blank" rel="noopener noreferrer">Quero o pack completo · R$ 37</a>
       <a href="#packs" class="btn btn-ghost">Ver os packs</a>
     </div>
     <p class="micro reveal">Pagamento único · garantia de 7 dias · acesso por e-mail</p>
@@ -107,7 +107,7 @@
 
 <!-- NÚMEROS (verdadeiros) -->
 <section class="band"><div class="wrap band-in">
-  <div><strong>11</strong><span>skills</span></div>
+  <div><strong>tudo</strong><span>packs + faceless + demos</span></div>
   <div><strong>3</strong><span>IAs compatíveis</span></div>
   <div><strong>4</strong><span>packs + o completo</span></div>
   <div><strong>7 dias</strong><span>de garantia</span></div>
@@ -126,7 +126,7 @@
 
 <!-- COMPRAR -->
 <section class="wrap sec" id="comprar">
-  <h2 class="reveal">Leva tudo por <mark class="hl">R$ 29,90</mark>.</h2>
+  <h2 class="reveal">O completo por <mark class="hl">R$ 37</mark>.</h2>
   <div class="buy">
     <ol class="buy-steps reveal">
       <li><b>1</b>Clique em comprar</li>
@@ -134,20 +134,19 @@
       <li><b>3</b>Receba os arquivos no seu e-mail</li>
       <li><b>4</b>Coloque na pasta e peça pra sua IA</li>
     </ol>
-    <div class="price-card reveal">
-      <span class="stamp">ECONOMIZE R$ 9,70</span>
-      <span class="lbl">PACK COMPLETO</span>
-      <p class="old">4 packs = R$ 39,60</p>
-      <p class="big"><small>R$</small>29<small>,90</small></p>
+    <div class="price-card reveal" id="pack-completo" data-pack="completo">
+      <span class="lbl">Pack completo</span>
+      <span class="lbl">preço de lançamento</span>
+      <p class="big"><small>R$</small>37</p>
       <p class="micro">pagamento único · Pix ou cartão</p>
       <ul class="chk">
-        <li>Os 4 packs (11 skills + prompts)</li>
+        <li>Todos os packs + Faceless + demos</li>
+        <li>demo-flythrough-airbnb e app-ui-redesign</li>
         <li><b>Bônus:</b> template de CRM para prospecção</li>
         <li>Funciona no Cursor, Claude e Antigravity</li>
         <li>Atualizações deste lote sem custo</li>
       </ul>
-      <!-- TODO(José): trocar pelo link de pagamento do Mercado Pago (Completo R$ 29,90) -->
-      <a class="btn btn-full" href="#checkout-completo">Quero o completo →</a>
+      <a class="btn btn-full" id="checkout-completo" data-pack="completo" href="https://pay.kiwify.com.br/LN2xiTX" target="_blank" rel="noopener noreferrer">Quero o completo →</a>
       <p class="micro">Não gostou? Peça o reembolso em até 7 dias. <a href="#termos">Ver termos</a></p>
     </div>
   </div>
@@ -191,9 +190,8 @@
 <footer class="foot">José Torquato</footer>
 
 <div class="sticky" role="region" aria-label="Comprar">
-  <span><b>Completo</b> R$ 29,90</span>
-  <!-- TODO(José): mesmo link do Completo -->
-  <a class="btn btn-sm" href="#checkout-completo">Comprar</a>
+  <span><b>Completo</b> R$ 37<small>preço de lançamento</small></span>
+  <a class="btn btn-sm" id="checkout-completo-sticky" data-pack="completo" href="https://pay.kiwify.com.br/LN2xiTX" target="_blank" rel="noopener noreferrer">Comprar</a>
 </div>
 <script src="main.js" defer></script>
 </body>
