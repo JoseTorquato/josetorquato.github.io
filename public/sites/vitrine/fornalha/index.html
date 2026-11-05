@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fornalha Burger — demonstração (negócio fictício)</title>
+<meta name="description" content="Site de demonstração de hamburgueria feito por José Torquato. Negócio fictício." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preload" as="image" href="assets/hero-720.webp" imagesrcset="assets/hero-720.webp 720w, assets/hero-1200.webp 1200w" imagesizes="(min-width: 900px) 50vw, 100vw" fetchpriority="high" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --carvao: #0d0b0a; --fuligem: #17130f; --brasa: #ff5a1f; --brasa-2: #ff8a3d; --creme: #f4ede4; --cinza: #b5aa9c; --linha: #2a231d;
+    --f-display: 'Anton', Impact, sans-serif; --f-texto: 'Inter', system-ui, sans-serif;
+    --r: 18px; --ease: cubic-bezier(.2,.7,.2,1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--carvao); color: var(--creme); font: 400 17px/1.6 var(--f-texto); -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; letter-spacing: .01em; line-height: .95; margin: 0; }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  .demo { position: sticky; top: 0; z-index: 30; background: var(--creme); color: var(--carvao); font: 600 13px/1.3 var(--f-texto); padding: 8px 16px; display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; text-align: center; }
+  .demo a { font-weight: 800; }
+  .embed .demo { display: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 999px; font: 800 16px/1 var(--f-texto); text-decoration: none; letter-spacing: .02em; transition: transform 180ms var(--ease), background 180ms var(--ease); }
+  .btn-fogo { background: var(--brasa); color: #120800; box-shadow: 0 12px 30px -10px rgba(255,90,31,.6); }
+  .btn-fogo:hover { background: var(--brasa-2); transform: translateY(-2px); }
+  .btn-linha { border: 2px solid var(--linha); color: var(--creme); }
+  .btn-linha:hover { border-color: var(--brasa); }
+  .btn svg { width: 20px; height: 20px; }
+  :focus-visible { outline: 3px solid var(--brasa-2); outline-offset: 3px; }
+  .rotulo { font: 800 12px/1 var(--f-texto); letter-spacing: .22em; text-transform: uppercase; color: var(--brasa); }
+  section { padding: 72px 0; }
+
+  /* topo */
+  .hero { position: relative; min-height: min(88vh, 860px); display: grid; align-items: end; overflow: hidden; }
+  .hero-foto { position: absolute; inset: 0; }
+  .hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform: scale(1.06); animation: respira 14s var(--ease) infinite alternate; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,11,10,.15) 0%, rgba(13,11,10,.35) 45%, rgba(13,11,10,.96) 88%); }
+  .hero .wrap { position: relative; z-index: 2; padding-bottom: 48px; width: 100%; }
+  .marca { font: 400 22px/1 var(--f-display); letter-spacing: .08em; color: var(--creme); display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .marca i { width: 10px; height: 10px; border-radius: 50%; background: var(--brasa); box-shadow: 0 0 0 6px rgba(255,90,31,.18); }
+  .hero h1 { font-size: clamp(64px, 19vw, 150px); }
+  .hero h1 span { color: var(--brasa); display: block; }
+  .hero .sub { max-width: 34ch; color: var(--cinza); font-size: 18px; margin: 18px 0 26px; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+  .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; font-weight: 600; font-size: 15px; color: var(--cinza); }
+  .status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--cinza); }
+  .status.aberto::before { background: #46d16f; box-shadow: 0 0 0 5px rgba(70,209,111,.18); }
+  .status.fechado::before { background: var(--brasa); }
+  @keyframes respira { to { transform: scale(1.14) translateY(-1.5%); } }
+
+  /* faixa */
+  .faixa { border-block: 1px solid var(--linha); overflow: hidden; padding: 16px 0; background: var(--fuligem); }
+  .faixa-trilho { display: flex; gap: 40px; width: max-content; animation: corre 26s linear infinite; font: 400 26px/1 var(--f-display); text-transform: uppercase; letter-spacing: .04em; }
+  .faixa-trilho span { display: inline-flex; align-items: center; gap: 40px; }
+  .faixa-trilho span::after { content: "✦"; color: var(--brasa); font-size: 18px; }
+  @keyframes corre { to { transform: translateX(-50%); } }
+
+  /* números */
+  .numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center; }
+  .numeros b { display: block; font: 400 clamp(44px, 12vw, 80px)/1 var(--f-display); color: var(--creme); }
+  .numeros b small { font-size: .45em; color: var(--brasa); margin-left: 2px; }
+  .numeros span { color: var(--cinza); font-size: 14px; }
+
+  /* cardápio */
+  .cab { display: grid; gap: 12px; margin-bottom: 32px; }
+  .cab h2 { font-size: clamp(46px, 12vw, 88px); }
+  .cab p { color: var(--cinza); max-width: 46ch; }
+  .menu { display: grid; gap: 16px; }
+  .prato { background: var(--fuligem); border: 1px solid var(--linha); border-radius: var(--r); overflow: hidden; display: grid; grid-template-rows: auto 1fr; transition: transform 240ms var(--ease), border-color 240ms var(--ease); }
+  .prato:hover { transform: translateY(-4px); border-color: #4a3a2c; }
+  .prato figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; }
+  .prato img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease); }
+  .prato:hover img { transform: scale(1.05); }
+  .prato .corpo { padding: 18px 20px 22px; display: grid; gap: 8px; align-content: start; }
+  .prato h3 { font-size: 30px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .prato h3 em { font-style: normal; color: var(--brasa); font-size: 26px; white-space: nowrap; }
+  .prato p { color: var(--cinza); font-size: 15px; }
+  .tag { justify-self: start; font: 800 11px/1 var(--f-texto); letter-spacing: .14em; text-transform: uppercase; color: #120800; background: var(--brasa); padding: 6px 9px; border-radius: 999px; }
+
+  /* como pedir */
+  .passos { display: grid; gap: 14px; counter-reset: p; }
+  .passos li { counter-increment: p; display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: center; padding: 18px; border: 1px solid var(--linha); border-radius: var(--r); }
+  .passos li::before { content: "0" counter(p); font: 400 44px/1 var(--f-display); color: var(--brasa); }
+  .passos h3 { font-size: 26px; margin-bottom: 4px; }
+  .passos p { color: var(--cinza); font-size: 15px; }
+
+  /* falam */
+  .falas { display: grid; gap: 14px; }
+  .fala { margin: 0; padding: 22px; border-radius: var(--r); background: var(--fuligem); border: 1px solid var(--linha); }
+  .fala p { font-size: 18px; }
+  .fala p::before { content: "“"; color: var(--brasa); font: 400 40px/0 var(--f-display); vertical-align: -14px; margin-right: 4px; }
+  .aviso { color: var(--cinza); font-size: 13px; margin-top: 12px; }
+
+  /* visite */
+  .visite { display: grid; gap: 24px; }
+  .hours li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--linha); color: var(--cinza); }
+  .hours li.hoje { color: var(--creme); font-weight: 800; }
+  .hours li.hoje span:first-child::after { content: " · hoje"; color: var(--brasa); }
+  .mapa { min-height: 220px; border-radius: var(--r); border: 1px solid var(--linha); background:
+      radial-gradient(circle at 58% 46%, var(--brasa) 0 7px, rgba(255,90,31,.25) 8px 22px, transparent 23px),
+      repeating-linear-gradient(35deg, transparent 0 46px, #241d17 46px 50px),
+      repeating-linear-gradient(-55deg, transparent 0 70px, #241d17 70px 74px), var(--fuligem);
+    display: grid; place-items: end start; padding: 16px; color: var(--cinza); font-size: 13px; }
+
+  /* fim */
+  .fim { text-align: center; background: radial-gradient(ellipse at 50% 120%, rgba(255,90,31,.35), transparent 60%), var(--carvao); }
+  .fim h2 { font-size: clamp(54px, 15vw, 120px); }
+  .fim p { color: var(--cinza); margin: 16px auto 28px; max-width: 36ch; }
+  footer { border-top: 1px solid var(--linha); padding: 28px 0 44px; color: var(--cinza); font-size: 13px; }
+  footer .wrap { display: grid; gap: 8px; }
+
+  /* reveal (só com JS) */
+  .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (min-width: 900px) {
+    section { padding: 104px 0; }
+    .hero { min-height: 92vh; align-items: center; }
+    .hero-foto { left: 42%; }
+    .hero-foto img { object-position: 50% 45%; }
+    .hero::after { background: linear-gradient(90deg, var(--carvao) 0%, var(--carvao) 40%, rgba(13,11,10,.55) 52%, rgba(13,11,10,.05) 75%); }
+    .hero .wrap { padding-bottom: 0; }
+    .menu { grid-template-columns: repeat(4, 1fr); }
+    .passos { grid-template-columns: repeat(3, 1fr); }
+    .passos li { grid-template-columns: 1fr; align-items: start; }
+    .falas { grid-template-columns: repeat(3, 1fr); }
+    .visite { grid-template-columns: 1fr 1.2fr; align-items: stretch; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body data-horario='{"0":[[1110,1410]],"1":[],"2":[[1110,1410]],"3":[[1110,1410]],"4":[[1110,1410]],"5":[[1110,1440]],"6":[[1110,1440]]}'>
+<div class="demo" role="note">Demonstração · negócio fictício · site feito por José Torquato <a href="/sites/">Quero um assim →</a></div>
+
+<header class="hero">
+  <div class="hero-foto"><img src="assets/hero-720.webp" srcset="assets/hero-720.webp 720w, assets/hero-1200.webp 1200w" sizes="100vw" width="1200" height="1800" alt="Cheeseburger duplo com picles e cheddar derretido sobre fundo escuro" fetchpriority="high" /></div>
+  <div class="wrap">
+    <p class="marca"><i aria-hidden="true"></i>Fornalha Burger</p>
+    <h1>Smash<span>na brasa.</span></h1>
+    <p class="sub">Blend prensado na chapa quente, crosta crocante e cheddar escorrendo. Do jeito que hambúrguer tem que ser.</p>
+    <div class="acoes">
+      <a class="btn btn-fogo" href="https://wa.me/5551991913505?text=Oi%2C%20Jos%C3%A9!%20Vi%20a%20vitrine%20Fornalha%20Burger%20e%20quero%20um%20site%20assim%20pro%20meu%20neg%C3%B3cio." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>Pedir no WhatsApp</a>
+      <a class="btn btn-linha" href="#cardapio">Ver cardápio</a>
+    </div>
+    <p class="status" data-status><span data-status-text>Terça a domingo · a partir das 18h30</span></p>
+  </div>
+</header>
+
+<div class="faixa" aria-hidden="true"><div class="faixa-trilho">
+  <span>Smash na chapa</span><span>Cheddar inglês</span><span>Pão brioche</span><span>Batata rústica</span><span>Molho da casa</span><span>Chopp gelado</span>
+  <span>Smash na chapa</span><span>Cheddar inglês</span><span>Pão brioche</span><span>Batata rústica</span><span>Molho da casa</span><span>Chopp gelado</span>
+</div></div>
+
+<section aria-label="A casa em números">
+  <div class="wrap numeros">
+    <div class="reveal"><b><span class="count" data-to="150">150</span><small>g</small></b><span>de blend por carne</span></div>
+    <div class="reveal"><b><span class="count" data-to="90">90</span><small>s</small></b><span>na chapa, cada lado</span></div>
+    <div class="reveal"><b><span class="count" data-to="6">6</span><small>dias</small></b><span>por semana, à noite</span></div>
+  </div>
+</section>
+
+<section id="cardapio" aria-labelledby="t-cardapio">
+  <div class="wrap">
+    <div class="cab reveal"><p class="rotulo">Cardápio</p><h2 id="t-cardapio">Feito na hora</h2><p>Quatro clássicos da casa. Todo lanche vem com batata rústica e o molho Fornalha.</p></div>
+    <ul class="menu">
+      <li class="prato reveal"><figure><img src="assets/prato-480.webp" srcset="assets/prato-480.webp 480w, assets/prato-720.webp 720w" sizes="(min-width: 900px) 25vw, 100vw" width="480" height="720" loading="lazy" alt="Cheeseburger alto em prato preto" /></figure><div class="corpo"><span class="tag">Mais pedido</span><h3>Duplo da casa <em>R$ 39</em></h3><p>Dois smash de 150 g, cheddar duplo, picles e molho Fornalha no brioche.</p></div></li>
+      <li class="prato reveal"><figure><img src="assets/grelha-480.webp" srcset="assets/grelha-480.webp 480w, assets/grelha-720.webp 720w" sizes="(min-width: 900px) 25vw, 100vw" width="480" height="704" loading="lazy" alt="Cheeseburger com cebola e tomate sobre a grelha" /></figure><div class="corpo"><h3>Brasa clássico <em>R$ 34</em></h3><p>Smash de 150 g, cheddar, cebola branca, tomate e maionese defumada.</p></div></li>
+      <li class="prato reveal"><figure><img src="assets/cebola-480.webp" srcset="assets/cebola-480.webp 480w, assets/cebola-720.webp 720w" sizes="(min-width: 900px) 25vw, 100vw" width="480" height="320" loading="lazy" alt="Cheeseburger com cebola roxa sobre mesa de madeira" /></figure><div class="corpo"><h3>Cebola tostada <em>R$ 37</em></h3><p>Smash duplo com cebola roxa tostada na chapa e cheddar cremoso.</p></div></li>
+      <li class="prato reveal"><figure><img src="assets/trio-480.webp" srcset="assets/trio-480.webp 480w, assets/trio-720.webp 720w" sizes="(min-width: 900px) 25vw, 100vw" width="480" height="720" loading="lazy" alt="Três hambúrgueres lado a lado numa tábua" /></figure><div class="corpo"><span class="tag">Pra dividir</span><h3>Trio fornalha <em>R$ 99</em></h3><p>Três lanches à escolha, batata grande e três molhos da casa.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="t-pedir">
+  <div class="wrap">
+    <div class="cab reveal"><p class="rotulo">Como pedir</p><h2 id="t-pedir">Três toques</h2></div>
+    <ol class="passos">
+      <li class="reveal"><div><h3>Escolha</h3><p>Veja o cardápio com foto e preço, sem baixar nada.</p></div></li>
+      <li class="reveal"><div><h3>Chame</h3><p>Um toque no botão abre o WhatsApp com o pedido começado.</p></div></li>
+      <li class="reveal"><div><h3>Retire ou receba</h3><p>No balcão ou na sua casa, ainda quente.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section aria-labelledby="t-falas">
+  <div class="wrap">
+    <div class="cab reveal"><p class="rotulo">Quem já foi</p><h2 id="t-falas">Fala o povo</h2></div>
+    <div class="falas">
+      <figure class="fala reveal"><p>A crosta do smash é outra coisa. Volto toda sexta.</p></figure>
+      <figure class="fala reveal"><p>Pedi pelo WhatsApp e chegou quente. O duplo vale cada real.</p></figure>
+      <figure class="fala reveal"><p>Lugar pequeno, atendimento rápido e o melhor cheddar da região.</p></figure>
+    </div>
+    <p class="aviso">Depoimentos ilustrativos: este é um negócio fictício.</p>
+  </div>
+</section>
+
+<section aria-labelledby="t-visite">
+  <div class="wrap visite">
+    <div class="reveal">
+      <p class="rotulo">Visite</p>
+      <h2 id="t-visite" style="font-size:clamp(46px,12vw,80px);margin:12px 0 18px">Chapa acesa</h2>
+      <p class="status" data-status style="margin:0 0 14px"><span data-status-text>Terça a domingo · a partir das 18h30</span></p>
+      <ul class="hours">
+        <li data-dia="2"><span>Terça</span><span>18h30 – 23h30</span></li>
+        <li data-dia="3"><span>Quarta</span><span>18h30 – 23h30</span></li>
+        <li data-dia="4"><span>Quinta</span><span>18h30 – 23h30</span></li>
+        <li data-dia="5"><span>Sexta</span><span>18h30 – 0h</span></li>
+        <li data-dia="6"><span>Sábado</span><span>18h30 – 0h</span></li>
+        <li data-dia="0"><span>Domingo</span><span>18h30 – 23h30</span></li>
+        <li data-dia="1"><span>Segunda</span><span>Fechado</span></li>
+      </ul>
+    </div>
+    <div class="mapa reveal" role="img" aria-label="Mapa ilustrativo">Endereço de exemplo · Canoas, RS · mapa ilustrativo</div>
+  </div>
+</section>
+
+<section class="fim" aria-labelledby="t-fim">
+  <div class="wrap">
+    <h2 id="t-fim">Bateu a fome?</h2>
+    <p>O pedido começa com um toque. A chapa já está quente.</p>
+    <a class="btn btn-fogo" href="https://wa.me/5551991913505?text=Oi%2C%20Jos%C3%A9!%20Vi%20a%20vitrine%20Fornalha%20Burger%20e%20quero%20um%20site%20assim%20pro%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Pedir no WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Fornalha Burger é um negócio fictício.</strong> Este site é uma demonstração feita por <a href="/sites/">José Torquato</a>; os botões de WhatsApp falam com ele.</p>
+    <p>Fotos: Unsplash — Eiliv Aceron, Arvid Skywalker, Manu Ros, Fábio Alves (Licença Unsplash).</p>
+  </div>
+</footer>
+<script src="../vitrine.js" defer></script>
+</body>
+</html>
