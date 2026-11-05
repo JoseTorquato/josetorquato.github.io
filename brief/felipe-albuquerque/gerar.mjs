@@ -57,7 +57,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x).replace(
 <body>
 <p class="faixa">Prévia para aprovação — não é o site publicado.</p>
 <header class="top"><div class="wrap">
-  <a class="marca" href="${BASE}"><span class="monograma" aria-hidden="true">FA</span><span><b>${esc(C.nome)}</b><small>${esc(C.titulo)} · CRECI ${esc(C.creci)}</small></span></a>
+  <a class="marca" href="${BASE}"><img class="avatar" src="${BASE}fotos/felipe-avatar.webp" width="40" height="40" alt="" /><span><b>${esc(C.nome)}</b><small>${esc(C.titulo)} · CRECI ${esc(C.creci)}</small></span></a>
   <nav aria-label="Principal"><a class="link" href="${BASE}#imoveis">Imóveis</a><a class="link" href="${BASE}#sobre">Sobre</a><a class="btn btn-wa" href="${wa('Olá, Felipe! Vi o seu site e quero falar sobre imóveis.')}" target="_blank" rel="noopener" aria-label="Falar com o Felipe no WhatsApp">${ICO.wa}<span class="txt">WhatsApp</span></a></nav>
 </div></header>`
 
@@ -81,6 +81,7 @@ const agente = {
   '@context': 'https://schema.org', '@type': 'RealEstateAgent', name: `${C.nome} — ${C.titulo}`, url: URL_BASE,
   description: `${C.titulo} em Canoas/RS. CRECI ${C.creci}.`, telephone: '+55-51-98299-3404',
   address: { '@type': 'PostalAddress', streetAddress: 'Rua Sete Povos, 330, sala 803', addressLocality: 'Canoas', addressRegion: 'RS', addressCountry: 'BR' },
+  image: 'https://josetorquato.dev' + BASE + 'fotos/felipe-retrato.webp',
   areaServed: { '@type': 'City', name: 'Canoas' }, identifier: { '@type': 'PropertyValue', name: 'CRECI', value: C.creci },
   sameAs: [C.instagram, C.instagram2, C.maps],
 }
@@ -103,7 +104,7 @@ const home = head({
     <h1>O imóvel certo, no <em>bairro certo</em>, com quem conhece Canoas.</h1>
     <p class="sub">${esc(C.bio)} Casas e sobrados selecionados no Igara, São José, Mont Serrat, Bela Vista e Moinhos de Vento.</p>
     <div class="acoes"><a class="btn btn-wa" href="${wa('Olá, Felipe! Estou procurando um imóvel em Canoas.')}" target="_blank" rel="noopener">${ICO.wa}Falar com o Felipe</a><a class="btn btn-fio" href="#imoveis">Ver imóveis</a></div>
-    <p class="creci">CRECI ${esc(C.creci)} · Escritório no Marechal Rondon</p>
+    <p class="corretor-chip"><img class="avatar" src="${BASE}fotos/felipe-avatar.webp" width="52" height="52" alt="" /><span><b>${esc(C.nome)}</b> · CRECI ${esc(C.creci)}<br />Escritório no Marechal Rondon, Canoas</span></p>
   </div>
 </section>
 
@@ -139,13 +140,14 @@ ${IM.map((i) => card(i)).join('\n')}
 </div></section>
 
 <section id="sobre" class="sobre" aria-labelledby="t-sobre"><div class="wrap">
+  <figure class="retrato reveal"><img src="${BASE}fotos/felipe-retrato.webp" width="360" height="450" loading="lazy" alt="Felipe Albuquerque em frente a um sobrado à venda em Canoas" /><figcaption>Felipe em um dos imóveis que apresenta no Instagram</figcaption></figure>
   <div class="reveal">
     <p class="rotulo">Sobre</p>
     <h2 id="t-sobre" style="margin:14px 0 18px">Felipe Albuquerque</h2>
-    <p>Corretor de imóveis em Canoas, com escritório no Marechal Rondon. No Instagram, mostra cada imóvel em detalhes, e as entregas de chaves que acompanha até o fim.</p>
+    <p>Corretor de imóveis em Canoas, com escritório no Marechal Rondon. Visita cada imóvel, mostra os detalhes em vídeo no Instagram e acompanha o cliente até a entrega das chaves.</p>
     <p style="margin-top:22px"><a class="btn btn-fio" href="${C.instagram}" target="_blank" rel="noopener">Ver no Instagram</a></p>
   </div>
-  <div class="ficha reveal">
+  <div class="ficha reveal" style="grid-column:1 / -1">
     <p><b>CRECI</b> ${esc(C.creci)}</p>
     <p><b>Escritório</b> ${esc(C.escritorio)}</p>
     <p><b>Atendimento</b> pelo WhatsApp, com visitas agendadas</p>
@@ -217,7 +219,7 @@ for (const i of IM) {
       <a class="btn btn-wa" href="${wa(msg)}" target="_blank" rel="noopener">${ICO.wa}Quero saber mais</a>
       <a class="btn btn-fio" href="${wa(`Olá, Felipe! Quero agendar uma visita ao imóvel ${i.cod}.`)}" target="_blank" rel="noopener">Agendar visita</a>
       <small>Anunciado no Instagram em ${dataPost[i.post] || '2026'} · valores e disponibilidade a confirmar. <a href="https://www.instagram.com/p/${i.post}/" target="_blank" rel="noopener">Ver o anúncio original</a>.</small>
-      <small>${esc(C.nome)} · CRECI ${esc(C.creci)}</small>
+      <div class="seu-corretor"><img class="avatar" src="${BASE}fotos/felipe-avatar.webp" width="48" height="48" alt="" /><span><b>${esc(C.nome)}</b><br />Corretor de Imóveis · CRECI ${esc(C.creci)}</span></div>
     </aside>
   </div>
 </div>
