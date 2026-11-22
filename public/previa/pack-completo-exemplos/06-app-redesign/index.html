@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Antes e depois — redesign de painel de app</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tokens.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-bg);color:var(--color-text);font:var(--fw-body) var(--fs-md)/var(--lh-body) var(--font-body)}
+.fict{background:var(--color-support-soft);color:var(--color-support);text-align:center;font-weight:var(--fw-subtitle);font-size:var(--fs-sm);padding:var(--space-2) var(--space-4)}
+main{max-width:var(--container);margin:auto;padding:var(--space-8) var(--space-4) var(--space-12)}
+h1{font-size:var(--fs-xl);line-height:var(--lh-tight);margin:0 0 var(--space-3)}
+h2{font-size:var(--fs-lg);margin:var(--space-12) 0 var(--space-3)}
+.lead{font-size:var(--fs-subtitle-mobile);font-weight:var(--fw-subtitle);color:var(--color-muted);max-width:60ch}
+.cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)}
+figure{margin:0;background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-md);box-shadow:var(--shadow-1);padding:var(--space-4)}
+figcaption{font-weight:var(--fw-subtitle);margin-bottom:var(--space-3);display:flex;justify-content:space-between;gap:var(--space-2);flex-wrap:wrap}
+figcaption a{color:var(--color-accent);font-size:var(--fs-sm)}
+.shot{height:560px;overflow:auto;border:1px solid var(--color-line);border-radius:var(--radius-sm)}
+.shot img{width:100%;display:block}
+.mob{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6);justify-items:center}
+.mob .shot{width:100%;max-width:300px}
+table{width:100%;border-collapse:collapse;background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-md)}
+th,td{text-align:left;padding:var(--space-3);border-bottom:1px solid var(--color-line);vertical-align:top;font-size:var(--fs-sm)}
+th{color:var(--color-muted);font-size:var(--fs-xs)}
+.pr{font-weight:var(--fw-subtitle);color:var(--color-accent)}
+footer{border-top:1px solid var(--color-line);padding:var(--space-6) var(--space-4);text-align:center;color:var(--color-muted);font-size:var(--fs-sm)}
+a{color:var(--color-accent)} :focus-visible{outline:3px solid var(--color-focus);outline-offset:2px}
+.scroll{overflow-x:auto}
+@media (max-width:820px){.cmp,.mob{grid-template-columns:1fr}.lead{font-size:var(--fs-subtitle-mobile)}th,td{padding:var(--space-2)}.shot{height:420px}}
+</style></head><body>
+<div class="fict">Exemplo fictício feito com o Pack Completo</div>
+<main>
+<h1>Antes e depois: redesign do painel do Studio Lume</h1>
+<p class="lead">Um painel de agendamentos e financeiro de um estúdio fictício, refeito para responder primeiro à pergunta “o que eu preciso decidir hoje?”. Todos os dados são inventados e ilustrativos.</p>
+
+<h2>Desktop (1280px)</h2>
+<div class="cmp">
+ <figure><figcaption>Antes <a href="before.html">abrir ao vivo</a></figcaption><div class="shot" tabindex="0"><img src="screenshots/before/desktop.png" alt="Painel antes: texto corrido, tabela crua com 10 colunas e cores padrão"></div></figure>
+ <figure><figcaption>Depois <a href="after.html">abrir ao vivo</a></figcaption><div class="shot" tabindex="0"><img src="screenshots/after/desktop.png" alt="Painel depois: barra lateral, cartão de ações, KPIs, gráfico e agenda legível"></div></figure>
+</div>
+
+<h2>Mobile (390px)</h2>
+<div class="mob">
+ <figure><figcaption>Antes</figcaption><div class="shot" tabindex="0"><img src="screenshots/before/mobile.png" alt="Antes no celular: tabela larga que estoura a tela"></div></figure>
+ <figure><figcaption>Depois</figcaption><div class="shot" tabindex="0"><img src="screenshots/after/mobile.png" alt="Depois no celular: KPIs em grade e agenda em cartões"></div></figure>
+</div>
+
+<h2>O que mudou e por quê</h2>
+<div class="scroll"><table>
+<thead><tr><th>Mudança</th><th>Por quê (princípio da skill app-ui-redesign)</th></tr></thead>
+<tbody>
+<tr><td><span class="pr">Cartão “3 coisas precisam de você hoje”</span> no topo, com botões de ação.</td><td><b>Diagnóstico: foco em decisão, não em log.</b> O antes listava 7 números sem prioridade; agora o que exige ação (pendentes e atrasos) vem primeiro.</td></tr>
+<tr><td><span class="pr">Estado global no cabeçalho:</span> data, 6 confirmados, 2 pendentes, “Novo agendamento”.</td><td><b>Estado global no cabeçalho, não dentro de painéis.</b> Contagens e ação principal ficam visíveis em qualquer rolagem.</td></tr>
+<tr><td><span class="pr">4 KPIs</span> em cartões, valores em R$ com tamanho grande; “Em atraso” em vermelho.</td><td><b>Hierarquia:</b> o número é o protagonista, o rótulo é secundário. Cor só onde há significado (atraso).</td></tr>
+<tr><td><span class="pr">Gráfico de barras em SVG</span> com a semana mais forte destacada e valores nas barras.</td><td><b>Conteúdo nativo:</b> o antes tinha “S1 4100, S2 5200…” em texto; o gráfico mostra a comparação sem exigir leitura.</td></tr>
+<tr><td><span class="pr">Tabela enxuta:</span> de 10 colunas para 5; cliente e serviço agrupados, status em selo com texto e cor, valores em R$ alinhados à direita.</td><td><b>Densidade e status</b> legíveis. Colunas de baixo valor (id, data repetida, “pago S/N”) saíram da visão principal. No mobile, vira lista de cartões.</td></tr>
+<tr><td><span class="pr">“Detalhes e histórico do mês”</span> recolhível; cancelados ocultos por padrão com filtro.</td><td><b>Informação secundária em gaveta recolhível.</b></td></tr>
+<tr><td><span class="pr">Estados vazios</span> (lista de espera; filtro sem resultados) com explicação e ação.</td><td>Evita telas mortas; diz o que fazer em seguida. (Clique em “Profissional 4 (0)” em after.html para ver.)</td></tr>
+<tr><td><span class="pr">tokens.css</span> com cores, tipografia, espaços, raios, sombras e movimento; <a href="design-system.html">vitrine</a>.</td><td><b>design-system-tokens:</b> nenhum hex solto nos componentes; trocar a marca é editar um arquivo. Subtítulo ≥ 20px no mobile, pesos ≥ 400/600.</td></tr>
+</tbody></table></div>
+
+<h2>Documentos do processo</h2>
+<p><a href="DIAGNOSTICO.md">DIAGNOSTICO.md</a> · <a href="design-system.html">design-system.html</a></p>
+</main>
+<footer>Exemplo fictício feito com o Pack Completo. Studio Lume é um negócio inventado; nomes, valores e datas são ilustrativos.</footer>
+</body></html>

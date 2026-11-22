@@ -1,0 +1,55 @@
+/* tokens.css — Sol do Delta Energia (fictício). Somente variáveis.
+   Componentes usam SÓ var(--*). Trocar a marca = editar este arquivo. */
+:root {
+  /* Cores */
+  --color-bg:         #FFF8EC;
+  --color-surface:    #FFFFFF;
+  --color-surface-2:  #FDEFD3;
+  --color-text:       #12353B;
+  --color-muted:      #46595C;
+  --color-primary:    #0E4A52;   /* verde-petróleo */
+  --color-primary-ink:#FFF8EC;   /* texto sobre primário */
+  --color-accent:     #F5A524;   /* âmbar do sol */
+  --color-accent-hov: #FFB84A;
+  --color-accent-ink: #1A2A2D;   /* texto sobre acento */
+  --color-dark:       #0B3238;
+  --color-dark-muted: #BFD3D2;
+  --color-line:       #E6D9BF;
+  --color-success:    #1E7A4C;
+  --color-error:      #B3261E;
+  --color-wa:         #1FA855;
+  --color-wa-hov:     #2BC066;
+  --color-wa-ink:     #04210F;
+  --color-focus:      #1B5FD6;
+
+  /* Tipografia (fontes do sistema; offline) */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fs-xs: .8125rem; --fs-sm: .9375rem; --fs-md: 1.0625rem;
+  --fs-lg: 1.375rem; --fs-xl: clamp(1.75rem, 4vw, 2.6rem);
+  --fs-hero: clamp(2.3rem, 6.2vw, 4.4rem);
+  --fs-number: clamp(2.4rem, 7vw, 3.6rem);
+  --fs-subtitle-mobile: 1.25rem;   /* 20px mínimo no mobile */
+  --lh-tight: 1.08; --lh-body: 1.6;
+  --fw-body: 400; --fw-subtitle: 600; --fw-bold: 700;
+
+  /* Espaçamento (escala 4px) */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px; --space-24: 96px;
+  --container: 1120px;
+
+  /* Forma e profundidade */
+  --radius-sm: 8px; --radius-md: 16px; --radius-pill: 999px;
+  --shadow-1: 0 1px 2px rgb(18 53 59 / .08);
+  --shadow-2: 0 12px 30px rgb(18 53 59 / .14);
+
+  /* Movimento */
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+  --dur-fast: 150ms; --dur-base: 300ms; --dur-slow: 600ms;
+  --reveal-distance: 24px;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; --reveal-distance: 0px; }
+}
+/* Lacunas: sem logo/identidade real (negócio fictício); fonte display é do sistema (varia por SO);
+   ícone do Instagram é genérico, perfil @soldodelta.exemplo é placeholder. */

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miolo &amp; Cia — Moodboard e design system (exemplo fictício)</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c-farinha);color:var(--c-centeio);font:var(--fw-body) var(--fs-md)/var(--lh-body) var(--ff-body);overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:var(--c-azulejo)}
+:focus-visible{outline:var(--focus);outline-offset:2px}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 var(--sp-5)}
+h1,h2,h3{font-family:var(--ff-display);font-weight:var(--fw-title);line-height:var(--lh-title);margin:0 0 var(--sp-4);color:var(--c-azulejo-escuro)}
+h1{font-size:var(--fs-h1);line-height:var(--lh-tight)}
+h2{font-size:var(--fs-h2)}
+h3{font-size:var(--fs-h3)}
+p{margin:0 0 var(--sp-4)}
+.sub{font-size:var(--fs-subtitle);font-weight:var(--fw-subtitle);color:var(--c-miolo);line-height:1.35}
+.muted{color:var(--c-miolo)}
+.small{font-size:var(--fs-sm)}
+.fict{background:var(--c-azulejo-escuro);color:var(--c-farinha);text-align:center;font-size:var(--fs-sm);font-weight:var(--fw-subtitle);padding:var(--sp-2) var(--sp-4)}
+section{padding:var(--sp-8) 0}
+section.alt{background:var(--c-massa)}
+.eyebrow{font-size:var(--fs-xs);letter-spacing:.14em;text-transform:uppercase;font-weight:var(--fw-title);color:var(--c-brasa-escuro);margin-bottom:var(--sp-3)}
+.grid{display:grid;gap:var(--sp-5)}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}section{padding:var(--sp-7) 0}}
+
+/* ---- componentes ---- */
+.nav{background:var(--c-farinha);border-bottom:1px solid var(--c-borda);position:sticky;top:0;z-index:5}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4);padding:var(--sp-3) var(--sp-5);max-width:var(--container);margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:var(--sp-3);font-family:var(--ff-display);font-weight:var(--fw-title);font-size:var(--fs-h3);color:var(--c-azulejo-escuro);text-decoration:none}
+.brand svg{width:40px;height:40px;flex:none}
+.nav ul{display:flex;gap:var(--sp-2);list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav li a{display:block;padding:var(--sp-2) var(--sp-3);border-radius:var(--r-pill);text-decoration:none;color:var(--c-centeio);font-weight:var(--fw-subtitle);font-size:var(--fs-sm);transition:background var(--dur-fast) var(--ease-out)}
+.nav li a:hover{background:var(--c-azulejo-claro)}
+.nav li a[aria-current]{background:var(--c-azulejo);color:var(--c-branco)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);min-height:48px;padding:var(--sp-3) var(--sp-5);border:2px solid transparent;border-radius:var(--r-pill);font:var(--fw-subtitle) var(--fs-sm)/1 var(--ff-body);cursor:pointer;text-decoration:none;transition:transform var(--dur-fast) var(--ease-out),background var(--dur-base) var(--ease-out),box-shadow var(--dur-base)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sh-2)}
+.btn-primary{background:var(--c-brasa);color:var(--c-branco)}
+.btn-primary:hover{background:var(--c-brasa-escuro)}
+.btn-secondary{background:var(--c-azulejo);color:var(--c-branco)}
+.btn-secondary:hover{background:var(--c-azulejo-escuro)}
+.btn-ghost{background:transparent;color:var(--c-azulejo);border-color:var(--c-azulejo)}
+.btn-ghost:hover{background:var(--c-azulejo-claro)}
+.btn[disabled]{background:var(--c-massa);color:var(--c-miolo);border-color:var(--c-borda);cursor:not-allowed;transform:none;box-shadow:none}
+.row{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center}
+.card{background:var(--c-branco);border:1px solid var(--c-borda);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-1);display:flex;flex-direction:column;transition:box-shadow var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+.card:hover{box-shadow:var(--sh-3);transform:translateY(-4px)}
+.card .art{aspect-ratio:4/3;background:var(--c-azulejo-claro);display:block;width:100%}
+.card .body{padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-2);flex:1}
+.card h3{margin:0;font-size:var(--fs-subtitle)}
+.card .price{font-family:var(--ff-display);font-weight:var(--fw-title);font-size:var(--fs-h3);color:var(--c-azulejo)}
+.card .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-3);margin-top:auto;padding-top:var(--sp-3)}
+.badge{display:inline-flex;align-items:center;gap:var(--sp-1);padding:var(--sp-1) var(--sp-3);border-radius:var(--r-pill);font-size:var(--fs-xs);font-weight:var(--fw-title);align-self:flex-start}
+.b-info{background:var(--c-azulejo-claro);color:var(--c-azulejo-escuro)}
+.b-ok{background:var(--c-fermento-claro);color:var(--c-fermento)}
+.b-err{background:var(--c-queimado-claro);color:var(--c-queimado)}
+.b-hot{background:var(--c-brasa);color:var(--c-branco)}
+.field{display:flex;flex-direction:column;gap:var(--sp-2)}
+.field label{font-weight:var(--fw-subtitle);font-size:var(--fs-sm)}
+.input{min-height:48px;padding:var(--sp-3) var(--sp-4);border:2px solid var(--c-miolo);border-radius:var(--r-md);background:var(--c-branco);color:var(--c-centeio);font:var(--fw-body) var(--fs-sm)/1.2 var(--ff-body);width:100%}
+.input:focus{outline:var(--focus);outline-offset:1px;border-color:var(--c-azulejo)}
+.input.bad{border-color:var(--c-queimado)}
+.hint{font-size:var(--fs-xs);color:var(--c-miolo)}
+.hint.bad{color:var(--c-queimado);font-weight:var(--fw-subtitle)}
+.hint.good{color:var(--c-fermento);font-weight:var(--fw-subtitle)}
+
+/* ---- hero ---- */
+.hero{position:relative;overflow:hidden;background:var(--c-azulejo-escuro);color:var(--c-farinha);padding:var(--sp-8) 0}
+.hero h1{color:var(--c-farinha)}
+.hero .sub{color:var(--c-azulejo-claro);max-width:34rem}
+.hero .eyebrow{color:var(--c-trigo)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--sp-6);align-items:center;position:relative}
+.hero svg.tile{width:100%;height:auto;border-radius:var(--r-lg);box-shadow:var(--sh-3)}
+@media(max-width:800px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+.hero-bg{position:absolute;inset:0;opacity:.18}
+
+/* ---- moodboard ---- */
+.mood{background:var(--c-branco);border:2px solid var(--c-borda);border-radius:var(--r-lg);padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-3)}
+.mood.chosen{border-color:var(--c-brasa);box-shadow:var(--sh-2)}
+.mood h3{margin:0}
+.sw-row{display:flex;height:40px;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-borda)}
+.sw-row i{flex:1}
+.kw{display:flex;flex-wrap:wrap;gap:var(--sp-3)}
+.kw span{font-family:var(--ff-display);font-size:var(--fs-h3);font-weight:var(--fw-title);padding:var(--sp-2) var(--sp-5);border-radius:var(--r-pill);background:var(--c-branco);border:2px solid var(--c-azulejo);color:var(--c-azulejo-escuro)}
+.kw span:nth-child(even){background:var(--c-azulejo);color:var(--c-farinha)}
+.tex{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--c-borda);background:var(--c-branco);margin:0}
+.tex .sample{height:180px;display:block;width:100%}
+.tex figcaption{padding:var(--sp-3) var(--sp-4);font-size:var(--fs-sm)}
+.tex figcaption b{display:block;font-family:var(--ff-display)}
+.t-azulejo{background-color:var(--c-azulejo);background-image:radial-gradient(circle at 50% 50%,var(--c-azulejo-claro) 0 14%,transparent 15%),radial-gradient(circle at 0 0,var(--c-azulejo-claro) 0 14%,transparent 15%),radial-gradient(circle at 100% 0,var(--c-azulejo-claro) 0 14%,transparent 15%),radial-gradient(circle at 0 100%,var(--c-azulejo-claro) 0 14%,transparent 15%),radial-gradient(circle at 100% 100%,var(--c-azulejo-claro) 0 14%,transparent 15%);background-size:48px 48px}
+.t-banneton{background:repeating-linear-gradient(90deg,var(--c-massa) 0 10px,var(--c-farinha) 10px 14px,var(--c-borda) 14px 15px,var(--c-farinha) 15px 24px)}
+.t-farinha{background-color:var(--c-centeio);background-image:radial-gradient(var(--c-farinha) 1px,transparent 1.5px),radial-gradient(var(--c-massa) 1px,transparent 1.5px),radial-gradient(var(--c-trigo) .8px,transparent 1.2px);background-size:17px 17px,11px 13px,29px 23px;background-position:0 0,5px 7px,9px 3px}
+.t-crosta{background-color:var(--c-crosta);background-image:repeating-linear-gradient(135deg,var(--c-brasa-escuro) 0 3px,transparent 3px 22px),radial-gradient(circle at 30% 30%,var(--c-trigo) 0 40%,transparent 70%);background-blend-mode:multiply}
+
+/* ---- paleta ---- */
+.sw{background:var(--c-branco);border:1px solid var(--c-borda);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column}
+.sw .chip{height:88px;display:flex;align-items:flex-end;padding:var(--sp-2) var(--sp-3);font-weight:var(--fw-title);font-size:var(--fs-sm)}
+.sw .info{padding:var(--sp-3);font-size:var(--fs-xs);line-height:1.5}
+.sw .info b{font-size:var(--fs-sm);display:block}
+.sw code{font-size:var(--fs-xs)}
+.pass{color:var(--c-fermento);font-weight:var(--fw-title)}
+.fail{color:var(--c-queimado);font-weight:var(--fw-title)}
+.pairs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:var(--sp-3)}
+.pair{border-radius:var(--r-md);padding:var(--sp-4);font-weight:var(--fw-subtitle);border:1px solid var(--c-borda)}
+.pair small{display:block;font-weight:var(--fw-body);font-size:var(--fs-xs);margin-top:var(--sp-1)}
+
+/* ---- tipografia / tokens ---- */
+.type-row{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:var(--sp-4);align-items:baseline;padding:var(--sp-3) 0;border-bottom:1px solid var(--c-borda)}
+.type-row code{font-size:var(--fs-xs);color:var(--c-miolo)}
+@media(max-width:640px){.type-row{grid-template-columns:minmax(0,1fr);gap:var(--sp-1)}}
+.space-bar{height:20px;background:var(--c-azulejo);border-radius:var(--r-sm)}
+.sp-row{display:grid;grid-template-columns:5rem minmax(0,1fr);gap:var(--sp-3);align-items:center;font-size:var(--fs-xs);margin-bottom:var(--sp-2)}
+.demo-box{height:90px;background:var(--c-branco);border:1px solid var(--c-borda);display:flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:var(--fw-subtitle)}
+pre{background:var(--c-azulejo-escuro);color:var(--c-farinha);padding:var(--sp-4);border-radius:var(--r-md);overflow:auto;font-size:var(--fs-xs);line-height:1.5;margin:0}
+
+footer{background:var(--c-azulejo-escuro);color:var(--c-farinha);padding:var(--sp-7) 0 var(--sp-6)}
+footer a{color:var(--c-trigo)}
+footer .fict-foot{font-weight:var(--fw-title);font-size:var(--fs-md);margin-bottom:var(--sp-3)}
+
+.reveal{opacity:0;transform:translateY(var(--reveal-distance));transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+<!-- SVG reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mono" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="var(--c-azulejo)"/><path d="M8 29V13l6 8 6-8 6 8 6-8v16" fill="none" stroke="var(--c-trigo)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="trigo" viewBox="0 0 24 24"><path d="M12 22V8M12 8c-2-1-3-3-3-5 2 1 3 3 3 5Zm0 0c2-1 3-3 3-5-2 1-3 3-3 5Zm0 6c-2-1-3-3-3-5 2 1 3 3 3 5Zm0 0c2-1 3-3 3-5-2 1-3 3-3 5Zm0 6c-2-1-3-3-3-5 2 1 3 3 3 5Zm0 0c2-1 3-3 3-5-2 1-3 3-3 5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="fict" role="note">Exemplo fictício feito com o Pack Completo</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#topo" aria-label="Miolo &amp; Cia (marca fictícia)"><svg aria-hidden="true"><use href="#mono"/></svg>Miolo &amp; Cia</a>
+    <nav aria-label="Navegação do exemplo">
+      <ul>
+        <li><a href="#moodboard" aria-current="page">Moodboard</a></li>
+        <li><a href="#paleta">Paleta</a></li>
+        <li><a href="#tipografia">Tipografia</a></li>
+        <li><a href="#tokens">Tokens</a></li>
+        <li><a href="#componentes">Componentes</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+<div class="hero">
+  <svg class="hero-bg" width="100%" height="100%" aria-hidden="true"><defs><pattern id="hp" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M32 0 64 32 32 64 0 32Z" fill="none" stroke="var(--c-azulejo-claro)" stroke-width="1.5"/><circle cx="32" cy="32" r="6" fill="var(--c-trigo)"/></pattern></defs><rect width="100%" height="100%" fill="url(#hp)"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Direção de arte · Clima “Azulejo de Forno”</p>
+      <h1>Pão lento, marca com cara de balcão antigo.</h1>
+      <p class="sub">Moodboard e design system da Miolo &amp; Cia, uma padaria artesanal inventada para este exemplo. Tudo em código: sem fotos de terceiros, sem CDN.</p>
+      <div class="row"><a class="btn btn-primary" href="#componentes">Ver componentes</a><a class="btn btn-ghost" style="color:var(--c-farinha);border-color:var(--c-farinha)" href="tokens.css">Baixar tokens.css</a></div>
+    </div>
+    <svg class="tile" viewBox="0 0 320 320" role="img" aria-label="Ilustração: pão redondo com cortes sobre fundo de azulejo">
+      <rect width="320" height="320" fill="var(--c-azulejo)"/>
+      <g fill="none" stroke="var(--c-azulejo-claro)" stroke-width="2" opacity=".5"><path d="M0 80h320M0 160h320M0 240h320M80 0v320M160 0v320M240 0v320"/></g>
+      <ellipse cx="160" cy="250" rx="110" ry="14" fill="var(--c-azulejo-escuro)" opacity=".6"/>
+      <path d="M50 215c0-70 50-115 110-115s110 45 110 115c0 18-30 30-110 30S50 233 50 215Z" fill="var(--c-crosta)"/>
+      <path d="M62 205c6-58 48-93 98-93s92 35 98 93c-20 14-60 20-98 20s-78-6-98-20Z" fill="var(--c-trigo)"/>
+      <path d="M105 150c10 8 18 22 22 40M150 138c8 12 12 30 12 52M195 150c-10 8-18 22-22 40" fill="none" stroke="var(--c-crosta)" stroke-width="9" stroke-linecap="round"/>
+      <g fill="var(--c-farinha)" opacity=".85"><circle cx="90" cy="170" r="3"/><circle cx="220" cy="160" r="3"/><circle cx="130" cy="125" r="2.5"/><circle cx="188" cy="128" r="3"/><circle cx="245" cy="190" r="2.5"/></g>
+      <g transform="translate(24 24)" stroke="var(--c-trigo)" color="var(--c-trigo)"><use href="#trigo" width="40" height="40"/></g>
+    </svg>
+  </div>
+</div>
+
+<!-- MOODBOARD -->
+<section id="moodboard">
+  <div class="wrap">
+    <p class="eyebrow">1 · Moodboard</p>
+    <h2 class="reveal">Três climas propostos, um escolhido</h2>
+    <p class="sub reveal" style="max-width:46rem">Brief assumido (não há cliente real): pães de fermentação natural, bairro residencial, calor de forno com confiança. Documento completo em <code>docs/moodboard.md</code>.</p>
+    <div class="grid g3" style="margin-top:var(--sp-6)">
+      <article class="mood chosen reveal">
+        <span class="badge b-hot">Escolhido</span>
+        <h3>Azulejo de Forno</h3>
+        <p class="muted small" style="margin:0">“Azulejo de padaria antiga, forno aceso.”</p>
+        <div class="sw-row" aria-label="Paleta"><i style="background:var(--c-farinha)"></i><i style="background:var(--c-azulejo)"></i><i style="background:var(--c-brasa)"></i><i style="background:var(--c-crosta)"></i><i style="background:var(--c-trigo)"></i></div>
+        <p class="small" style="margin:0"><b>Fontes:</b> serifada de sistema (display) + system-ui (texto).<br><b>Movimento:</b> reveal suave de 16px.<br><b>Evitar:</b> copiar padrão histórico de azulejaria específico.</p>
+      </article>
+      <article class="mood reveal">
+        <h3>Madrugada de Massa</h3>
+        <p class="muted small" style="margin:0">“Silêncio, escuro e vapor às 4h da manhã.”</p>
+        <div class="sw-row" aria-label="Paleta"><i style="background:var(--c-centeio)"></i><i style="background:var(--c-miolo)"></i><i style="background:var(--c-trigo)"></i><i style="background:var(--c-farinha)"></i></div>
+        <p class="small" style="margin:0"><b>Fontes:</b> serifada condensada + mono.<br><b>Movimento:</b> vapor sutil (opacity).<br><b>Descartado:</b> escuro com dourado é o clichê de cafeteria; leitura pior em sol de rua.</p>
+      </article>
+      <article class="mood reveal">
+        <h3>Trigal Pop</h3>
+        <p class="muted small" style="margin:0">“Feira de domingo, cor e barulho bom.”</p>
+        <div class="sw-row" aria-label="Paleta"><i style="background:var(--c-massa)"></i><i style="background:var(--c-trigo)"></i><i style="background:var(--c-fermento)"></i><i style="background:var(--c-queimado)"></i></div>
+        <p class="small" style="margin:0"><b>Fontes:</b> sans arredondada + display pesada.<br><b>Movimento:</b> rotação leve no hover.<br><b>Descartado:</b> pouca sobriedade para o público do brief.</p>
+      </article>
+    </div>
+    <p class="small muted" style="margin-top:var(--sp-4)"><b>Por que azul numa padaria?</b> Foge do “creme + terracota” de sempre, mas segue o nicho: azulejo de balcão antigo. A brasa do forno vira acento de ação; farinha, massa e centeio vêm do próprio pão.</p>
+
+    <h3 style="margin-top:var(--sp-7)">Palavras-chave</h3>
+    <div class="kw reveal"><span>Fermento lento</span><span>Azulejo</span><span>Brasa</span><span>Crosta</span><span>Farinha</span><span>Vizinhança</span></div>
+
+    <h3 style="margin-top:var(--sp-7)">Referências visuais (geradas em SVG/CSS)</h3>
+    <div class="grid g4">
+      <figure class="tex reveal"><div class="sample t-azulejo" role="img" aria-label="Textura de azulejo em CSS"></div><figcaption><b>Azulejo</b>Grade de losangos e pontos, repetição de balcão.</figcaption></figure>
+      <figure class="tex reveal"><div class="sample t-banneton" role="img" aria-label="Textura de listras de banneton"></div><figcaption><b>Banneton</b>Marca das listras de cesto na massa.</figcaption></figure>
+      <figure class="tex reveal"><div class="sample t-farinha" role="img" aria-label="Textura de farinha espalhada"></div><figcaption><b>Farinha</b>Pontos finos sobre bancada escura.</figcaption></figure>
+      <figure class="tex reveal"><div class="sample t-crosta" role="img" aria-label="Textura de crosta assada"></div><figcaption><b>Crosta</b>Diagonais de corte e brilho dourado.</figcaption></figure>
+    </div>
+    <div class="grid g3" style="margin-top:var(--sp-5)">
+      <figure class="tex reveal"><svg class="sample" preserveAspectRatio="xMidYMid slice" viewBox="0 0 300 180" role="img" aria-label="Ilustração: espiga de trigo"><rect width="300" height="180" fill="var(--c-azulejo-claro)"/><g transform="translate(110 10) scale(3.2)" color="var(--c-azulejo-escuro)"><use href="#trigo" width="24" height="24"/></g></svg><figcaption><b>Espiga</b>Ícone-base da marca, traço único.</figcaption></figure>
+      <figure class="tex reveal"><svg class="sample" preserveAspectRatio="xMidYMid slice" viewBox="0 0 300 180" role="img" aria-label="Ilustração: pães em fileira"><rect width="300" height="180" fill="var(--c-massa)"/><g fill="var(--c-trigo)" stroke="var(--c-crosta)" stroke-width="4"><ellipse cx="70" cy="100" rx="45" ry="30"/><ellipse cx="150" cy="100" rx="45" ry="30"/><ellipse cx="230" cy="100" rx="45" ry="30"/></g><g stroke="var(--c-crosta)" stroke-width="4" stroke-linecap="round"><path d="M50 92l12 14M70 88l12 18M90 92l12 14M130 92l12 14M150 88l12 18M170 92l12 14M210 92l12 14M230 88l12 18M250 92l12 14"/></g><rect y="135" width="300" height="45" fill="var(--c-azulejo)"/></svg><figcaption><b>Fornada</b>Silhuetas simples, cortes marcados.</figcaption></figure>
+      <figure class="tex reveal"><svg class="sample" preserveAspectRatio="xMidYMid slice" viewBox="0 0 300 180" role="img" aria-label="Ilustração: selo circular de monograma"><rect width="300" height="180" fill="var(--c-azulejo-escuro)"/><circle cx="150" cy="90" r="64" fill="none" stroke="var(--c-trigo)" stroke-width="3" stroke-dasharray="3 7"/><circle cx="150" cy="90" r="50" fill="var(--c-azulejo)"/><path d="M118 112V70l16 22 16-22 16 22 16-22v42" fill="none" stroke="var(--c-trigo)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><figcaption><b>Monograma</b>Provisório (sem logo real).</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PALETA -->
+<section id="paleta" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">2 · Paleta</p>
+    <h2>Cores com nome de ingrediente</h2>
+    <p class="sub" style="max-width:46rem">Razão de contraste calculada no navegador a partir de <code>tokens.css</code> (WCAG 2.x). Texto normal exige 4,5:1.</p>
+    <div class="grid g4" id="swatches" style="margin-top:var(--sp-6)"></div>
+    <h3 style="margin-top:var(--sp-7)">Pares aprovados (texto/fundo)</h3>
+    <div class="pairs" id="pairs"></div>
+    <p class="small muted" style="margin-top:var(--sp-4)"><b>Trigo</b> (<code>--c-trigo</code>) é só decorativo: não passa como texto sobre farinha, por isso nunca é usado assim.</p>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section id="tipografia">
+  <div class="wrap">
+    <p class="eyebrow">3 · Tipografia</p>
+    <h2>Serifada para título, sistema para leitura</h2>
+    <p class="sub" style="max-width:46rem">Sem arquivos de fonte e sem CDN. A pilha cai de Iowan Old Style para Palatino e Georgia; o corpo usa <code>system-ui</code>. A aparência varia um pouco entre sistemas (lacuna declarada).</p>
+    <div style="margin-top:var(--sp-6)">
+      <div class="type-row"><code>--fs-h1</code><div style="font-family:var(--ff-display);font-weight:var(--fw-title);font-size:var(--fs-h1);line-height:var(--lh-tight)">Pão de verdade</div></div>
+      <div class="type-row"><code>--fs-h2</code><div style="font-family:var(--ff-display);font-weight:var(--fw-title);font-size:var(--fs-h2);line-height:var(--lh-title)">Fornada das sete da manhã</div></div>
+      <div class="type-row"><code>--fs-h3</code><div style="font-family:var(--ff-display);font-weight:var(--fw-title);font-size:var(--fs-h3)">Fermentação natural de 36 horas</div></div>
+      <div class="type-row"><code>--fs-subtitle</code><div style="font-size:var(--fs-subtitle);font-weight:var(--fw-subtitle);line-height:1.35">Subtítulo com peso 600 e ao menos 20px</div></div>
+      <div class="type-row"><code>--fs-md</code><div>Texto de corpo: farinha, água, sal e tempo. Linha com altura de 1,6 para leitura confortável em telas pequenas.</div></div>
+      <div class="type-row"><code>--fs-sm</code><div style="font-size:var(--fs-sm)">Texto de apoio e legendas de componente.</div></div>
+      <div class="type-row"><code>--fs-xs</code><div style="font-size:var(--fs-xs)">Rótulos, dicas e notas pequenas.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKENS -->
+<section id="tokens" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">4 · Espaçamento, raios, sombras e movimento</p>
+    <h2>Poucos valores, bem nomeados</h2>
+    <div class="grid g2" style="margin-top:var(--sp-6)">
+      <div>
+        <h3>Espaçamento</h3>
+        <div id="spaces"></div>
+      </div>
+      <div>
+        <h3>Raios</h3>
+        <div class="grid g4" style="gap:var(--sp-3)">
+          <div class="demo-box" style="border-radius:var(--r-sm)">sm 6</div>
+          <div class="demo-box" style="border-radius:var(--r-md)">md 12</div>
+          <div class="demo-box" style="border-radius:var(--r-lg)">lg 24</div>
+          <div class="demo-box" style="border-radius:var(--r-pill)">pill</div>
+        </div>
+        <h3 style="margin-top:var(--sp-6)">Sombras</h3>
+        <div class="grid g3" style="gap:var(--sp-4)">
+          <div class="demo-box" style="border-radius:var(--r-md);box-shadow:var(--sh-1)">sh-1</div>
+          <div class="demo-box" style="border-radius:var(--r-md);box-shadow:var(--sh-2)">sh-2</div>
+          <div class="demo-box" style="border-radius:var(--r-md);box-shadow:var(--sh-3)">sh-3</div>
+        </div>
+        <h3 style="margin-top:var(--sp-6)">Movimento</h3>
+        <p class="small muted">ease-out <code>cubic-bezier(.16,1,.3,1)</code> · rápido 120ms · base 240ms · lento 480ms · reveal 16px (respeita <code>prefers-reduced-motion</code>).</p>
+      </div>
+    </div>
+    <h3 style="margin-top:var(--sp-7)">Trecho de tokens.css</h3>
+    <pre>:root{
+  --c-azulejo:#1E3A5F;   --c-brasa:#B93C0B;
+  --c-farinha:#F6F4EF;   --c-centeio:#2B2118;
+  --ff-display:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --r-lg:24px;  --sh-2:0 6px 16px rgb(43 33 24 / .14);
+}</pre>
+    <p class="small muted" style="margin-top:var(--sp-3)">Arquivos: <a href="tokens.css">tokens.css</a> · <a href="tokens.json">tokens.json</a> · <a href="docs/moodboard.md">docs/moodboard.md</a></p>
+  </div>
+</section>
+
+<!-- COMPONENTES -->
+<section id="componentes">
+  <div class="wrap">
+    <p class="eyebrow">5 · Componentes</p>
+    <h2>Tudo feito só com <code>var(--…)</code></h2>
+
+    <h3 style="margin-top:var(--sp-6)">Botões</h3>
+    <div class="row">
+      <button class="btn btn-primary" type="button">Encomendar pão</button>
+      <button class="btn btn-secondary" type="button">Ver cardápio</button>
+      <button class="btn btn-ghost" type="button">Saiba mais</button>
+      <button class="btn" type="button" disabled>Esgotado</button>
+    </div>
+
+    <h3 style="margin-top:var(--sp-7)">Badges</h3>
+    <div class="row">
+      <span class="badge b-info">Fermentação natural</span>
+      <span class="badge b-ok">Disponível hoje</span>
+      <span class="badge b-err">Esgotado</span>
+      <span class="badge b-hot">Saindo do forno</span>
+    </div>
+
+    <h3 style="margin-top:var(--sp-7)">Cards de produto</h3>
+    <p class="small muted">Preços ilustrativos; produtos fictícios.</p>
+    <div class="grid g3">
+      <article class="card reveal">
+        <svg class="art" viewBox="0 0 400 300" role="img" aria-label="Ilustração de pão de fermentação natural"><rect width="400" height="300" fill="var(--c-azulejo-claro)"/><ellipse cx="200" cy="230" rx="130" ry="16" fill="var(--c-azulejo)" opacity=".25"/><path d="M70 205c0-70 55-120 130-120s130 50 130 120c0 20-40 32-130 32S70 225 70 205Z" fill="var(--c-crosta)"/><path d="M84 195c8-60 55-95 116-95s108 35 116 95c-24 14-70 20-116 20s-92-6-116-20Z" fill="var(--c-trigo)"/><path d="M135 145c12 8 20 22 26 42M200 132c8 12 12 30 12 52M265 145c-12 8-20 22-26 42" fill="none" stroke="var(--c-crosta)" stroke-width="10" stroke-linecap="round"/></svg>
+        <div class="body"><span class="badge b-hot">Saindo do forno</span><h3>Pão de campanha</h3><p class="muted small" style="margin:0">Casca crocante, miolo úmido. Farinha integral e fermento natural.</p>
+        <div class="foot"><span class="price">R$ 18,00 <small class="hint">ilustrativo</small></span><button class="btn btn-primary" type="button">Adicionar</button></div></div>
+      </article>
+      <article class="card reveal">
+        <svg class="art" viewBox="0 0 400 300" role="img" aria-label="Ilustração de croissant"><rect width="400" height="300" fill="var(--c-massa)"/><ellipse cx="200" cy="235" rx="140" ry="14" fill="var(--c-azulejo)" opacity=".25"/><path d="M60 215c20-90 90-130 140-130s120 40 140 130c-40-20-70-24-140-24s-100 4-140 24Z" fill="var(--c-trigo)" stroke="var(--c-crosta)" stroke-width="6" stroke-linejoin="round"/><path d="M140 108l-20 90M170 95l-10 98M200 90v102M230 95l10 98M260 108l20 90" stroke="var(--c-crosta)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>
+        <div class="body"><span class="badge b-ok">Disponível hoje</span><h3>Folhado de manteiga</h3><p class="muted small" style="margin:0">Massa laminada em camadas finas, assada até dourar.</p>
+        <div class="foot"><span class="price">R$ 9,50 <small class="hint">ilustrativo</small></span><button class="btn btn-primary" type="button">Adicionar</button></div></div>
+      </article>
+      <article class="card reveal">
+        <svg class="art" viewBox="0 0 400 300" role="img" aria-label="Ilustração de baguete"><rect width="400" height="300" fill="var(--c-azulejo)"/><g fill="none" stroke="var(--c-azulejo-claro)" stroke-width="2" opacity=".35"><path d="M0 100h400M0 200h400M100 0v300M200 0v300M300 0v300"/></g><g transform="rotate(-18 200 150)"><rect x="40" y="115" width="320" height="70" rx="35" fill="var(--c-trigo)" stroke="var(--c-crosta)" stroke-width="6"/><path d="M100 128l22 44M160 128l22 44M220 128l22 44M280 128l22 44" stroke="var(--c-crosta)" stroke-width="7" stroke-linecap="round"/></g></svg>
+        <div class="body"><span class="badge b-err">Esgotado</span><h3>Baguete da casa</h3><p class="muted small" style="margin:0">Fornada da manhã. Volta amanhã às 7h.</p>
+        <div class="foot"><span class="price">R$ 12,00 <small class="hint">ilustrativo</small></span><button class="btn" type="button" disabled>Esgotado</button></div></div>
+      </article>
+    </div>
+
+    <h3 style="margin-top:var(--sp-7)">Inputs</h3>
+    <div class="grid g3">
+      <div class="field"><label for="i1">Seu nome</label><input class="input" id="i1" placeholder="Maria Exemplo"><span class="hint">Padrão</span></div>
+      <div class="field"><label for="i2">WhatsApp</label><input class="input bad" id="i2" value="55 51 9" aria-invalid="true" aria-describedby="e2"><span class="hint bad" id="e2">Faltam dígitos (ex.: 55 51 90000-0000)</span></div>
+      <div class="field"><label for="i3">E-mail</label><input class="input" id="i3" value="contato@example.com"><span class="hint good">✓ Formato válido</span></div>
+    </div>
+
+    <h3 style="margin-top:var(--sp-7)">Navbar</h3>
+    <div style="border:1px solid var(--c-borda);border-radius:var(--r-lg);overflow:hidden">
+      <div class="nav-in" style="position:static">
+        <span class="brand"><svg aria-hidden="true"><use href="#mono"/></svg>Miolo &amp; Cia</span>
+        <ul><li><a href="#componentes" aria-current="page">Pães</a></li><li><a href="#componentes">Folhados</a></li><li><a href="#componentes">Café</a></li><li><a href="#componentes">Encomendas</a></li></ul>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:var(--sp-3)">Navbar real desta página fica fixa no topo (acima).</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fict-foot">Exemplo fictício feito com o Pack Completo</p>
+    <p class="small" style="margin:0 0 var(--sp-3)">Miolo &amp; Cia é uma padaria inventada. Nomes, produtos e preços são ilustrativos. Contato fictício: 55 51 90000-0000 · <a href="mailto:contato@example.com">contato@example.com</a></p>
+    <p class="small" style="margin:0">Skills usadas: brand-moodboard e design-system-tokens.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cs=getComputedStyle(document.documentElement);
+  function v(n){return cs.getPropertyValue(n).trim()}
+  function rgb(h){h=h.replace('#','');return [0,2,4].map(function(i){return parseInt(h.substr(i,2),16)/255})}
+  function lum(h){var c=rgb(h).map(function(x){return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)});return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+  function cr(a,b){var x=lum(a),y=lum(b),hi=Math.max(x,y),lo=Math.min(x,y);return (hi+.05)/(lo+.05)}
+  var names=[['farinha','Fundo'],['massa','Superfície'],['centeio','Texto'],['miolo','Texto secundário'],['azulejo','Primária'],['azulejo-escuro','Primária escura'],['azulejo-claro','Primária clara'],['brasa','Acento / CTA'],['brasa-escuro','CTA hover'],['crosta','Secundária'],['trigo','Decorativa'],['fermento','Sucesso'],['queimado','Erro'],['borda','Borda']];
+  var sw=document.getElementById('swatches');
+  names.forEach(function(n){
+    var hex=v('--c-'+n[0]);
+    var txt=cr(hex,v('--c-branco'))>=cr(hex,v('--c-centeio'))?'--c-branco':'--c-centeio';
+    var r1=cr(hex,v(txt));
+    var d=document.createElement('div');d.className='sw reveal';
+    d.innerHTML='<div class="chip" style="background:var(--c-'+n[0]+');color:var('+txt+')">'+n[1]+'</div><div class="info"><b>'+n[0]+'</b><code>'+hex+'</code><br>texto '+(txt=='--c-branco'?'branco':'centeio')+' sobre ela: '+r1.toFixed(1)+':1 '+(r1>=4.5?'<span class="pass">AA ✓</span>':'<span class="fail">abaixo de AA</span>')+'</div>';
+    sw.appendChild(d);
+  });
+  var pairs=[['centeio','farinha'],['miolo','farinha'],['miolo','massa'],['branco','azulejo'],['branco','brasa'],['branco','brasa-escuro'],['crosta','farinha'],['azulejo','farinha'],['fermento','fermento-claro'],['queimado','queimado-claro'],['azulejo-escuro','azulejo-claro'],['farinha','azulejo-escuro'],['trigo','azulejo-escuro']];
+  var pe=document.getElementById('pairs');
+  pairs.forEach(function(p){
+    var r=cr(v('--c-'+p[0]),v('--c-'+p[1]));
+    var d=document.createElement('div');d.className='pair';
+    d.style.background='var(--c-'+p[1]+')';d.style.color='var(--c-'+p[0]+')';
+    d.innerHTML='Pão de fermento<small>'+p[0]+' em '+p[1]+' — '+r.toFixed(2)+':1 '+(r>=7?'AAA':r>=4.5?'AA':'REPROVADO')+'</small>';
+    pe.appendChild(d);
+  });
+  var sp=document.getElementById('spaces');
+  [1,2,3,4,5,6,7,8].forEach(function(i){
+    var d=document.createElement('div');d.className='sp-row';
+    d.innerHTML='<code>--sp-'+i+'</code><div class="space-bar" style="width:var(--sp-'+i+')"></div>';sp.appendChild(d);
+  });
+  var els=document.querySelectorAll('.reveal');setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},2500);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px 300px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }else{els.forEach(function(e){e.classList.add('in')})}
+})();
+</script>
+</body>
+</html>

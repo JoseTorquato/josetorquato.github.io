@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Diagnóstico de anúncios — Pizzaria Forno Imaginário (exemplo fictício)</title>
+<style>
+:root{--ink:#1f1a17;--mut:#6b625b;--bg:#faf6f1;--card:#fff;--red:#b3261e;--org:#d9731a;--line:#e6ddd3;--ok:#2e7d4f}
+*{box-sizing:border-box}
+html,body{margin:0;overflow-x:hidden}
+body{font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+.banner{background:var(--ink);color:#fff;text-align:center;padding:8px 12px;font-weight:600;font-size:13px}
+.wrap{max-width:1000px;margin:0 auto;padding:20px 18px}
+header h1{margin:4px 0 2px;font-size:26px;line-height:1.2}
+header p{margin:0;color:var(--mut)}
+.tag{display:inline-block;font-size:11px;background:#fde8d4;color:#8a4a0d;padding:2px 8px;border-radius:99px;font-weight:600}
+h2{font-size:16px;margin:22px 0 8px;padding-bottom:4px;border-bottom:2px solid var(--org);text-transform:uppercase;letter-spacing:.04em}
+.grid{display:grid;gap:12px}
+.ads{grid-template-columns:repeat(4,1fr)}
+.ad{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:12px;display:flex;flex-direction:column}
+.ad .top{padding:8px 10px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--line)}
+.av{width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:700;font-size:12px;flex:none}
+.ad .top small{color:var(--mut);display:block;line-height:1.2}
+.ad .txt{padding:8px 10px;flex:1}
+.img{height:90px;display:grid;place-items:center;color:#fff;font-weight:700;text-align:center;padding:6px;font-size:13px}
+.i1{background:linear-gradient(135deg,#b3261e,#d9731a)}.i2{background:linear-gradient(135deg,#444,#888)}.i3{background:linear-gradient(135deg,#2e7d4f,#8bb04a)}.i4{background:linear-gradient(135deg,#7a3b1d,#c98b4a)}
+.cta{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:#f3eee8;font-weight:600}
+.cta b{background:#d8d1c8;padding:3px 8px;border-radius:4px;font-size:11px}
+.meta{padding:6px 10px;color:var(--mut);border-top:1px dashed var(--line);font-size:11px}
+.fict{background:#fff3cd;color:#7a5a00;font-size:10px;text-align:center;padding:2px;font-weight:700;letter-spacing:.05em}
+.cols{grid-template-columns:1fr 1fr}
+.box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.box h3{margin:0 0 6px;font-size:14px}
+ul{margin:0;padding-left:18px}li{margin:3px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#f3eee8}
+.alto{color:var(--red);font-weight:700}.med{color:var(--org);font-weight:700}.bx{color:var(--ok);font-weight:700}
+.draft{background:#fffdf5;border:2px dashed var(--org);border-radius:8px;padding:12px 14px}
+.draft pre{white-space:pre-wrap;font:inherit;margin:6px 0;background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.note{color:var(--mut);font-size:12px}
+footer{margin-top:22px;border-top:1px solid var(--line);padding-top:10px;text-align:center}
+footer strong{display:block;font-size:14px}
+@media(max-width:900px){.ads{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
+@media(max-width:560px){.ads{grid-template-columns:1fr}header h1{font-size:22px}table,th,td{font-size:12px}.tw{overflow-x:auto}}
+@media print{@page{size:A4;margin:10mm}body{background:#fff;font-size:10.5px}.wrap{padding:0;max-width:none}h2{margin:10px 0 5px;font-size:12px}.img{height:56px}.box,.ad,.draft{break-inside:avoid}header h1{font-size:20px}th,td{padding:3px 5px;font-size:10px}.ad{font-size:10px}.banner{background:#fff;color:#000;border:1px solid #000}}
+</style>
+</head>
+<body>
+<div class="banner">Exemplo fictício feito com o Pack Completo — negócio, anúncios e números são inventados</div>
+<div class="wrap">
+<header>
+  <span class="tag">Relatório de 1 página · análise externa, sem acesso à conta de anúncios</span>
+  <h1>Diagnóstico de anúncios: Pizzaria Forno Imaginário</h1>
+  <p>Caxias do Sul/RS (fictícia) · Pizzaria delivery e salão · Cenário de exemplo, data-base 22/11/2026</p>
+</header>
+
+<h2>1. O que está rodando</h2>
+<div class="grid ads">
+  <div class="ad"><div class="fict">ANÚNCIO FICTÍCIO</div>
+    <div class="top"><div class="av">FI</div><div><b>Pizzaria Forno Imaginário</b><small>Patrocinado</small></div></div>
+    <div class="txt">Pizza quentinha na sua casa! 🍕 Peça já.</div>
+    <div class="img i1">Foto de pizza (banco de imagem genérica)</div>
+    <div class="cta">Instagram <b>Saiba mais</b></div>
+    <div class="meta">No ar há 94 dias (fictício) · imagem · destino: perfil do Instagram</div></div>
+  <div class="ad"><div class="fict">ANÚNCIO FICTÍCIO</div>
+    <div class="top"><div class="av">FI</div><div><b>Pizzaria Forno Imaginário</b><small>Patrocinado</small></div></div>
+    <div class="txt">Terça é dia de pizza em dobro. Chame no WhatsApp.</div>
+    <div class="img i2">Imagem escura, texto pequeno</div>
+    <div class="cta">WhatsApp <b>Enviar mensagem</b></div>
+    <div class="meta">No ar há 61 dias (fictício) · imagem · destino: WhatsApp sem mensagem automática</div></div>
+  <div class="ad"><div class="fict">ANÚNCIO FICTÍCIO</div>
+    <div class="top"><div class="av">FI</div><div><b>Pizzaria Forno Imaginário</b><small>Patrocinado</small></div></div>
+    <div class="txt">Novo: pizza de pinhão com queijo serrano.</div>
+    <div class="img i3">Vídeo 15s (cena de abertura lenta)</div>
+    <div class="cta">Site <b>Pedir agora</b></div>
+    <div class="meta">No ar há 12 dias (fictício) · vídeo · destino: site fora do ar (cenário)</div></div>
+  <div class="ad"><div class="fict">ANÚNCIO FICTÍCIO</div>
+    <div class="top"><div class="av">FI</div><div><b>Pizzaria Forno Imaginário</b><small>Patrocinado</small></div></div>
+    <div class="txt">Combo família: 2 pizzas + refri. Consulte valores.</div>
+    <div class="img i4">Carrossel (3 cards)</div>
+    <div class="cta">Instagram <b>Saiba mais</b></div>
+    <div class="meta">No ar há 37 dias (fictício) · carrossel · sem preço visível</div></div>
+</div>
+<p class="note">Cenário fictício: 4 anúncios ativos, só 1 deles com destino direto de pedido (WhatsApp). Mockups no estilo de card da Biblioteca de Anúncios; nenhum criativo real foi copiado e nenhuma fonte real foi consultada.</p>
+
+<h2>2. Problemas encontrados</h2>
+<div class="grid cols">
+  <div class="box"><h3>Destino e oferta</h3><ul>
+    <li><b>Destino fraco:</b> 2 de 4 anúncios levam ao perfil do Instagram e 1 a um site fora do ar (cenário).</li>
+    <li><b>Oferta sem preço:</b> "Consulte valores" no combo; a chamada do anúncio não bate com o destino.</li>
+    <li><b>Prova ausente:</b> nota e avaliações do Google não aparecem nos anúncios.</li></ul></div>
+  <div class="box"><h3>Criativo e atendimento</h3><ul>
+    <li><b>Cansaço de público:</b> 2 anúncios acima de 60 dias sem troca; no total, menos de 5 variações.</li>
+    <li><b>Vídeo:</b> primeiros 3 segundos lentos, sem produto em destaque nem texto na tela.</li>
+    <li><b>WhatsApp:</b> sem mensagem automática de boas-vindas (teste de resposta <u>não realizado</u>: exige OK do usuário).</li></ul></div>
+</div>
+
+<h2>3. Oportunidades</h2>
+<div class="grid cols">
+  <div class="box"><h3>Página de destino</h3>
+    <p style="margin:0">Uma página única e rápida (cardápio, preço do combo, botão de WhatsApp com mensagem pré-preenchida, horário, bairros atendidos e nota do Google). A prévia seria feita com <code>lp-section-builder</code> e publicada com noindex.</p></div>
+  <div class="box"><h3>3 criativos para testar</h3><ul>
+    <li><b>Gancho:</b> "Fome às 21h?" · <b>Imagem:</b> queijo esticando, close · <b>Chamada:</b> Pedir no WhatsApp</li>
+    <li><b>Gancho:</b> "Combo família por R$ XX" (valor a definir com o dono) · <b>Imagem:</b> mesa com 2 pizzas · <b>Chamada:</b> Ver cardápio</li>
+    <li><b>Gancho:</b> "Pinhão chegou" · <b>Imagem:</b> vídeo com fatia em 1s · <b>Chamada:</b> Pedir agora</li></ul></div>
+</div>
+
+<h2>4. Prioridades (impacto × esforço)</h2>
+<div class="tw"><table>
+<tr><th>#</th><th>Correção</th><th>Impacto</th><th>Esforço</th></tr>
+<tr><td>1</td><td>Consertar o destino do anúncio com site fora do ar / criar página de pedido</td><td class="alto">Alto</td><td class="med">Médio</td></tr>
+<tr><td>2</td><td>Colocar preço claro no combo e alinhar anúncio e destino</td><td class="alto">Alto</td><td class="bx">Baixo</td></tr>
+<tr><td>3</td><td>Mensagem automática de boas-vindas no WhatsApp</td><td class="med">Médio</td><td class="bx">Baixo</td></tr>
+<tr><td>4</td><td>Trocar os criativos com mais de 60 dias; testar 3 novos</td><td class="med">Médio</td><td class="med">Médio</td></tr>
+<tr><td>5</td><td>Mostrar nota e avaliações do Google no anúncio e na página</td><td class="med">Médio</td><td class="bx">Baixo</td></tr>
+</table></div>
+
+<h2>5. Próximos passos</h2>
+<div class="grid cols">
+  <div class="box"><h3>Com o dono, sem acesso à conta</h3><ul>
+    <li>Validar o cenário e a oferta; combinar o teste de WhatsApp (só com autorização).</li>
+    <li>Aprovar a prévia da página de destino.</li></ul></div>
+  <div class="box"><h3>Com acesso à conta (gestão mensal)</h3><ul>
+    <li>Medir custo por lead, CTR e frequência; hoje não há como afirmar nenhum valor.</li>
+    <li>Oferta: gestão mensal de tráfego com relatório mensal (valor a combinar).</li></ul></div>
+</div>
+<p class="note">Concorrentes: etapa de coleta com 2–3 pizzarias da cidade não foi feita neste exemplo (evitar citar negócios reais). Nenhum benchmark de mercado é usado.</p>
+
+<h2>Rascunho de abordagem (smb-outreach)</h2>
+<div class="draft">
+  <span class="tag">RASCUNHO — NÃO ENVIADO · aguarda aprovação humana</span>
+  <p class="note" style="margin:6px 0"><b>WhatsApp</b> (contato fictício: 55 51 90000-0000)</p>
+<pre>Oi, pessoal da Forno Imaginário — vi que o anúncio do combo família está no ar há 37 dias e leva ao Instagram, sem o preço à vista. Fiz um diagnóstico de 1 página com 5 ajustes rápidos e uma prévia de página de pedido: https://exemplo.example.com/previa-fornoimaginario (noindex). Faz sentido eu te mostrar em 2 min? Se preferir não receber mensagens, é só avisar que paro por aqui.</pre>
+  <p class="note" style="margin:6px 0"><b>E-mail</b> (contato@example.com) · assunto: <i>5 ajustes nos anúncios da Forno Imaginário</i></p>
+<pre>Olá! Analisei só o que é público nos seus anúncios (sem acesso à conta) e montei um relatório curto com correções e uma prévia de página de destino: https://exemplo.example.com/previa-fornoimaginario
+Não prometo resultados; o ideal é medir com acesso à conta. Se não quiser receber contato, responda "parar" e não escrevo mais.
+Abraço, [seu nome]</pre>
+  <p class="note" style="margin:0">Follow-up: no máximo em 3 e 7 dias, e só sem opt-out. Dados usados: apenas públicos e necessários. Não é aconselhamento jurídico.</p>
+</div>
+
+<footer>
+  <strong>Exemplo fictício feito com o Pack Completo</strong>
+  <span class="note">Pizzaria, cidade-cenário, anúncios, prazos e contatos são inventados e ilustrativos. Sem depoimentos, benchmarks ou dados reais.</span>
+</footer>
+</div>
+</body>
+</html>

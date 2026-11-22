@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Design system — Studio Lume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tokens.css">
+<style>
+body{margin:0;background:var(--color-bg);color:var(--color-text);font:var(--fw-body) var(--fs-md)/var(--lh-body) var(--font-body);padding:var(--space-6)}
+main{max-width:var(--container);margin:auto}
+h1{font-size:var(--fs-xl);margin:0 0 var(--space-2)} h2{font-size:var(--fs-lg);margin:var(--space-8) 0 var(--space-3)}
+.row{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.sw{width:140px;border:1px solid var(--color-line);border-radius:var(--radius-md);overflow:hidden;background:var(--color-surface);font-size:var(--fs-xs)}
+.sw i{display:block;height:56px} .sw span{display:block;padding:var(--space-2)}
+.card{background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-md);box-shadow:var(--shadow-1);padding:var(--space-4)}
+.btn{font:var(--fw-subtitle) var(--fs-sm) var(--font-body);border:1px solid transparent;border-radius:var(--radius-sm);padding:var(--space-2) var(--space-4);cursor:pointer;transition:background var(--dur-fast) var(--ease-out)}
+.btn-p{background:var(--color-accent);color:var(--color-accent-ink)} .btn-s{background:var(--color-surface);color:var(--color-accent);border-color:var(--color-accent)}
+.badge{display:inline-block;padding:2px var(--space-2);border-radius:var(--radius-pill);font-size:var(--fs-xs);font-weight:var(--fw-subtitle)}
+.b-ok{background:var(--color-success-soft);color:var(--color-success)} .b-wait{background:var(--color-support-soft);color:var(--color-support)} .b-no{background:var(--color-danger-soft);color:var(--color-danger)}
+input{font:inherit;padding:var(--space-2) var(--space-3);border:1px solid var(--color-line);border-radius:var(--radius-sm);background:var(--color-surface);color:var(--color-text)}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:2px}
+</style></head><body><main>
+<p class="badge b-wait">Exemplo fictício feito com o Pack Completo</p>
+<h1>Design system — Studio Lume</h1><p style="color:var(--color-muted)">Vitrine dos tokens de tokens.css. Marca fictícia.</p>
+<h2>Cores</h2><div class="row" id="sw"></div>
+<h2>Tipografia</h2><div class="card"><div style="font-size:var(--fs-xl);font-weight:var(--fw-bold)">Título (--fs-xl)</div><div style="font-size:var(--fs-kpi);font-weight:var(--fw-bold)">R$ 18.420,50 (--fs-kpi)</div><div style="font-size:var(--fs-lg);font-weight:var(--fw-subtitle)">Subtítulo (--fs-lg)</div><p>Corpo (--fs-md, peso 400).</p><small style="font-size:var(--fs-xs);color:var(--color-muted)">Legenda (--fs-xs)</small></div>
+<h2>Botões, status, campos</h2><div class="card row" style="align-items:center"><button class="btn btn-p">Novo agendamento</button><button class="btn btn-s">Exportar</button><span class="badge b-ok">Confirmado</span><span class="badge b-wait">Pendente</span><span class="badge b-no">Cancelado</span><input placeholder="Buscar cliente" aria-label="Buscar cliente"></div>
+<h2>Raios e sombras</h2><div class="row"><div class="card" style="border-radius:var(--radius-sm)">radius-sm</div><div class="card" style="box-shadow:var(--shadow-2)">shadow-2</div></div>
+<script>
+const names=["bg","surface","text","muted","accent","accent-soft","support","success","danger","line","sidebar"];
+document.getElementById("sw").innerHTML=names.map(n=>`<div class="sw"><i style="background:var(--color-${n})"></i><span>--color-${n}</span></div>`).join("");
+</script></main></body></html>

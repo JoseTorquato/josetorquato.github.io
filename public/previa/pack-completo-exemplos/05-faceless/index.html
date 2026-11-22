@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ciência de Cozinha — pacote de canal faceless (exemplo fictício)</title>
+<style>
+:root{--bg:#151826;--panel:#21263c;--line:#343b5c;--tx:#f5f7fc;--mu:#aab3cc;--or:#ff7a30;--am:#ffd640;--bl:#409cff}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+.aviso{background:var(--am);color:#1b1500;text-align:center;font-weight:700;padding:.55rem 1rem;font-size:.95rem}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header.hero{padding:56px 0 36px}
+.kicker{color:var(--or);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:.4rem 0 1rem;max-width:20ch}
+h2{font-size:clamp(1.5rem,3vw,2rem);margin:0 0 .6rem} h3{margin:1.6rem 0 .5rem}
+.lead{color:var(--mu);max-width:62ch;font-size:1.1rem}
+nav.idx{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+nav.idx a{color:var(--tx);text-decoration:none;border:1px solid var(--line);padding:.35rem .8rem;border-radius:99px;font-size:.9rem}
+nav.idx a:hover{border-color:var(--or)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:520px}
+th,td{padding:.55rem .75rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#1b2036;color:var(--mu);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+tr.final td{background:rgba(255,122,48,.08)}
+.tag{background:var(--or);color:#1b0b00;border-radius:6px;padding:.05rem .4rem;font-size:.7rem;font-weight:700;margin-left:.3rem;white-space:nowrap}
+.av{background:rgba(255,214,64,.1);border:1px solid var(--am);border-radius:12px;padding:12px 16px;color:var(--am);margin:1rem 0}
+.pill{display:inline-block;background:#1b2036;border:1px solid var(--line);border-radius:6px;padding:.05rem .5rem;font-size:.8rem;color:var(--mu)}
+ol,ul{padding-left:1.2rem} li{margin:.25rem 0}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.th{margin:0} .th figcaption{font-size:.88rem;color:var(--mu);margin-top:.5rem} .th figcaption b{color:var(--tx)}
+.thumb{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;container-type:inline-size;border:1px solid var(--line);font-family:Impact,"Arial Black","Helvetica Neue",Arial,sans-serif;font-weight:900}
+.thumb .t{position:absolute;line-height:.95;text-transform:uppercase;letter-spacing:.01em}
+.thumb .pot{position:absolute;width:46%;height:auto}
+.t1{background:linear-gradient(120deg,#0e1220 55%,#3a1608)}
+.t1 .pot{left:3%;bottom:6%} .t1 .t{right:5%;top:12%;text-align:right;font-size:11cqw;color:var(--tx);text-shadow:0 .5cqw 0 #000}
+.t1 .t em{display:block;color:var(--or);font-style:normal;font-size:19cqw}
+.t1 .seta{position:absolute;left:30%;top:6%;font-size:11cqw;color:var(--am);transform:rotate(-12deg)}
+.t2{background:radial-gradient(circle at 70% 55%,#ff7a30,#7a1d05 60%,#1a0a08)}
+.t2 .term{position:absolute;right:12%;top:10%;bottom:10%;width:12%;background:#fff;border-radius:99px;border:.8cqw solid #151826;overflow:hidden}
+.t2 .term i{position:absolute;left:0;right:0;bottom:0;height:88%;background:linear-gradient(#ff3b1a,#ffb000)}
+.t2 .t{left:5%;top:10%;font-size:13cqw;color:#fff;text-shadow:0 .6cqw 0 #3a0a00}
+.t2 .t span{display:block;color:var(--am);font-size:9cqw;margin-top:2cqw}
+.t2 .pot{left:4%;bottom:5%;width:36%}
+.t3{background:linear-gradient(180deg,#1d2a55,#0d1020)}
+.t3 .pot{left:52%;bottom:3%;width:44%}
+.t3 .t{left:5%;top:12%;font-size:15cqw;color:var(--am);text-shadow:0 .6cqw 0 #000}
+.t3 .t span{display:block;color:#fff;font-size:9cqw;margin-top:2cqw}
+.t3 .v{position:absolute;border-radius:50%;background:rgba(235,240,250,.75)}
+.mini{display:flex;gap:10px;align-items:center;margin-top:1rem;color:var(--mu);font-size:.85rem;flex-wrap:wrap}
+.mini .thumb{width:160px;flex:none} 
+video{width:100%;border-radius:12px;background:#000;border:1px solid var(--line);aspect-ratio:16/9}
+a{color:var(--bl)} code{background:#1b2036;padding:.05rem .35rem;border-radius:5px;font-size:.88em}
+footer{border-top:1px solid var(--line);padding:30px 0 46px;color:var(--mu);font-size:.9rem}
+footer .aviso{display:inline-block;border-radius:8px;margin-bottom:.8rem}
+@media(max-width:860px){.grid2{grid-template-columns:1fr} .thumbs{grid-template-columns:1fr} header.hero{padding-top:36px}}
+</style></head><body>
+<div class="aviso">Exemplo fictício feito com o Pack Completo</div>
+<header class="hero"><div class="wrap">
+<div class="kicker">Canal faceless · português do Brasil</div>
+<h1>Ciência de Cozinha</h1>
+<p class="lead">Pacote completo de um canal faceless do zero: nicho com método de validação, 3 títulos com thumbnails, roteiro de 8 minutos e uma animação feita por código. O canal é fictício e <b>nenhum número de audiência</b> aparece aqui sem estar marcado como “a validar”.</p>
+<nav class="idx"><a href="#nicho">1 · Nicho</a><a href="#titulos">2 · Títulos e thumbs</a><a href="#roteiro">3 · Roteiro</a><a href="#animacao">4 · Animação</a></nav>
+</div></header>
+
+<main class="wrap">
+<section id="nicho"><h2>1 · Nicho e racional</h2>
+<p class="lead">Do genérico (“curiosidades”) para um recorte: <b>público</b> + <b>ângulo</b> + <b>formato</b>.</p>
+<div class="grid2" style="margin-top:1rem">
+<div class="card"><h3 style="margin-top:0">Micronicho</h3>
+<ul><li><b>Público:</b> adultos brasileiros curiosos que cozinham em casa, 25–55 anos (hipótese a validar).</li>
+<li><b>Ângulo:</b> a física e a química escondidas em objetos e processos de cozinha, explicadas sem jargão.</li>
+<li><b>Formato:</b> long de 8 min (e cortes em short depois), narração + animação por código.</li></ul>
+<p><span class="pill">hipótese</span> Cabe em 30+ vídeos: panelas, fogão, geladeira, facas, óleo, sal, pão, café, micro-ondas…</p></div>
+<div class="card"><h3 style="margin-top:0">Por que este recorte</h3>
+<ul><li>Visual simples: formas, cortes e setas — viável com animação por código.</li>
+<li>Tema <b>universal/adaptável</b>: a física vale em qualquer país; os exemplos (feijão, botijão, panela) são locais.</li>
+<li>Reutilizável em outros idiomas trocando exemplos, não traduzindo.</li></ul></div></div>
+
+<div class="av"><b>Dados de mercado: a validar.</b> Não há números de views, inscritos, RPM/CPM ou nomes de canais de referência neste exemplo. Eles precisam ser verificados por pessoa no YouTube. Nada aqui foi pesquisado ou “lembrado” pelo agente.</div>
+
+<h3>Como validar (skill <code>minerar-canal-validado</code>)</h3>
+<p>Critérios: 1º vídeo publicado há ≤ ~21 dias · ≥ 2 vídeos com views ≥ 3× os inscritos (ou média ≥ 1×) · ≥ 5 vídeos no formato · faceless de verdade · formato replicável.</p>
+<ol>
+<li>Gerar buscas em PT-BR com os termos-semente: <i>“explicado”, “e se”, “a história de”, “em 1 minuto”, “curiosidades”</i> misturados a “cozinha”, “panela”, “fogão”.</li>
+<li>Filtrar no YouTube: <i>Upload date: This month</i>; <i>Type: Channel/Video</i>.</li>
+<li>Para cada candidato: aba Vídeos → “Mais antigos” → data do 1º vídeo; inscritos × views dos 5 últimos; formato e duração; estilo visual e de narração (anotar, nunca baixar); descartar reupload/compilação.</li>
+<li>Preencher a tabela abaixo (mínimo de 5 canais). Conferir também se o CPM do mercado PT-BR pesa na sua meta (dados atuais).</li></ol>
+<div class="tbl"><table><thead><tr><th>canal</th><th>língua</th><th>1º vídeo (data)</th><th>nicho</th><th>views (média/top)</th><th>por que estudar</th><th>risco de cópia</th></tr></thead>
+<tbody>
+<tr><td>a validar</td><td>PT-BR</td><td>a validar</td><td>a validar</td><td>a validar</td><td>a validar</td><td>a validar</td></tr>
+<tr><td>a validar</td><td>PT-BR</td><td>a validar</td><td>a validar</td><td>a validar</td><td>a validar</td><td>a validar</td></tr>
+<tr><td colspan="7" style="color:var(--mu)">… (5 linhas no mínimo, preenchidas à mão após a pesquisa)</td></tr></tbody></table></div>
+
+<h3>Micronichar e adaptar (skill <code>micronichar-e-adaptar</code>)</h3>
+<p>Sem tabela de referência validada, não há “10 vídeos mais fortes” para analisar; o passo 1 fica pendente. Os passos 3–6 foram aplicados sobre a hipótese acima: ideias <b>originais</b> (não adaptadas de canal algum), testadas com a pergunta “alguém busca isso sem conhecer o canal?”.</p>
+<div class="tbl"><table><thead><tr><th>título provisório</th><th>micronicho</th><th>tipo</th><th>observação</th></tr></thead><tbody>
+<tr><td>Por que a panela de pressão não explode?</td><td>panelas</td><td>universal</td><td>vídeo deste pacote</td></tr>
+<tr><td>Por que o óleo espirra quando a água cai nele?</td><td>fogão/fritura</td><td>universal</td><td>segurança prática</td></tr>
+<tr><td>Por que a chama do fogão é azul?</td><td>fogão</td><td>universal</td><td>gancho para o próximo vídeo</td></tr>
+<tr><td>Como a geladeira esfria sem “gelo dentro”</td><td>eletrodomésticos</td><td>universal</td><td></td></tr>
+<tr><td>Por que o pão de forma murcha na geladeira</td><td>pão</td><td>adaptável</td><td>exemplo local: pão de forma/pãozinho</td></tr>
+<tr><td>O que acontece com o sal quando derrete o gelo</td><td>sal</td><td>universal</td><td></td></tr>
+<tr><td>Por que a faca afiada machuca menos</td><td>facas</td><td>universal</td><td></td></tr>
+<tr><td>Por que o feijão “não amolece” em algumas panelas</td><td>feijão/água dura</td><td>adaptável</td><td>feijão como exemplo local; checar fontes</td></tr>
+<tr><td>Por que o café coado sai mais amargo quando a água ferve demais</td><td>café</td><td>adaptável</td><td>checar fontes</td></tr>
+<tr><td>O que o micro-ondas realmente esquenta</td><td>eletrodomésticos</td><td>universal</td><td>cuidado com mitos; checar fontes</td></tr></tbody></table></div>
+<p style="margin-top:1rem"><b>5 ideias descartadas</b></p>
+<ul><li>“Receitas da vovó que curam doenças”: risco de desinformação/política.</li>
+<li>“Os piores chefs da TV”: cultural demais e depende de pessoas reais.</li>
+<li>“Curiosidades de cozinha” (genérico): saturado, sem ângulo.</li>
+<li>“Truques virais de cozinha”: depende de vídeos/assets de terceiros.</li>
+<li>“Alimentos que emagrecem”: sem busca confiável e risco de política.</li></ul>
+</section>
+
+<section id="titulos"><h2>2 · Títulos e thumbnails</h2>
+<p class="lead"><b>Promessa:</b> entender o que acontece dentro da panela de pressão e por que as travas de segurança existem. Gatilhos variados; ≤ 60 caracteres; palavra-chave no começo; texto da thumb não repete o título.</p>
+<div class="tbl" style="margin-top:1rem"><table><thead><tr><th>título</th><th>gatilho</th><th>caracteres</th><th>nota (1–5)*</th></tr></thead><tbody>
+<tr class=final><td>Panela de pressão: por que ela não explode? <span class=tag>finalista</span></td><td>pergunta/curiosidade</td><td>43</td><td>★★★★☆</td></tr>
+<tr class=final><td>Panela de pressão: a água ferve mais quente aqui dentro <span class=tag>finalista</span></td><td>contraste</td><td>55</td><td>★★★★☆</td></tr>
+<tr class=final><td>O que o chiado da panela de pressão está te avisando <span class=tag>finalista</span></td><td>curiosidade/consequência</td><td>52</td><td>★★★★☆</td></tr>
+<tr><td>3 travas que impedem a panela de pressão de explodir</td><td>número</td><td>52</td><td>★★★☆☆</td></tr>
+<tr><td>E se a válvula da panela de pressão entupir?</td><td>"e se"</td><td>44</td><td>★★★★☆</td></tr>
+<tr><td>Panela de pressão em 60 segundos: como funciona</td><td>tempo</td><td>47</td><td>★★★☆☆</td></tr>
+<tr><td>Por que feijão cozinha mais rápido na pressão</td><td>pergunta/utilidade</td><td>45</td><td>★★★☆☆</td></tr>
+<tr><td>A física escondida na sua panela de pressão</td><td>curiosidade</td><td>43</td><td>★★★☆☆</td></tr>
+<tr><td>Panela de pressão: o erro que causa acidentes</td><td>consequência</td><td>45</td><td>★★☆☆☆</td></tr>
+<tr><td>100 °C? Não aqui dentro: a panela de pressão explicada</td><td>contraste</td><td>54</td><td>★★★☆☆</td></tr>
+</tbody></table></div>
+<p style="color:var(--mu);font-size:.85rem">* Nota subjetiva do autor, não é dado de desempenho. Sem teste A/B real: o ideal é testar os 3 finalistas no YouTube Studio e esperar 48–72 h entre trocas.</p>
+
+<h3>Thumbnails (mockups em HTML/CSS)</h3>
+<div class="thumbs">
+<figure class="th"><div class="thumb t1"><span class="seta">↘</span><svg class="pot" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="80" width="260" height="110" rx="22" fill="#b0bacc" stroke="#707a8e" stroke-width="5"/><rect x="38" y="100" width="224" height="72" rx="14" fill="#2a3050"/><rect x="38" y="130" width="224" height="42" rx="14" fill="#409cff"/><rect x="8" y="62" width="284" height="28" rx="12" fill="#707a8e"/><rect x="141" y="36" width="18" height="28" fill="#707a8e"/><rect x="128" y="14" width="44" height="26" rx="7" fill="#ff7a30" stroke="#707a8e" stroke-width="4"/></svg><div class="t">Não é<em>100°</em></div></div>
+<figcaption><b>A · pergunta</b><br>Título: “Panela de pressão: por que ela não explode?”<br>Elemento: panela · Tensão: “100°” em laranja · Texto: 2 palavras.</figcaption></figure>
+<figure class="th"><div class="thumb t2"><svg class="pot" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="80" width="260" height="110" rx="22" fill="#b0bacc" stroke="#707a8e" stroke-width="5"/><rect x="38" y="100" width="224" height="72" rx="14" fill="#2a3050"/><rect x="38" y="130" width="224" height="42" rx="14" fill="#409cff"/><rect x="8" y="62" width="284" height="28" rx="12" fill="#707a8e"/><rect x="141" y="36" width="18" height="28" fill="#707a8e"/><rect x="128" y="14" width="44" height="26" rx="7" fill="#ff7a30" stroke="#707a8e" stroke-width="4"/></svg><div class="t">+ Quente<span>mesma água</span></div><div class="term"><i></i></div></div>
+<figcaption><b>B · contraste</b><br>Título: “Panela de pressão: a água ferve mais quente aqui dentro”<br>Elemento: termômetro cheio · Fundo quente · Texto: 3 palavras.</figcaption></figure>
+<figure class="th"><div class="thumb t3"><span class="v" style="left:70%;top:6%;width:9cqw;height:9cqw"></span><span class="v" style="left:74%;top:-6%;width:13cqw;height:13cqw"></span><svg class="pot" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="80" width="260" height="110" rx="22" fill="#b0bacc" stroke="#707a8e" stroke-width="5"/><rect x="38" y="100" width="224" height="72" rx="14" fill="#2a3050"/><rect x="38" y="130" width="224" height="42" rx="14" fill="#409cff"/><rect x="8" y="62" width="284" height="28" rx="12" fill="#707a8e"/><rect x="141" y="36" width="18" height="28" fill="#707a8e"/><rect x="128" y="14" width="44" height="26" rx="7" fill="#ff7a30" stroke="#707a8e" stroke-width="4"/></svg><div class="t">Ela chia<span>por quê?</span></div></div>
+<figcaption><b>C · consequência</b><br>Título: “O que o chiado da panela de pressão está te avisando”<br>Elemento: válvula soltando vapor · Fundo azul-noite × texto amarelo.</figcaption></figure>
+</div>
+<div class="card" style="margin-top:1rem"><b>Brief de thumb</b> (skill <code>embalagem-titulo-thumb</code>): 1 elemento principal (a panela) + 1 de tensão (número/termômetro/vapor); texto de 1 a 4 palavras, grande; alto contraste claro × escuro; mesma identidade do canal (paleta azul-noite, laranja e amarelo; panela e válvula sempre iguais). Teste a 160 px de largura:
+<div class="mini"><div class="thumb t1"><span class="seta">↘</span><svg class="pot" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="80" width="260" height="110" rx="22" fill="#b0bacc" stroke="#707a8e" stroke-width="5"/><rect x="38" y="100" width="224" height="72" rx="14" fill="#2a3050"/><rect x="38" y="130" width="224" height="42" rx="14" fill="#409cff"/><rect x="8" y="62" width="284" height="28" rx="12" fill="#707a8e"/><rect x="141" y="36" width="18" height="28" fill="#707a8e"/><rect x="128" y="14" width="44" height="26" rx="7" fill="#ff7a30" stroke="#707a8e" stroke-width="4"/></svg><div class="t">Não é<em>100°</em></div></div><div class="thumb t2"><svg class="pot" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="80" width="260" height="110" rx="22" fill="#b0bacc" stroke="#707a8e" stroke-width="5"/><rect x="38" y="100" width="224" height="72" rx="14" fill="#2a3050"/><rect x="38" y="130" width="224" height="42" rx="14" fill="#409cff"/><rect x="8" y="62" width="284" height="28" rx="12" fill="#707a8e"/><rect x="141" y="36" width="18" height="28" fill="#707a8e"/><rect x="128" y="14" width="44" height="26" rx="7" fill="#ff7a30" stroke="#707a8e" stroke-width="4"/></svg><div class="t">+ Quente<span>mesma água</span></div><div class="term"><i></i></div></div><div class="thumb t3"><svg class="pot" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="80" width="260" height="110" rx="22" fill="#b0bacc" stroke="#707a8e" stroke-width="5"/><rect x="38" y="100" width="224" height="72" rx="14" fill="#2a3050"/><rect x="38" y="130" width="224" height="42" rx="14" fill="#409cff"/><rect x="8" y="62" width="284" height="28" rx="12" fill="#707a8e"/><rect x="141" y="36" width="18" height="28" fill="#707a8e"/><rect x="128" y="14" width="44" height="26" rx="7" fill="#ff7a30" stroke="#707a8e" stroke-width="4"/></svg><div class="t">Ela chia<span>por quê?</span></div></div></div></div>
+<p style="color:var(--mu);font-size:.85rem">Sem clickbait enganoso: o vídeo entrega exatamente o que cada título promete. Nenhuma marca, rosto ou thumb de terceiros.</p>
+</section>
+
+<section id="roteiro"><h2>3 · Roteiro (~8 min)</h2>
+<p class="lead">Roteiro de retenção em <a href="ROTEIRO.md">ROTEIRO.md</a>: ~1.200 palavras de fala (≈ 8 min a 150 palavras/min), em duas colunas (fala | visual), com marcações de tempo.</p>
+<div class="grid2" style="margin-top:1rem">
+<div class="card"><h3 style="margin-top:0">Estrutura</h3><ul>
+<li><b>0:00 · Gancho:</b> “A água ferve a cem graus. Aqui dentro, não.” (escolhido entre 5 versões)</li>
+<li><b>8 beats</b> de ~55–90 s, cada um com mini-gancho e loop aberto no fim.</li>
+<li><b>2:14 · CTA leve</b> (≈28%), logo após o 1º payoff.</li>
+<li><b>7:04 · Payoff final</b> e <b>8:02 · CTA</b> para o próximo vídeo.</li></ul></div>
+<div class="card"><h3 style="margin-top:0">Cuidados</h3><ul>
+<li>Fatos marcados com <code>[V]</code> no roteiro precisam de checagem antes de gravar; fontes listadas ao final do arquivo.</li>
+<li>Valores como “perto de 120 °C” são aproximados e variam por modelo.</li>
+<li>Sem estatísticas, sem acidentes citados como dado.</li></ul></div></div>
+<p><b>Trecho (abertura):</b></p>
+<blockquote class="card" style="margin:0"><i>“A água ferve a cem graus. Aqui dentro, não. Sua panela de pressão faz a água ferver mais quente do que a física parece permitir. E ela faz isso com uma peça de metal do tamanho de um dedo.”</i></blockquote>
+</section>
+
+<section id="animacao"><h2>4 · Animação por código</h2>
+<p class="lead">8 segundos, 1280×720, 30 fps, gerados com Python + Pillow e unidos com ffmpeg. Só formas desenhadas por código; sem imagens ou personagens de terceiros. Remotion não foi usado: exige Node e pacotes baixados, indisponíveis offline.</p>
+<video controls preload="metadata" poster="poster.png" playsinline><source src="animacao.webm" type="video/webm"><source src="animacao.mp4" type="video/mp4">Seu navegador não reproduziu o vídeo. Arquivo: animacao.mp4.</video>
+<p style="color:var(--mu);font-size:.88rem">Cenas: título (0–2 s) · água ferve mais quente (2–5 s, valores aproximados) · válvula libera o excesso (5–7 s) · encerramento (7–8 s). Código em <code>animacao/render.py</code>; tokens de cor, fonte e tempo em <code>animacao/tokens.py</code>. Sem áudio (a voz ficaria em <code>voz-e-legenda</code>, fora do escopo).</p>
+</section>
+</main>
+<footer><div class="wrap"><div class="aviso">Exemplo fictício feito com o Pack Completo</div>
+<div>“Ciência de Cozinha” é um canal inventado para demonstração. Não há depoimentos, clientes, números reais ou premiações. Contato fictício: contato@example.com.</div></div></footer>
+</body></html>
