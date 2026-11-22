@@ -1,0 +1,53 @@
+/* tokens.css — Studio Lume (app fictício). Gerado seguindo design-system-tokens.
+   Regra: componentes usam SÓ var(--*). Trocar a marca = editar este arquivo. */
+:root {
+  /* Cores (marca fictícia: verde-petróleo + âmbar) */
+  --color-bg:        #F4F6F5;
+  --color-surface:   #FFFFFF;
+  --color-text:      #17262B;
+  --color-muted:     #4A5B61;   /* ≥ 6:1 sobre surface */
+  --color-accent:    #0F6B63;
+  --color-accent-ink:#FFFFFF;
+  --color-accent-soft:#DFF0EE;
+  --color-support:   #B45309;   /* âmbar: atenção/pendente */
+  --color-support-soft:#FDEBD3;
+  --color-success:   #166534;
+  --color-success-soft:#DCF3E4;
+  --color-danger:    #B42318;
+  --color-danger-soft:#FBE4E1;
+  --color-line:      #D5DDDB;
+  --color-focus:     #2F6FED;
+  --color-sidebar:   #12353A;
+  --color-sidebar-ink:#E6F1F0;
+
+  /* Tipografia (fontes do sistema, offline) */
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --fs-xs: .8125rem; --fs-sm: .9375rem; --fs-md: 1.0625rem;
+  --fs-lg: 1.375rem; --fs-xl: clamp(1.5rem, 3vw, 2rem);
+  --fs-kpi: clamp(1.75rem, 3.2vw, 2.25rem);
+  --lh-tight: 1.15; --lh-body: 1.55;
+  --fw-body: 400; --fw-subtitle: 600; --fw-regular: var(--fw-body); --fw-bold: 700;
+  --fs-subtitle-mobile: 1.25rem;
+
+  /* Espaçamento (escala 4px) */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px;
+  --container: 1200px; --sidebar-w: 232px;
+
+  /* Forma e profundidade */
+  --radius-sm: 6px; --radius-md: 12px; --radius-pill: 999px;
+  --shadow-1: 0 1px 2px rgb(23 38 43 / .08);
+  --shadow-2: 0 8px 24px rgb(23 38 43 / .12);
+
+  /* Movimento */
+  --dur-fast: 150ms; --dur-base: 300ms; --dur-slow: 600ms;
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; }
+}
+/* Lacunas: sem logo real (marca fictícia, só texto); fonte de marca não definida
+   (usando fontes do sistema); ícones são SVG simples feitos à mão, não um kit oficial;
+   contraste conferido por cálculo manual dos pares principais, sem ferramenta automática. */

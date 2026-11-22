@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Studio Lume — Painel (depois)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tokens.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-bg);color:var(--color-text);font:var(--fw-body) var(--fs-sm)/var(--lh-body) var(--font-body)}
+.app{display:grid;grid-template-columns:var(--sidebar-w) minmax(0,1fr);min-height:100vh}
+.side{background:var(--color-sidebar);color:var(--color-sidebar-ink);padding:var(--space-6) var(--space-4);display:flex;flex-direction:column;gap:var(--space-6)}
+.brand{font-weight:var(--fw-bold);font-size:var(--fs-md);display:flex;gap:var(--space-2);align-items:center}
+.brand svg{width:24px;height:24px}
+.side nav{display:flex;flex-direction:column;gap:var(--space-1)}
+.side a{color:var(--color-sidebar-ink);text-decoration:none;padding:var(--space-2) var(--space-3);border-radius:var(--radius-sm);display:flex;gap:var(--space-3);align-items:center;font-weight:var(--fw-subtitle)}
+.side a svg{width:18px;height:18px;flex:none}
+.side a:hover{background:rgb(255 255 255/.1)}
+.side a[aria-current=page]{background:var(--color-accent);color:var(--color-accent-ink)}
+.side small{margin-top:auto;font-size:var(--fs-xs);opacity:.85}
+.main{min-width:0}
+.fict{background:var(--color-support-soft);color:var(--color-support);text-align:center;font-size:var(--fs-xs);font-weight:var(--fw-subtitle);padding:var(--space-2)}
+header.top{display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;justify-content:space-between;padding:var(--space-6) var(--space-8) 0;max-width:var(--container)}
+h1{margin:0;font-size:var(--fs-xl);line-height:var(--lh-tight)}
+.sub{margin:var(--space-1) 0 0;color:var(--color-muted)}
+.status{display:flex;gap:var(--space-2);flex-wrap:wrap}
+.btn{font:var(--fw-subtitle) var(--fs-sm) var(--font-body);border:1px solid transparent;border-radius:var(--radius-sm);padding:var(--space-2) var(--space-4);cursor:pointer;background:var(--color-accent);color:var(--color-accent-ink);transition:background var(--dur-fast) var(--ease-out)}
+.btn:hover{background:var(--color-sidebar)}
+.btn.sec{background:var(--color-surface);color:var(--color-accent);border-color:var(--color-accent)}
+.btn.sec:hover{background:var(--color-accent-soft)}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:2px}
+.wrap{padding:var(--space-6) var(--space-8) var(--space-12);max-width:var(--container);display:grid;gap:var(--space-6)}
+.card{background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius-md);box-shadow:var(--shadow-1);padding:var(--space-6)}
+.card h2{margin:0 0 var(--space-1);font-size:var(--fs-md);font-weight:var(--fw-subtitle)}
+.card .hint{margin:0 0 var(--space-4);color:var(--color-muted);font-size:var(--fs-xs)}
+.act{border-left:6px solid var(--color-support);display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;justify-content:space-between}
+.act strong{font-size:var(--fs-md)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4)}
+.kpi{padding:var(--space-4) var(--space-6)}
+.kpi .l{color:var(--color-muted);font-size:var(--fs-xs);font-weight:var(--fw-subtitle)}
+.kpi .v{white-space:nowrap;font-size:clamp(1.2rem,1.9vw,1.65rem);font-size:var(--fs-kpi);font-weight:var(--fw-bold);line-height:var(--lh-tight);margin:var(--space-1) 0}
+.kpi .d{font-size:var(--fs-xs);color:var(--color-muted)}
+.kpi.warn .v{color:var(--color-danger)}
+.cols{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:var(--space-4)}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{font:var(--fs-xs) var(--font-body);fill:var(--color-muted)}
+.chart .val{fill:var(--color-text);font-weight:var(--fw-subtitle)}
+.tools{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4)}
+.chip{font:var(--fw-subtitle) var(--fs-xs) var(--font-body);padding:var(--space-2) var(--space-3);border-radius:var(--radius-pill);border:1px solid var(--color-line);background:var(--color-surface);color:var(--color-text);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--color-accent);color:var(--color-accent-ink);border-color:var(--color-accent)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:var(--fs-xs);color:var(--color-muted);font-weight:var(--fw-subtitle);padding:var(--space-2) var(--space-3);border-bottom:2px solid var(--color-line)}
+td{padding:var(--space-3);border-bottom:1px solid var(--color-line);vertical-align:middle}
+tbody tr:hover{background:var(--color-bg)}
+td.t{font-variant-numeric:tabular-nums;font-weight:var(--fw-subtitle)} td.n{text-align:right;font-variant-numeric:tabular-nums} th.n{text-align:right}
+.sv{color:var(--color-muted);font-size:var(--fs-xs);display:block}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:2px var(--space-2);border-radius:var(--radius-pill);font-size:var(--fs-xs);font-weight:var(--fw-subtitle);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.ok{background:var(--color-success-soft);color:var(--color-success)} .wait{background:var(--color-support-soft);color:var(--color-support)} .no{background:var(--color-danger-soft);color:var(--color-danger)}
+.empty{text-align:center;padding:var(--space-8) var(--space-4);color:var(--color-muted)}
+.empty svg{width:48px;height:48px;color:var(--color-accent);margin-bottom:var(--space-2)}
+.empty strong{display:block;color:var(--color-text);font-size:var(--fs-md);margin-bottom:var(--space-1)}
+details summary{cursor:pointer;font-weight:var(--fw-subtitle);list-style:none;display:flex;justify-content:space-between;gap:var(--space-4)}
+details summary::after{content:"+";color:var(--color-accent);font-size:var(--fs-lg);line-height:1}
+details[open] summary::after{content:"−"}
+details p{color:var(--color-muted);margin:var(--space-3) 0 0}
+footer{padding:var(--space-4) var(--space-8) var(--space-8);color:var(--color-muted);font-size:var(--fs-xs)}
+.vh{position:absolute;left:-9999px}
+@media (max-width:1000px){.kpis{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}}
+@media (max-width:760px){
+ .app{grid-template-columns:1fr}
+ .side{flex-direction:row;align-items:center;padding:var(--space-3) var(--space-4);overflow-x:auto;gap:var(--space-4)}
+ .side nav{flex-direction:row}.side a span{display:none}.side a{padding:var(--space-2)} .side small{display:none}
+ .side .brand span{display:none}
+ header.top,.wrap,footer{padding-left:var(--space-4);padding-right:var(--space-4)}
+ .sub{font-size:var(--fs-subtitle-mobile);font-weight:var(--fw-subtitle);color:var(--color-muted)}
+ .kpi .v{font-size:1.3rem}.kpi{padding:var(--space-3)} .card{padding:var(--space-4)}
+ /* tabela vira lista de cartões */
+ thead{display:none} table,tbody,tr,td{display:block;width:100%}
+ tr{border-bottom:1px solid var(--color-line);padding:var(--space-3) 0;display:grid;grid-template-columns:auto 1fr auto;gap:0 var(--space-3);align-items:center}
+ td{border:0;padding:2px 0}
+ td.t{grid-row:1/3} td.c{grid-column:2} td.s{grid-column:3;grid-row:1} td.n{grid-column:3;grid-row:2;text-align:right}
+ td.p{display:none}
+}
+</style></head>
+<body>
+<div class="app">
+ <aside class="side">
+  <div class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><span>Studio Lume</span></div>
+  <nav aria-label="Principal">
+   <a href="#" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8v10H3z"/></svg><span>Início</span></a>
+   <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Agenda</span></a>
+   <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 100-6"/></svg><span>Clientes</span></a>
+   <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18M6 16V9M12 16V4M18 16v-5"/></svg><span>Financeiro</span></a>
+  </nav>
+  <small>Dados fictícios (ilustrativo)</small>
+ </aside>
+ <div class="main">
+  <div class="fict">Exemplo fictício feito com o Pack Completo · depois do redesign</div>
+  <header class="top">
+   <div><h1>Hoje, 22/11/2026</h1><p class="sub">9 horários na agenda · 1 cancelado</p></div>
+   <div class="status"><span class="badge ok">6 confirmados</span><span class="badge wait">2 pendentes</span><button class="btn">+ Novo agendamento</button></div>
+  </header>
+  <div class="wrap">
+   <section class="card act" aria-label="Ações necessárias">
+    <div><strong>3 coisas precisam de você hoje</strong><div class="sub">Confirmar 2 horários pendentes e cobrar R$ 1.180,00 em atraso (3 clientes).</div></div>
+    <div class="status"><button class="btn">Confirmar pendentes</button><button class="btn sec">Ver cobranças</button></div>
+   </section>
+   <section class="kpis" aria-label="Indicadores">
+    <div class="card kpi"><div class="l">Receita do mês</div><div class="v">R$ 18.420,50</div><div class="d">148 agendamentos</div></div>
+    <div class="card kpi"><div class="l">Previsto até o fim do mês</div><div class="v">R$ 6.230,00</div><div class="d">já agendado</div></div>
+    <div class="card kpi warn"><div class="l">Em atraso</div><div class="v">R$ 1.180,00</div><div class="d">3 clientes</div></div>
+    <div class="card kpi"><div class="l">Ticket médio</div><div class="v">R$ 124,46</div><div class="d">no mês</div></div>
+   </section>
+   <div class="cols">
+    <section class="card chart"><h2>Receita por semana</h2><p class="hint">Novembro, valores em R$ (ilustrativo)</p>
+     <svg viewBox="0 0 520 220" role="img" aria-label="Gráfico de barras: semana 1 R$ 4.100, semana 2 R$ 5.200, semana 3 R$ 4.680, semana 4 R$ 4.440,50">
+      <g stroke="var(--color-line)"><line x1="40" y1="30" x2="510" y2="30"/><line x1="40" y1="83" x2="510" y2="83"/><line x1="40" y1="137" x2="510" y2="137"/><line x1="40" y1="190" x2="510" y2="190" stroke="var(--color-muted)"/></g>
+      <text x="34" y="34" text-anchor="end">6 mil</text><text x="34" y="87" text-anchor="end">4 mil</text><text x="34" y="141" text-anchor="end">2 mil</text>
+      <!-- escala: 160px = 6000 → 0,02667 px/R$ ; base y=190 -->
+      <g fill="var(--color-accent-soft)"><rect x="70" y="81" width="64" height="109" rx="4"/><rect x="190" y="51" width="64" height="139" rx="4" fill="var(--color-accent)"/><rect x="310" y="65" width="64" height="125" rx="4" fill="var(--color-accent-soft)"/><rect x="430" y="72" width="64" height="118" rx="4" fill="var(--color-accent-soft)"/></g>
+      <g class="val" text-anchor="middle"><text class="val" x="102" y="74">4.100</text><text class="val" x="222" y="44">5.200</text><text class="val" x="342" y="58">4.680</text><text class="val" x="462" y="65">4.440</text></g>
+      <g text-anchor="middle"><text x="102" y="208">Sem 1</text><text x="222" y="208">Sem 2</text><text x="342" y="208">Sem 3</text><text x="462" y="208">Sem 4</text></g>
+     </svg>
+    </section>
+    <section class="card"><h2>Lista de espera</h2><p class="hint">Clientes que querem encaixe</p>
+     <div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>Ninguém na espera</strong>Quando um horário vagar, quem estiver na lista aparece aqui.<br><br><button class="btn sec">Adicionar à lista</button></div>
+    </section>
+   </div>
+   <section class="card"><h2>Agenda de hoje</h2><p class="hint">Cancelados ficam ocultos por padrão</p>
+    <div class="tools" role="group" aria-label="Filtros"><button class="chip" data-f="todos" aria-pressed="true">Todos (8)</button><button class="chip" data-f="pendente" aria-pressed="false">Pendentes (2)</button><button class="chip" data-f="naopago" aria-pressed="false">Não pagos (5)</button><button class="chip" data-f="cancelado" aria-pressed="false">Cancelados (1)</button><button class="chip" data-f="vazio" aria-pressed="false">Profissional 4 (0)</button></div>
+    <table><thead><tr><th>Hora</th><th>Cliente e serviço</th><th>Profissional</th><th>Status</th><th class="n">Valor</th></tr></thead><tbody id="rows"></tbody></table>
+    <div class="empty" id="vazio" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><strong>Nenhum horário neste filtro</strong>Tente outro filtro ou crie um novo agendamento.</div>
+   </section>
+   <section class="card"><details><summary>Detalhes e histórico do mês</summary><p>Agendamentos no mês: 148 · cancelados: 7 (4,7%) · receita acumulada R$ 18.420,50 · semana mais forte: Sem 2 (R$ 5.200,00). Dados fictícios (ilustrativo).</p></details></section>
+  </div>
+  <footer>Exemplo fictício feito com o Pack Completo · Studio Lume é um negócio inventado; clientes, valores e datas são ilustrativos.</footer>
+ </div>
+</div>
+<script>
+const D=[["09:00","Cliente Exemplo A","Corte feminino","Profissional 1","ok",120,1],["10:00","Cliente Exemplo B","Escova","Profissional 2","ok",80,0],["10:30","Cliente Exemplo C","Coloração","Profissional 1","wait",260,0],["11:00","Cliente Exemplo D","Manicure","Profissional 3","ok",55,1],["13:30","Cliente Exemplo E","Hidratação","Profissional 2","no",140,0],["14:00","Cliente Exemplo F","Corte masculino","Profissional 1","ok",70,0],["15:00","Cliente Exemplo G","Design de sobrancelha","Profissional 3","wait",60,0],["16:00","Cliente Exemplo H","Coloração","Profissional 2","ok",280,1],["17:30","Cliente Exemplo I","Escova","Profissional 1","ok",80,0]];
+const L={ok:"Confirmado",wait:"Pendente",no:"Cancelado"};
+const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+function draw(f){
+ const r=D.filter(x=>f==="cancelado"?x[4]==="no":x[4]!=="no"&&(f==="todos"||(f==="pendente"&&x[4]==="wait")||(f==="naopago"&&!x[6])));
+ document.getElementById("rows").innerHTML=r.map(x=>`<tr><td class="t">${x[0]}</td><td class="c">${x[1]}<span class="sv">${x[2]}</span></td><td class="p">${x[3]}</td><td class="s"><span class="badge ${x[4]}">${L[x[4]]}</span></td><td class="n">${brl(x[5])}</td></tr>`).join("");
+ document.querySelector("table").hidden=!r.length;document.getElementById("vazio").hidden=!!r.length;
+}
+document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));draw(b.dataset.f)});
+draw("todos");
+</script>
+</body></html>

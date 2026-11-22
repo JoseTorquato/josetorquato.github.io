@@ -1,0 +1,59 @@
+/* Padaria Miolo & Cia (FICTÍCIA) — tokens. Somente variáveis. */
+:root{
+  /* Cores base (nomes de ingredientes) */
+  --c-farinha:#F6F4EF;      /* fundo */
+  --c-massa:#E9E4DA;        /* superfície alternativa */
+  --c-centeio:#2B2118;      /* texto principal */
+  --c-miolo:#5C5044;        /* texto secundário */
+  --c-azulejo:#1E3A5F;      /* primária */
+  --c-azulejo-escuro:#12253F;
+  --c-azulejo-claro:#DCE5F0;
+  --c-brasa:#B93C0B;        /* acento / CTA */
+  --c-brasa-escuro:#8F2E08;
+  --c-crosta:#7A4410;       /* secundária (texto seguro) */
+  --c-trigo:#E3A84B;        /* decorativo — NÃO usar como texto */
+  --c-fermento:#2F6A47;     /* sucesso */
+  --c-fermento-claro:#DDEFE4;
+  --c-queimado:#B3261E;     /* erro */
+  --c-queimado-claro:#F8E0DD;
+  --c-branco:#FFFFFF;
+  --c-borda:#CFC7B8;
+
+  /* Tipografia (fontes do sistema, sem CDN; fallback explícito) */
+  --ff-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --ff-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --fw-body:400; --fw-subtitle:600; --fw-title:700;
+  --fs-xs:clamp(.8125rem,.8rem + .1vw,.875rem);
+  --fs-sm:clamp(.9375rem,.92rem + .1vw,1rem);
+  --fs-md:clamp(1.0625rem,1rem + .3vw,1.1875rem);
+  --fs-subtitle:clamp(1.25rem,1.1rem + .6vw,1.5rem);   /* ≥20px no mobile */
+  --fs-h3:clamp(1.375rem,1.2rem + .8vw,1.75rem);
+  --fs-h2:clamp(1.75rem,1.4rem + 1.6vw,2.5rem);
+  --fs-h1:clamp(2.25rem,1.6rem + 3vw,4rem);
+  --lh-tight:1.1; --lh-title:1.2; --lh-body:1.6;
+
+  /* Espaçamento */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:.75rem; --sp-4:1rem;
+  --sp-5:1.5rem; --sp-6:2rem; --sp-7:3rem; --sp-8:5rem;
+
+  /* Raios */
+  --r-sm:6px; --r-md:12px; --r-lg:24px; --r-pill:999px;
+
+  /* Sombras (cor de centeio, baixa opacidade) */
+  --sh-1:0 1px 2px rgb(43 33 24 / .12);
+  --sh-2:0 6px 16px rgb(43 33 24 / .14);
+  --sh-3:0 18px 40px rgb(43 33 24 / .20);
+
+  /* Movimento */
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur-fast:120ms; --dur-base:240ms; --dur-slow:480ms;
+  --reveal-distance:16px;
+
+  --container:72rem;
+  --focus:3px solid var(--c-azulejo);
+}
+/* LACUNAS (design-system-tokens, passo 7):
+   - Sem logo real: a marca é apenas um monograma SVG provisório.
+   - Fontes: sem arquivo de fonte licenciado/local; usa pilha do sistema (aparência varia por SO).
+   - Tokens de movimento definidos, mas sem lp-motion-layer neste projeto.
+   - Tema escuro não definido. */
