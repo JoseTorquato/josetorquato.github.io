@@ -31,7 +31,16 @@ mark.hl{background:linear-gradient(transparent 55%,var(--hl) 55%) no-repeat;back
 .exemplos-grid img{display:block;width:100%;height:148px;object-fit:cover;object-position:top;border:var(--b);background:#111}
 .exemplos .btn{margin-top:14px}
 .exemplos-link a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;margin-top:28px}
+.hero-buy{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.hero-buy .micro{margin-top:0;max-width:280px}
+.prova{padding:0 22px 64px}
+.prova-card{display:grid;grid-template-columns:1.35fr .65fr;align-items:center;background:#fff;border:var(--b);box-shadow:8px 8px 0 var(--ink);text-decoration:none;color:inherit}
+.prova-card img{display:block;width:100%;height:280px;object-fit:cover;object-position:top;border-right:var(--b)}
+.prova-card div{padding:22px 26px}
+.prova-kicker{font:500 12px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.prova-card p:last-child{font-size:20px;font-weight:600;line-height:1.35}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
 .card{background:#fff;border:var(--b);box-shadow:var(--sh);padding:26px}
 .term{position:relative;background:var(--ink);color:#E9E6DD;border:var(--b);box-shadow:8px 8px 0 var(--or);transform:rotate(1.5deg)}
 .term-bar{display:flex;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid #333}
@@ -105,6 +114,6 @@ details p{padding:0 22px 20px}
 .sticky.on{transform:none}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
-@media (max-width:900px){.hero,.buy,.two{grid-template-columns:1fr}.packs{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.band-in{grid-template-columns:1fr 1fr}.top nav{display:none}.top .btn{margin-left:auto}.sticky{display:flex}.term{transform:none}}
+@media (max-width:900px){.hero,.buy,.two,.prova-card{grid-template-columns:1fr}.prova-card img{height:200px;border-right:0;border-bottom:var(--b)}.packs{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.band-in{grid-template-columns:1fr 1fr}.top nav{display:none}.top .btn{margin-left:auto}.sticky{display:flex}.term{transform:none}}
 @media (max-width:560px){.packs{grid-template-columns:1fr}.pack{grid-column:auto}.sec{padding:56px 18px}.big{font-size:80px}.price-card{padding:26px 20px}.proof-card{padding:30px 22px}.exemplos-grid img{height:110px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.term .type{max-width:none}.stamp{opacity:1}mark.hl{background-size:100% 100%}}

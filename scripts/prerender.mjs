@@ -227,7 +227,7 @@ const llms = [
   '## Serviço',
   '',
   `- [Sites para negócios locais](${urlOf('/sites')}): criação de site para negócios de Canoas e Porto Alegre, com prévia grátis. Promoção de lançamento: R$ 397 de setup + R$ 39,90/mês, sem fidelidade.`,
-  `- [Skill Packs](${urlOf('/skillpacks')}): Pack Completo, 21 skills para Cursor, Claude, Grok Bot e Antigravity. Preço de lançamento R$ 37, pagamento único. O conteúdo inclui landing page, prospecção, marca, produtividade, canal faceless e dois extras (demo-flythrough-airbnb e app-ui-redesign), mais 15 prompts e um template de CRM.`,
+  `- [Skill Packs](${urlOf('/skillpacks')}): Pack Completo, 20 skills para Cursor, Claude Code, Grok Bot e Antigravity. R$ 37, pagamento único. O conteúdo inclui landing page, prospecção, marca, produtividade, canal faceless e um extra (app-ui-redesign), mais 15 prompts e um template de CRM.`,
   '',
   '## Sobre e contato',
   '',
