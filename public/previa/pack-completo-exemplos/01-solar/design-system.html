@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Design system — Sol do Delta Energia (exemplo fictício)</title><meta name="robots" content="noindex, nofollow">
+<title>Design system — Bruma de Laje Energia (exemplo fictício)</title><meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="styles.css">
 <style>.sw{display:flex;flex-wrap:wrap;gap:var(--space-3)}.sw div{width:140px;border-radius:var(--radius-sm);border:1px solid var(--color-line);overflow:hidden;font-size:var(--fs-xs);background:var(--color-surface)}.sw i{display:block;height:56px}.sw span{display:block;padding:var(--space-2)}section.ds{padding-block:var(--space-8)}</style></head>
 <body><div class="topbar">Exemplo fictício feito com o Pack Completo · vitrine do design system</div>
@@ -16,4 +16,17 @@
 <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
 <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg></a></div><p class="fine">O ícone de WhatsApp aqui é um círculo simplificado; o real está em index.html.</p></section>
 </main>
-<footer class="footer"><div class="container"><strong>Exemplo fictício feito com o Pack Completo</strong></div></footer></body></html>
+<footer class="footer"><div class="container"><strong>Exemplo fictício feito com o Pack Completo</strong></div></footer><style>
+.pack-compra{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:center;padding:8px 14px;background:#121214;color:#f7f1e3;font:600 13px/1.3 system-ui,sans-serif}
+.pack-compra span{text-align:center}
+.pack-compra a{color:#121214;background:#d7ff3a;text-decoration:none;padding:7px 12px;border-radius:999px;font-weight:700}
+.pack-compra a.sec{background:transparent;color:#f7f1e3;box-shadow:inset 0 0 0 1.5px #f7f1e3}
+body{padding-bottom:96px}
+.fab,.flutuante{bottom:108px!important}
+</style>
+<div class="pack-compra" role="region" aria-label="Pack Completo">
+  <span>Feito com o Pack Completo · R$ 37</span>
+  <a href="https://pay.kiwify.com.br/LN2xiTX" target="_blank" rel="noopener noreferrer">Comprar</a>
+  <a class="sec" href="/skillpacks/">Ver o pack</a>
+</div>
+</body></html>

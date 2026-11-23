@@ -1,8 +1,8 @@
-# Direção de arte — Sol do Delta Energia (negócio FICTÍCIO)
+# Direção de arte — Bruma de Laje Energia (negócio FICTÍCIO)
 
 Primeira prévia do projeto: sem comparação com outras prévias.
 
-**Clima escolhido (registrado sem consulta ao usuário, execução autônoma):** "Fim de tarde no Delta" — luz âmbar baixa sobre o Delta do Jacuí, creme quente, verde-petróleo profundo. Tom: claro, direto, técnico sem jargão.
+**Clima escolhido (registrado sem consulta ao usuário, execução autônoma):** "Fim de tarde na laje" — luz âmbar baixa, creme quente, verde-petróleo profundo. Tom: claro, direto, técnico sem jargão.
 
 Alternativas descartadas: "Meio-dia técnico" (branco/azul elétrico, parecido com todo site solar) e "Noite fotovoltaica" (escuro/neon, ruim p/ confiança em contas de luz).
 

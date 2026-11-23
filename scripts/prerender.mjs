@@ -194,8 +194,9 @@ for (const route of routes) {
   writeFileSync(resolve(dir, 'index.html'), pageHtml(route))
 }
 
-// páginas estáticas de public/ que devem aparecer no sitemap (as prévias de clientes ficam fora: são noindex)
-const staticPages = ['/sites', '/skillpacks']
+// páginas estáticas de public/ que devem aparecer no sitemap
+// (prévias de cliente ficam fora: são noindex; o hub dos exemplos do pack entra)
+const staticPages = ['/sites', '/skillpacks', '/previa/pack-completo-exemplos']
 
 // sitemap.xml
 const sitemap =
