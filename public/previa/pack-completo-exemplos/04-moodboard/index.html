@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Miolo &amp; Cia — Moodboard e design system (exemplo fictício)</title>
+<title>Fermento Torto — Moodboard e design system (exemplo fictício)</title>
 <link rel="stylesheet" href="tokens.css">
 <style>
 *{box-sizing:border-box}
@@ -143,7 +143,7 @@ footer .fict-foot{font-weight:var(--fw-title);font-size:var(--fs-md);margin-bott
 
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="#topo" aria-label="Miolo &amp; Cia (marca fictícia)"><svg aria-hidden="true"><use href="#mono"/></svg>Miolo &amp; Cia</a>
+    <a class="brand" href="#topo" aria-label="Fermento Torto (marca fictícia)"><svg aria-hidden="true"><use href="#mono"/></svg>Fermento Torto</a>
     <nav aria-label="Navegação do exemplo">
       <ul>
         <li><a href="#moodboard" aria-current="page">Moodboard</a></li>
@@ -163,7 +163,7 @@ footer .fict-foot{font-weight:var(--fw-title);font-size:var(--fs-md);margin-bott
     <div>
       <p class="eyebrow">Direção de arte · Clima “Azulejo de Forno”</p>
       <h1>Pão lento, marca com cara de balcão antigo.</h1>
-      <p class="sub">Moodboard e design system da Miolo &amp; Cia, uma padaria artesanal inventada para este exemplo. Tudo em código: sem fotos de terceiros, sem CDN.</p>
+      <p class="sub">Moodboard e design system do Fermento Torto, uma padaria artesanal inventada para este exemplo. Tudo em código: sem fotos de terceiros, sem CDN.</p>
       <div class="row"><a class="btn btn-primary" href="#componentes">Ver componentes</a><a class="btn btn-ghost" style="color:var(--c-farinha);border-color:var(--c-farinha)" href="tokens.css">Baixar tokens.css</a></div>
     </div>
     <svg class="tile" viewBox="0 0 320 320" role="img" aria-label="Ilustração: pão redondo com cortes sobre fundo de azulejo">
@@ -348,7 +348,7 @@ footer .fict-foot{font-weight:var(--fw-title);font-size:var(--fs-md);margin-bott
     <h3 style="margin-top:var(--sp-7)">Navbar</h3>
     <div style="border:1px solid var(--c-borda);border-radius:var(--r-lg);overflow:hidden">
       <div class="nav-in" style="position:static">
-        <span class="brand"><svg aria-hidden="true"><use href="#mono"/></svg>Miolo &amp; Cia</span>
+        <span class="brand"><svg aria-hidden="true"><use href="#mono"/></svg>Fermento Torto</span>
         <ul><li><a href="#componentes" aria-current="page">Pães</a></li><li><a href="#componentes">Folhados</a></li><li><a href="#componentes">Café</a></li><li><a href="#componentes">Encomendas</a></li></ul>
       </div>
     </div>
@@ -360,7 +360,7 @@ footer .fict-foot{font-weight:var(--fw-title);font-size:var(--fs-md);margin-bott
 <footer>
   <div class="wrap">
     <p class="fict-foot">Exemplo fictício feito com o Pack Completo</p>
-    <p class="small" style="margin:0 0 var(--sp-3)">Miolo &amp; Cia é uma padaria inventada. Nomes, produtos e preços são ilustrativos. Contato fictício: 55 51 90000-0000 · <a href="mailto:contato@example.com">contato@example.com</a></p>
+    <p class="small" style="margin:0 0 var(--sp-3)">Fermento Torto é uma padaria inventada. Nomes, produtos e preços são ilustrativos. Contato fictício: 55 51 90000-0000 · <a href="mailto:contato@example.com">contato@example.com</a></p>
     <p class="small" style="margin:0">Skills usadas: brand-moodboard e design-system-tokens.</p>
   </div>
 </footer>
@@ -403,5 +403,18 @@ footer .fict-foot{font-weight:var(--fw-title);font-size:var(--fs-md);margin-bott
   }else{els.forEach(function(e){e.classList.add('in')})}
 })();
 </script>
+<style>
+.pack-compra{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:center;padding:8px 14px;background:#121214;color:#f7f1e3;font:600 13px/1.3 system-ui,sans-serif}
+.pack-compra span{text-align:center}
+.pack-compra a{color:#121214;background:#d7ff3a;text-decoration:none;padding:7px 12px;border-radius:999px;font-weight:700}
+.pack-compra a.sec{background:transparent;color:#f7f1e3;box-shadow:inset 0 0 0 1.5px #f7f1e3}
+body{padding-bottom:96px}
+.fab,.flutuante{bottom:108px!important}
+</style>
+<div class="pack-compra" role="region" aria-label="Pack Completo">
+  <span>Feito com o Pack Completo · R$ 37</span>
+  <a href="https://pay.kiwify.com.br/LN2xiTX" target="_blank" rel="noopener noreferrer">Comprar</a>
+  <a class="sec" href="/skillpacks/">Ver o pack</a>
+</div>
 </body>
 </html>

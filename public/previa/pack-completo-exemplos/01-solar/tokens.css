@@ -1,4 +1,4 @@
-/* tokens.css — Sol do Delta Energia (fictício). Somente variáveis.
+/* tokens.css — Bruma de Laje Energia (fictício). Somente variáveis.
    Componentes usam SÓ var(--*). Trocar a marca = editar este arquivo. */
 :root {
   /* Cores */
@@ -52,4 +52,4 @@
   :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; --reveal-distance: 0px; }
 }
 /* Lacunas: sem logo/identidade real (negócio fictício); fonte display é do sistema (varia por SO);
-   ícone do Instagram é genérico, perfil @soldodelta.exemplo é placeholder. */
+   ícone do Instagram é genérico, perfil não há perfil real. */
